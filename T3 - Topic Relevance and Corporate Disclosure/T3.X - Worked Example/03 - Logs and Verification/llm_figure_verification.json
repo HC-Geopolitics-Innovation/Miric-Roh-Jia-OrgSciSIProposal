@@ -1,0 +1,343 @@
+{
+  "run_root": "/project2/njia_1089/acroh/data/output/topic68_relevance_20180410",
+  "topic_id": 68,
+  "hearing_id": "CHRG-115shrg37801",
+  "ranking": "Separate threat / n_sentences and opportunity / n_sentences; flagged_blocks == 0; minimum ranks for ties; plots omit zeros",
+  "clean_filings": 894,
+  "excluded_flagged_filings": 104,
+  "clean_positive_filings": 112,
+  "clean_positive_industries": 32,
+  "directional_figures": {
+    "threat": {
+      "displayed_firms": 15,
+      "firms_with_tags": 101,
+      "neither_baseline": 9
+    },
+    "opportunity": {
+      "displayed_firms": 7,
+      "firms_with_tags": 7,
+      "neither_baseline": 6
+    }
+  },
+  "industry_rule": "Same modal NAICS3 as Facebook (519); not a test of all industry-based methods",
+  "name_rule": "Literal listed aliases; casefold; whitespace collapsed; word boundaries; full hearing including appendices",
+  "name_checks": [
+    {
+      "gvkey": "010631",
+      "display_name": "Total System Services",
+      "aliases": [
+        "Total System Services",
+        "TSYS"
+      ],
+      "alias_hit_counts": {
+        "Total System Services": 0,
+        "TSYS": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "170617",
+      "display_name": "Facebook",
+      "aliases": [
+        "Facebook"
+      ],
+      "alias_hit_counts": {
+        "Facebook": 4464
+      },
+      "name_found": true
+    },
+    {
+      "gvkey": "027885",
+      "display_name": "The Trade Desk",
+      "aliases": [
+        "Trade Desk"
+      ],
+      "alias_hit_counts": {
+        "Trade Desk": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "001468",
+      "display_name": "American Greetings",
+      "aliases": [
+        "American Greetings",
+        "AmericanGreetings",
+        "AG Interactive",
+        "Blue Mountain",
+        "BlueMountain",
+        "justwink",
+        "Cardstore",
+        "Carlton Cards"
+      ],
+      "alias_hit_counts": {
+        "American Greetings": 0,
+        "AmericanGreetings": 0,
+        "AG Interactive": 0,
+        "Blue Mountain": 0,
+        "BlueMountain": 0,
+        "justwink": 0,
+        "Cardstore": 0,
+        "Carlton Cards": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "031673",
+      "display_name": "AmerisourceBergen",
+      "aliases": [
+        "AmerisourceBergen",
+        "Amerisource"
+      ],
+      "alias_hit_counts": {
+        "AmerisourceBergen": 0,
+        "Amerisource": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "165993",
+      "display_name": "Fidelity National (FIS)",
+      "aliases": [
+        "Fidelity National Information Services",
+        "FIS"
+      ],
+      "alias_hit_counts": {
+        "Fidelity National Information Services": 0,
+        "FIS": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "199356",
+      "display_name": "TripAdvisor",
+      "aliases": [
+        "TripAdvisor",
+        "Trip Advisor"
+      ],
+      "alias_hit_counts": {
+        "TripAdvisor": 0,
+        "Trip Advisor": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "002269",
+      "display_name": "H&R Block",
+      "aliases": [
+        "H&R Block",
+        "H & R Block",
+        "H and R Block"
+      ],
+      "alias_hit_counts": {
+        "H&R Block": 0,
+        "H & R Block": 0,
+        "H and R Block": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "007647",
+      "display_name": "Bank of America",
+      "aliases": [
+        "Bank of America",
+        "BofA"
+      ],
+      "alias_hit_counts": {
+        "Bank of America": 0,
+        "BofA": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "184700",
+      "display_name": "Fleetcor",
+      "aliases": [
+        "Fleetcor",
+        "Fleet cor"
+      ],
+      "alias_hit_counts": {
+        "Fleetcor": 0,
+        "Fleet cor": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "007228",
+      "display_name": "Medtronic",
+      "aliases": [
+        "Medtronic"
+      ],
+      "alias_hit_counts": {
+        "Medtronic": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "001447",
+      "display_name": "American Express",
+      "aliases": [
+        "American Express",
+        "Amex"
+      ],
+      "alias_hit_counts": {
+        "American Express": 0,
+        "Amex": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "143974",
+      "display_name": "Alliance Data Systems",
+      "aliases": [
+        "Alliance Data",
+        "AllianceData"
+      ],
+      "alias_hit_counts": {
+        "Alliance Data": 0,
+        "AllianceData": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "018043",
+      "display_name": "News Corp",
+      "aliases": [
+        "News Corp",
+        "News Corporation"
+      ],
+      "alias_hit_counts": {
+        "News Corp": 0,
+        "News Corporation": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "018872",
+      "display_name": "Twitter",
+      "aliases": [
+        "Twitter"
+      ],
+      "alias_hit_counts": {
+        "Twitter": 34
+      },
+      "name_found": true
+    },
+    {
+      "gvkey": "002751",
+      "display_name": "Cardinal Health",
+      "aliases": [
+        "Cardinal Health"
+      ],
+      "alias_hit_counts": {
+        "Cardinal Health": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "031887",
+      "display_name": "ResMed",
+      "aliases": [
+        "ResMed"
+      ],
+      "alias_hit_counts": {
+        "ResMed": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "025056",
+      "display_name": "Time Warner",
+      "aliases": [
+        "Time Warner",
+        "TimeWarner"
+      ],
+      "alias_hit_counts": {
+        "Time Warner": 1,
+        "TimeWarner": 0
+      },
+      "name_found": true
+    },
+    {
+      "gvkey": "003226",
+      "display_name": "Comcast",
+      "aliases": [
+        "Comcast"
+      ],
+      "alias_hit_counts": {
+        "Comcast": 1
+      },
+      "name_found": true
+    },
+    {
+      "gvkey": "005543",
+      "display_name": "Welltower",
+      "aliases": [
+        "Welltower",
+        "Health Care REIT"
+      ],
+      "alias_hit_counts": {
+        "Welltower": 0,
+        "Health Care REIT": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "020116",
+      "display_name": "Paycom Software",
+      "aliases": [
+        "Paycom"
+      ],
+      "alias_hit_counts": {
+        "Paycom": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "141384",
+      "display_name": "Align Technology",
+      "aliases": [
+        "Align Technology",
+        "Invisalign"
+      ],
+      "alias_hit_counts": {
+        "Align Technology": 0,
+        "Invisalign": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "020430",
+      "display_name": "SLM",
+      "aliases": [
+        "SLM",
+        "Sallie Mae"
+      ],
+      "alias_hit_counts": {
+        "SLM": 0,
+        "Sallie Mae": 0
+      },
+      "name_found": false
+    },
+    {
+      "gvkey": "028191",
+      "display_name": "Royal Caribbean",
+      "aliases": [
+        "Royal Caribbean"
+      ],
+      "alias_hit_counts": {
+        "Royal Caribbean": 0
+      },
+      "name_found": false
+    }
+  ],
+  "case_calls_verified": 29,
+  "selection": "The two highest-ranked firms for threat and the two highest-ranked for opportunity; sentences selected for interpretation",
+  "human_validation": "not completed; raw tags retained; selected opportunity passages describe assurance or compliance without an explicit gain",
+  "input_sha256": {
+    "/project2/njia_1089/acroh/data/output/topic68_relevance_20180410/outputs/hearing_firm_privacy_panel.parquet": "850324c843f1268807ab7480b77c02ba69a6fe4b3a8519121c678af510bbfb80",
+    "/project2/njia_1089/acroh/data/output/topic68_relevance_20180410/outputs/privacy_tags.parquet": "c6f359d7db4170aa83c0bd4cd9ccab260d9e19c7daf3c07c77992f1e29286e4c",
+    "/project2/njia_1089/acroh/projects/LLM-Text-Analysis-and-Synthesis/T1 - Text Summarization/T1.X - Worked Example/01 - Inputs/source.txt": "690af0e95e3bd9c3efddb12940fa339969b0f0973c8badd8de6ee8d8b64c7ba8",
+    "/project2/mmiric_1435/acroh/llm_method/data/interim/repo_data/raw/01_firm_id/crsp_compustat_link.dta": "478cc1cc03a0333acd9721ad919dc9887e9ee8f851d2c0f781effed44faaf110"
+  }
+}

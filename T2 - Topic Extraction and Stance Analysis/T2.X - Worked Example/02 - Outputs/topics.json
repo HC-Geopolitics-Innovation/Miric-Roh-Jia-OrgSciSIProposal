@@ -1,0 +1,84 @@
+{
+  "packageId": "CHRG-115shrg37801",
+  "extracted": [
+    {
+      "rank": 1,
+      "topic": "Facebook data privacy",
+      "topic_lint": null
+    },
+    {
+      "rank": 2,
+      "topic": "content moderation",
+      "topic_lint": null
+    },
+    {
+      "rank": 3,
+      "topic": "election integrity",
+      "topic_lint": null
+    },
+    {
+      "rank": 4,
+      "topic": "Honest Ads Act",
+      "topic_lint": null
+    },
+    {
+      "rank": 5,
+      "topic": "GDPR-style controls",
+      "topic_lint": null
+    }
+  ],
+  "assigned": [
+    {
+      "packageId": "CHRG-115shrg37801",
+      "year": 2018,
+      "chamber": "SENATE",
+      "rank": 1,
+      "phrase": "Facebook data privacy",
+      "topic_id": 68,
+      "topic_label": "consumer data privacy legislation"
+    },
+    {
+      "packageId": "CHRG-115shrg37801",
+      "year": 2018,
+      "chamber": "SENATE",
+      "rank": 2,
+      "phrase": "content moderation",
+      "topic_id": 93,
+      "topic_label": "Online advertising and consumer choice policies"
+    },
+    {
+      "packageId": "CHRG-115shrg37801",
+      "year": 2018,
+      "chamber": "SENATE",
+      "rank": 3,
+      "phrase": "election integrity",
+      "topic_id": 100,
+      "topic_label": "Voting systems standards and integrity"
+    },
+    {
+      "packageId": "CHRG-115shrg37801",
+      "year": 2018,
+      "chamber": "SENATE",
+      "rank": 4,
+      "phrase": "Honest Ads Act",
+      "topic_id": 93,
+      "topic_label": "Online advertising and consumer choice policies"
+    },
+    {
+      "packageId": "CHRG-115shrg37801",
+      "year": 2018,
+      "chamber": "SENATE",
+      "rank": 5,
+      "phrase": "GDPR-style controls",
+      "topic_id": 68,
+      "topic_label": "consumer data privacy legislation"
+    }
+  ],
+  "primary": {
+    "packageId": "CHRG-115shrg37801",
+    "topic_id": 68,
+    "n": 2,
+    "primary_label": "consumer data privacy legislation",
+    "primary_theme": "cybersecurity and information security legislation"
+  }
+}

@@ -1,0 +1,523 @@
+# Recorded outputs: CHRG-115shrg37801
+
+These are the output strings stored in the production log, without editorial corrections or new model generation. They include any sentence trimming performed by the original pipeline.
+
+## Map 01
+
+Stage `map`, level 0, 1 input(s), 251 output tokens.
+
+```text
+This segment covers a joint Senate hearing on "Facebook, Social Media Privacy, and the Use and Abuse of Data," held April 10, 2018. Senators John Thune, Chuck Grassley, and Bill Nelson addressed data privacy breaches, specifically the Cambridge Analytica scandal where approximately 87 million users' data was scraped via a quiz app. Thune noted Facebook's 2 billion monthly users and warned that exploiting privacy tools to manipulate users is not negligence but a systemic issue. Feinstein highlighted the Russia-based Internet Research Agency's 2016 election interference using 470 Facebook accounts and reported that Professor Kogan sold data to Cambridge Analytica for $800,000. Nelson questioned why Facebook did not notify 87 million users of the breach or its political use, citing prior FTC findings of deceptive policies. Grassley provided context on Facebook's 2.13 billion users, 25,000 employees, and $40 billion in 2017 revenue, noting data collection spans ads, events, and locations. The speakers emphasized the need for transparency, consumer protection, and stronger federal standards, contrasting the current opaque consent models with the necessity of informed choices.
+```
+
+## Map 02
+
+Stage `map`, level 0, 1 input(s), 273 output tokens.
+
+```text
+Mark Zuckerberg addressed the Committee on privacy, safety, and democracy, acknowledging a failure to prevent harm from fake news, foreign interference, and hate speech. He apologized for the Cambridge Analytica scandal, where Aleksandr Kogan's app accessed data from tens of millions of users. Zuckerberg stated that while Facebook made changes in 2014 to restrict app data access, they must now investigate tens of thousands of apps, having already suspended around 200 apps pending audit. He confirmed that since 2006, Facebook sent over 1,150 cease-and-desist letters to over 1,600 targets and took action against about 370,000 apps in 2017. Regarding Russian election interference, Zuckerberg noted the Internet Research Agency (IRA) generated around 80,000 posts seen by approximately 126 million people and spent $100,000 on ads seen by 11 million. He announced plans to require advertiser authorization for political ads, verify large page managers, and support the Honest Ads Act. Zuckerberg emphasized that protecting the community and social mission takes priority over profits, noting Facebook serves more than 2 billion people. Chairman Grassley questioned the lack of transparency in data usage policies and the specific instances of improper data transfers beyond Kogan.
+```
+
+## Map 03
+
+Stage `map`, level 0, 1 input(s), 251 output tokens.
+
+```text
+Mark Zuckerberg testified before Congress regarding Facebook's data privacy, advertising models, and content moderation. He explained that users control who sees their content via in-product settings, though he noted that most prefer relevant ads over none, making an ad-free paid option unlikely. Zuckerberg stated that users own their data but acknowledged a 2015 mistake regarding Cambridge Analytica, which fraudulently obtained data from 87 million users, and confirmed he would handle such incidents differently today. He discussed a 14-year history of privacy apologies and outlined a shift toward proactively policing the ecosystem to prevent fake news and foreign interference. Regarding elections, Zuckerberg admitted slow identification of Russian information operations in 2016 but cited improved performance in 2017 elections, where AI tools removed tens of thousands of fake accounts. Specific figures included 470 IRA-linked accounts spending $100,000 on ads and 270 targeted Russian pages removed. Senator Cantwell questioned if Palantir taught Cambridge Analytica tactics, to which Zuckerberg replied he did not know, though he confirmed Facebook provided general sales support to the Trump campaign. Senator Hatch emphasized transparency and consumer choice, noting Facebook's commitment to a free service sustained by advertising.
+```
+
+## Map 04
+
+Stage `map`, level 0, 1 input(s), 258 output tokens.
+
+```text
+Mark Zuckerberg addressed data privacy, foreign interference, and regulation during a congressional hearing. He stated the company is committed to implementing GDPR-style controls globally regardless of U.S. regulatory outcomes, distinguishing between internet "pipes" (ISPs) and platforms. Senator Roger Wicker questioned whether consistent privacy protections are needed across the ecosystem; Zuckerberg confirmed Facebook does not collect call/text history unless users opt in, though he could not immediately confirm if minors aged 13–17 can opt in. A statement clarified teens can opt in but are protected from targeted ads and unconnected adult messaging. Wicker also asked about post-logout tracking; Zuckerberg explained cookies correlate activity for security and ad measurement but do not create profiles for non-users or sell data. Senator Patrick Leahy confirmed Facebook received subpoenas from Special Counsel Mueller and was interviewed, though Zuckerberg denied personal knowledge of a specific subpoena. Leahy questioned Zuckerberg's ability to confirm Russian-created groups and Facebook's role in the Myanmar genocide; Zuckerberg pledged to hire more Burmese reviewers and work with civil society. Senator Lindsey Graham discussed Andrew Bosworth's internal note on connectivity risks, competitors like Google and Apple, and the necessity of regulation versus self-regulation. Zuckerberg agreed to submit proposed regulations and acknowledged average consumers do not read full terms of service.
+```
+
+## Map 05
+
+Stage `map`, level 0, 1 input(s), 210 output tokens.
+
+```text
+Senator Klobuchar questioned Mark Zuckerberg regarding the Honest Ads Act, noting a target disclosure date of June. Zuckerberg confirmed early action on transparency and advertiser verification. Klobuchar asked about the geographic concentration of the 87 million users affected by Cambridge Analytica and whether data could be stored in Russia; Zuckerberg stated he lacked immediate data but promised an audit and legal action if data remained. Klobuchar also pressed for a 72-hour breach notification rule, which Zuckerberg supported. Senator Blunt inquired about cross-device tracking and off-line data collection. Zuckerberg confirmed linking accounts across devices and collecting device attributes like GPS and Wi-Fi signals, though he stated non-Facebook user data is not used for targeted ads. Senator Durbin asked for Zuckerberg's hotel name and messenger contacts, which he refused. Durbin then discussed Messenger Kids, noting concerns from the Children's Online Privacy Protection Act. Zuckerberg explained the app collects only minimum necessary data, which is not shared with third parties, though Durbin noted the phrase "in general" implied potential exceptions.
+```
+
+## Map 06
+
+Stage `map`, level 0, 1 input(s), 306 output tokens.
+
+```text
+The segment features Mark Zuckerberg testifying before Senators Durbin, Cornyn, and Blumenthal regarding Facebook's data practices. Durbin questioned whether users over 13 should have their Messenger Kids data deleted upon transitioning to Facebook accounts; Zuckerberg agreed, noting users must start over at age 13. Durbin also asked about Facebook's position on the Illinois Biometric Information Privacy Act (740 ILCS 14/ 5), specifically regarding exceptions for facial recognition. Zuckerberg argued Facebook's use differs from commercial applications like grocery store scans, citing features that protect identity and assist the visually impaired. Cornyn questioned if Facebook's shift from the "move fast and break things" mantra to "move fast with stable infrastructure" led to privacy mistakes, to which Zuckerberg admitted the broader error was viewing responsibility as merely building tools rather than ensuring good use. Cornyn also inquired about data ownership and third-party access; Zuckerberg confirmed users can delete all data upon account termination and stated Facebook does not sell data to advertisers but allows targeted placement without data transfer. Blumenthal addressed the Cambridge Analytica scandal, noting Facebook was on notice of Kogan's terms of service. Zuckerberg acknowledged the app review team's responsibility but denied a violation of the FTC Consent Decree. Blumenthal submitted a letter from former employee Sandy Parakilas detailing a lack of enforcement resources. Blumenthal also introduced the MY DATA Act and the CONSENT Act, proposing opt-in consent and user access to all collected information, including data from brokers.
+```
+
+## Map 07
+
+Stage `map`, level 0, 1 input(s), 286 output tokens.
+
+```text
+Senator Blumenthal requested legislative cooperation regarding sex trafficking, citing the recently passed Stop Enabling Sex Trafficking Act (SESTA), which will be signed into law tomorrow. He emphasized that rules of the road require congressional action. Mark Zuckerberg agreed to cooperate, stating Facebook supports SESTA and aims to work with regulators to craft appropriate regulations for complex industry issues. Senator Cruz questioned whether Facebook considers itself a neutral public forum or engages in political speech under the First Amendment. Zuckerberg clarified that while Facebook moderates content in good faith to keep users safe, it does not create or edit user content and relies on Section 230 immunity under the Communications Decency Act (CDA), specifically 47 U.S.C. Sec. 230(c)(2). Cruz accused Facebook of pervasive political bias, citing May 2016 Gizmodo reports on suppressed conservative stories and the blocking of pages including Chick-fil-A, Fox News, Catholic groups, and Trump supporters' Diamond and Silk pages (1.2 million followers). Zuckerberg acknowledged Silicon Valley's left-leaning nature but denied making hiring or firing decisions based on political views, though he declined to comment on Palmer Luckey's firing. When asked about the political orientation of the 15,000 to 20,000 content reviewers, Zuckerberg stated they do not ask employees about their political stance. The hearing concluded with a five-minute recess.
+```
+
+## Map 08
+
+Stage `map`, level 0, 1 input(s), 282 output tokens.
+
+```text
+Chairman Grassley presided over a hearing segment where Senator Feinstein requested the record include letters from the ACLU, EPIC, ACM, and Public Knowledge regarding Facebook's privacy practices. The ACLU letter, dated April 9, 2018, highlighted that up to 87 million users' data may have been improperly shared with Cambridge Analytica and noted ongoing lawsuits over discriminatory ads based on gender, age, and other protected characteristics. It urged questions on why Facebook failed to prevent such discrimination and whether it would extend GDPR protections to U.S. consumers by May 25, 2018. The ACLU detailed GDPR requirements for consent, data portability, transparency, and breach notification. EPIC's statement, also dated April 9, 2018, criticized the FTC for failing to enforce a 2011 Consent Order with Facebook, which prohibited data transfers to Cambridge Analytica. EPIC noted that in 2007, Facebook Beacon allowed purchases to be publicized without user awareness, and in 2009, Facebook's Terms of Service allowed data retention after account deactivation. EPIC referenced a 2009 complaint alleging unfair and deceptive trade practices under Section 5 of the Federal Trade Commission Act and mentioned a 2001 complaint against Microsoft Passport. Both organizations called for stronger baseline privacy legislation in the U.S.
+```
+
+## Map 09
+
+Stage `map`, level 0, 1 input(s), 289 output tokens.
+
+```text
+This segment details Federal Trade Commission (FTC) enforcement actions regarding consumer privacy, focusing on Microsoft, Choicepoint, Facebook, and Google. The Commission charged Microsoft with false security claims regarding its Passport services in 2001, leading to a settlement requiring a comprehensive information security program. Similarly, the FTC charged Choicepoint in 2005 for compromising 163,000 customers' records, resulting in a $10 million penalty and $5 million for redress. In 2011, the FTC issued a Final Order against Facebook for deceiving consumers about privacy settings, mandating affirmative consent for data sharing, a comprehensive privacy program, and biennial independent audits for 20 years. EPIC supported the order but urged stricter measures, including restoring 2009 privacy settings and making audits public. The segment highlights the FTC's 2011 consent order against Google for its "Buzz" rollout and notes the agency's subsequent failure to enforce these orders despite violations by Facebook and Google. Finally, the text addresses the 2018 Cambridge Analytica breach, where Facebook admitted unlawfully harvesting data from up to 87 million users, violating the 2011 order. EPIC urged the FTC to reopen the investigation, which the Acting Director confirmed on March 26, 2018, stating the FTC is committed to enforcing privacy promises.
+```
+
+## Map 10
+
+Stage `map`, level 0, 1 input(s), 304 output tokens.
+
+```text
+The segment presents a letter from EPIC and an attached complaint regarding Facebook's privacy violations. EPIC, along with State Attorneys General and the TransAtlantic Consumer Dialogue (TACD), urges Mark Zuckerberg to comply with the General Data Protection Regulation (GDPR). EPIC supports TACD's recommendation, arguing U.S. firms should provide equal privacy protection domestically and internationally. EPIC disputes the Federal Trade Commission's (FTC) ability to protect consumers, citing the FTC's failure to enforce the 2011 Consent Order against Facebook. EPIC submitted a Freedom of Information Act request on March 20, 2018, for 2013, 2015, and 2017 Facebook Assessments. The letter recommends improving FTC oversight, updating U.S. privacy laws, and establishing a Federal privacy agency. It states the transfer of 87 million user records to Cambridge Analytica could have been prevented. The attached complaint, filed before the FTC on December 17, 2009, alleges Facebook's changes to privacy settings violate Section 5 of the Federal Trade Commission Act. The complaint involves over 100 million U.S. users and cites Facebook's 2006 News Feed and 2007 Beacon programs as examples of unauthorized data disclosure. It notes Facebook had more than 350 million active users globally and 2.5 billion photos uploaded monthly as of 2009.
+```
+
+## Map 11
+
+Stage `map`, level 0, 1 input(s), 232 output tokens.
+
+```text
+This segment details Facebook's 2009 privacy policy revisions, which the Privacy Commissioner of Canada found lacked adequate safeguards for unauthorized access and meaningful consent. Facebook initially asserted broad, permanent rights to user data, even after account deletion, but reversed these changes following user objections and an EPIC complaint. The revised policy, effective November 19 and December 9, 2009, categorized names, photos, friend lists, and political interests as "publicly available information," accessible to search engines and third-party applications without explicit user consent. While Facebook's Chief Privacy Officer, Chris Kelly, testified that users retain controls, critics argue defaults now favor public disclosure. Specific concerns include the exposure of sensitive data to Iranian authorities, leading users to change names to "Irani," and the ability of developers to access excessive data via the API. User opposition was widespread, with over 1,050 users in a group demanding a rollback and thousands of blog posts criticizing the changes. Despite some rollbacks regarding friend list visibility, Facebook eliminated the one-click opt-out for third-party data sharing, leaving users unable to fully prevent data access by applications.
+```
+
+## Map 12
+
+Stage `map`, level 0, 1 input(s), 231 output tokens.
+
+```text
+This segment discusses Facebook's 2009 privacy changes, which shifted default settings to make user information visible to "everyone," including search engines. Experts like Joseph Bonneau, Graham Cluley, and Jason Kincaid warned of risks such as cross-network de-anonymization, phishing, and loss of control over data once shared. Users expressed anger, with some threatening to delete accounts, citing violations of their privacy policies. Editorialists from the Boston Globe and L.A. Times criticized the move as a "privacy downgrade" that alienates users. The text then analyzes these actions under the FTC Act, Section 5, defining unfair practices as those causing substantial, unavoidable consumer injury not outweighed by benefits. It cites prior FTC cases against Sears Holdings (2009), Gateway Learning (2004), and Life is Good (2008) regarding deceptive privacy policies and unauthorized data sharing. The segment concludes by noting Facebook's representations that users had extensive controls and could opt-out of third-party sharing, contrasting them with the new reality where names, photos, friend lists, and geographic data are publicly available without user consent.
+```
+
+## Map 13
+
+Stage `map`, level 0, 1 input(s), 220 output tokens.
+
+```text
+The segment consists of four letters submitted to the Senate Judiciary and Commerce Committees regarding Facebook data privacy. EPIC argues that Facebook's privacy changes eliminate the universal one-click opt-out, requiring users to provide personal information previously preventable. EPIC requests injunctive relief to restore previous settings and compel clearer data collection practices. ACM, via its USACM council, calls the Facebook incident a "watershed moment" necessitating a comprehensive review of consent definitions and Federal enforcement authority, citing ACM's 2018 Statement on Privacy Principles. NetChoice warns that aggressive regulations, such as those modeled on the European approach or the BROWSER Act, would cost American businesses $340 billion over five years and reduce online ad effectiveness by 65 percent, harming small businesses and consumers. Public Knowledge highlights specific breaches involving 87 million users via Cambridge Analytica, SMS data collection, and identity theft, urging legislation that restores individual control over personal information. The correspondence dates range from December 17, 2009, to April 10, 2018.
+```
+
+## Map 14
+
+Stage `map`, level 0, 1 input(s), 203 output tokens.
+
+```text
+Allison S. Bohm of Public Knowledge argues that privacy notices cannot be buried in lengthy policies, citing Carnegie Mellon researchers who estimate reading all encountered policies takes seventy-six work days. Bohm contends consumers need granular, real consent for data use, withdrawal rights, and data portability, noting the General Data Protection Regulation goes into effect in Europe in May. Regarding security, Bohm urges adherence to privacy by design, data minimization, and encryption, stating the government must convene multi-stakeholder processes because industry self-policing failed in the Facebook/Cambridge Analytica case. On recourse, Bohm highlights the Federal Arbitration Act as a barrier, arguing Congress should exempt privacy cases from it to allow class actions. She also suggests liquidated damages, referencing the Cable Privacy Act, to address unquantifiable harms like psychographic influence. Finally, Bohm encourages legislation compatible with existing sector-specific laws and state privacy statutes, urging Congress to update bills to cover modern data like social media "likes."
+```
+
+## Map 15
+
+Stage `map`, level 0, 1 input(s), 273 output tokens.
+
+```text
+This segment of a congressional hearing features U.S. Senator Sheldon Whitehouse, Senator Mike Lee, Senator Brian Schatz, Senator Deb Fischer, and Senator Christopher Coons questioning Mark Zuckerberg regarding Facebook's data practices, content moderation, and user control. Whitehouse clarified that Cambridge Analytica began advertising in 2015, leading to the banning of the firm, its parent company, AIQ, and Aleksandr Kogan's accounts, though personal accounts of principals remain unbanned. He questioned the verification of political ad owners, noting shell corporations could hide true beneficial owners. Lee discussed content moderation, affirming that while Facebook avoids hate speech and terrorism, it generally does not favor or disfavor viewpoints beyond prohibited categories. He also addressed data collection, explaining that while users control shared content, Facebook collects specific data to improve ad relevance, though users can opt out. Schatz highlighted the complexity of Facebook's 3,200-word terms of service and data policy, asking about WhatsApp encryption and the concept of an "information fiduciary," to which Zuckerberg expressed openness. Fischer referenced reports of 98 data categories and 192 billion data points, clarifying that these reflect ad targeting audiences rather than universal collection, and confirmed that users retain control over content sharing and storage. Coons' statement was cut off before his questions were fully recorded.
+```
+
+## Map 16
+
+Stage `map`, level 0, 1 input(s), 273 output tokens.
+
+```text
+Senator Coons questioned Facebook's tension between privacy promises and ad-targeting profits, citing $40 billion in ad revenue and examples of discriminatory housing ads, Russian election interference, and wildlife trafficking. He highlighted the 2011 FTC Consent Decree and asked if Facebook protects all users equally. Mr. Zuckerberg acknowledged the need for better content enforcement, noting plans to expand the security team to over 20,000 by year-end and use AI to proactively remove 99% of ISIS and al-Qaida content. Senator Sasse discussed the difficulty of defining hate speech versus free expression, noting 40% of Americans under 35 view the First Amendment as dangerous, and asked about social media addiction and dopamine loops. Senator Markey pressed for clear user permission before sharing sensitive data, supporting the CONSENT Act and a child privacy bill of rights for those under 16, aligning with the Child Online Privacy Protection Act of 1999. Mr. Zuckerberg affirmed support for opt-in principles but stated he was unsure if a law was necessary. Senator Flake addressed data harvesting by Russian and Chinese governments and the need for AI in content moderation. Senator Hirono questioned Facebook's cooperation with ICE's visa lifecycle vetting initiative to predict criminal behavior, to which Zuckerberg stated they would not proactively assist in such assessments.
+```
+
+## Map 17
+
+Stage `map`, level 0, 1 input(s), 291 output tokens.
+
+```text
+Senator Hirono questioned Facebook's adherence to its February 2017 promise to ban discriminatory ads based on race, gender, and other categories prohibited by federal law, noting ProPublica's findings that such ads remained possible. Mr. Zuckerberg explained that while the ability to exclude sensitive groups was removed, enforcement relies on community flags and upcoming AI tools, admitting it is a work in progress. Senator Sullivan highlighted Facebook's scale, citing 2 billion users, 200 million Americans, and $40 billion in revenue, asking if the company is too powerful and if regulation might cement its dominance. Zuckerberg agreed that regulation must not favor existing winners but emphasized his company's commitment to not cementing advantages. Senator Udall expressed anger over the Cambridge Analytica scandal and asked if Zuckerberg would personally advocate for the Honest Ads Act; Zuckerberg confirmed support and implementation but declined to commit to frequent D.C. appearances, stating he cannot guarantee the complete removal of Russian interference images due to an ongoing arms race. He also detailed verification steps for foreign money in ads. Senator Moran addressed the FTC investigation regarding the 2011 Consent Order, questioning how 87 million friends' data sharing with third parties by only 300,000 consenting users violated the agreement; Zuckerberg attributed this to the platform's original design, which was changed in 2014 to restrict data access. He also discussed the Data Abuse Bounty Program.
+```
+
+## Map 18
+
+Stage `map`, level 0, 1 input(s), 304 output tokens.
+
+```text
+Senator Booker raised concerns about law enforcement using Facebook to surveil African-American organizations like Black Lives Matter, asking if Facebook would push back against such access without clear subpoenas. Mr. Zuckerberg affirmed this commitment, stating they would resist requests lacking clear legal authority. Senator Booker also requested clarification on why Facebook moved to dismiss a discrimination lawsuit, noting that people of color were not recruited for economic opportunities.
+
+Senator Heller questioned how many of the 87 million users notified about the Cambridge Analytica data breach were from Nevada and asked about data retention policies after account deletion. Zuckerberg stated they do not sell data but allow developers access to friend lists, acknowledging the 87 million users were victims of the breach. He also addressed concerns about audio mining, denying that Facebook listens to mobile device microphones for ads.
+
+Senator Peters discussed the erosion of trust due to algorithmic changes and asked if Facebook uses audio from mobile devices for targeting; Zuckerberg denied this, clarifying they only record audio during video uploads. Peters also inquired about AI principles, to which Zuckerberg confirmed Facebook is developing ethical and technical foundations for AI safety and fairness.
+
+Senator Tillis criticized Facebook's timeline for omitting early data exploitation by the Obama campaign and urged an examination of bad actors across the political spectrum. He suggested industry-wide standards and a business code of conduct to prevent favoritism. Senator Harris expressed concern over Facebook's lack of transparency regarding user tracking and the decision not to notify users in December 2015 about the Cambridge Analytica breach.
+```
+
+## Map 19
+
+Stage `map`, level 0, 1 input(s), 268 output tokens.
+
+```text
+Mark Zuckerberg testified before Congress regarding Facebook's data practices, specifically addressing the 2015 Cambridge Analytica scandal. He admitted that while the company banned the developer and demanded data deletion, they failed to inform users due to false information, a mistake he acknowledged in retrospect. Senator Harris questioned the decision not to notify users and asked about revenue from foreign propaganda ads; Zuckerberg stated the Internet Research Agency spent approximately $100,000 on ads. Senator Kennedy criticized Facebook's user agreement as "sucking" and urged Zuckerberg to rewrite it in plain English, while also discussing the right to data portability and erasure. Senator Baldwin confirmed that Aleksandr Kogan accessed a subset of 95 data categories and sold data to firms including Eunoia Technologies and SCL Elections Ltd. She also noted that on December 11, 2015, The Guardian reported Kogan may have passed data to Cambridge Analytica. Senator Johnson discussed user engagement, noting no dramatic falloff in usage despite privacy concerns, and addressed proposals for user data monetization. Senator Hassan highlighted risks to Facebook's business model involving user engagement and ad targeting effectiveness, citing 2017 financial statements that listed decreased user engagement as a major risk. Zuckerberg responded that long-term community building aligns with well-being research and business success.
+```
+
+## Map 20
+
+Stage `map`, level 0, 1 input(s), 265 output tokens.
+
+```text
+The segment features Mark Zuckerberg testifying before Senators Hassan, Capito, Masto, Gardner, Tester, and Chairman Grassley regarding Facebook's privacy, security, and regulatory framework. Senator Hassan questions the lack of financial incentives for companies like Facebook and Equifax to protect user data, while Zuckerberg acknowledges the harm caused by recent breaches but argues existing regulatory pressures and FTC oversight provide sufficient motivation. Zuckerberg supports federal breach notification requirements, citing the complexity of varying state laws compared to the EU's GDPR.
+
+Senator Capito clarifies that deleted accounts are permanently removed from Facebook's systems, though shared content may persist elsewhere. He also requests a commitment for Facebook to send a representative to an upcoming opioid summit led by FDA Commissioner Scott Gottlieb, which Zuckerberg agrees to. Senator Masto challenges Zuckerberg on the FTC's 2011 consent order, noting that users were not adequately informed when data was shared with third parties, and demands concrete steps beyond policy changes to prevent future misuse. Senator Gardner addresses data deletion backups, cross-site tracking functionality, and the labeling of issue advocacy as political ads to combat foreign interference. Finally, Senator Tester asks Zuckerberg to outline steps to prevent a recurrence of the Cambridge Analytica scandal, to which Zuckerberg points to a full audit of the firm and restrictions on developer access implemented in 2014.
+```
+
+## Map 21
+
+Stage `map`, level 0, 1 input(s), 219 output tokens.
+
+```text
+Senator Tester questioned whether Facebook could audit data stored outside the U.S. or U.K., noting claims of Russian storage and the impossibility of accessing such data. Zuckerberg acknowledged potential audit limitations but stated they would pursue legal action if unable to satisfy audit requirements. Tester pressed on data ownership, noting Facebook generates $40 billion annually from user data while users earn nothing, citing the Cambridge Analytica breach affecting approximately 80 million Americans. Zuckerberg clarified that "ownership" means users control how data is used on Facebook, requiring a license for the platform to function. Senator Young discussed user privacy expectations, distinguishing between encrypted ISP pipes and central edge platforms like Facebook. He proposed laws establishing user property rights over online data or stronger affirmative opt-in requirements, asking if Facebook would need to retool its model; Zuckerberg stated current policies align with these principles. Chairman Thune addressed efforts to remove bad actors, assuring the committee that speech protection, especially political speech, would be prioritized. Chairman Grassley commented on public cynicism toward government, urging Zuckerberg to use his influence to restore faith in democratic institutions.
+```
+
+## Map 22
+
+Stage `map`, level 0, 1 input(s), 297 output tokens.
+
+```text
+The segment concludes a Senate Judiciary Committee hearing on Facebook privacy, adjourning at 7:24 p.m. on April 10, 2018. An April 10, 2018 letter from the Committee for Justice (CFJ) opposes new legislation regulating online data collection, arguing it would harm economic growth, small businesses, and the online ecosystem. The CFJ cites that over 70 million small businesses use Facebook and data-driven marketing added more than $200 billion to the U.S. economy in 2014. The letter contends that existing protections under the Federal Trade Commission Act 15 U.S.C. Sec. 45(a) and state laws suffice, noting the Cambridge Analytica incident involved non-sensitive data like names and page likes. It contrasts the 2016 Trump election with the 2012 Obama campaign's use of Facebook data. Mark Zuckerberg's written responses to Senators Thune, Wicker, and Moran address investigations into apps accessing pre-2014 data, where thousands of apps were reviewed and around 200 suspended. Zuckerberg confirmed he learned of Cambridge Analytica's potential data misuse on December 11, 2015, and became aware of their failure to delete data in March 2018. He detailed Facebook's efforts to improve user privacy controls, including new settings menus and the TTC Labs design innovation initiative.
+```
+
+## Map 23
+
+Stage `map`, level 0, 1 input(s), 264 output tokens.
+
+```text
+Mark Zuckerberg testified before Congress regarding Facebook's content moderation, business models, data practices, and the Cambridge Analytica incident. He explained that Facebook appeals removed content for nudity, hate speech, and violence, aiming to expand this process to include more violation types and context. When questioned about shifting to a subscription model, Zuckerberg stated Facebook remains advertising-supported to keep services free, emphasizing that relevant ads and privacy are not in conflict. He detailed how user feedback drives ad relevance and confirmed that while targeted ads create value, they do not compromise user data. Regarding data retention, Zuckerberg noted that deleted accounts have their posts removed, except for legal obligations or term violations. He clarified that non-users can request data copies but Facebook does not profile them, though it logs visits to sites with Facebook tools. On the Cambridge Analytica scandal, Zuckerberg acknowledged 87 million potentially impacted users, citing conservative estimates due to deleted accounts and privacy setting changes. He denied preferential treatment to the Obama campaign and argued the 2012 FTC consent order was not implicated in the current matter. In written responses, Zuckerberg addressed data collection from minors, confirming opt-in requirements for call/text history and stating such data is not used for advertising. He also discussed cross-device tracking, affirming that Facebook associates information across devices to provide a consistent personalized experience.
+```
+
+## Map 24
+
+Stage `map`, level 0, 1 input(s), 193 output tokens.
+
+```text
+The segment details Facebook's data collection practices, including device operations, identifiers, network signals, and third-party data from advertisers. Zuckerberg states data is used to personalize content and ads, retained until no longer necessary or account deletion. Regarding cross-device tracking, he confirms users can control permissions via operating system settings and explains that Android requires listing all potential permissions at install time. On content moderation, Zuckerberg asserts Facebook does not determine content visibility based on corporate values, truth, or social desirability. He emphasizes Community Standards rooted in Safety, Voice, and Equity, noting removal occurs only for real-world harm like hate speech targeting protected characteristics (race, religion, etc.). He affirms First Amendment protection under Section 230, stating Facebook arranges but does not create content. Finally, he confirms access to services is viewpoint-neutral, removing only content violating policies on hate speech, self-harm, or violence, while erring on the side of allowing diverse expression.
+```
+
+## Map 25
+
+Stage `map`, level 0, 1 input(s), 294 output tokens.
+
+```text
+Facebook's representatives addressed congressional inquiries regarding discrimination, content moderation, and hate speech policies. Regarding political bias, Facebook stated its investigation into the "Trending Topics" feature revealed no systematic political bias, noting approval rates for conservative and liberal topics were "virtually identical." They announced hiring former Senator Jon Kyl to advise on bias against conservative voices and launched an appeals process for content decisions.
+
+On content removal, Facebook confirmed it removes content violating policies regardless of the poster's identity, citing April 24, 2018, as the date detailed guidelines were published. They defined "hate speech" as direct attacks based on protected characteristics like race, ethnicity, national origin, religious affiliation, sexual orientation, sex, gender, gender identity, and serious disability or disease, defining an "attack" as violent, dehumanizing, or exclusionary. Facebook clarified they do not defer to outside organizations in making content decisions but consult academics like Timothy Garton Ash and Susan Benesch. They stated they do not believe hate speech is protected under the First Amendment, aiming to protect their 2 billion users, more than 87 percent located outside the U.S.
+
+Specific questions about the Bible, Torah, Koran, California's AB 2943, and various political statements were answered by deferring to previous responses on hate speech definitions and context. Facebook emphasized that context, intent, and regional linguistic factors are critical in determining if content violates policies.
+```
+
+## Map 26
+
+Stage `map`, level 0, 1 input(s), 241 output tokens.
+
+```text
+The segment features Facebook responding to congressional questions regarding content moderation, hate speech policies, and political neutrality. Facebook defines hate speech as direct attacks based on protected characteristics like race, religion, and sexual orientation, explicitly excluding political party affiliation. The company addressed specific incidents, including the "TERMINATE the Republican Party" group linked to the 2017 shooting of Rep. Steve Scalise, Governor Mike Huckabee's 2012 Chick-fil-A post, and the removal of a "Special Operations Speaks" post about Benghazi. Facebook stated it removed the Benghazi post for 29 hours due to an error, later restoring it. Regarding the "Diamond and Silk" case, Facebook apologized for mislabeling their content as "dangerous" and announced an appeals process and external advisor, former Senator Jon Kyl. Facebook confirmed it does not remove content opposing same-sex marriage or the Obama administration's handling of Benghazi, citing a commitment to free expression. The company also detailed its moderation operations, noting a workforce of 20,000 safety and security employees by the end of 2018, though it declined to disclose statistics on moderator political affiliations or partisan donations.
+```
+
+## Map 27
+
+Stage `map`, level 0, 1 input(s), 263 output tokens.
+
+```text
+The segment consists of congressional questions regarding Facebook's political activities, algorithmic bias, and advertising practices, with the company responding that it does not maintain statistics on employee political affiliation, volunteer work, or specific donation amounts. Facebook stated it uses third-party fact-checkers (Associated Press, Factcheck.org, PolitiFact, Snopes, Weekly Standard) and operates under the International Fact-Checking Network Code of Principles. Regarding the 2018 algorithm change, Facebook noted liberal publisher traffic rose approximately 2 percent while conservative publisher traffic declined approximately 14 percent, citing a Western Journal study. The company listed 25 specific publishers (including The Washington Post, Fox News, National Review, and Vice) to which it was asked about traffic changes. Facebook confirmed compliance with political contribution reporting and provided a link to its engagement data. The company stated it partners with non-governmental organizations spanning the political spectrum and provides technical expertise and advertising credits to these partners. Finally, Facebook was asked about advertising rates charged to the Hillary Clinton and Donald Trump campaigns in 2016, as well as rates for Barack Obama and John McCain in 2008, and various Democratic and Republican candidates for Senate, House, Governor, and local offices from 2008 through 2018.
+```
+
+## Map 28
+
+Stage `map`, level 0, 1 input(s), 260 output tokens.
+
+```text
+This segment covers Facebook's responses to congressional questions regarding political advertising, employee training, content moderation, and data privacy. Facebook stated it offered identical support to both the Trump and Clinton campaigns in 2016, using the same tools for all candidates. Regarding rates, Facebook explained that costs are determined by its ad auction system rather than fixed quotes for specific elections like 2008, 2010, 2012, 2014, 2016, or 2018. The company confirmed users can create Pages for free but must pay to run ads, and its algorithms do not promote specific parties.
+
+On workplace policies, Facebook detailed mandatory trainings on sexual harassment, unconscious bias (including a three-day course on racial privilege), and inclusivity, citing six principles for handling discrimination claims with a zero-tolerance policy. It denied tracking religious beliefs or personal characteristics when resolving content complaints. Regarding the James Damore firing, Facebook declined to comment on Google's decision or hypothetical disciplinary actions. On data collection, Facebook clarified it does not create profiles for non-users, only logging standard browser records for security and analytics without identifying individuals. It also stated employees regularly view public pages of Senators to track issues but did not access private data.
+```
+
+## Map 29
+
+Stage `map`, level 0, 1 input(s), 247 output tokens.
+
+```text
+The segment features Facebook's executive responding to congressional questions regarding data collection, privacy, and business practices. Facebook states that all users must expressly consent to its Terms and Data Policy upon registration. It details collecting user content, device information, transaction data, and partner-provided data, noting that non-users cannot post content and thus lack corresponding controls. Regarding facial recognition, Facebook confirms its use for tagging friends and preventing impersonation but asserts it does not share templates with third parties or allow government access; users can opt out, which deletes their template. Facebook denies collecting audio or visual data without contemporaneous consent. On market position, it cites Scott Galloway's estimate of Facebook and Google's combined worth at $1.3 trillion, noting Facebook holds a 6% share of the $650 billion global advertising ecosystem. Financially, Facebook reports 2017 revenue of $40,653,000,000, 98% from third-party ads, with historical data from 2008 to 2017. Facebook maintains that it does not sell user information, sells substantially all revenue from ads, and conducts research under an enhanced review process for sensitive topics.
+```
+
+## Map 30
+
+Stage `map`, level 0, 1 input(s), 293 output tokens.
+
+```text
+The segment features Mark Zuckerberg responding to written questions from Congressmen Deb Fischer, Jerry Moran, and others regarding Facebook's data practices, advertising, and compliance. Zuckerberg explains that Facebook collects three data categories: user actions, device data, and partner data. He details how users control ad targeting via "Ad Preferences," managing interests, behaviors (categories), and advertiser lists, noting that opting out stops ad use but not core data collection for platform safety. Revenue figures are provided for 2008 through 2017, showing growth from $272 million in 2008 to $40.653 billion in 2017, with 84% to 98% from third-party ads. Zuckerberg confirms Facebook is an American company with 90% of users outside the U.S. and states it does not program back doors or provide searchable data to the PRC. He admits four Facebook employees attended the PRC's World Internet Conference, with Vaughan Smith giving keynotes, though no advisory committee participation occurred. Regarding the Cambridge Analytica scandal, Zuckerberg states Kogan's app accessed public profile data from ~300,000 users and limited friend data from fewer than 1,500, arguing the 2011 consent decree did not apply as privacy settings were not expanded. He also addresses bug bounty programs, noting they target unauthorized access rather than data sharing arrangements.
+```
+
+## Map 31
+
+Stage `map`, level 0, 1 input(s), 277 output tokens.
+
+```text
+Mark Zuckerberg addressed data abuse bounties, GDPR compliance, and law enforcement cooperation. He confirmed shifting 1.5 billion users from Ireland to the U.S. to allow local legal frameworks, noting GDPR requires specific EU protections. Regarding law enforcement, Zuckerberg stated Facebook responds to emergency requests within minutes, citing 78% response rates for U.S. emergency disclosures in the second half of 2017 and 85% for general requests. He detailed valid data requests under the Federal Stored Communications Act, including subpoenas, 18 U.S.C. Sec. 2703(d) court orders, and search warrants. On antitrust, Zuckerberg argued Facebook is not too big, representing only 6% of the $650 billion global advertising ecosystem. He denied extracting audio for ads, stating only microphone access occurs with user permission for specific features. For children, he highlighted the Youth Portal, Messenger Kids (with no ads), and AMBER Alert partnerships with NCMEC. On SESTA, he affirmed support while ensuring good actors are not penalized. Regarding Cambridge Analytica, he admitted data deletion claims were inaccurate in March 2018. He announced Clear History to let users opt out of web browsing history collection and described plans to increase safety staff to 20,000 to combat foreign interference and fake news.
+```
+
+## Map 32
+
+Stage `map`, level 0, 1 input(s), 251 output tokens.
+
+```text
+Mark Zuckerberg addressed safety, privacy, and regulation during a congressional hearing. He detailed actions against the Russia-based Internet Research Agency (IRA), noting the removal of 70 Facebook accounts, 65 Instagram accounts, and 138 Facebook Pages. Zuckerberg highlighted investments in security, doubling the team from 10,000 to over 20,000, and collaborations like the TechAccord pact with 34 companies. Regarding elections, he mentioned tracking 40+ globally, including the U.S. midterms, and deploying tools after testing in Alabama. On privacy, Zuckerberg clarified that the General Data Protection Regulation (GDPR) does not impact U.S. users who contract with Facebook, Inc., though similar protections exist. He explained the "Download Your Information" (DYI) tool and announced "Clear History" to show third-party data sources. Zuckerberg responded to questions about the Honest Ads Act, AI ethics, and breach notification, stating Facebook is open to centralized U.S. reporting schemes similar to the EU's 72-hour GDPR requirement. He also addressed web tracking, confirming data is used for advertising but not for non-users, and emphasized that employees have strict access controls to the Hive database.
+```
+
+## Map 33
+
+Stage `map`, level 0, 1 input(s), 282 output tokens.
+
+```text
+Facebook addressed privacy concerns regarding data collection, advertising policies, and third-party app misuse. The company explained that while it collects data on user activities, devices, and partner information, it restricts health-related advertising and prohibits using sensitive data like financial or health details. Facebook introduced "Clear History" to allow users to see and delete data sent by websites and apps. Regarding the Onavo VPN app, Facebook confirmed it collects traffic data to improve the service and its own products but stated it does not associate this data with user profiles or use it for competitive analytics. On academic research, Facebook noted it does not provide direct access to non-anonymized data and is investigating apps that misused user information before 2014 policy changes; approximately 200 apps have been suspended, including those linked to Aleksandr Kogan, AIQ, and Cambridge Analytica. Specific dates of deletion certifications were provided for Cambridge Analytica entities, ranging from January 18, 2016, to April 3, 2017. Facebook also detailed its enforcement actions, noting over 1,150 cease-and-desist letters sent since 2006 and actions against 370,000 apps in 2017. The "People You May Know" feature uses mutual friends and uploaded contacts but does not utilize data brokers or bypass privacy controls.
+```
+
+## Map 34
+
+Stage `map`, level 0, 1 input(s), 264 output tokens.
+
+```text
+The segment covers Facebook's responses to congressional questions regarding privacy, data security, Russian interference, hate speech, and human rights. On privacy, Facebook stated it streamlines GDPR consent choices to 2-3 options to avoid "notice fatigue" and relies on cross-disciplinary reviews. Regarding data portability, the company confirmed users can download information including About Me, Chat, and Messages, and will provide clear data practices under Section 5 of the FTC Act. On security, Facebook expressed openness to centralized breach notification legislation similar to the EU's GDPR.
+
+Concerning Russian interference, Facebook committed to pre-election reporting and detailed 10 changes, including removing nearly one-third of targeting segments used by the Internet Research Agency (IRA) and blocking millions of fake accounts daily. They noted removing 70 Facebook and 65 Instagram accounts controlled by the IRA. On hate speech in Myanmar and Sri Lanka, Facebook acknowledged delays and pledged to double content reviewers to over 20,000 globally, increase Burmese reviewers, and promote local language Community Standards reaching over 8 million people. They also listed designated hate figures like U Wirathu for permanent removal. Finally, regarding Iran, Facebook affirmed its membership in the Global Network Initiative since 2013 and uses face recognition to detect impersonation.
+```
+
+## Map 35
+
+Stage `map`, level 0, 1 input(s), 218 output tokens.
+
+```text
+Mark Zuckerberg addressed congressional inquiries regarding Facebook's data collection, user privacy controls, and compliance with the General Data Protection Regulation (GDPR). Zuckerberg detailed data types collected from users, including content, device information, and third-party data, stating that users own shared data and can manage it via tools like "Download Your Information" and "Ads Preferences." He explained that Facebook does not create profiles for non-users but logs browser/app visits for security and analytics without targeting ads. Regarding user engagement, Zuckerberg noted there is no single metric for time spent reading terms of service, emphasizing in-product education over upfront documents. He confirmed GDPR-style consent flows for facial recognition and off-platform data usage are now available globally, though U.S. users retain existing choices. On children's safety, Zuckerberg pledged no advertising or in-app purchases in Messenger Kids and no automatic account creation or data sharing for targeted ads once users turn 13. He described a cross-functional privacy review process overseen by the Chief Privacy Officer, which considers privacy early in development and involves independent third-party assessments submitted to the FTC every two years.
+```
+
+## Map 36
+
+Stage `map`, level 0, 1 input(s), 230 output tokens.
+
+```text
+The segment covers Facebook's investigation into apps accessing data before 2014, specifically naming Kogan, AIQ, Cube You, the Cambridge Psychometrics Center, and myPersonality. Approximately 200 apps were suspended pending investigation, with around 14 additional apps linked to AIQ/Cambridge Analytica also suspended. Facebook details measures to prevent ad targeting using ill-gotten data, including restricting API access, banning misusing apps, notifying users of data misuse, and turning off unused apps after three months. Regarding the Trump campaign, Facebook states no employees worked full-time for either campaign and found no improper data use during interactions with Cambridge Analytica. On tracking, Facebook reports that during the week prior to April 16, 2018, Like buttons appeared on 8.4M websites, Share buttons on 931K websites covering 275M pages, and 2.2M Facebook pixels were installed. The company confirms it collects data on non-users via Shadow Profiles but does not create profiles or track browser behavior for them, though users can request deletion via a contact form.
+```
+
+## Map 37
+
+Stage `map`, level 0, 1 input(s), 282 output tokens.
+
+```text
+Mark Zuckerberg addressed data privacy, AI principles, and safety measures during congressional hearings. He explained that Facebook's servers automatically log browser records and publisher-shared activity (e.g., purchases) when users visit sites with Facebook tools, a standard Internet feature. For non-users, Facebook uses logs for security and analytics but does not create profiles or show targeted ads. Regarding a kids' privacy bill, Zuckerberg stated Facebook is not opposed to regulation but seeks to craft the "right regulation."
+
+On AI, Zuckerberg defined principles of safety, fairness, transparency, and accountability, noting Facebook is a co-founder of the Partnership on AI (PAI). He reported that 99% of ISIS and Al Qaeda content is detected before flagging. He also confirmed plans to double security team size to 20,000 employees by year-end. In response to questions on political ads, Zuckerberg detailed new requirements for advertisers to verify identity and location, and the creation of a seven-year ad archive. He addressed the Cambridge Analytica scandal, stating Kogan represented to Facebook he only paid SCL/Cambridge Analytica, though an investigation into whether data was shared with others remains ongoing. Finally, regarding fair housing discrimination, Zuckerberg explained that machine learning classifiers intended to block discriminatory housing ads became over- and under-inclusive after launching in February 2017, requiring advertiser certification for hundreds of thousands of ads daily.
+```
+
+## Map 38
+
+Stage `map`, level 0, 1 input(s), 279 output tokens.
+
+```text
+The segment covers Facebook's responses to congressional inquiries regarding ad review failures, GDPR implementation, and data privacy. Mark Zuckerberg addressed housing, credit, and employment ad classifiers, noting training set limitations identified in November 2017. He detailed remedial steps, including adding over 1,000 people to review teams and disabling multicultural affinity targeting for all ads as of January 2018. Zuckerberg confirmed Facebook has engaged with the U.S. Department of Housing and Urban Development since the Fall of 2016.
+
+Regarding GDPR, Zuckerberg stated protections for access, rectification, erasure, and data portability are available globally, though specific legal bases differ for EU users. He denied coordinating with political organizations against GDPR. In response to written questions, Zuckerberg clarified that while no Facebook employee was assigned full-time to the Trump campaign, interactions with Cambridge Analytica occurred. He reported that approximately 300,000 users installed Kogan's app, with fewer than 1,500 granting access to messages. Zuckerberg confirmed Facebook does not analyze message content for ads but uses user interests and advertiser data. He also outlined measures to combat the opioid crisis, including search result modifications and treatment referrals, and described API restrictions implemented in April 2014, noting fewer than 100 companies received extensions by May 2015.
+```
+
+## Map 39
+
+Stage `map`, level 0, 1 input(s), 319 output tokens.
+
+```text
+The segment covers Facebook's data privacy policies, app review processes, and responses to external inquiries regarding misinformation, elections, and discrimination. Facebook stated that apps launched after April 30, 2014, require restrictive API usage, and over half of apps seeking additional data permissions were rejected, including Kogan's second app version. The company announced plans to audit apps with pre-2014 data access, ban misusing apps, and notify users of data misuse. By early June 2018, thousands of apps were investigated, with around 200 suspended; affected developers included Kogan, AIQ, Cube You, the Cambridge Psychometrics Center, and myPersonality. Regarding China, Facebook noted it is blocked since 2009 and is a member of the Global Network Initiative (GNI) since 2013. On misinformation, Facebook listed ten changes, including ads transparency for political content, verification requirements, and blocking millions of fake accounts daily. They removed 70 Facebook and 65 Instagram accounts controlled by the IRA. Facebook confirmed Instagram requires users to be at least 13 years old and protects minors by not showing search results based on profile data to unconnected adults. The Children's Online Privacy Protection Act (COPPA) requires parental consent for children under 13, which Facebook does not collect. On discrimination, Facebook prohibits targeting based on race, ethnicity, color, national origin, religion, age, sex, sexual orientation, gender identity, family status, disability, and medical or genetic condition.
+```
+
+## Map 40
+
+Stage `map`, level 0, 1 input(s), 309 output tokens.
+
+```text
+The segment features a congressional hearing where the committee questions Facebook regarding discriminatory advertising, diversity initiatives, political ad transparency, and security staffing. The committee asks about Facebook's processes for monitoring ads under Title VII, the Fair Housing Act, and other civil rights laws, noting a press release from Rob Goldman, VP of Ads, dated December 20, 2017. Facebook repeatedly defers to a letter dated May 16, 2018, for specific data on deleted ads or proactive monitoring. However, the company confirms it will commission Relman, Dane & Colfax to conduct a civil rights audit, guided by Laura Murphy, with input from groups like The Leadership Conference on Civil and Human Rights.
+
+Regarding workforce diversity, Facebook cites an increase in Black and Hispanic representation from 2014 to 2017, with women's global representation rising from 33% to 35% and technical roles from 17% to 19%. The company details programs like the Diverse Slate Approach (DSA), Facebook University (starting with 30 students in 2013, expecting 280 in 2018), and partnerships with HBCUs. On political ads, Facebook outlines new transparency measures requiring advertisers to upload ID, provide the last four digits of their Social Security number, and prove U.S. residency. Ads must include a "Paid for by" disclaimer, and a searchable archive will be available at www.facebook.com/politicalcontentads.
+```
+
+## Map 41
+
+Stage `map`, level 0, 1 input(s), 320 output tokens.
+
+```text
+The segment covers Facebook's privacy assessments, the Cambridge Analytica data leak, data collection practices, and policy changes regarding app access. PwC completed three independent privacy assessments submitted to the FTC on April 16, 2013; April 13, 2015; and April 12, 2017, finding controls sufficient. Facebook states it did not inform auditors of the leak, noting Kogan's app improperly transferred data to Cambridge Analytica in violation of policies, though no data leaked from Facebook's systems. Regarding audits, Facebook follows the July 27, 2012 Consent Order and GAPP principles, with PwC evaluating control sufficiency rather than specific incidents. Facebook refuses to make full PwC reports public due to confidential business information but offers review with assurances. In 2011, the FTC did not require disabling friend data porting; Facebook voluntarily changed this in 2014. Facebook paused a Hospital Data Sharing Project with institutions like the American College of Cardiology and Stanford University in March 2018 to better protect data. Facebook collects extensive user data including location, interests, and device signals, and tracks non-users via browser logs for security and analytics without creating profiles. The Like button appeared on 8.4 million websites, the Share button on 931,000, and 2.2 million pixels were installed as of April 2018. Facebook banned Cambridge Analytica and confirms misrepresenting app terms violates developer policies.
+```
+
+## Map 42
+
+Stage `map`, level 0, 1 input(s), 278 output tokens.
+
+```text
+The segment features Mark Zuckerberg responding to congressional questions regarding the Cambridge Analytica data breach, Russian interference, and Facebook's data policies. Zuckerberg detailed Facebook's Platform Policy, noting pre-2014 rules requiring developers to give users control, protect data, and not share it with ad networks. He stated Kogan received approximately 750,000 GBP from SCL for data services but admitted Facebook failed to proactively notify the 87 million affected users until after the breach. Zuckerberg confirmed Joseph Chancellor, Kogan's partner, was hired for VR research and remains employed, while denying Facebook employees knew about improper data use during the 2016 election. Regarding Russian actors, Zuckerberg revealed the IRA spent approximately $100,000 on 3,500 ads between June 2015 and August 2017, reaching an estimated 126 million people. He described ongoing audits of apps with pre-2014 access, suspending around 200 apps, and outlined new restrictions on data collection, including banning access to political views and relationship status. Zuckerberg pledged $1 million toward research on media's impact on youth well-being. In written responses, he defined Facebook's data collection into three categories: user actions, device data, and partner data, emphasizing user controls for deletion and export.
+```
+
+## Map 43
+
+Stage `map`, level 0, 1 input(s), 247 output tokens.
+
+```text
+Facebook addressed data collection, user control, and privacy policies across 19 questions. The company stated it does not create profiles or track non-users, logging only standard browser/app records for security and analytics without targeting ads. Users can request deletion, though some data persists for legal obligations, investigations, or up to one year for disabled accounts. Facebook clarified that while users control profile visibility and can opt out of search indexing, certain data like name and photos remain public. Regarding research, Facebook paused discussions with institutions like the American College of Cardiology and Stanford University School of Medicine in March 2018 after updating its Data Policy to increase transparency. The company confirmed it does not collect anonymized medical data or scan photos for biometrics beyond facial recognition templates used for tagging and impersonation prevention; users can opt out, triggering template deletion. Cross-device tracking collects device attributes, operations, identifiers, and signals to personalize content, with data retained until no longer necessary or account deletion. Facebook denied collecting call history/SMS without opt-in and confirmed facial recognition uses only voluntarily uploaded photos. On security, Facebook shut down a phone/email lookup feature in April after discovering abuse, noting no fixed timelines for breach reviews but prioritizing expedited processing.
+```
+
+## Map 44
+
+Stage `map`, level 0, 1 input(s), 267 output tokens.
+
+```text
+Facebook addressed security protocols, data transfers, and content moderation during this hearing. The company confirmed dedicated teams for security, including a seven-year open bug bounty program. Regarding the Cambridge Analytica scandal, Facebook stated Aleksandr Kogan sold data to SCL Elections Ltd., Eunoia Technologies, and the Toronto Laboratory for Social Neuroscience. Approximately 300,000 users installed Kogan's app, accessing public profile data, birthdates, cities, and liked pages; fewer than 1,500 users had messages or news feed access. Facebook noted over 1,150 cease-and-desist letters sent since 2006 and actions against 370,000 apps in 2017.
+
+On content moderation, Facebook announced plans to hire 20,000 personnel for security and content review by year-end, currently employing about 15,000. The company detailed strict requirements for developers, restricting data access without review to name, photo, and email only. Facebook also outlined its Data Abuse Bounty program and confirmed no special treatment for the Obama or Romney campaigns. In response to written questions, Zuckerberg explained that Facebook's ad-based model allows free services and highlighted features like "Why am I seeing this?" and Clear History to improve transparency.
+```
+
+## Map 45
+
+Stage `map`, level 0, 1 input(s), 247 output tokens.
+
+```text
+Mark Zuckerberg addressed concerns regarding Facebook's data practices, personalization, and security. He confirmed that 2.2 billion users' public profiles were scraped by malicious actors, noting the company disabled a search feature allowing lookups by phone number and email in April. Regarding third-party apps, Zuckerberg stated that thousands were investigated and around 200 suspended; specific entities mentioned include Kogan, AIQ, Cube You, the Cambridge Psychometrics Center, and myPersonality. He affirmed Facebook does not sell user data but allows third parties access to public profile information and friends lists if users consent.
+
+On the Cambridge Analytica scandal, Zuckerberg explained that while Kogan's app was banned in December 2015, a forensic audit of Cambridge Analytica was delayed due to UK regulatory requests. He confirmed Cambridge Analytica was banned from purchasing ads in March 2018 and utilized hundreds of Contact List Custom Audiences during the 2016 election cycle. Zuckerberg detailed new transparency measures, including a seven-year archive for political ads and ID verification for advertisers. He also noted the removal of nearly one-third of targeting segments used by the Internet Research Agency (IRA) and the blocking of millions of fake accounts daily.
+```
+
+## Map 46
+
+Stage `map`, level 0, 1 input(s), 302 output tokens.
+
+```text
+Mark Zuckerberg addressed Facebook's safety measures, including reducing misinformation distribution, doubling security staff from 10,000 to over 20,000, and joining the TechAccord pact. He noted tracking 40+ elections and removing 70 Facebook and 65 Instagram accounts controlled by the Russia-based Internet Research Agency (IRA). Regarding the "Release the Nunes Memo" campaign, Zuckerberg stated his team found no evidence of Russian involvement as of February 7, 2018. He confirmed providing ad data to Congress and noted posts were shared with the Senate Judiciary Committee on October 30 and 31. On privacy, Zuckerberg clarified that U.S. users contract with Facebook, Inc., retaining access to GDPR tools like data portability. He addressed hate speech in Myanmar, stating reports are reviewed 24/7 with most handled within 24 hours. He explained that while Burmese reviewers have existed since 2013, the company is expanding this team and using AI to proactively identify content. Regarding China, Zuckerberg stated Facebook is blocked there since 2009 and cannot know how local laws would apply, though they restrict content only where alleged illegal if it doesn't violate Community Standards. He also discussed the Cambridge Analytica breach, acknowledging the failure to notify 87 million users was a mistake, and detailed his relationship with Dr. Aleksandr Kogan, noting Kogan accessed only anonymized data during academic collaborations.
+```
+
+## Map 47
+
+Stage `map`, level 0, 1 input(s), 273 output tokens.
+
+```text
+Mark Zuckerberg addressed questions regarding Facebook's data practices, privacy controls, and regulatory compliance. He detailed steps taken after RapLeaf sold user data, including disabling RapLeaf domains and instituting six-month moratoriums on developer access. Zuckerberg explained that while users control who sees shared information, advertisers do not receive user identities or sold data. He stated Facebook does not cooperate with agencies for profiling or predictive analytics beyond legal requirements. Regarding polarization, Zuckerberg argued algorithms reflect existing societal conversations and actively reduce clickbait while boosting trusted local news. He confirmed the 2012 Obama campaign did not violate policies or receive special treatment, whereas Cambridge Analytica violated policies and was banned in March 2018 after failing to delete data. On user transparency, Zuckerberg described the "Download Your Information" tool, Clear History, and Access Your Information features, noting Facebook rejected over half of apps submitted for App Review between April 2014 and April 2018. He affirmed no data from Messenger Kids is shared with third parties, allowing parents to delete children's accounts and their associated data. Zuckerberg opposed a one-size-fits-all approach to facial recognition regulation, citing its legitimate uses for tagging friends and protecting visually impaired users, while supporting clarifications to the Illinois Biometric Information Privacy Act (HB 6074) to exclude digital photo scans.
+```
+
+## Map 48
+
+Stage `map`, level 0, 1 input(s), 310 output tokens.
+
+```text
+Senator Whitehouse questioned Facebook CEO Mark Zuckerberg regarding hate speech, fake accounts, and human rights. Zuckerberg confirmed Facebook engaged Relman, Dane & Colfax to conduct a civil rights assessment and hired 10,000 additional safety staff, aiming to reach 20,000 by year-end. He detailed policy updates prohibiting attacks based on protected characteristics like race, religion, and sexual orientation, and removed exclusion targeting for sensitive attributes. On the Myanmar and Sri Lanka issues, Zuckerberg admitted Facebook was "too slow," citing UN reports on violence against the Rohingya and anti-Muslim mobs in Sri Lanka. He described hiring native-language reviewers and promoting Community Standards in local languages, noting over 8 million people reached in Myanmar and 100 million views in Sri Lanka. Regarding Vietnam, Zuckerberg affirmed Facebook's membership in the Global Network Initiative since 2013 and stated it does not take government requests without legal sufficiency. He denied direct work with the "Secure America Now" group behind anti-Muslim ads from 2016, attributing them to a third-party agency. On fake accounts, Zuckerberg estimated 3% to 4% of monthly active users were fake during Q1 2018 and Q4 2017. He reported taking action on 1.9 million pieces of ISIS/al-Qaeda content in Q1 2018, with 99.5% flagged by AI. Zuckerberg supported net neutrality and stated Facebook's Terms of Service do not contain mandatory arbitration clauses.
+```
+
+## Map 49
+
+Stage `map`, level 0, 1 input(s), 293 output tokens.
+
+```text
+Mark Zuckerberg testified before Congress regarding Facebook's data practices, security measures, and regulatory compliance. He detailed efforts to restrict political and issue ads, requiring advertiser authorization and identity verification. Zuckerberg confirmed Facebook entered a legally binding contract with Cambridge Analytica to certify data deletion, noting that while Kogan and GSR provided certifications in 2016, Facebook could not confirm if data existed off-platform without a forensic audit. He addressed the "friend permission" policy change in 2014, stating thousands of apps were investigated and around 200 suspended. Regarding GDPR, Zuckerberg explained Facebook is seeking explicit consent for facial recognition and off-platform data use in Europe, providing similar tools globally, though not mandating the same flows for non-European users. On fake news, Zuckerberg defined false news as intentional misstatements and outlined strategies including blocking ads from pages sharing false content and using third-party fact-checking, which reduces impressions by 80 percent. He also discussed plans to replace "Disputed Flags" with "Related Articles" to provide context rather than warnings. In written responses, Zuckerberg provided a link to a state-by-state breakdown of Cambridge Analytica data, explained the rudimentary targeting of Internet Research Agency ads compared to Cambridge Analytica's use of contact lists, and expressed support for bipartisan legislation requiring 72-hour breach notifications. He listed ten alternative social platforms, noting Facebook represents 6 percent of the $650 billion global advertising ecosystem.
+```
+
+## Map 50
+
+Stage `map`, level 0, 1 input(s), 304 output tokens.
+
+```text
+The segment features Mark Zuckerberg addressing sex trafficking on Facebook, detailing policies against human trafficking, collaboration with the National Center for Missing and Exploited Children (NCMEC), and the 2015 launch of AMBER Alerts. He describes automated and manual reviews for child exploitation images and cross-industry initiatives like the 2016 X-Industry Child Safety Hackathon, which involved over 75 engineers from companies including Microsoft and Google.
+
+Zuckerberg responds to written questions from Hon. Christopher Coons regarding the 2015 Cambridge Analytica data breach. He states that Facebook retained an outside firm in December 2015 to investigate Aleksandr Kogan's actions and obtained written certifications from Kogan, Cambridge Analytica, and Strategic Communications Laboratories (SCL) that data was deleted. He explains that Facebook did not publicly disclose the breach until March 2018 after media reports questioned the accuracy of these certifications. He notes that over 87 million users were affected and that Facebook suspended approximately 370,000 apps in 2017, including 200 pending investigation and 14 linked to AIQ. Zuckerberg confirms that Facebook banned Cambridge Analytica and SCL from purchasing advertising and removed some officers' accounts. He details API restrictions implemented in April 2014, which required new apps to undergo review, rejecting more than half of those seeking extended permissions. Regarding Joseph Chancellor, Zuckerberg states an investigation is ongoing.
+```
+
+## Map 51
+
+Stage `map`, level 0, 1 input(s), 267 output tokens.
+
+```text
+The segment covers Facebook's consent order obligations, advertising revenue, data privacy practices, and efforts to combat foreign interference. Facebook confirmed it spent no single budget line-item on civil rights compliance but hired Relman, Dane & Colfax for an audit. Regarding AI, Facebook stated it does not analyze user content to target ads, relying instead on user-provided interests, advertiser-shared data, and third-party app data. Users can opt out of partner data usage via Ad Preferences but cannot opt out of ads entirely. Facebook retains limited data after account deletion for legal or safety reasons. Addressing GDPR concerns, Facebook denied relocating 1.5 billion users' data to avoid the law, clarifying the move involved changing legal entities for non-U.S. users while maintaining equivalent protections globally. On security, Facebook reported blocking 583 million fake accounts in the first three months of 2018 and doubling its safety team from 10,000 to over 20,000. In response to Russian interference, Facebook listed ten changes, including removing nearly one-third of targeting segments used by the Internet Research Agency and removing 70 Facebook and 65 Instagram accounts controlled by the IRA. The company also implemented a seven-year archive for political ads and requires advertiser verification for U.S. political content.
+```
+
+## Map 52
+
+Stage `map`, level 0, 1 input(s), 257 output tokens.
+
+```text
+The segment covers Facebook's data practices, specifically the collection of personal data from non-users via third-party websites and apps using cookies and browser logs. Zuckerberg explained this data is logged automatically to detect bots and protect security, but no profiles are created for non-users, nor are they used for targeted advertising. He addressed the upcoming May 25, 2018, implementation of the EU's General Data Protection Regulation (GDPR), confirming that GDPR-style controls, including data portability and the ability to withdraw consent, are available globally. Regarding the 72-hour breach notification timeline, Zuckerberg noted the lack of a federal U.S. law complicates this, though he supports a centralized federal scheme. On discriminatory ad targeting, Zuckerberg admitted enforcement is a "work in progress" and described measures like removing gender-based targeting, requiring advertiser certifications, and launching the "View Ads" tool to increase transparency. He defended Facebook's advertising revenue model as essential to keeping the platform free and accessible, asserting that targeted ads align with its mission to build community. Finally, Zuckerberg confirmed that Ireland was added to the "View Ads" pilot program and that ads related to the May 25, 2018, Irish abortion referendum would be rejected if run by advertisers outside Ireland.
+```
+
+## Map 53
+
+Stage `map`, level 0, 1 input(s), 269 output tokens.
+
+```text
+Mark Zuckerberg addressed congressional questions regarding Facebook's data practices, discrimination policies, and surveillance tools. He acknowledged a 2016 ProPublica finding that "ethnic affinity" marketing allowed discriminatory housing ads, noting a "technical failure" before shifting to a self-certification model. Zuckerberg confirmed that in late February 2018, ads were still occurring. He detailed limited targeting restrictions, prohibiting ads based on race, religion, disability, sexual orientation, gender identity, and national origin, while allowing "multicultural affinity" segments based on user activity rather than personal characteristics. Regarding the Geofeedia surveillance case, he stated that in March 2017, Facebook added explicit language to policies prohibiting developers from using data for surveillance. On data collection, Zuckerberg confirmed via written responses that Facebook stores usernames, gender, address, school affiliation, employment, political affiliation, friend lists, ad clicks, IP addresses, likes, status updates, and searches. He listed three data categories: user actions, device data, and partner data. He clarified that while Facebook does not create profiles for non-users, it logs browsing activity for security and analytics. Zuckerberg also addressed the "98 data points" claim, explaining these are audience categories, not universal collection points, and noted he did not proactively review third-party developer terms of service.
+```
+
+## Map 54
+
+Stage `map`, level 0, 1 input(s), 228 output tokens.
+
+```text
+This segment details Facebook's responses to congressional inquiries regarding data privacy, foreign propaganda, and election interference. Facebook confirmed it provides GDPR-like privacy controls globally, including tools for data access, rectification, and deletion, and committed to notifying users of data breaches. Regarding revenue, Facebook stated that income from inauthentic accounts, fake news, and hyper-partisan content is "immaterial," though it noted that fraudulent ads are removed and funds are reinvested in security rather than returned. The company reported at least 250 employees dedicated to election integrity and confirmed that while no full-time staff were assigned to the Trump campaign, Facebook employees did interact with Cambridge Analytica without identifying improper data use. Facebook denied providing support for foreign elections outside the U.S. and stated it did not work directly with Secure America Now. On third-party data, Facebook announced it is investigating apps with pre-2014 data access and launched a "Data Abuse Bounty" program. Finally, Facebook described its new independent research initiative funded by multiple foundations, which allows scholars access to privacy-protected datasets but excludes studies on Russian interference and privacy/security topics.
+```
+
+## Map 55
+
+Stage `map`, level 0, 1 input(s), 237 output tokens.
+
+```text
+The segment covers Facebook's response to discriminatory ad practices, the Cambridge Analytica data breach, and transparency reporting. Regarding ads, Facebook states it prohibits discrimination based on race, ethnicity, religion, age, sex, sexual orientation, gender identity, family status, disability, and medical conditions. It confirmed that as of March 27, 2018, housing rights advocates were suing Facebook over ads excluding protected categories. On the Cambridge Analytica leak, Facebook acknowledged learning of the breach on December 11, 2015, when The Guardian reported Kogan's app shared data with SCL/Cambridge Analytica. Facebook claimed it decided not to notify users in December 2015 to ensure data deletion, though Mr. Zuckerberg confirmed this decision at a Joint hearing on April 10, 2018. The transcript notes that while Russian actors purchased ads to interfere with elections, Facebook's board rejected a June 1, 2017 shareholder proposal for a fake news report, calling it unnecessary. Facebook commits to an annual transparency report, with the most recent issued on May 15, 2018.
+```
+
+## Collapse 01
+
+Stage `collapse`, level 1, 23 input(s), 253 output tokens.
+
+```text
+On April 10, 2018, a joint Senate hearing addressed Facebook's data privacy, focusing on the Cambridge Analytica scandal where approximately 87 million users' data was scraped. Senators John Thune, Chuck Grassley, Bill Nelson, Dianne Feinstein, and others questioned Facebook's failure to notify victims and its opaque consent models. Mark Zuckerberg testified, apologizing for the scandal and acknowledging that while he made changes in 2014, he failed to prevent harm from fake news and foreign interference. He confirmed that the Internet Research Agency spent $100,000 on ads seen by 11 million people and that around 200 apps were suspended pending audit. Zuckerberg stated Facebook serves over 2 billion users with $40 billion in 2017 revenue and emphasized that protecting the community takes priority over profits. He denied selling data to advertisers but acknowledged allowing targeted placement. Senators also discussed the Honest Ads Act, GDPR-style controls, and the need for federal standards. While Zuckerberg supported a 72-hour breach notification rule, he refused to disclose his hotel name or messenger contacts. The hearing concluded with a recess, leaving the committee to consider the need for stronger legislation versus self-regulation.
+```
+
+## Collapse 02
+
+Stage `collapse`, level 1, 22 input(s), 377 output tokens.
+
+```text
+Mark Zuckerberg and Facebook representatives addressed congressional inquiries regarding data practices, content moderation, and political neutrality. Zuckerberg detailed data collection, including device operations, identifiers, and network signals, retained until account deletion or no longer necessary. He confirmed cross-device tracking permissions are controlled by operating systems and explained that Facebook does not determine content visibility based on corporate values but adheres to Community Standards focused on Safety, Voice, and Equity. Regarding hate speech, Facebook defined it as direct attacks based on protected characteristics like race, religion, and sexual orientation, explicitly excluding political party affiliation. The company stated it removes content violating these policies regardless of the poster's identity, citing April 24, 2018, as the date guidelines were published.
+
+On political bias, Facebook reported that an investigation into the "Trending Topics" feature found no systematic bias, with approval rates for conservative and liberal topics being "virtually identical." They announced hiring former Senator Jon Kyl to advise on bias and launched an appeals process. Zuckerberg noted Facebook employs approximately 20,000 safety and security employees by the end of 2018. Regarding the Cambridge Analytica scandal, Zuckerberg admitted that while Kogan's app accessed public data from roughly 300,000 users, the company failed to proactively notify affected users until after the breach. He confirmed Aleksandr Kogan sold data to SCL Elections Ltd. and other entities, with approximately 200 apps suspended pending investigation.
+
+Facebook confirmed it does not maintain statistics on employee political affiliation or donations but stated it offers identical support to both the Trump and Clinton campaigns in 2016. The company detailed new transparency measures, including a seven-year ad archive, ID verification for advertisers, and requirements for ads to include a "Paid for by" disclaimer. Zuckerberg affirmed that Facebook is open to centralized U.S.
+```
+
+## Collapse 03
+
+Stage `collapse`, level 1, 10 input(s), 362 output tokens.
+
+```text
+Mark Zuckerberg testified before Congress regarding Facebook's safety measures, data practices, and regulatory compliance. He detailed expanding security staff from 10,000 to over 20,000 and joining the TechAccord pact. On election integrity, Zuckerberg noted tracking 40+ elections, removing 70 Facebook and 65 Instagram accounts controlled by the Russia-based Internet Research Agency (IRA), and finding no evidence of Russian involvement in the "Release the Nunes Memo" campaign as of February 7, 2018.
+
+Addressing privacy, Zuckerberg clarified that U.S. users contract with Facebook, Inc., retaining access to GDPR tools like data portability. He confirmed providing ad data to Congress and discussed hate speech in Myanmar, stating reports are reviewed 24/7 with most handled within 24 hours. Regarding China, he noted Facebook is blocked there since 2009. On the Cambridge Analytica breach, Zuckerberg acknowledged the failure to notify 87 million users was a mistake and detailed his relationship with Dr. Aleksandr Kogan, noting Kogan accessed only anonymized data during academic collaborations.
+
+Zuckerberg explained steps taken after RapLeaf sold user data, including disabling RapLeaf domains and instituting six-month moratoriums on developer access. He stated Facebook does not cooperate with agencies for profiling beyond legal requirements. Regarding polarization, he argued algorithms reflect existing societal conversations while reducing clickbait. He confirmed the 2012 Obama campaign did not violate policies, whereas Cambridge Analytica was banned in March 2018. On user transparency, Zuckerberg described the "Download Your Information" tool and noted Facebook rejected over half of apps submitted for App Review between April 2014 and April 2018.
+```
+
+## Final summary
+
+Stage `reduce`, level 2, 3 input(s), 359 output tokens.
+
+```text
+On April 10, 2018, a joint Senate hearing addressed Facebook's data privacy, centering on the Cambridge Analytica scandal where approximately 87 million users' data was scraped. Mark Zuckerberg testified, apologizing for the failure to notify victims and acknowledging that while changes were made in 2014, he failed to prevent harm from fake news and foreign interference. He confirmed the Internet Research Agency spent $100,000 on ads seen by 11 million people and that around 200 apps were suspended pending audit. Zuckerberg stated Facebook serves over 2 billion users with $40 billion in 2017 revenue, emphasizing community protection over profits. He denied selling data to advertisers but acknowledged allowing targeted placement.
+
+The hearing also covered content moderation and political neutrality. Zuckerberg detailed data collection practices and explained that content visibility adheres to Community Standards focused on Safety, Voice, and Equity, explicitly excluding political party affiliation from hate speech definitions. Regarding bias, Facebook reported that an investigation into the "Trending Topics" feature found no systematic bias, with approval rates for conservative and liberal topics being "virtually identical." On election integrity, Zuckerberg noted tracking 40+ elections, removing 70 Facebook and 65 Instagram accounts controlled by the Russia-based Internet Research Agency, and finding no evidence of Russian involvement in the "Release the Nunes Memo" campaign as of February 7, 2018.
+
+Senators questioned the need for federal standards, including the Honest Ads Act and GDPR-style controls, while Zuckerberg supported a 72-hour breach notification rule but refused to disclose his hotel name or messenger contacts. The hearing concluded with a recess, leaving the committee to consider stronger legislation versus self-regulation.
+```
+
+## C-SPAN reference
+
+Saved program ID: `500690`. Title: **Facebook CEO Mark Zuckerberg Hearing on Data Privacy and Protection**.
+
+```text
+Facebook CEO Mark Zuckerberg testified before two Senate committees on the social media platform's use and protection of user data. The hearing was one of several held in response to revelations that the political consulting firm Cambridge Analytica improperly harvested data of up to 87 million Facebook users. Mr. Zuckerberg in his opening statement said his company was working on tools to prevent fake news, foreign interference, and hate speech. During his testimony, he apologized for Facebook's failures and admitted that not enough had been done to protect users' privacy, but he said his company has handled user data security responsibly.
+```

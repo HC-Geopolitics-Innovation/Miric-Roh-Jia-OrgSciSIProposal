@@ -26,27 +26,32 @@ The codebase is organized into intuitive, self-contained sections:
 │   ├── T1.1 - Process Prototyping and Evaluation/    # Model setup, token chunking & draft execution (Python)
 │   ├── T1.2 - Process Execution/                     # 10-shard batch execution & master parquet consolidation (Python)
 │   ├── T1.3 - Quality Assessment/                    # C-SPAN embedding discriminant evaluation (Python)
-│   └── T1.X - Background Helper Functions/           # chunking.py, summarize.py
+│   ├── T1.X - Background Helper Functions/           # chunking.py, summarize.py
+│   └── T1.X - Worked Example/                       # Zuckerberg hearing: inputs, summaries, logs, and scripts
 │
 ├── T2 - Topic Extraction and Stance Analysis/        # Task 2: Congressional topic extraction & stance panel
 │   ├── Topic Extraction Workflow Overview.ipynb      # Comprehensive technical and workflow overview
 │   ├── T2.1 - Process Prototyping and Evaluation/    # Turn attribution & few-shot promptbook testing (Python)
 │   ├── T2.2 - Process Execution/                     # Track 1/Track 2 batch extraction & codebook freeze (Python)
 │   ├── T2.3 - Quality Assessment/                    # CAP codebook crosswalk alignment & audit (Python)
-│   └── T2.X - Background Helper Functions/           # stance.py, constrained.py, speakers.py
+│   ├── T2.X - Background Helper Functions/           # stance.py, constrained.py, speakers.py
+│   └── T2.X - Worked Example/                       # Same hearing: topics, stances, codebook, logs, and scripts
 │
 ├── T3 - Topic Relevance and Corporate Disclosure/    # Task 3: Dual-instrument corporate disclosure topic relevance
 │   ├── Topic Relevance Workflow Overview.ipynb       # Comprehensive technical and workflow overview
 │   ├── T3.1 - Process Prototyping and Evaluation/    # Sentence segmentation & centroid scoring prototyping (Python)
 │   ├── T3.2 - Process Execution/                     # Dual-instrument batch tagging & Compustat panel (Python)
 │   ├── T3.3 - Quality Assessment/                    # Gold-standard gate audit & agreement analysis (Python)
-│   └── T3.X - Background Helper Functions/           # tagging.py, relevance.py, item1_local.py
+│   ├── T3.X - Background Helper Functions/           # tagging.py, relevance.py, item1_local.py
+│   └── T3.X - Worked Example/                       # Same hearing: privacy relevance across eligible firms
 │
 ├── L - Lib/                                          # Centralized core Python software library (L1 to L5)
 ├── R - Results/                                      # Evaluation results and categorized figure outputs
 │   └── figures/                                      # Subdivided by D1, T1, T2, T3
 └── B - Backup of Original File Structure/            # Complete preserved backup of initial scripts
 ```
+
+Follow the April 10, 2018 Zuckerberg hearing through the [T1 summarization example](<T1 - Text Summarization/T1.X - Worked Example/README.md>), [T2 topic and stance example](<T2 - Topic Extraction and Stance Analysis/T2.X - Worked Example/README.md>), and [T3 firm-relevance example](<T3 - Topic Relevance and Corporate Disclosure/T3.X - Worked Example/README.md>). Each example has a README walkthrough and numbered folders for inputs, outputs, logs and verification, and scripts. T3 follows the hearing's privacy topic across all 998 eligible preceding firm disclosures, with Facebook and ResMed as two illustrations.
 
 ---
 

@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "firms": 998,
+  "blocks_verified": 7950,
+  "calls_verified": 8789,
+  "cap_hits": 31,
+  "parser_flags": {
+    "json_parse": 29,
+    "unknown_topic": 129,
+    "json_truncated_salvaged": 6,
+    "bad_record": 93,
+    "duplicate_topic": 6
+  },
+  "firms_with_flagged_calls": 104,
+  "firms_related": 129,
+  "firms_without_confirmed_relevance": 782,
+  "firms_unknown": 87,
+  "privacy_sentence_tags": 1044,
+  "directions": {
+    "threat": 682,
+    "neutral": 336,
+    "opportunity": 26
+  },
+  "audit_blocks": 60,
+  "audit_invalid_blocks": 0,
+  "audit_confirmed_blocks": 2,
+  "audit_missed_blocks": 1,
+  "audit_miss_rate": 0.5,
+  "spearman_standardized_similarity_vs_sentence_share": 0.46063170901200096,
+  "agreement_firms_without_flagged_calls": 894,
+  "filings_older_than_two_years": 289,
+  "human_validation": "not completed"
+}

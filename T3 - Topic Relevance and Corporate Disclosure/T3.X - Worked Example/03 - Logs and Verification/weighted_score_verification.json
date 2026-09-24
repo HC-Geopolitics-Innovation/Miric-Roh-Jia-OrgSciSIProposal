@@ -1,0 +1,41 @@
+{
+  "version": "sentence-cosine-direction-1.0",
+  "status": "computed; not independently validated",
+  "formula": "100 / n_sentences * sum(max(0, sentence_cosine) for accepted tags of each direction)",
+  "cosine": "L2-normalize stored sentence and topic vectors again after loading; float64 calculation",
+  "topic_id": 68,
+  "filings": 998,
+  "sentence_records": 1044,
+  "eligible_filings": 894,
+  "flagged_filings_with_missing_scores": 104,
+  "nonpositive_cosines": 0,
+  "cosine_min": 0.43746026958255957,
+  "cosine_max": 0.8543252355444796,
+  "checks": [
+    "known-angle and missing-versus-zero self-check",
+    "unique sentence-topic keys",
+    "all tag counts match original panel",
+    "source sentence text matches embedding row",
+    "sentence contributions sum to filing scores",
+    "0 <= weighted <= unweighted <= 100"
+  ],
+  "input_sha256": {
+    "/project2/njia_1089/acroh/data/output/topic68_relevance_20180410/outputs/hearing_firm_privacy_panel.parquet": "850324c843f1268807ab7480b77c02ba69a6fe4b3a8519121c678af510bbfb80",
+    "/project2/njia_1089/acroh/data/output/topic68_relevance_20180410/outputs/privacy_tags.parquet": "c6f359d7db4170aa83c0bd4cd9ccab260d9e19c7daf3c07c77992f1e29286e4c",
+    "/project2/mmiric_1435/acroh/llm_method/data/interim/relevance/scores/topic_centroids_bge-large-en-v1.5.npy": "5176245886d04dcc1f4751ffcf396e8efbe54a0e64cd484e9e67a661697c4c2e",
+    "/project2/mmiric_1435/acroh/llm_method/data/interim/relevance/scores/topic_index.parquet": "79493364c8947c7a4c45b5f6d50c704b15f4a24fd86bfd80d52be5d9d00f6f23",
+    "/project2/njia_1089/acroh/data/output/topic68_relevance_20180410/config.json": "1b2becb1e6dd17e8bd0b2f1507be96fbdd93838ac91cc9b02b3e3ff12a033003"
+  },
+  "embedding_source": {
+    "path": "/project2/mmiric_1435/acroh/llm_method/data/interim/relevance/item1/emb_bge-large-en-v1.5.npy",
+    "shape": [
+      6306793,
+      1024
+    ],
+    "dtype": "float16",
+    "file_size": 12916312192,
+    "selected_rows_sha256": "cf908370d829f70eecea992f6ad1dcad9a46e51c2d23ef49e8fa8bc95c0ca5c8"
+  },
+  "sentence_index_source": "/project2/mmiric_1435/acroh/llm_method/data/interim/relevance/item1/sentences.parquet",
+  "interpretation": "A weighted disclosure-intensity index; neither a percentage of sentences nor an economic-effect estimate. Positive weights do not prove relevance; direction labels remain the original LLM outputs."
+}

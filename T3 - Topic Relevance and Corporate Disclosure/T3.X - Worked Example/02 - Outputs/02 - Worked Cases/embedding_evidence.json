@@ -1,0 +1,122 @@
+[
+  {
+    "accessionNo": "0001193125-17-248016",
+    "topic_id": 68,
+    "rank": 0,
+    "sent_idx": 458,
+    "cosine": 0.8131353855133057,
+    "cik": "943819",
+    "gvkey": "031887",
+    "fyear": 2017,
+    "sentence": "New laws governing privacy may be adopted in the future as well.",
+    "sentence_number": 459
+  },
+  {
+    "accessionNo": "0001193125-17-248016",
+    "topic_id": 68,
+    "rank": 1,
+    "sent_idx": 467,
+    "cosine": 0.7684760689735413,
+    "cik": "943819",
+    "gvkey": "031887",
+    "fyear": 2017,
+    "sentence": "In addition, Congress and some states are considering new laws and regulations that further protect the privacy and security of medical records or medical information.",
+    "sentence_number": 468
+  },
+  {
+    "accessionNo": "0001193125-17-248016",
+    "topic_id": 68,
+    "rank": 2,
+    "sent_idx": 472,
+    "cosine": 0.7655571103096008,
+    "cik": "943819",
+    "gvkey": "031887",
+    "fyear": 2017,
+    "sentence": "In addition to data breach notification laws, some states have enacted statutes and rules requiring businesses to reasonably protect certain types of personal information they hold or to otherwise comply with certain specified data security requirements for personal information.",
+    "sentence_number": 473
+  },
+  {
+    "accessionNo": "0001193125-17-248016",
+    "topic_id": 68,
+    "rank": 3,
+    "sent_idx": 468,
+    "cosine": 0.7527210116386414,
+    "cik": "943819",
+    "gvkey": "031887",
+    "fyear": 2017,
+    "sentence": "With the recent increase in publicity regarding data breaches resulting in improper dissemination of consumer information, many states have passed laws regulating the actions that a business must take if it experiences a data breach, such as prompt disclosure to affected customers.",
+    "sentence_number": 469
+  },
+  {
+    "accessionNo": "0001193125-17-248016",
+    "topic_id": 68,
+    "rank": 4,
+    "sent_idx": 470,
+    "cosine": 0.749650239944458,
+    "cik": "943819",
+    "gvkey": "031887",
+    "fyear": 2017,
+    "sentence": "Congress has also been considering similar federal legislation relating to data breaches.",
+    "sentence_number": 471
+  },
+  {
+    "accessionNo": "0001326801-18-000009",
+    "topic_id": 68,
+    "rank": 0,
+    "sent_idx": 47,
+    "cosine": 0.8048922419548035,
+    "cik": "1326801",
+    "gvkey": "170617",
+    "fyear": 2017,
+    "sentence": "In particular, we are subject to federal, state, and foreign laws regarding privacy and protection of people's data.",
+    "sentence_number": 48
+  },
+  {
+    "accessionNo": "0001326801-18-000009",
+    "topic_id": 68,
+    "rank": 1,
+    "sent_idx": 46,
+    "cosine": 0.7606765627861023,
+    "cik": "1326801",
+    "gvkey": "170617",
+    "fyear": 2017,
+    "sentence": "These may involve user privacy, data protection and personal information, rights of publicity, content, intellectual property, advertising, marketing, distribution, data security, data retention and deletion, electronic contracts and other communications, competition, protection of minors, consumer protection, telecommunications, product liability, taxation, economic or other trade prohibitions or sanctions, securities law compliance, and online payment services.",
+    "sentence_number": 47
+  },
+  {
+    "accessionNo": "0001326801-18-000009",
+    "topic_id": 68,
+    "rank": 2,
+    "sent_idx": 56,
+    "cosine": 0.7544213533401489,
+    "cik": "1326801",
+    "gvkey": "170617",
+    "fyear": 2017,
+    "sentence": "In addition, some countries are considering or have passed legislation implementing data protection requirements or requiring local storage and processing of data or similar requirements that could increase the cost and complexity of delivering our services.",
+    "sentence_number": 57
+  },
+  {
+    "accessionNo": "0001326801-18-000009",
+    "topic_id": 68,
+    "rank": 3,
+    "sent_idx": 55,
+    "cosine": 0.7407320737838745,
+    "cik": "1326801",
+    "gvkey": "170617",
+    "fyear": 2017,
+    "sentence": "Similarly, there are a number of legislative proposals in the United States, at both the federal and state level, that could impose new obligations in areas affecting our business, such as liability for copyright infringement by third parties.",
+    "sentence_number": 56
+  },
+  {
+    "accessionNo": "0001326801-18-000009",
+    "topic_id": 68,
+    "rank": 4,
+    "sent_idx": 44,
+    "cosine": 0.7359265685081482,
+    "cik": "1326801",
+    "gvkey": "170617",
+    "fyear": 2017,
+    "sentence": "We are subject to a number of U.S. federal and state and foreign laws and regulations that affect companies conducting business on the Internet.",
+    "sentence_number": 45
+  }
+]

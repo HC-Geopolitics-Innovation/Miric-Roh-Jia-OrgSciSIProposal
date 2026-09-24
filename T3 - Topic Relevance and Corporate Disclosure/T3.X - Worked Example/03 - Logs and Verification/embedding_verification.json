@@ -1,0 +1,22 @@
+{
+  "packageId": "CHRG-115shrg37801",
+  "hearing_date": "2018-04-10",
+  "topic_id": 68,
+  "topic_evidence_sentences": 474,
+  "preceding_filings": 998,
+  "codebook_sha256": "fd81e7814be416617cb52ac4bfaee3eec8086192aa51fda171342b9bb1919abc",
+  "checks": [
+    {
+      "accessionNo": "0001326801-18-000009",
+      "saved_score": 0.7593297958374023,
+      "recomputed_score": 0.7593297958374023,
+      "top_five_indices_match": true
+    },
+    {
+      "accessionNo": "0001193125-17-248016",
+      "saved_score": 0.7699079513549805,
+      "recomputed_score": 0.76990807056427,
+      "top_five_indices_match": true
+    }
+  ]
+}

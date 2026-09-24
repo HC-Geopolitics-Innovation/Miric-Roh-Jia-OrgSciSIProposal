@@ -1,0 +1,1003 @@
+[
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 4,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "F000062",
+    "surname": "Feinstein",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      20
+    ],
+    "topic": "Facebook data breach response",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7037097215652466,
+    "topic_id": 61,
+    "topic_label": "Cybersecurity legislation and policy"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 5,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "G000386",
+    "surname": "Grassley",
+    "honorific": "Chairman",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      26
+    ],
+    "topic": "data privacy and security policy",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.8021512031555176,
+    "topic_id": 68,
+    "topic_label": "consumer data privacy legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 5,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "G000386",
+    "surname": "Grassley",
+    "honorific": "Chairman",
+    "is_chair": false,
+    "record_idx": 1,
+    "sentences": [
+      27
+    ],
+    "topic": "data privacy",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.8454324007034302,
+    "topic_id": 68,
+    "topic_label": "consumer data privacy legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 5,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "G000386",
+    "surname": "Grassley",
+    "honorific": "Chairman",
+    "is_chair": false,
+    "record_idx": 2,
+    "sentences": [
+      28,
+      29
+    ],
+    "topic": "consumer transparency regarding data sharing",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.838213324546814,
+    "topic_id": 68,
+    "topic_label": "consumer data privacy legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 5,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "G000386",
+    "surname": "Grassley",
+    "honorific": "Chairman",
+    "is_chair": false,
+    "record_idx": 3,
+    "sentences": [
+      30
+    ],
+    "topic": "tech industry response to data privacy concerns",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.7862969636917114,
+    "topic_id": 68,
+    "topic_label": "consumer data privacy legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 5,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "G000386",
+    "surname": "Grassley",
+    "honorific": "Chairman",
+    "is_chair": false,
+    "record_idx": 4,
+    "sentences": [
+      32
+    ],
+    "topic": "privacy standards",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.8771653175354004,
+    "topic_id": 68,
+    "topic_label": "consumer data privacy legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 7,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "N000032",
+    "surname": "Nelson",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      4,
+      5,
+      6
+    ],
+    "topic": "privacy",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.8117396831512451,
+    "topic_id": 68,
+    "topic_label": "consumer data privacy legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 7,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "N000032",
+    "surname": "Nelson",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 1,
+    "sentences": [
+      25,
+      26
+    ],
+    "topic": "Facebook privacy measures",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.8009517788887024,
+    "topic_id": 68,
+    "topic_label": "consumer data privacy legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 7,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "N000032",
+    "surname": "Nelson",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 2,
+    "sentences": [
+      27,
+      28
+    ],
+    "topic": "Cambridge Analytica hearing",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.6974302530288696,
+    "topic_id": 74,
+    "topic_label": "inspectors general and federal accountability"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 7,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "N000032",
+    "surname": "Nelson",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 3,
+    "sentences": [
+      31,
+      32,
+      33
+    ],
+    "topic": "consumer trust in online companies",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7332252264022827,
+    "topic_id": 93,
+    "topic_label": "Online advertising and consumer choice policies"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 17,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "G000386",
+    "surname": "Grassley",
+    "honorific": "Chairman",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      4,
+      5
+    ],
+    "topic": "Facebook data policy",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7425966262817383,
+    "topic_id": 68,
+    "topic_label": "consumer data privacy legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 60,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "H000338",
+    "surname": "Hatch",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      2
+    ],
+    "topic": "consumer privacy",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.9260278940200806,
+    "topic_id": 68,
+    "topic_label": "consumer data privacy legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 208,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "K000367",
+    "surname": "Klobuchar",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      8
+    ],
+    "topic": "Honest Ads Act",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.7327739000320435,
+    "topic_id": 93,
+    "topic_label": "Online advertising and consumer choice policies"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 223,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "K000367",
+    "surname": "Klobuchar",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      3,
+      4
+    ],
+    "topic": "Honest Ads bill",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.7151046991348267,
+    "topic_id": 93,
+    "topic_label": "Online advertising and consumer choice policies"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 267,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "C001056",
+    "surname": "Cornyn",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      1,
+      2
+    ],
+    "topic": "social media platform content moderation responsibility",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7174120545387268,
+    "topic_id": 93,
+    "topic_label": "Online advertising and consumer choice policies"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 302,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "B001277",
+    "surname": "Blumenthal",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      1,
+      2,
+      3
+    ],
+    "topic": "business model",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7264788746833801,
+    "topic_id": 93,
+    "topic_label": "Online advertising and consumer choice policies"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 456,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "C001088",
+    "surname": "Coons",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      15
+    ],
+    "topic": "Facebook's practice of making bold promises about changes in practices and then operating in a way that contradicts them",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.6536349058151245,
+    "topic_id": -1,
+    "topic_label": "other"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 456,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "C001088",
+    "surname": "Coons",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 1,
+    "sentences": [
+      16
+    ],
+    "topic": "Facebook's follow-up on things brought to its attention where it has apologized and promised to change practices and policies",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.5835084915161133,
+    "topic_id": -1,
+    "topic_label": "other"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 456,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "C001088",
+    "surname": "Coons",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 2,
+    "sentences": [
+      17
+    ],
+    "topic": "Facebook's enforcement of policies",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7020949125289917,
+    "topic_id": 90,
+    "topic_label": "antitrust enforcement"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 458,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "C001088",
+    "surname": "Coons",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      5
+    ],
+    "topic": "Delawareans lacking resources",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.6216506361961365,
+    "topic_id": -1,
+    "topic_label": "other"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 465,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "S001197",
+    "surname": "Sasse",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      10,
+      11
+    ],
+    "topic": "company policing speech",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7202804088592529,
+    "topic_id": 65,
+    "topic_label": "Consumer privacy and anti-spam legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 493,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "M000133",
+    "surname": "Markey",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      3
+    ],
+    "topic": "Child Online Privacy Protection Act of 1999",
+    "stance": "support",
+    "topic_lint": "Protection",
+    "sim": 0.8573344945907593,
+    "topic_id": 92,
+    "topic_label": "Children's online privacy and safety legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 495,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "M000133",
+    "surname": "Markey",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      4
+    ],
+    "topic": "privacy bill of rights for kids",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.828519880771637,
+    "topic_id": 92,
+    "topic_label": "Children's online privacy and safety legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 495,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "M000133",
+    "surname": "Markey",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 1,
+    "sentences": [
+      7
+    ],
+    "topic": "privacy bill of rights for kids",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.828519880771637,
+    "topic_id": 92,
+    "topic_label": "Children's online privacy and safety legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 543,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "S001198",
+    "surname": "Sullivan",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      2
+    ],
+    "topic": "regulation",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7754659056663513,
+    "topic_id": 54,
+    "topic_label": "FCC telecommunications regulation authority"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 543,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "S001198",
+    "surname": "Sullivan",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 1,
+    "sentences": [
+      6,
+      7,
+      8
+    ],
+    "topic": "Dodd-Frank",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7935357093811035,
+    "topic_id": 87,
+    "topic_label": "Consumer credit protection and loan guarantee programs"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 543,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "S001198",
+    "surname": "Sullivan",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 2,
+    "sentences": [
+      9
+    ],
+    "topic": "dominance",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.6740430593490601,
+    "topic_id": -1,
+    "topic_label": "other"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 566,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "U000039",
+    "surname": "Udall",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      4
+    ],
+    "topic": "Honest Ads Act",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.7327739000320435,
+    "topic_id": 93,
+    "topic_label": "Online advertising and consumer choice policies"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 593,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "M000934",
+    "surname": "Moran",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      4
+    ],
+    "topic": "vulnerability disclosure programs",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.804323673248291,
+    "topic_id": 61,
+    "topic_label": "Cybersecurity legislation and policy"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 655,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "T000476",
+    "surname": "Tillis",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      21,
+      22
+    ],
+    "topic": "partisan rhetoric",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7199491858482361,
+    "topic_id": 93,
+    "topic_label": "Online advertising and consumer choice policies"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 655,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "T000476",
+    "surname": "Tillis",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 1,
+    "sentences": [
+      23
+    ],
+    "topic": "accountability for bad actors",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.772487223148346,
+    "topic_id": 74,
+    "topic_label": "inspectors general and federal accountability"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 656,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "T000476",
+    "surname": "Tillis",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      3
+    ],
+    "topic": "regulatory guidance",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.7606546878814697,
+    "topic_id": 74,
+    "topic_label": "inspectors general and federal accountability"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 656,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "T000476",
+    "surname": "Tillis",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 1,
+    "sentences": [
+      4
+    ],
+    "topic": "business code of conduct",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.694650411605835,
+    "topic_id": 79,
+    "topic_label": "hours-of-service regulations"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 659,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "H001075",
+    "surname": "Harris",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      3
+    ],
+    "topic": "Facebook's trust and transparency",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7171909213066101,
+    "topic_id": 68,
+    "topic_label": "consumer data privacy legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 685,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "K000393",
+    "surname": "Kennedy",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      1,
+      2
+    ],
+    "topic": "Facebook regulation",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7303377389907837,
+    "topic_id": 68,
+    "topic_label": "consumer data privacy legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 685,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "K000393",
+    "surname": "Kennedy",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 1,
+    "sentences": [
+      8,
+      9,
+      10
+    ],
+    "topic": "Facebook digital utopia",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7198100090026855,
+    "topic_id": 91,
+    "topic_label": "Digital equity and access legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 685,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "K000393",
+    "surname": "Kennedy",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 2,
+    "sentences": [
+      12,
+      13
+    ],
+    "topic": "Facebook regulation bills",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.6726076602935791,
+    "topic_id": -1,
+    "topic_label": "other"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 685,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "K000393",
+    "surname": "Kennedy",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 3,
+    "sentences": [
+      14
+    ],
+    "topic": "lobbying",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7288278341293335,
+    "topic_id": 60,
+    "topic_label": "trade policy"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 737,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "B001230",
+    "surname": "Baldwin",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      5
+    ],
+    "topic": "transparency regarding political ads",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.7392648458480835,
+    "topic_id": 74,
+    "topic_label": "inspectors general and federal accountability"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 769,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "H001076",
+    "surname": "Hassan",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      4
+    ],
+    "topic": "Facebook's profitability",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.6544438004493713,
+    "topic_id": -1,
+    "topic_label": "other"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 769,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "H001076",
+    "surname": "Hassan",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 1,
+    "sentences": [
+      5
+    ],
+    "topic": "maximizing time spent on products and collecting data",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.7533025145530701,
+    "topic_id": 93,
+    "topic_label": "Online advertising and consumer choice policies"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 769,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "H001076",
+    "surname": "Hassan",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 2,
+    "sentences": [
+      8
+    ],
+    "topic": "time spent on social media",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.6860455274581909,
+    "topic_id": 93,
+    "topic_label": "Online advertising and consumer choice policies"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 769,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "H001076",
+    "surname": "Hassan",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 3,
+    "sentences": [
+      9
+    ],
+    "topic": "ad targeting effectiveness",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.8219178915023804,
+    "topic_id": 93,
+    "topic_label": "Online advertising and consumer choice policies"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 769,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "H001076",
+    "surname": "Hassan",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 4,
+    "sentences": [
+      10
+    ],
+    "topic": "Facebook's bottom line",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.6745561361312866,
+    "topic_id": -1,
+    "topic_label": "other"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 769,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "H001076",
+    "surname": "Hassan",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 5,
+    "sentences": [
+      13
+    ],
+    "topic": "Facebook's business model",
+    "stance": "concern",
+    "topic_lint": null,
+    "sim": 0.6779651641845703,
+    "topic_id": -1,
+    "topic_label": "other"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 772,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "H001076",
+    "surname": "Hassan",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      6,
+      7
+    ],
+    "topic": "Honest Ads Act",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.7327739000320435,
+    "topic_id": 93,
+    "topic_label": "Online advertising and consumer choice policies"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 793,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "C001047",
+    "surname": "Capito",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      6
+    ],
+    "topic": "rural internet connectivity",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.9092481732368469,
+    "topic_id": 47,
+    "topic_label": "Rural broadband and telecommunications infrastructure"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 884,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "Y000064",
+    "surname": "Young",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      14
+    ],
+    "topic": "comprehensive privacy policy",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.785538911819458,
+    "topic_id": 68,
+    "topic_label": "consumer data privacy legislation"
+  },
+  {
+    "packageId": "CHRG-115shrg37801",
+    "turn_idx": 888,
+    "year": 2018,
+    "chamber": "SENATE",
+    "bioGuideId": "Y000064",
+    "surname": "Young",
+    "honorific": "Senator",
+    "is_chair": false,
+    "record_idx": 0,
+    "sentences": [
+      3
+    ],
+    "topic": "stronger privacy rights for consumers",
+    "stance": "support",
+    "topic_lint": null,
+    "sim": 0.8787541389465332,
+    "topic_id": 68,
+    "topic_label": "consumer data privacy legislation"
+  }
+]

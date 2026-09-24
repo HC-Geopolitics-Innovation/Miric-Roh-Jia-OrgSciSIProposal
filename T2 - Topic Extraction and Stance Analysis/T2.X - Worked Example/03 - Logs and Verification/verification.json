@@ -1,0 +1,121 @@
+{
+  "packageId": "CHRG-115shrg37801",
+  "data_root": "/project2/mmiric_1435/acroh/llm_method/data",
+  "model": "Qwen/Qwen3.5-4B",
+  "selected_turns": 507,
+  "cleaned_sentences": 1696,
+  "removed_sentences_by_rule": {
+    "truncated": 13380,
+    "label_echo": 501,
+    "stage_direction": 15,
+    "header": 44
+  },
+  "verified_user_prompt_hashes": 508,
+  "track2_calls": 507,
+  "stance_records": 49,
+  "turns_with_stances": 27,
+  "parser_errors": {
+    "indices_not_consecutive": 8
+  },
+  "merged_records": 1,
+  "assigned_stance_records": 41,
+  "codebook_topics": 111,
+  "codebook_themes": 14,
+  "codebook_parquet_sha256": "fd81e7814be416617cb52ac4bfaee3eec8086192aa51fda171342b9bb1919abc",
+  "codebook_dropped_clusters": 30,
+  "codebook_merged_clusters": 9,
+  "hearing_contributions_to_115th_congress": [
+    {
+      "topic_id": 47,
+      "topic_label": "Rural broadband and telecommunications infrastructure",
+      "stance": "support",
+      "n": 1
+    },
+    {
+      "topic_id": 54,
+      "topic_label": "FCC telecommunications regulation authority",
+      "stance": "concern",
+      "n": 1
+    },
+    {
+      "topic_id": 60,
+      "topic_label": "trade policy",
+      "stance": "concern",
+      "n": 1
+    },
+    {
+      "topic_id": 61,
+      "topic_label": "Cybersecurity legislation and policy",
+      "stance": "concern",
+      "n": 2
+    },
+    {
+      "topic_id": 65,
+      "topic_label": "Consumer privacy and anti-spam legislation",
+      "stance": "concern",
+      "n": 1
+    },
+    {
+      "topic_id": 68,
+      "topic_label": "consumer data privacy legislation",
+      "stance": "concern",
+      "n": 6
+    },
+    {
+      "topic_id": 68,
+      "topic_label": "consumer data privacy legislation",
+      "stance": "support",
+      "n": 7
+    },
+    {
+      "topic_id": 74,
+      "topic_label": "inspectors general and federal accountability",
+      "stance": "support",
+      "n": 4
+    },
+    {
+      "topic_id": 79,
+      "topic_label": "hours-of-service regulations",
+      "stance": "support",
+      "n": 1
+    },
+    {
+      "topic_id": 87,
+      "topic_label": "Consumer credit protection and loan guarantee programs",
+      "stance": "concern",
+      "n": 1
+    },
+    {
+      "topic_id": 90,
+      "topic_label": "antitrust enforcement",
+      "stance": "concern",
+      "n": 1
+    },
+    {
+      "topic_id": 91,
+      "topic_label": "Digital equity and access legislation",
+      "stance": "concern",
+      "n": 1
+    },
+    {
+      "topic_id": 92,
+      "topic_label": "Children's online privacy and safety legislation",
+      "stance": "support",
+      "n": 3
+    },
+    {
+      "topic_id": 93,
+      "topic_label": "Online advertising and consumer choice policies",
+      "stance": "concern",
+      "n": 7
+    },
+    {
+      "topic_id": 93,
+      "topic_label": "Online advertising and consumer choice policies",
+      "stance": "support",
+      "n": 4
+    }
+  ],
+  "cap_match": null,
+  "verification_scope": "Reproduced turn selection, sentence cleaning, all extraction user prompts, parsing and merging, and Track-1 cluster membership. Checked saved Track-2 labels and the 0.68 threshold; did not rerun embeddings or LLMs."
+}
