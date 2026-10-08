@@ -1,0 +1,556 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How LLMs and Agents Change Research Pipelines and the Classroom
+% IE University -- October 8, 2026
+% Milan Miric (USC Marshall)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% PREAMBLE %
+\documentclass[xcolor=x11names,compress,9pt]{beamer}
+
+%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{decorations.fractals}
+\usepackage{amsmath}
+\usepackage{bchart}
+\usepackage{booktabs}
+\usepackage{array}
+
+%% BEAMER LAYOUT & COLOR THEME %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\useoutertheme[subsection=false,shadow]{miniframes}
+\useinnertheme{default}
+\usefonttheme{serif}
+\usepackage{palatino}
+
+\setbeamerfont{title}{shape=\scshape, size = \Large}
+\setbeamerfont{frametitle}{shape=\scshape}
+
+\definecolor{cardinal}{rgb}{0.77, 0.12, 0.23}
+\definecolor{gold}{rgb}{1.0, 0.84, 0.0}
+\definecolor{USCRed}{rgb}{0.60,0.11, 0.12}
+\definecolor{UBCgrey}{rgb}{0.3686, 0.5255, 0.6235}
+
+\setbeamercolor*{lower separation line head}{bg=black} 
+\setbeamercolor*{normal text}{fg=darkgray,bg=white} 
+\setbeamercolor*{alerted text}{fg=red} 
+\setbeamercolor*{example text}{fg=black} 
+\setbeamercolor*{structure}{fg=black} 
+
+\setbeamercolor{palette tertiary}{bg=USCRed,fg=white}
+
+\renewcommand{\(}{\begin{columns}}
+\renewcommand{\)}{\end{columns}}
+\newcommand{\<}[1]{\begin{column}{#1}}
+\renewcommand{\>}{\end{column}}
+
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=1\paperwidth,ht=2.75ex,dp=1ex,left]{title in head/foot}%
+    \usebeamerfont{title in head/foot} \textbf{~~~IE University --- October 8, 2026} \hfill \textbf{Milan Miric (USC Marshall)~~~}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatletter
+
+% Title and Metadata %
+\title{\Large How LLMs and Agents Change \\ Research Pipelines and the Classroom}
+
+\date{\textbf{IE University} \\ \vspace{0.2cm} \textit{October 8, 2026}}
+\author{\textbf{Milan Miric}\\ 
+\textit{University of Southern California, \\ Marshall School of Business}}
+
+\begin{document}
+
+%% TITLE SLIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MOTIVATION                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Motivation}
+
+\begin{frame}{Motivation}
+    \begin{itemize}
+        \item \textbf{Textual Data in Research:} Text (10-Ks, hearings, transcripts) provides rich empirical signal for research questions that were previously difficult to measure.
+        \item []
+        \item \textbf{The Data Bottleneck:} Existing methods (topic models, embeddings) require short documents and break down with long, noisy, boilerplate-heavy text.
+        \item []
+        \item \textbf{Need for Control:} Unassisted, end-to-end LLM processing lacks auditability, transparency, and verifiable statistical guarantees.
+        \item []
+        \item \textbf{Our Approach:} Build structured, modular AI pipelines. Use LLM to solve key bottlenecks (LLM text distillation) while using established econometric and empirical standards.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{What LLMs Do}
+    \begin{itemize}
+        \item \textbf{Two Core Strengths of LLMs:}
+        \begin{itemize}
+            \item \textbf{Synthesizing text:} Converting long, unstructured text into concise, informative summaries.
+            \item \textbf{Generating code:} Writing structured instructions that can be systematically tested and audited.
+        \end{itemize}
+        \item []
+        \item \textbf{Complementary Deployment:} Use LLMs at discrete bottlenecks where they excel, while retaining explicit control over data structures and validation.
+        \item []
+        \item \textbf{Transparency \& Replication:} Preserving intermediate chunks, prompts, and verification logs enables systematic replication. You can look and audit the code yourselves.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{An Example: Privacy Regulation and Firm Innovation}
+    \begin{itemize}
+        \item \textbf{Substantive Question:} How do government debates on consumer privacy regulation influence corporate strategy and innovation?
+        \item []
+        \item \textbf{The Empirical Challenge:} Policy deliberations are diffuse across hundreds of hearing pages, while corporate responses are embedded in 10-K filings. Information is there, but Noise $>$ Signal.
+        \item []
+        \item \textbf{Three-Stage Solution:}
+        \begin{itemize}
+            \item \textbf{Step 1:} Summarize multi-hour Congressional hearings into dense policy summaries.
+            \item \textbf{Step 2:} Extract debated topics and directional member/witness stances.
+            \item \textbf{Step 3:} Connect hearing topics to S\&P 500 10-K Item 1 business disclosures.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PART A: SEPARATOR                                   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Part A: Research Pipeline}
+
+\begin{frame}
+    \centering
+    \vfill
+    \usebeamerfont{title}\Huge\bfseries Part A \\ 
+    \vspace{0.4cm}
+    \large\scshape Engineering the AI-Enabled Research Pipeline
+    \vfill
+\end{frame}
+
+%% SUBSECTION 1: SUMMARIZATION %%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Step 1: Text Summarization}
+
+\begin{frame}{Step 1: Document Characteristics and Noise}
+    \begin{itemize}
+        \item \textbf{Corpus Scale:} 2,352 Congressional hearings (1996--2025; House Science, Space, \& Tech; Senate Commerce, Science, \& Transportation).
+        \item \textbf{Extreme Length:} Median transcript contains 36,505 words.
+        \item \textbf{Running Example:} \textit{Facebook, Social Media Privacy, and Data Abuse} (April 10, 2018): 243,434 words (385 PDF pages).
+        \item \textbf{The Noise Problem:} Saturated with opening procedural preamble, committee pleasantries, and index dot leaders.
+    \end{itemize}
+    \vspace{0.15cm}
+    \begin{block}{Raw Transcript Preamble Excerpt}
+        \tiny
+        \textbf{Unidentified speaker:} - FACEBOOK, SOCIAL MEDIA PRIVACY, AND THE USE AND ABUSE OF DATA [Senate Hearing 115-683]\\
+        {[From the U.S. Government Publishing Office]} --- S. Hrg. 115-683\\
+        \textbf{JOINT HEARING BEFORE THE COMMITTEE ON COMMERCE, SCIENCE, AND TRANSPORTATION}\\
+        UNITED STATES SENATE AND THE COMMITTEE ON THE JUDICIARY UNITED STATES SENATE --- APRIL 10, 2018\\
+        \textit{JOHN THUNE, South Dakota, Chairman; ROGER F. WICKER, Mississippi; BILL NELSON, Florida, Ranking...}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Step 1: Approach --- Semantic Partitioning \& Map-Reduce}
+    \begin{itemize}
+        \item \textbf{Context Limits \& Partitioning:} Long transcripts exceed token limits and span diverse topics, requiring structure-aware chunking.
+        \item []
+        \item \textbf{Speaker-Turn Parsing:} Rule-based parser separates 903 speaker turns without LLM calls, preserving dialogue context.
+        \item []
+        \item \textbf{Hierarchical Map-Reduce:}
+        \begin{itemize}
+            \item \textit{Map:} 55 chunks $\to$ 55 segment summaries ($\approx 150$ words each).
+            \item \textit{Collapse:} 55 segment summaries $\to$ 3 condensed accounts ($\approx 200$ words each).
+            \item \textit{Reduce:} 3 condensed accounts $\to$ 1 hearing summary (264 words, 359 tokens).
+        \end{itemize}
+        \item []
+        \item \textbf{Total Calls:} 59 model calls for 243k words (evaluated on Qwen 3.5-4B).
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Architecture: Map-Reduce Summarization Pipeline}
+    \centering
+    \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{../../R - Results/figures/T1 - Text Summarization/fig_summarization_mapreduce.pdf}
+\end{frame}
+
+\begin{frame}{Step 1: Validation Against Independent Human Abstracts}
+    \begin{itemize}
+        \item \textbf{Ground-Truth Benchmark:} Evaluated against 3,812 human-written C-SPAN editorial abstracts using \textit{bge-large-en-v1.5} embeddings.
+        \item \textbf{Discriminant Validity Test:} Cosine similarity compared across three mutually exclusive tiers:
+    \end{itemize}
+    \vspace{0.2cm}
+    \centering
+    \footnotesize
+    \begin{tabular}{p{2.2cm}p{3.2cm}rr}
+        \toprule
+        \textbf{Comparison} & \textbf{Assessment Objective} & \textbf{Pairs} & \textbf{Median Sim.} \\
+        \midrule
+        \textbf{Same hearing} & Correspondence to independent human account & 351 & \textbf{0.798} \\
+        \textbf{Diff. hearing, shared comm.} & Baseline for recurring committee subject matter & 94,304 & \textbf{0.576} \\
+        \textbf{Hearings, no shared comm.} & Broad cross-congressional baseline similarity & 1,243,357 & \textbf{0.533} \\
+        \bottomrule
+    \end{tabular}
+    \vspace{0.2cm}
+    \begin{itemize}
+        \item \textbf{Top-1 Retrieval:} Correct human abstract ranked \#1 among all 3,812 candidates for \textbf{61.3\%} of hearings.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Step 1: Similarity Distribution}
+    \centering
+    \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{../../R - Results/figures/T1 - Text Summarization/cosine_similarity_averages.pdf}
+\end{frame}
+
+\begin{frame}{Step 1: Three-Tier Research Outputs}
+    \begin{itemize}
+        \item \textbf{Traceable Asset Generation:} Releasing all intermediate stages for auditability:
+    \end{itemize}
+    \vspace{0.2cm}
+    \centering
+    \scriptsize
+    \begin{tabular}{p{2.4cm}p{3.8cm}p{3.8cm}}
+        \toprule
+        \textbf{Output Tier} & \textbf{Content} & \textbf{Research Utility} \\
+        \midrule
+        \textbf{Parsed Records} & Cleaned turns, speaker labels, and chunk bounds & Trace raw text; inspect turn boundaries \\
+        \addlinespace
+        \textbf{Segment Summaries} & Intermediate outputs before final synthesis & Identify if details were lost in mapping \\
+        \addlinespace
+        \textbf{Hearing Summary Table} & 2,352 hearing rows with metadata and runtime & Extract topics; compare accounts at scale \\
+        \bottomrule
+    \end{tabular}
+\end{frame}
+
+%% SUBSECTION 2: TOPIC & STANCE %%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Step 2: Topic \& Stance Extraction}
+
+\begin{frame}{Step 2: Two-Track Topic and Stance Extraction}
+    \begin{itemize}
+        \item \textbf{Beyond Bag-of-Words:} LLMs identify semantic concepts directly from dialogue without LDA topic mixing or vocabulary thresholds.
+        \item []
+        \item \textbf{Track 1 (Hearing Subjects):} Model extracts up to 5 neutral policy phrases per summary (\textit{``Facebook data privacy''}, \textit{``Honest Ads Act''}, \textit{``GDPR-style controls''}).
+        \item []
+        \item \textbf{Track 2 (Legislator Stances):} Cleans 507 legislator speaking turns (1,696 sentences); extracts neutral topic, stance (\textit{support} vs.\ \textit{concern}), and sentence citations.
+        \item []
+        \item \textbf{Evidence Linking:} Links statements directly to numbered sentence citations for transparent human review.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Pipeline: Member Turn Topic \& Stance Extraction}
+    \centering
+    \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{../../R - Results/figures/T2 - Topic Extraction and Stance Analysis/fig_topic_extraction.pdf}
+\end{frame}
+
+% NOTE: Codebook construction and clustering diagnostic slides commented out as requested
+
+\begin{frame}{Step 2: Validation Against Comparative Agendas Project (CAP)}
+    \begin{itemize}
+        \item \textbf{Benchmark Sample:} 1,697 matched hearings with official human-assigned CAP codes.
+        \item []
+        \item \textbf{Phrase Correspondence:} Human-assigned CAP subtopic ranks \#1 for \textbf{27.0\%} of hearings.
+        \item []
+        \item \textbf{Domain Alignment:} Cross-tabulation shows strong correspondence (e.g., 88.6\% of NASA theme hearings align with CAP Technology domain).
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Figure: CAP Category Crosswalk Heatmap}
+    \centering
+    \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{../../R - Results/figures/T2 - Topic Extraction and Stance Analysis/fig_cap_crosswalk.pdf}
+\end{frame}
+
+\begin{frame}{Step 2: Longitudinal Stance Panels \& Polarization}
+    \begin{itemize}
+        \item \textbf{Corpus Totals:} 32,385 stance records across 2,352 hearings.
+        \item []
+        \item \textbf{Topic-by-Congress Aggregation:} Panel measuring volume and net stance:
+        $$\text{Net Stance} = \frac{\text{Support Records} - \text{Concern Records}}{\text{Support Records} + \text{Concern Records}} \in [-1, +1]$$
+        \item []
+        \item \textbf{Example (Consumer Privacy in 115th Congress):} 17 hearings, 34 support, 21 concern records $\to \text{Net Stance} = +0.236$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Figure: Congressional Attention Heatmap}
+    \centering
+    \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{../../R - Results/figures/T2 - Topic Extraction and Stance Analysis/fig_stance_attention.pdf}
+\end{frame}
+
+\begin{frame}{Figure: Net Stance Polarization Heatmap}
+    \centering
+    \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{../../R - Results/figures/T2 - Topic Extraction and Stance Analysis/fig_stance_net.pdf}
+\end{frame}
+
+%% SUBSECTION 3: TOPIC RELEVANCE %%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Step 3: Corporate Disclosure Relevance}
+
+\begin{frame}{Step 3: Measuring Cross-Domain Topic Relevance}
+    \begin{itemize}
+        \item \textbf{The Empirical Goal:} Connect Congressional policy topics to publicly traded firms via SEC 10-K Item 1 (Business Description) disclosures.
+        \item []
+        \item \textbf{Corpus Scale:} 21,966 filings for 1,061 S\&P 500 firms (6,306,793 retained sentences after boilerplate removal).
+        \item []
+        \item \textbf{Two-Layer Architecture:}
+        \begin{itemize}
+            \item \textit{Layer 1 (Deterministic Embedding Rail):} Sentence-level cosine similarity to fixed topic centroids (top 5 sentences averaged).
+            \item \textit{Layer 2 (LLM Sentence Tagging):} Qwen two-pass screening and confirmation of directional framing (\textit{Opportunity}, \textit{Threat}, \textit{Neutral}).
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Step 3: Similarity-Weighted Directional Scores}
+    \begin{itemize}
+        \item \textbf{Mathematical Formulation:}
+        \begin{itemize}
+            \item Let $w_{sk} = \max(0, \cos(\mathbf{e}_s, \mathbf{v}_k))$ be the topic similarity weight of sentence $s$.
+            \item Separate threat and opportunity indices (per 100 retained sentences):
+            $$\operatorname{Threat}_{fkt} = \frac{100}{N_{ft}}\sum_{s\in S_{ft}}w_{sk}\,\mathbf{1}\{D_{sk}=T\}$$
+            $$\operatorname{Opportunity}_{fkt} = \frac{100}{N_{ft}}\sum_{s\in S_{ft}}w_{sk}\,\mathbf{1}\{D_{sk}=O\}$$
+        \end{itemize}
+        \item []
+        \item \textbf{Advantage:} Combines the volume of discussion with its semantic proximity to the policy topic without letting threats and opportunities cancel.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Step 3: Firm Evidence and Score Comparisons}
+    \begin{itemize}
+        \item \textbf{Embedding Similarity (Snapshot preceding April 2018 hearing):}
+        \begin{itemize}
+            \item \textit{Facebook (78 sentences):} Raw similarity = 0.759, Standardized = 4.879 (Sentence 48: subject to privacy \& data protection laws).
+            \item \textit{ResMed (484 sentences):} Raw similarity = 0.770, Standardized = 2.443 (Sentence 459: laws governing privacy \& medical data).
+        \end{itemize}
+        \item \textbf{Unweighted vs. Similarity-Weighted Scores:}
+    \end{itemize}
+    \vspace{0.15cm}
+    \centering
+    \footnotesize
+    \begin{tabular}{lrrrr}
+        \toprule
+        \textbf{Firm} & \textbf{Unw. Threat} & \textbf{Wt. Threat} & \textbf{Unw. Opp} & \textbf{Wt. Opp} \\
+        \midrule
+        Total System Services & 24.14\% & \textbf{16.03} & 0.00\% & \textbf{0.00} \\
+        Facebook & 19.23\% & \textbf{13.65} & 0.00\% & \textbf{0.00} \\
+        Paycom Software & 1.67\% & \textbf{1.25} & 2.67\% & \textbf{1.46} \\
+        Fidelity National Info (FIS) & 9.27\% & \textbf{6.16} & 1.16\% & \textbf{0.81} \\
+        \bottomrule
+    \end{tabular}
+\end{frame}
+
+\begin{frame}{Step 3: Sentence Evidence for Directional Labels}
+    \begin{itemize}
+        \item \textbf{Sentence-Level Audit:} Retaining original disclosure sentences behind model classifications:
+    \end{itemize}
+    \vspace{0.15cm}
+    \centering
+    \scriptsize
+    \begin{tabular}{p{1.8cm}cp{1.2cm}p{5.5cm}}
+        \toprule
+        \textbf{Firm} & \textbf{Sent.} & \textbf{Label} & \textbf{Original 10-K Disclosure Sentence} \\
+        \midrule
+        \textbf{Total System Services} & 48 & \textbf{Threat} & In many jurisdictions consumers must be notified in the event of a data breach, and such notification requirements continue to increase in scope and cost. \\
+        \addlinespace
+        \textbf{Facebook} & 55 & \textbf{Threat} & The GDPR will include operational requirements... and will include significant penalties for non-compliance. \\
+        \addlinespace
+        \textbf{Paycom Software} & 263 & \textbf{Opportunity} & We voluntarily obtain third-party security examinations relating to security and data privacy in accordance with SSAE No. 16... \\
+        \addlinespace
+        \textbf{FIS} & 217 & \textbf{Opportunity} & The Company has adopted a comprehensive global privacy program to assess and manage these evolving risks... \\
+        \bottomrule
+    \end{tabular}
+\end{frame}
+
+\begin{frame}{Figure: Privacy Measure Agreement Across Quintiles}
+    \centering
+    \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{../../R - Results/figures/T3 - Topic Relevance and Corporate Disclosure/fig_privacy_measure_agreement.pdf}
+\end{frame}
+
+\begin{frame}{Figure: Industry-Wide Policy Exposure}
+    \centering
+    \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{../../R - Results/figures/T3 - Topic Relevance and Corporate Disclosure/fig_relevance_industry_exposure.pdf}
+\end{frame}
+
+\begin{frame}{Figure: Longitudinal Industry Disclosure Trends}
+    \centering
+    \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{../../R - Results/figures/T3 - Topic Relevance and Corporate Disclosure/fig_relevance_industry_trends.pdf}
+\end{frame}
+
+\begin{frame}{Figure: Leading Privacy Threat and Opportunity Ranks}
+    \centering
+    \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{../../R - Results/figures/T3 - Topic Relevance and Corporate Disclosure/fig_privacy_llm_threat.pdf}
+\end{frame}
+
+\begin{frame}{Step 3: Empirical Assets of Topic Relevance}
+    \begin{itemize}
+        \item \textbf{Multi-Level Panel Assets:}
+    \end{itemize}
+    \vspace{0.2cm}
+    \centering
+    \scriptsize
+    \begin{tabular}{p{2.2cm}p{4.0cm}p{4.0cm}}
+        \toprule
+        \textbf{Output Tier} & \textbf{Content} & \textbf{Research Utility} \\
+        \midrule
+        \textbf{Prepared Sentences} & 6.3M 10-K sentences with metadata & Retrieve raw text; test preprocessing \\
+        \addlinespace
+        \textbf{Topic Vectors} & 111 representations combining text + evidence & Fixed anchor representation across years \\
+        \addlinespace
+        \textbf{Corpus Similarity} & 2.4M filing--topic pairs with top-5 citations & Measure proximity across S\&P 500 firms \\
+        \addlinespace
+        \textbf{Weighted Panel} & Threat \& Opportunity indices (894 clean filings) & Econometric panel on corporate policy exposure \\
+        \bottomrule
+    \end{tabular}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PART B: LLM CODING AGENTS (Research & PhD Teaching) %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Part B: Research Agents}
+
+\begin{frame}
+    \centering
+    \vfill
+    \usebeamerfont{title}\Huge\bfseries Part B \\ 
+    \vspace{0.4cm}
+    \large\scshape LLM Coding Agents for \\ Research \& PhD Teaching
+    \vfill
+\end{frame}
+
+\begin{frame}{Evaluating Current Discourses on LLMs in Research}
+    \begin{itemize}
+        \item \textbf{Can AI generate novel theory or formulate and test hypotheses?} 
+        \begin{itemize}
+            \item Currently, no. But this is not what we should want. 
+            \item []
+        \end{itemize}
+        \item \textbf{Can LLMs effectively synthesize literature and map a field?} 
+        \begin{itemize}
+            \item Valuable for orienting new entrants, but often superficial for established scholars.
+            \item []
+        \end{itemize}
+        \item \textbf{Can AI assist in data cleaning, structuring, and synthesis?} 
+        \begin{itemize}
+            \item Yes, [as shown in Part A].
+            \item []
+        \end{itemize}
+        \item \textbf{Can LLMs facilitate the execution of technical research tasks?} 
+        \begin{itemize}
+            \item Yes, particularly in writing and optimizing code.
+            \item The critical challenge shifts from syntax generation to formulating research designs and processes.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Evolving the Data Pipeline: An Agent-Centric Approach}
+    \begin{itemize}
+        \item \textbf{Transitioning to ``Agent-First'' Workflows:} Moving beyond simple chat interfaces to deploying autonomous agents to do the analytical tasks. 
+        \item []
+        \item \textbf{Understanding of the context:} While AI generates code, the researcher must possess a deep understanding of the codebase architecture and the overall data stack.
+        \item []
+        \item \textbf{Navigating the Computational Environment:} Need to understand the packages, functionality and what the technology is doing. 
+        \item []
+        \item \textbf{Shifting Cognitive Load:} The responsibility of the researcher evolves from knowing syntax to architecting the analytical structure.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Implications for Doctoral Education}
+    \begin{itemize}
+        \item \textbf{Enhanced Reproducibility:} LLMs enable the generation of cleaner, more robust code, which the LLM can audit.
+        \item []
+        \item \textbf{Rethinking Doctoral Training:} 
+        \begin{itemize}
+            \item Historically, methodological training emphasized the mechanics of coding.
+            \item Shifting focus to teaching students how to develop analytical workflows.
+            \item []
+        \end{itemize}
+        \item \textbf{The Limitations of Traditional Replication:} While replicating prior studies remains valuable, existing approaches focus on reproducibility. 
+        \begin{itemize}
+            \item LLMs allow for better documentation, in-process validation, human-readable documents, and clarification of the logic. 
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{The Future of Research Outputs}
+    Current fear of LLMs being able to ``do research'' better than people $\to$ It's already there. 
+    \vspace{0.4cm}
+    \begin{itemize}
+        \item \textbf{Elevating Research Questions:} The premium shifts away from ``shock arbitrage'' toward important research questions.
+        \begin{itemize}
+            \item Because LLMs can evaluate alternatives, the value is not the empirical contingencies. The value is the question and the data. 
+        \end{itemize}
+        \item \textbf{Transforming the Manuscript Format:} If empirical execution becomes easy, why retain dense, convoluted methods sections?
+        \begin{itemize}
+            \item We may transition toward methods sections functioning as high-level executive summaries, with the granular methodology dynamically documented and accessible in public repositories.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Concluding Thoughts on Research Pipelines}
+    \begin{itemize}
+        \item \textbf{LLMs as Implementation Engines:} They are exceptionally powerful tools for executing complex research designs.
+        \item []
+        \item \textbf{The Era of Agents:} The debate has moved past simple chatbots; autonomous agents are already transforming commercial software development and will similarly impact academic research.
+        \item []
+        \item \textbf{Iterative Refinement:} The value lies in using LLMs to continuously check, refine, and adapt code across diverse empirical scenarios.
+    \end{itemize}
+\end{frame}
+    
+\begin{frame}{Concluding Thoughts on Institutional Shifts}
+    \textbf{The Real Existential Question:} \\ \vspace{0.2cm}
+    While many worry that AI will devalue traditional research skills, the more profound disruption is institutional:
+    \begin{itemize}
+        \item []
+        \item These technologies challenge the primacy of the static, ``PDF-centric'' publication model.
+        \item []
+        \item The critical question is determining how to attribute intellectual credit, manage the peer review process, and document scientific knowledge in a dynamic landscape.
+    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PART C: LLM CODING AGENTS FOR TEACHING              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Part C: Teaching Agents}
+
+\begin{frame}
+    \centering
+    \vfill
+    \usebeamerfont{title}\Huge\bfseries Part C \\ 
+    \vspace{0.4cm}
+    \large\scshape LLM Coding Agents for Teaching
+    \vfill
+\end{frame}
+
+\begin{frame}{LLM Coding Agents and the Future of Teaching}
+    \begin{itemize}
+        \item \textbf{Productivity \& Adoption:} This is an undeniably positive shift that increases productivity; everyone should learn and adopt these tools.
+        \item \textbf{The Wrong Focus:} The discourse is often fixated on the wrong things (theorizing, long-form writing, etc.\ were just testing proxies).
+        \item \textbf{Two Core University Functions:} Universities perform two intertwined roles: \textbf{Teaching/Knowledge} and \textbf{Evaluation}.
+        \begin{itemize}
+            \item We were never exceptionally good at evaluation, but knowledge and evaluation were historically highly correlated.
+            \item Difficult exams with trick questions or elaborate essays meant students had to master knowledge to succeed.
+        \end{itemize}
+        \item \textbf{Diminishing Correlation:} LLMs make learning easier, but make evaluating learning with traditional methods far harder.
+        \item \textbf{The Real Disruption:} Don't worry about direct teaching decline undermining universities; worry about employers and companies performing evaluation directly.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Potential Solutions: Real Problem-Solving}
+    \begin{itemize}
+        \item \textbf{Evaluation Through Building:} Test by building and solving real problems rather than evaluation through repetition or trick questions. Building with LLMs enables students to accomplish far more than ever before.
+        \item []
+        \item \textbf{Current Misalignment:} Those who could benefit most from AI often avoid it, while others overuse tokens prognosticating hype.
+        \item []
+        \item \textbf{A Practical Experiment:} Rather than managing central token licenses, give staff and students \$20/month for their own agent models to use across personal and professional tasks to gain genuine proficiency.
+        \item []
+        \item \textbf{Focus on Immediate Problems:} Those who solve immediate, concrete problems with these tools consistently outperform those chasing grandiose theoretical claims.
+    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CLOSING SLIDE                                       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \centering
+    \Huge \textsc{Thank You!} \\ \vspace{0.6cm}
+    \large \textit{Questions \& Discussion}
+\end{frame}
+
+\end{document}

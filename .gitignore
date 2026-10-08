@@ -2,3 +2,11 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+missfont.log
