@@ -1,0 +1,58 @@
+topic_id,admin,party,favor_more,favor_less,party_missing_records
+78,Clinton,D,2,0,10
+78,Clinton,R,1,0,10
+78,Bush,D,28,2,10
+78,Bush,R,9,4,10
+78,Bush,unknown,1,0,10
+78,Obama,D,86,3,10
+78,Obama,R,19,197,10
+78,Obama,unknown,1,0,10
+78,Trump I,D,74,0,10
+78,Trump I,R,2,17,10
+78,Biden,D,9,0,10
+78,Biden,R,2,9,10
+78,Biden,unknown,2,2,10
+78,Trump II,D,1,0,10
+78,Trump II,R,0,2,10
+26,Clinton,D,1,0,8
+26,Bush,D,86,0,8
+26,Bush,R,91,1,8
+26,Bush,unknown,2,1,8
+26,Obama,D,57,0,8
+26,Obama,R,23,23,8
+26,Trump I,D,30,0,8
+26,Trump I,R,10,5,8
+26,Biden,D,18,0,8
+26,Biden,R,11,25,8
+26,Trump II,D,9,0,8
+26,Trump II,R,0,1,8
+68,Clinton,D,20,1,36
+68,Clinton,R,19,0,36
+68,Clinton,unknown,1,0,36
+68,Bush,D,26,1,36
+68,Bush,R,18,3,36
+68,Bush,unknown,3,0,36
+68,Obama,D,35,4,36
+68,Obama,R,18,5,36
+68,Obama,unknown,5,4,36
+68,Trump I,D,60,0,36
+68,Trump I,R,19,8,36
+68,Trump I,unknown,1,1,36
+68,Biden,D,22,0,36
+68,Biden,R,35,5,36
+68,Biden,unknown,12,1,36
+68,Trump II,D,3,0,36
+68,Trump II,R,1,0,36
+68,Trump II,unknown,0,1,36
+21,Clinton,D,0,1,1
+21,Bush,D,12,16,1
+21,Bush,R,63,4,1
+21,Bush,unknown,1,0,1
+21,Obama,D,58,14,1
+21,Obama,R,57,4,1
+21,Trump I,D,21,2,1
+21,Trump I,R,43,4,1
+21,Biden,D,40,1,1
+21,Biden,R,54,0,1
+21,Trump II,D,9,2,1
+21,Trump II,R,17,0,1
