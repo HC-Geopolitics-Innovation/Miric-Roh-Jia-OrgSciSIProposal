@@ -1,6 +1,6 @@
 # Re-clustering of Topics from Topic Extraction Step
 
-Input: [codebook_v1.csv](codebook_v1.csv)
+Input: Final output from the Topic Extraction stage [codebook_v1.csv](codebook_v1.csv)
 
 Output: [topic_groups.csv](topic_groups.csv)
 
