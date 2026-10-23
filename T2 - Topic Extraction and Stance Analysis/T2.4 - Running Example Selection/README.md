@@ -1,8 +1,8 @@
 # Re-clustering of Topics from Topic Extraction Step
 
-Input: /project2/njia_1089/acroh/projects/LLM-Text-Analysis-and-Synthesis/T2 - Topic Extraction and Stance Analysis/T2.4 - Running Example Selection/codebook_v1.csv
+Input: [codebook_v1.csv](codebook_v1.csv)
 
-Output: /project2/njia_1089/acroh/projects/LLM-Text-Analysis-and-Synthesis/T2 - Topic Extraction and Stance Analysis/T2.4 - Running Example Selection/topic_groups.csv
+Output: [topic_groups.csv](topic_groups.csv)
 
 Method: Manually cluster the topic (label) into groups
 
