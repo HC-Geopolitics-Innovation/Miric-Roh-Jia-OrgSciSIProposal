@@ -16,22 +16,21 @@
 
 - [1. Introduction](#1-introduction)
 - [2. Why an AI-Enabled Data Pipeline vs. Allowing an LLM to Handle the Entire Task?](#2-why-an-ai-enabled-data-pipeline-vs-allowing-an-llm-to-handle-the-entire-task)
-- [3. Step #1: Long-Document Text Summarization](#3-step-1-long-document-text-summarization)
-    - [3.1. How Text Summarization Works: Data Preparation and Key Inputs](#31-how-text-summarization-works-data-preparation-and-key-inputs)
-    - [3.2. Application: Congressional Hearing Transcripts](#32-application-congressional-hearing-transcripts)
-    - [3.3. Research Outputs](#33-research-outputs)
-- [4. Step #2: Extracting Relevant Information from Textual Documents](#4-step-2-extracting-relevant-information-from-textual-documents)
-    - [4.1. How Topic Extraction Works: Topic and Stance Identification](#41-how-topic-extraction-works-topic-and-stance-identification)
-    - [4.2. Application: Topic Extraction and Stance Analysis in Congressional Hearings](#42-application-topic-extraction-and-stance-analysis-in-congressional-hearings)
-    - [4.3. Research Outputs](#43-research-outputs)
-- [5. Step #3: Identifying Topic Relevance and Corporate Disclosure](#5-step-3-identifying-topic-relevance-and-corporate-disclosure)
-    - [5.1. How Topic Relevance Works: Similarity and Sentence-Level Assessment](#51-how-topic-relevance-works-similarity-and-sentence-level-assessment)
-    - [5.2. Application: Hearing Topics and S&P 500 10-K Item 1 Disclosures](#52-application-hearing-topics-and-sp-500-10-k-item-1-disclosures)
-    - [5.3. Research Outputs](#53-research-outputs)
-- [6. Research Outputs, Reproducibility, and Application to Future Research](#6-research-outputs-reproducibility-and-application-to-future-research)
-
-- [Appendix A. Prompts](#appendix-a-prompts)
-- [Appendix B. Primary-Topic Tie Breaking](#appendix-b-primary-topic-tie-breaking)
+- [3. Three instances of Large Language Model Enabled Research Pipelines leveraging US Congressional Hearings as a motivating context](#3-three-instances-of-large-language-model-enabled-research-pipelines-leveraging-us-congressional-hearings-as-a-motivating-context)
+    - [3.1. Long-Document Text Summarization](#31-long-document-text-summarization)
+        - [3.1.1. Overview of Processing Pipeline](#311-overview-of-processing-pipeline)
+        - [3.1.2. Application: Summarizing Long Text Congressional Hearings](#312-application-summarizing-long-text-congressional-hearings)
+        - [3.1.3. Research Outputs](#313-research-outputs)
+    - [3.2. Extracting Topics, Positions and Arguments from Long-Form Documents](#32-extracting-topics-positions-and-arguments-from-long-form-documents)
+        - [3.2.1. Overview of Processing Pipeline](#321-overview-of-processing-pipeline)
+        - [3.2.2. Application: Extracting Stances and Arguments around Focal Topics](#322-application-extracting-stances-and-arguments-around-focal-topics)
+        - [3.2.3. Research Outputs](#323-research-outputs)
+    - [3.3. Policy Relevance for Publicly Listed Firms](#33-policy-relevance-for-publicly-listed-firms)
+        - [3.3.1. Overview of Processing Pipeline](#331-overview-of-processing-pipeline)
+        - [3.3.2. Application: Connecting Focal Concerns and Opportunities of Policy Makers to Business Areas of Publicly Listed Firms](#332-application-connecting-focal-concerns-and-opportunities-of-policy-makers-to-business-areas-of-publicly-listed-firms)
+        - [3.3.3. Research Outputs](#333-research-outputs)
+- [4. Empirical Application Enabled by AI Data Pipeline: Evaluating the Impact of Privacy Policy on Innovation Regulation](#4-empirical-application-enabled-by-ai-data-pipeline-evaluating-the-impact-of-privacy-policy-on-innovation-regulation)
+- [5. Reproducible and Adaptable Data Pipelines with Coding Agents](#5-reproducible-and-adaptable-data-pipelines-with-coding-agents)
 
 ---
 
@@ -73,7 +72,7 @@ These data pipelines are the foundation of our proposal, and the contribution th
 
 Our methodology thus far leverages AI models as a tool which summarizes and extracts information from other sources. We demonstrate the benefit of this research tool in our particular context. However, we expect that methodology can be applicable in the long term to other settings, documents and research questions. For this reason we also demonstrate how our research can be reproduced, but leveraging another powerful functionality of Large Language Models: AI Coding Agents. We demonstrate how researchers can apply our methodology to a different research context, but directing their own AI coding agents to understand the code from our public repository, develop an implementation plan for the researcher to review, and implement it within their own research projects. We hope that this can set a precedent for how research can be shared in manner that is transparent, reproducible and extensible.
 
-This proposal proceeds as follows. We first outline the rationale for why one might use such specific pipelines, rather than simply relying on an LLM to provide answers end-to-end. We next describe the three distinct data pipelines we develop for text summarization, stance extraction, and topic relevance identification, using US Congressional hearings as a motivating context. These are summaries for the sake of brevity, which we then elaborate on in the accompanying GitHub repo. In section 3 we demonstrate an application of the variables constructed from this in a novel research context. Finally, in section 4 we then provide a framework for researchers to apply these frameworks to a different methodology / approach. 
+This proposal proceeds as follows. We first outline the rationale for why one might use such specific pipelines, rather than simply relying on an LLM to provide answers end-to-end. We next describe the three distinct data pipelines we develop for text summarization, stance extraction, and topic relevance identification, using US Congressional hearings as a motivating context. These are summaries for the sake of brevity, which we then elaborate on in the accompanying GitHub repo. In section 4 we demonstrate an application of the variables constructed from this in a novel research context. Finally, in section 5 we then provide a framework for researchers to apply these frameworks to a different methodology / approach. 
 
 ## 2. Why an AI-Enabled Data Pipeline vs. Allowing an LLM to Handle the Entire Task?
 
@@ -103,7 +102,7 @@ b. **Summarize and Combine the Inputs.** Each chunk of text is provided to an LL
 
 c. **Model Selection, Validation and Deployment.** This is inherently an iterative process, where the researcher must test different approaches for partitioning, prompts for summarization, models for summarization, and finally combination strategy. All of these tests can be validated by testing the intermediate outputs (partitions, summaries, outcomes for different models), and validated against ground truth where such data exists. Once the optimal set of choices is identified, the pipeline is deployed on the entire corpus of documents. 
 
-#### 3.1.2 Application: Summarizing Long Text Congressional Hearings
+#### 3.1.2. Application: Summarizing Long Text Congressional Hearings
 
 We apply this pipeline to a corpus of US Congressional hearing testimonies. The corpus consists of hearing transcripts spanning from 1995 to 2022, with multiple sessions per year. Hearings are typically long, often exceeding 100 pages, and feature multiple witnesses and committee members presenting testimony and engaging in Q&A discussions.
 
@@ -111,7 +110,7 @@ To apply the pipeline, we first partition each hearing into individual witness t
 
 These summaries are tested with different prompts, models and splitting strategies and validated against human-made summaries for the hearings where they are available. The detailed output, prompts, splitting strategies, collapsing choices, validation tables and code for each stage are detailed in the Appendix.
 
-#### 3.1.3 Research Outputs
+#### 3.1.3. Research Outputs
 
 The summarization pipeline yields a transparent pipeline of code and prompts, as well as intermediate outputs at each stage of the process which can be deployed (utilized) further. 
 
@@ -139,7 +138,7 @@ d. **Aggregate and Summarize.** The output of the earlier section provides a set
 
 e. **Prototyping and Validation.** The goal of this exercise is to extract information which is otherwise difficult to capture and contextualize at scale. While this is challenging to validate precisely (i.e. quantitatively), it is possible to compare against other baselines where there exists some external validation. For instance to compare against other document categories or summaries.
 
-### 3.2.2. Application: Extracting Stances and Arguments around Focal Topics. 
+#### 3.2.2. Application: Extracting Stances and Arguments around Focal Topics 
 
 We apply this methodology to extract stances and arguments from US Congressional hearings. First, we use an LLM to extract key topics from the hearing summaries produced in the previous step. Then, we filter out summaries which are not relevant to the topic of interest. Finally, we extract the arguments and stances related to the topic of interest from the filtered summaries. 
 
@@ -148,38 +147,55 @@ This yields a set of statements which provides information about the key argumen
 Using these individual summaries, we are able to provide aggregation in different ways. First, we are able to aggregate the count of times a particular stance is made, or stance is taken on a particular topic (e.g. the number of times that the risks of a policy are mentioned, as opposed to the number of times the opportunities are mentioned).
 Alternatively, we are able to identify the major threats and opportunities being mentioned, and in doing so, and create a textual summary of the threats and opportunities. In doing so, we are able to capture the predominant stance and arguments being made by policy makers. 
 
-### 3.2.3. Research Outputs
+#### 3.2.3. Research Outputs
 
 The outputs of this pipeline are: 
 1. **Topics of Debate within Congressional Hearings.** A list of topics which are discussed within the textual documents, standardized and assigned to each hearing document. 
 2. **Filtered Arguments and Examples on Each Topic.** A set of statements filtered from each congressional debate that captures the main arguments related to each specific topic, classified as as whether they are examples of the policy being discussed within the congressional debate as an opportunity or a threat. 
 3. **Predominant Stances on Each Topic.** An index for each topic which indicates the extent to which it is perceived as an opportunity or a threat by policy makers in each hearing, also aggregated at the year and the committee levels providing an overall description of the main stances on each topic. 
 
-## Step 3: Policy Relevance for Publicly Listed Firms
+### 3.3. Policy Relevance for Publicly Listed Firms
 
 The earlier analysis provides detailed information extraction from congressional debate about economically important policies that will directly shape the external environment of publicly listed firms. However, a fundamental challenge of applying this to research is that it is challenging to link policy debates to the firms that are being affected. 
 
-To identify the relevance of policy debate to publicly listed firms, fundamentally involves computing the semantic similarity or relatedness between policy documents and corporate disclosures. This can fundamentally be done by computing the textual distance between the documents that convey the policy relevance, and documents that convey about the busines of the firm. LLMS can be used to either filter or summarize the text, as described above, in order to improve the accuracy of this distance measure. 
+To identify the relevance of policy debate to publicly listed firms, fundamentally involves computing the semantic similarity or relatedness between policy documents and corporate disclosures. This can fundamentally be done by computing the textual distance between the documents that convey the policy relevance, and documents that convey about the business of the firm. LLMs can be used to either filter or summarize the text, as described above, in order to improve the accuracy of this distance measure. 
 
 First, LLMs could be used to filter and identify the statements which capture the position of a policy debate (as described above), and identify the distance between those statements and the 10K statements of a firm. Second, LLMs could be used to summarize the documents which capture a particular stance of policy makers on this topic. Once these summaries have been created, which contain the key policy elements, computing the distance between these policy summaries and the 10K statements of a firm provides a measure of the relevance of the policy debate to the business of the firm. 
 
+#### 3.3.1. Overview of Processing Pipeline
 
+A pipeline to manage this process is as follows (summarized at length in xxx):
 
-### 3.2.2. Application: Extracting Stances and Arguments around Focal Topics. 
+a. **Identify & Pre-Process Focal Documents.** In the earlier process, we filtered out the text chunks that reflected a position or a stance of individuals or organizations on a particular topic. These chunks could be used further. However, as an optional step, they could also be further processed and summarized using a large language model to summarize and synthesize the main insights based on these filtered chunks of text. Similarly, an optional step could be to summarize or synthesize textual documents from companies (for example 10-Ks) in order to succinctly describe the characteristics of the focal firm. 
 
-We apply this methodology to extract stances and arguments from US Congressional hearings. First, we use an LLM to extract key topics from the hearing summaries produced in the previous step. Then, we filter out summaries which are not relevant to the topic of interest. Finally, we extract the arguments and stances related to the topic of interest from the filtered summaries. 
+b. **Compute Semantic Distance and Topical Relevance.** Using either the raw textual documents, or summaries of the documents created in the earlier step, we can compute the semantic relatedness of these documents to the 10k statements of firms. This can be done using textual distance measures between document embeddings (e.g. cosine similarity using transformer-based embedding), or by using large language models to compute semantic similarity. The robustness or sensitivity to different measures of similarity can be tested or validated. 
 
-This yields a set of statements which provides information about the key arguments related to each topic. For instance, within congressional debate on a particular topic (for example security and privacy of consumers), it becomes possible to capture both the arguments related to the risks that a policy topic presents (e.g. potential misuse of data, impact on free speech, etc.), as well as the potential opportunities (e.g. economic growth, innovation, etc.). 
+c. **Aggregate Distance and Relevance Measures.** Depending on the exact research question, and the unit at which the distance computation is calculated, the measures may be aggregated up to the level of theoretical interest. For instance, it may be of interest to aggregate the overall impact of policies on the business of a specific firm, but it might also be relevant to have a finer-grained measure the impact of a policy on the changing business of companies. To compute and test the robustness and sensitivity of this, the ability of researchers to provide fine-grained data outputs of each stage of the process, it allows for the understanding and evaluation of this process. 
 
-Using these individual summaries, we are able to provide aggregation in different ways. First, we are able to aggregate the count of times a particular stance is made, or stance is taken on a particular topic (e.g. the number of times that the risks of a policy are mentioned, as opposed to the number of times the opportunities are mentioned).
-Alternatively, we are able to identify the major threats and opportunities being mentioned, and in doing so, and create a textual summary of the threats and opportunities. In doing so, we are able to capture the predominant stance and arguments being made by policy makers. 
+#### 3.3.2. Application: Connecting Focal Concerns and Opportunities of Policy Makers to Business Areas of Publicly Listed Firms
 
+We apply this phenomenon to understand how the congressional policy debate around a particular policy topic, on the business of firms. We focus one of the most important topics which emerged from the policy debate on the privacy and security of consumers (summarized below in xxx).
 
+We utilize the filtered text from section 3.2.3. to first create a summary of the Congressional debate on the topic of Privacy and Security, and the primary concerns and opportunities. We then compute the semantic distance between these summaries and the 10-K statements of publicly listed firms. We then aggregate these measures to identify which are the firms for whom these policies have the potential to impact their business. We report both the raw data that can be leveraged for subsequent research, as well as an aggregate measure that is relevant for us. 
 
+#### 3.3.3. Research Outputs
 
+The outputs of this pipeline are: 
 
+1. **Summary of Policy Opportunities and Concerns for each Congressional Session.** A textual summary of the key concerns and opportunities related to a particular policy that policy makers discuss during a particular session. 
+2. **Aggregated Summary of Opportunities and Concerns for each Major Policy Issue.** A synthesized summary of the primary opportunities and concerns related to each policy for policy makers. 
+3. **Scores for Policy Relevance to Publicly Listed Firms.** A score (distance-based measure) of how much a particular policy (either opportunity or threat) related to the specific business activities of a publicly listed firm.
 
+## 4. Empirical Application Enabled by AI Data Pipeline: Evaluating the Impact of Privacy Policy on Innovation Regulation 
 
+To demonstrate the impact of technology policy on the innovation trajectory of firms, we focus on a specific research question which would have otherwise been difficult to study without the specific research outputs of this data pipeline. In addition, the AI-enabled nature of the pipeline with intermediate outputs allows a careful scrutiny and assessment of such approaches, far more than what would have otherwise been possible in other research applications. 
 
+We focus on a specific empirical research question, how the increasing intensity of Congressional attention to consumer privacy after 2016 (the Cambridge Analytica scandal) and calls for regulation and legislation was associated with the innovation trajectories of companies which were affected. We utilize the relevance measures computed in section 3.3.3. to identify the specific firms most affected by the privacy policy debates. We then proceed to match these scores to the innovation portfolios of publicly listed firms. 
 
-these 
+We can observe from the data how, following the Cambridge Analytica scandal, firms which were impacted by the legislation being discussed by policy makers (excluding Facebook, Google, and other technology companies which were likely impacted), increased their innovative activity in domains related to data privacy and security. While the unaffected firms, which were not likely to be subject to this legislation remained unaffected. 
+
+These are descriptive findings that point to the potential to use the methodology presented, in a transparent, replicable and scalable way to investigate research questions which would otherwise not have been possible. 
+
+## 5. Reproducible and Adaptable Data Pipelines with Coding Agents
+
+While this data pipeline can leverage AI tools to perform important analysis tasks, there is an additional important benefit which is emerging in empirical research. Research papers, made available through platforms such as GitHub in easy machine-readable formats (markdown, python code, stata and R), can be deployed easily through code agents, in order to build entire data pipelines in an instant. In addition to providing a methodology which we believe can advance research with text data, we also want to advocate for, and provide a framework for using the online repository of these papers as a medium where researchers can share their tools and have their tools be easily deployable and adaptable for other researchers. To demonstrate this in Appendix XX, we demonstrate a sample agent prompt and a sample implementation plan generated by an LLM. Researchers could do the same with their own AI tools, augment the implementation plan and deploy it further. 
