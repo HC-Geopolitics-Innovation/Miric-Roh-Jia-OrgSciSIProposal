@@ -1,0 +1,112 @@
+group,label,topic_id
+NASA and space policy,International Space Station,4
+NASA and space policy,Commercial Crew Program,9
+NASA and space policy,Mars and lunar exploration missions,10
+NASA and space policy,Space Launch System,11
+NASA and space policy,Space Shuttle retirement and related NASA programs,13
+NASA and space policy,Artemis program,125
+NASA and space policy,Constellation Program,126
+NASA and space policy,NASA Authorization Acts,3
+NASA and space policy,NASA budget,20
+NASA and space policy,James Webb Space Telescope,7
+NASA and space policy,Decadal Survey,112
+NASA and space policy,Commercial Space Launch Legislation,12
+NASA and space policy,Space debris and traffic management,14
+"Weather, satellites, and Earth observation",National Polar-orbiting Operational Environmental Satellite System,6
+"Weather, satellites, and Earth observation",Weather Research and Forecasting Innovation,37
+"Weather, satellites, and Earth observation",National Integrated Drought Information System,38
+Hazard preparedness and emergency response,Earthquake hazard reduction and preparedness programs,40
+Hazard preparedness and emergency response,Fire and emergency response preparedness,41
+Hazard preparedness and emergency response,public alert and risk information systems,138
+"Oceans, fisheries, and Arctic",Fisheries management and conservation,44
+"Oceans, fisheries, and Arctic",Arctic policy and international law,45
+"Oceans, fisheries, and Arctic",Ocean Acidification and Marine Ecosystem Management,46
+Climate and environmental regulation,Waters of the United States rule,35
+Climate and environmental regulation,Climate change research and policy,36
+Climate and environmental regulation,EPA air and water regulations,78
+"Energy policy, research, and clean technologies",Nuclear Energy Research and Development,21
+"Energy policy, research, and clean technologies",Department of Energy research and development programs,23
+"Energy policy, research, and clean technologies",Energy Policy Act of 2005,24
+"Energy policy, research, and clean technologies",Clean Power Plan,22
+"Energy policy, research, and clean technologies",Smart Grid and Grid Modernization,25
+"Energy policy, research, and clean technologies",Renewable Energy Technologies and Storage,26
+"Energy policy, research, and clean technologies",Carbon Capture and Storage,30
+"Fossil fuels, pipelines, and fuel standards",Fuel Economy and Biofuel Standards,27
+"Fossil fuels, pipelines, and fuel standards",Pipeline safety,32
+"Fossil fuels, pipelines, and fuel standards",Oil and gas extraction and infrastructure,34
+"Broadband infrastructure, spectrum, and universal service",Universal Service Fund,1
+"Broadband infrastructure, spectrum, and universal service",Rural broadband and telecommunications infrastructure,47
+"Broadband infrastructure, spectrum, and universal service",Broadband deployment and infrastructure,48
+"Broadband infrastructure, spectrum, and universal service",Digital equity and access legislation,91
+"Broadband infrastructure, spectrum, and universal service",spectrum policy,49
+"Broadband infrastructure, spectrum, and universal service",Public Safety Broadband Network,50
+Communications regulation and media,Telecommunications Act of 1996,52
+Communications regulation and media,FCC telecommunications regulation authority,54
+Communications regulation and media,Digital Television transition,55
+Communications regulation and media,media ownership concentration,56
+Communications regulation and media,Internet access taxation and net neutrality,84
+Privacy and digital consumer protection,Consumer privacy and anti-spam legislation,65
+Privacy and digital consumer protection,Digital identity verification and protection,67
+Privacy and digital consumer protection,consumer data privacy legislation,68
+Privacy and digital consumer protection,Children's online privacy and safety legislation,92
+Privacy and digital consumer protection,Online advertising and consumer choice policies,93
+Cybersecurity and system integrity,Cybersecurity legislation and policy,61
+Cybersecurity and system integrity,Year 2000 (Y2K) readiness and compliance,73
+Cybersecurity and system integrity,Voting systems standards and integrity,100
+"Advanced computing, AI, and nanotechnology",Artificial Intelligence policy and governance,94
+"Advanced computing, AI, and nanotechnology",advanced computing and ARPA-E programs,95
+"Advanced computing, AI, and nanotechnology",National Nanotechnology Initiatives and Legislation,109
+Health IT and biomedical policy,Health Information Technology and Telehealth,107
+Health IT and biomedical policy,stem cell research and bioethics,108
+"Science agencies, advisory bodies, and integrity",Scientific integrity and research misconduct,110
+"Science agencies, advisory bodies, and integrity",National Science Foundation and related science agencies,111
+"Science agencies, advisory bodies, and integrity",science policy bodies (OSTP and advisory boards),114
+"Competitiveness, innovation, and STEM workforce",CHIPS and Science Act,102
+"Competitiveness, innovation, and STEM workforce",America COMPETES Act,103
+"Competitiveness, innovation, and STEM workforce",Manufacturing Extension Partnership and related initiatives,115
+"Competitiveness, innovation, and STEM workforce",science competitiveness legislation,116
+"Competitiveness, innovation, and STEM workforce",Advanced Technology Programs,117
+"Competitiveness, innovation, and STEM workforce",Small Business Innovation Research and Technology Transfer programs,119
+"Competitiveness, innovation, and STEM workforce",K-12 STEM education and workforce development,121
+"Federal budgets, appropriations, and stimulus",Science and research funding,17
+"Federal budgets, appropriations, and stimulus",Federal agency budget requests and proposals,18
+"Federal budgets, appropriations, and stimulus",Federal science and technology agency budgets,19
+"Federal budgets, appropriations, and stimulus",American Recovery and Reinvestment Act,58
+"Federal budgets, appropriations, and stimulus",R&D tax credits,83
+Government operations and oversight,Federal agency and board nominations,2
+Government operations and oversight,inspectors general and federal accountability,74
+Government operations and oversight,Federal workforce development and staffing challenges,120
+Consumer and financial protection,Federal Trade Commission authority and reauthorization,53
+Consumer and financial protection,Consumer credit protection and loan guarantee programs,87
+Consumer and financial protection,Consumer Protection Legislation,89
+Consumer and financial protection,Consumer Product Safety Commission and related legislation,139
+Competition and intellectual property,intellectual property rights,69
+Competition and intellectual property,antitrust enforcement,90
+"Trade, supply chains, and critical minerals",Rare earth mineral recycling technologies,29
+"Trade, supply chains, and critical minerals",U.S. supply chain security and resilience,59
+"Trade, supply chains, and critical minerals",trade policy,60
+Sports and tourism regulation,Boxing and amateur sports safety and integrity legislation,76
+Sports and tourism regulation,Travel and Tourism Promotion Legislation,134
+Homeland and transportation security,Maritime Security and Port Safety,43
+Homeland and transportation security,Department of Homeland Security legislation and operations,62
+Homeland and transportation security,passenger fees and charges,86
+Homeland and transportation security,Transportation Worker Identification Credential program,122
+Homeland and transportation security,Aviation and Transportation Security Act,141
+Homeland and transportation security,Explosive detection systems,150
+"Aviation policy, safety, and air traffic management",NTSB and aviation safety investigations,137
+"Aviation policy, safety, and air traffic management",Aviation safety and certification policy,143
+"Aviation policy, safety, and air traffic management",Commercial airline pilot fatigue and training standards,144
+"Aviation policy, safety, and air traffic management",FAA reauthorization legislation,145
+"Aviation policy, safety, and air traffic management",Essential Air Service,146
+"Aviation policy, safety, and air traffic management",Next Generation Air Transportation System,147
+Passenger rail and rail safety,Amtrak funding and financial viability,127
+Passenger rail and rail safety,Passenger rail infrastructure and investment,128
+Passenger rail and rail safety,Positive Train Control and Rail Safety Legislation,129
+Surface transportation and infrastructure funding,Highway Trust Fund,15
+Surface transportation and infrastructure funding,Infrastructure Investment and Funding,130
+Surface transportation and infrastructure funding,Infrastructure maintenance and structural integrity,132
+Surface transportation and infrastructure funding,surface transportation agencies,133
+Motor carrier and vehicle safety,hours-of-service regulations,79
+Motor carrier and vehicle safety,Motor Vehicle and Truck Safety Regulations,136
+Motor carrier and vehicle safety,Autonomous and Unmanned Vehicle Safety and Standards,148
+Motor carrier and vehicle safety,Electronic Logging Devices and On-Board Recorders,149
