@@ -1,0 +1,3 @@
+vector,threshold,n_sentences_at_or_above,share_at_or_above,n_filings_with_any,n_firms_with_any,decided_by,reason
+definition,0.67,6183,0.0010948197478355486,2548,306,"author, by hand",Reviewed the example sentences by similarity band and the share tables; chose 0.67 for the definition vector and 0.75 for the centroid.
+centroid,0.75,3956,0.0007004863209505791,2031,265,"author, by hand",Reviewed the example sentences by similarity band and the share tables; chose 0.67 for the definition vector and 0.75 for the centroid.

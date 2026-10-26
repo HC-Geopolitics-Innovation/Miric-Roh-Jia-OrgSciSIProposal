@@ -1,0 +1,29 @@
+{
+  "topic_id": 68,
+  "topic_label": "consumer data privacy legislation",
+  "n_statements": 374,
+  "n_map_calls": 26,
+  "reduce_rounds": [
+    {
+      "round": 1,
+      "target_words": "200 to 250",
+      "n_words": 221,
+      "n_bge_tokens": 274,
+      "hit_cap": false
+    }
+  ],
+  "final_n_words": 221,
+  "final_n_bge_tokens": 274,
+  "model": "/scratch2/acroh/projects/llm_method/hf_cache/hub/models--Qwen--Qwen3.5-4B/snapshots/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "gpu": "NVIDIA A40",
+  "generation": {
+    "do_sample": true,
+    "temperature": 0.1
+  },
+  "enable_thinking": false,
+  "max_new_tokens": 512,
+  "seed": 0,
+  "run_started": "2026-10-25T12:37:24+00:00",
+  "run_finished": "2026-10-25T12:40:20+00:00",
+  "call_log": "/scratch1/acroh/projects/LLM-Text-Analysis-and-Synthesis/T3-TEMP/T3.5 - Topic Representations/Interim/policy_summary_calls.jsonl"
+}

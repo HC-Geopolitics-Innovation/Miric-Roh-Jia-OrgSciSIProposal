@@ -1,0 +1,9 @@
+shard_id,filings_done_this_run,filings_skipped_as_done,segments,model_calls,gpu,seconds,prompt_version,set,family,n_summaries_in_run,closing_sentence_share,truncated_share
+0,255,4,705,960,NVIDIA L40S,1260.0,item1-mapreduce-1.2,three_years,summary_lines_of_business,2072,1.0,0.0
+1,259,0,788,1048,NVIDIA A40,2028.6,item1-mapreduce-1.2,three_years,summary_lines_of_business,2072,1.0,0.0
+2,259,0,692,951,NVIDIA A40,1734.2,item1-mapreduce-1.2,three_years,summary_lines_of_business,2072,1.0,0.0
+3,259,0,768,1027,NVIDIA A40,1958.0,item1-mapreduce-1.2,three_years,summary_lines_of_business,2072,1.0,0.0
+4,259,0,947,1208,NVIDIA A40,2370.5,item1-mapreduce-1.2,three_years,summary_lines_of_business,2072,1.0,0.0
+5,259,0,840,1100,NVIDIA A40,2203.3,item1-mapreduce-1.2,three_years,summary_lines_of_business,2072,1.0,0.0
+6,259,0,845,1106,NVIDIA L40S,1467.0,item1-mapreduce-1.2,three_years,summary_lines_of_business,2072,1.0,0.0
+7,259,0,884,1145,NVIDIA A40,2244.9,item1-mapreduce-1.2,three_years,summary_lines_of_business,2072,1.0,0.0

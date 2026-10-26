@@ -1,0 +1,9 @@
+shard_id,n_rows,row_start,row_end,file
+0,705939,0,705938,shard_0.parquet
+1,705938,705939,1411876,shard_1.parquet
+2,705938,1411877,2117814,shard_2.parquet
+3,705938,2117815,2823752,shard_3.parquet
+4,705938,2823753,3529690,shard_4.parquet
+5,705938,3529691,4235628,shard_5.parquet
+6,705938,4235629,4941566,shard_6.parquet
+7,705938,4941567,5647504,shard_7.parquet

@@ -1,0 +1,11 @@
+,sentences | centroid | binary,sentences | centroid | share,sentences | definition | binary,sentences | definition | share,summaries | centroid | firm_summary,summaries | centroid | yearly_mean,summaries | definition | firm_summary,summaries | definition | yearly_mean,summaries | policy_summary | firm_summary,summaries | policy_summary | yearly_mean
+sentences | centroid | binary,1.0,0.9924,0.7687,0.7947,0.1815,0.2225,0.147,0.1945,0.1565,0.2043
+sentences | centroid | share,0.9924,1.0,0.7672,0.8042,0.1926,0.2313,0.153,0.1999,0.1694,0.2161
+sentences | definition | binary,0.7687,0.7672,1.0,0.9889,0.1703,0.224,0.1354,0.2039,0.1502,0.1963
+sentences | definition | share,0.7947,0.8042,0.9889,1.0,0.1803,0.2364,0.1448,0.2154,0.1583,0.2077
+summaries | centroid | firm_summary,0.1815,0.1926,0.1703,0.1803,1.0,0.8404,0.7337,0.644,0.7981,0.7172
+summaries | centroid | yearly_mean,0.2225,0.2313,0.224,0.2364,0.8404,1.0,0.6572,0.7715,0.6772,0.8005
+summaries | definition | firm_summary,0.147,0.153,0.1354,0.1448,0.7337,0.6572,1.0,0.8645,0.6491,0.5908
+summaries | definition | yearly_mean,0.1945,0.1999,0.2039,0.2154,0.644,0.7715,0.8645,1.0,0.5644,0.6737
+summaries | policy_summary | firm_summary,0.1565,0.1694,0.1502,0.1583,0.7981,0.6772,0.6491,0.5644,1.0,0.893
+summaries | policy_summary | yearly_mean,0.2043,0.2161,0.1963,0.2077,0.7172,0.8005,0.5908,0.6737,0.893,1.0

@@ -1,0 +1,9 @@
+shard_id,n_rows,row_start,row_end,gpu,seconds,n_truncated_at_max_tokens,finished,recheck_sentences,recheck_min_cosine,matrix_file
+0,705939,0,705938,NVIDIA A40,1687.5,116,2026-10-25T13:49:19+00:00,200,0.9999998211860657,/scratch1/acroh/projects/LLM-Text-Analysis-and-Synthesis/T3-TEMP/T3.6 - Firm Sentences/Processed/sentence_embeddings.npy
+1,705938,705939,1411876,NVIDIA A40,1708.1,97,2026-10-25T13:51:54+00:00,200,0.9999998211860657,/scratch1/acroh/projects/LLM-Text-Analysis-and-Synthesis/T3-TEMP/T3.6 - Firm Sentences/Processed/sentence_embeddings.npy
+2,705938,1411877,2117814,NVIDIA A40,1667.1,45,2026-10-25T14:18:09+00:00,200,0.9999998211860657,/scratch1/acroh/projects/LLM-Text-Analysis-and-Synthesis/T3-TEMP/T3.6 - Firm Sentences/Processed/sentence_embeddings.npy
+3,705938,2117815,2823752,NVIDIA A40,1651.9,69,2026-10-25T14:17:53+00:00,200,0.9999998211860657,/scratch1/acroh/projects/LLM-Text-Analysis-and-Synthesis/T3-TEMP/T3.6 - Firm Sentences/Processed/sentence_embeddings.npy
+4,705938,2823753,3529690,NVIDIA A40,1611.8,54,2026-10-25T14:19:53+00:00,200,0.9999998211860657,/scratch1/acroh/projects/LLM-Text-Analysis-and-Synthesis/T3-TEMP/T3.6 - Firm Sentences/Processed/sentence_embeddings.npy
+5,705938,3529691,4235628,NVIDIA A40,1643.0,91,2026-10-25T14:23:31+00:00,200,0.9999998211860657,/scratch1/acroh/projects/LLM-Text-Analysis-and-Synthesis/T3-TEMP/T3.6 - Firm Sentences/Processed/sentence_embeddings.npy
+6,705938,4235629,4941566,NVIDIA A40,1608.3,23,2026-10-25T14:22:48+00:00,200,0.9999998211860657,/scratch1/acroh/projects/LLM-Text-Analysis-and-Synthesis/T3-TEMP/T3.6 - Firm Sentences/Processed/sentence_embeddings.npy
+7,705938,4941567,5647504,NVIDIA A40,1520.6,20,2026-10-25T14:28:30+00:00,200,0.9999998211860657,/scratch1/acroh/projects/LLM-Text-Analysis-and-Synthesis/T3-TEMP/T3.6 - Firm Sentences/Processed/sentence_embeddings.npy

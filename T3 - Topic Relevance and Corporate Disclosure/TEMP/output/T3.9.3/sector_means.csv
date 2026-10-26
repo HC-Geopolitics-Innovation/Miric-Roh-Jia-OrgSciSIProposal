@@ -1,0 +1,191 @@
+measure_id,sector,n_firms,sector_mean,sector_sd,sample_mean,difference_from_sample_mean,ci95_half_width
+sentences | centroid | binary,Health care and social assistance,11,0.545455,0.522233,0.192628,0.352827,0.308620
+sentences | centroid | binary,Administrative and support and waste management,13,0.461538,0.518875,0.192628,0.268911,0.282063
+sentences | centroid | binary,Information,89,0.460674,0.501275,0.192628,0.268046,0.104145
+sentences | centroid | binary,Finance and insurance,113,0.451327,0.499842,0.192628,0.258700,0.092162
+sentences | centroid | binary,Wholesale trade,18,0.333333,0.485071,0.192628,0.140706,0.224091
+sentences | centroid | binary,"Professional, scientific, and technical services",27,0.259259,0.446576,0.192628,0.066631,0.168449
+sentences | centroid | binary,"Arts, entertainment, and recreation",4,0.250000,0.500000,0.192628,0.057372,0.490000
+sentences | centroid | binary,Accommodation and food services,15,0.200000,0.414039,0.192628,0.007372,0.209533
+sentences | centroid | binary,Transportation and warehousing,25,0.200000,0.408248,0.192628,0.007372,0.160033
+sentences | centroid | binary,Real estate and rental and leasing,42,0.119048,0.327770,0.192628,-0.073580,0.099129
+sentences | centroid | binary,Manufacturing,330,0.081818,0.274504,0.192628,-0.110810,0.029617
+sentences | centroid | binary,"Mining, quarrying, and oil and gas extraction",44,0.045455,0.210707,0.192628,-0.147173,0.062260
+sentences | centroid | binary,Retail trade,53,0.037736,0.192380,0.192628,-0.154892,0.051794
+sentences | centroid | binary,"Agriculture, forestry, fishing and hunting",2,0.000000,0.000000,0.192628,-0.192628,0.000000
+sentences | centroid | binary,Construction,10,0.000000,0.000000,0.192628,-0.192628,0.000000
+sentences | centroid | binary,Educational services,3,0.000000,0.000000,0.192628,-0.192628,0.000000
+sentences | centroid | binary,Other services,2,0.000000,0.000000,0.192628,-0.192628,0.000000
+sentences | centroid | binary,Unclassified,4,0.000000,0.000000,0.192628,-0.192628,0.000000
+sentences | centroid | binary,Utilities,36,0.000000,0.000000,0.192628,-0.192628,0.000000
+sentences | centroid | share,Administrative and support and waste management,13,0.003227,0.005009,0.000787,0.002440,0.002723
+sentences | centroid | share,Information,89,0.002576,0.004414,0.000787,0.001789,0.000917
+sentences | centroid | share,"Professional, scientific, and technical services",27,0.001782,0.003564,0.000787,0.000995,0.001344
+sentences | centroid | share,Finance and insurance,113,0.001453,0.002568,0.000787,0.000666,0.000473
+sentences | centroid | share,"Arts, entertainment, and recreation",4,0.001376,0.002752,0.000787,0.000589,0.002696
+sentences | centroid | share,Wholesale trade,18,0.001115,0.001917,0.000787,0.000328,0.000886
+sentences | centroid | share,Accommodation and food services,15,0.001091,0.002421,0.000787,0.000305,0.001225
+sentences | centroid | share,Health care and social assistance,11,0.000751,0.000897,0.000787,-0.000035,0.000530
+sentences | centroid | share,Real estate and rental and leasing,42,0.000498,0.001545,0.000787,-0.000288,0.000467
+sentences | centroid | share,Transportation and warehousing,25,0.000447,0.001118,0.000787,-0.000340,0.000438
+sentences | centroid | share,Manufacturing,330,0.000249,0.001375,0.000787,-0.000538,0.000148
+sentences | centroid | share,Retail trade,53,0.000176,0.000901,0.000787,-0.000611,0.000243
+sentences | centroid | share,"Mining, quarrying, and oil and gas extraction",44,0.000100,0.000500,0.000787,-0.000686,0.000148
+sentences | centroid | share,"Agriculture, forestry, fishing and hunting",2,0.000000,0.000000,0.000787,-0.000787,0.000000
+sentences | centroid | share,Construction,10,0.000000,0.000000,0.000787,-0.000787,0.000000
+sentences | centroid | share,Educational services,3,0.000000,0.000000,0.000787,-0.000787,0.000000
+sentences | centroid | share,Other services,2,0.000000,0.000000,0.000787,-0.000787,0.000000
+sentences | centroid | share,Unclassified,4,0.000000,0.000000,0.000787,-0.000787,0.000000
+sentences | centroid | share,Utilities,36,0.000000,0.000000,0.000787,-0.000787,0.000000
+sentences | definition | binary,Health care and social assistance,11,0.727273,0.467099,0.228300,0.498973,0.276038
+sentences | definition | binary,Educational services,3,0.666667,0.577350,0.228300,0.438367,0.653333
+sentences | definition | binary,Finance and insurance,113,0.575221,0.496511,0.228300,0.346922,0.091547
+sentences | definition | binary,Other services,2,0.500000,0.707107,0.228300,0.271700,0.980000
+sentences | definition | binary,Information,89,0.471910,0.502039,0.228300,0.243610,0.104303
+sentences | definition | binary,Administrative and support and waste management,13,0.461538,0.518875,0.228300,0.233239,0.282063
+sentences | definition | binary,Accommodation and food services,15,0.333333,0.487950,0.228300,0.105034,0.246937
+sentences | definition | binary,Wholesale trade,18,0.333333,0.485071,0.228300,0.105034,0.224091
+sentences | definition | binary,"Professional, scientific, and technical services",27,0.296296,0.465322,0.228300,0.067997,0.175520
+sentences | definition | binary,"Arts, entertainment, and recreation",4,0.250000,0.500000,0.228300,0.021700,0.490000
+sentences | definition | binary,Real estate and rental and leasing,42,0.142857,0.354169,0.228300,-0.085443,0.107113
+sentences | definition | binary,Transportation and warehousing,25,0.120000,0.331662,0.228300,-0.108300,0.130012
+sentences | definition | binary,Construction,10,0.100000,0.316228,0.228300,-0.128300,0.196000
+sentences | definition | binary,Retail trade,53,0.094340,0.295098,0.228300,-0.133960,0.079448
+sentences | definition | binary,Manufacturing,330,0.090909,0.287916,0.228300,-0.137391,0.031065
+sentences | definition | binary,"Mining, quarrying, and oil and gas extraction",44,0.045455,0.210707,0.228300,-0.182845,0.062260
+sentences | definition | binary,Utilities,36,0.027778,0.166667,0.228300,-0.200522,0.054444
+sentences | definition | binary,"Agriculture, forestry, fishing and hunting",2,0.000000,0.000000,0.228300,-0.228300,0.000000
+sentences | definition | binary,Unclassified,4,0.000000,0.000000,0.228300,-0.228300,0.000000
+sentences | definition | share,Administrative and support and waste management,13,0.005866,0.010409,0.001165,0.004701,0.005658
+sentences | definition | share,Information,89,0.003350,0.005717,0.001165,0.002185,0.001188
+sentences | definition | share,Finance and insurance,113,0.002460,0.004405,0.001165,0.001295,0.000812
+sentences | definition | share,Other services,2,0.002273,0.003214,0.001165,0.001107,0.004454
+sentences | definition | share,Health care and social assistance,11,0.002071,0.001884,0.001165,0.000906,0.001113
+sentences | definition | share,Wholesale trade,18,0.001904,0.003713,0.001165,0.000739,0.001715
+sentences | definition | share,"Professional, scientific, and technical services",27,0.001877,0.003818,0.001165,0.000712,0.001440
+sentences | definition | share,"Arts, entertainment, and recreation",4,0.001376,0.002752,0.001165,0.000211,0.002696
+sentences | definition | share,Accommodation and food services,15,0.001288,0.002191,0.001165,0.000123,0.001109
+sentences | definition | share,Real estate and rental and leasing,42,0.000827,0.002540,0.001165,-0.000338,0.000768
+sentences | definition | share,Transportation and warehousing,25,0.000510,0.001801,0.001165,-0.000655,0.000706
+sentences | definition | share,Retail trade,53,0.000365,0.001451,0.001165,-0.000800,0.000391
+sentences | definition | share,Manufacturing,330,0.000328,0.001342,0.001165,-0.000837,0.000145
+sentences | definition | share,Educational services,3,0.000314,0.000276,0.001165,-0.000851,0.000312
+sentences | definition | share,Construction,10,0.000279,0.000882,0.001165,-0.000886,0.000547
+sentences | definition | share,"Mining, quarrying, and oil and gas extraction",44,0.000201,0.001000,0.001165,-0.000964,0.000296
+sentences | definition | share,Utilities,36,0.000077,0.000459,0.001165,-0.001088,0.000150
+sentences | definition | share,"Agriculture, forestry, fishing and hunting",2,0.000000,0.000000,0.001165,-0.001165,0.000000
+sentences | definition | share,Unclassified,4,0.000000,0.000000,0.001165,-0.001165,0.000000
+summaries | centroid | firm_summary,Information,89,0.527768,0.023513,0.503212,0.024556,0.004885
+summaries | centroid | firm_summary,Administrative and support and waste management,13,0.525404,0.028565,0.503212,0.022192,0.015528
+summaries | centroid | firm_summary,Other services,2,0.523421,0.004798,0.503212,0.020209,0.006649
+summaries | centroid | firm_summary,"Agriculture, forestry, fishing and hunting",2,0.519247,0.015931,0.503212,0.016035,0.022079
+summaries | centroid | firm_summary,"Professional, scientific, and technical services",27,0.518536,0.021303,0.503212,0.015324,0.008036
+summaries | centroid | firm_summary,Unclassified,4,0.514599,0.022850,0.503212,0.011387,0.022393
+summaries | centroid | firm_summary,Retail trade,53,0.510102,0.031433,0.503212,0.006890,0.008463
+summaries | centroid | firm_summary,Finance and insurance,113,0.508190,0.023768,0.503212,0.004978,0.004382
+summaries | centroid | firm_summary,Health care and social assistance,11,0.507658,0.024074,0.503212,0.004446,0.014227
+summaries | centroid | firm_summary,Wholesale trade,18,0.506822,0.024974,0.503212,0.003610,0.011537
+summaries | centroid | firm_summary,Utilities,36,0.504897,0.023113,0.503212,0.001685,0.007550
+summaries | centroid | firm_summary,Manufacturing,330,0.499267,0.025267,0.503212,-0.003945,0.002726
+summaries | centroid | firm_summary,Construction,10,0.495044,0.028253,0.503212,-0.008168,0.017511
+summaries | centroid | firm_summary,Real estate and rental and leasing,42,0.491251,0.024922,0.503212,-0.011961,0.007537
+summaries | centroid | firm_summary,Educational services,3,0.490515,0.035125,0.503212,-0.012697,0.039748
+summaries | centroid | firm_summary,Transportation and warehousing,25,0.488397,0.024275,0.503212,-0.014815,0.009516
+summaries | centroid | firm_summary,Accommodation and food services,15,0.479869,0.029833,0.503212,-0.023343,0.015098
+summaries | centroid | firm_summary,"Mining, quarrying, and oil and gas extraction",44,0.472861,0.016967,0.503212,-0.030352,0.005013
+summaries | centroid | firm_summary,"Arts, entertainment, and recreation",4,0.471198,0.008450,0.503212,-0.032014,0.008281
+summaries | centroid | yearly_mean,Administrative and support and waste management,13,0.526780,0.028045,0.501107,0.025673,0.015246
+summaries | centroid | yearly_mean,Information,89,0.525529,0.027363,0.501107,0.024422,0.005685
+summaries | centroid | yearly_mean,"Agriculture, forestry, fishing and hunting",2,0.524691,0.017683,0.501107,0.023584,0.024507
+summaries | centroid | yearly_mean,Other services,2,0.519494,0.005204,0.501107,0.018387,0.007212
+summaries | centroid | yearly_mean,Unclassified,4,0.517001,0.029326,0.501107,0.015894,0.028740
+summaries | centroid | yearly_mean,Finance and insurance,113,0.511967,0.023259,0.501107,0.010860,0.004288
+summaries | centroid | yearly_mean,Health care and social assistance,11,0.511824,0.023379,0.501107,0.010717,0.013816
+summaries | centroid | yearly_mean,Retail trade,53,0.511683,0.026017,0.501107,0.010576,0.007005
+summaries | centroid | yearly_mean,"Professional, scientific, and technical services",27,0.511542,0.025376,0.501107,0.010435,0.009572
+summaries | centroid | yearly_mean,Utilities,36,0.508423,0.019165,0.501107,0.007316,0.006260
+summaries | centroid | yearly_mean,Wholesale trade,18,0.502614,0.024460,0.501107,0.001507,0.011300
+summaries | centroid | yearly_mean,Educational services,3,0.497171,0.026292,0.501107,-0.003936,0.029752
+summaries | centroid | yearly_mean,Manufacturing,330,0.494265,0.025517,0.501107,-0.006842,0.002753
+summaries | centroid | yearly_mean,Construction,10,0.490693,0.014697,0.501107,-0.010414,0.009109
+summaries | centroid | yearly_mean,Real estate and rental and leasing,42,0.489914,0.026948,0.501107,-0.011193,0.008150
+summaries | centroid | yearly_mean,Transportation and warehousing,25,0.486565,0.022703,0.501107,-0.014542,0.008899
+summaries | centroid | yearly_mean,Accommodation and food services,15,0.481286,0.027653,0.501107,-0.019821,0.013994
+summaries | centroid | yearly_mean,"Arts, entertainment, and recreation",4,0.467591,0.012103,0.501107,-0.033516,0.011861
+summaries | centroid | yearly_mean,"Mining, quarrying, and oil and gas extraction",44,0.467157,0.022711,0.501107,-0.033950,0.006711
+summaries | definition | firm_summary,Information,89,0.449889,0.026445,0.431320,0.018569,0.005494
+summaries | definition | firm_summary,Utilities,36,0.447120,0.029759,0.431320,0.015800,0.009721
+summaries | definition | firm_summary,"Agriculture, forestry, fishing and hunting",2,0.445799,0.026475,0.431320,0.014479,0.036693
+summaries | definition | firm_summary,Administrative and support and waste management,13,0.444708,0.030606,0.431320,0.013388,0.016637
+summaries | definition | firm_summary,Unclassified,4,0.443531,0.024351,0.431320,0.012211,0.023864
+summaries | definition | firm_summary,"Professional, scientific, and technical services",27,0.442459,0.031407,0.431320,0.011139,0.011847
+summaries | definition | firm_summary,Finance and insurance,113,0.442100,0.032793,0.431320,0.010780,0.006046
+summaries | definition | firm_summary,Retail trade,53,0.438846,0.034521,0.431320,0.007526,0.009294
+summaries | definition | firm_summary,Other services,2,0.437880,0.002867,0.431320,0.006560,0.003973
+summaries | definition | firm_summary,Wholesale trade,18,0.431644,0.027500,0.431320,0.000324,0.012705
+summaries | definition | firm_summary,Manufacturing,330,0.429061,0.029115,0.431320,-0.002259,0.003141
+summaries | definition | firm_summary,Construction,10,0.423146,0.026099,0.431320,-0.008174,0.016176
+summaries | definition | firm_summary,Health care and social assistance,11,0.416414,0.028667,0.431320,-0.014906,0.016941
+summaries | definition | firm_summary,Educational services,3,0.415395,0.040514,0.431320,-0.015925,0.045845
+summaries | definition | firm_summary,Transportation and warehousing,25,0.414870,0.029714,0.431320,-0.016451,0.011648
+summaries | definition | firm_summary,Real estate and rental and leasing,42,0.414022,0.023723,0.431320,-0.017298,0.007175
+summaries | definition | firm_summary,Accommodation and food services,15,0.407138,0.032510,0.431320,-0.024182,0.016452
+summaries | definition | firm_summary,"Arts, entertainment, and recreation",4,0.404164,0.033734,0.431320,-0.027157,0.033060
+summaries | definition | firm_summary,"Mining, quarrying, and oil and gas extraction",44,0.391275,0.029239,0.431320,-0.040045,0.008640
+summaries | definition | yearly_mean,Unclassified,4,0.458305,0.038184,0.433323,0.024982,0.037421
+summaries | definition | yearly_mean,Information,89,0.454338,0.032234,0.433323,0.021016,0.006697
+summaries | definition | yearly_mean,Other services,2,0.453816,0.017726,0.433323,0.020493,0.024567
+summaries | definition | yearly_mean,Utilities,36,0.450627,0.025604,0.433323,0.017304,0.008364
+summaries | definition | yearly_mean,Administrative and support and waste management,13,0.449918,0.034527,0.433323,0.016595,0.018769
+summaries | definition | yearly_mean,Finance and insurance,113,0.449102,0.033995,0.433323,0.015779,0.006268
+summaries | definition | yearly_mean,Retail trade,53,0.447650,0.032219,0.433323,0.014328,0.008674
+summaries | definition | yearly_mean,"Agriculture, forestry, fishing and hunting",2,0.446045,0.032477,0.433323,0.012722,0.045011
+summaries | definition | yearly_mean,"Professional, scientific, and technical services",27,0.438000,0.033125,0.433323,0.004677,0.012495
+summaries | definition | yearly_mean,Wholesale trade,18,0.433235,0.028316,0.433323,-0.000088,0.013081
+summaries | definition | yearly_mean,Health care and social assistance,11,0.432898,0.030467,0.433323,-0.000424,0.018005
+summaries | definition | yearly_mean,Manufacturing,330,0.428096,0.032460,0.433323,-0.005227,0.003502
+summaries | definition | yearly_mean,Construction,10,0.422182,0.019204,0.433323,-0.011141,0.011903
+summaries | definition | yearly_mean,Educational services,3,0.422044,0.032737,0.433323,-0.011279,0.037045
+summaries | definition | yearly_mean,Transportation and warehousing,25,0.420369,0.028951,0.433323,-0.012954,0.011349
+summaries | definition | yearly_mean,Accommodation and food services,15,0.415822,0.029481,0.433323,-0.017501,0.014920
+summaries | definition | yearly_mean,Real estate and rental and leasing,42,0.414140,0.025349,0.433323,-0.019183,0.007666
+summaries | definition | yearly_mean,"Arts, entertainment, and recreation",4,0.401629,0.030608,0.433323,-0.031694,0.029995
+summaries | definition | yearly_mean,"Mining, quarrying, and oil and gas extraction",44,0.384485,0.030039,0.433323,-0.048838,0.008876
+summaries | policy_summary | firm_summary,Information,89,0.556736,0.027026,0.514344,0.042392,0.005615
+summaries | policy_summary | firm_summary,"Professional, scientific, and technical services",27,0.541579,0.033779,0.514344,0.027235,0.012742
+summaries | policy_summary | firm_summary,Unclassified,4,0.536483,0.020451,0.514344,0.022139,0.020042
+summaries | policy_summary | firm_summary,Administrative and support and waste management,13,0.534659,0.038651,0.514344,0.020315,0.021011
+summaries | policy_summary | firm_summary,Retail trade,53,0.524411,0.035062,0.514344,0.010067,0.009440
+summaries | policy_summary | firm_summary,Other services,2,0.522118,0.015141,0.514344,0.007774,0.020985
+summaries | policy_summary | firm_summary,Health care and social assistance,11,0.517718,0.029638,0.514344,0.003374,0.017515
+summaries | policy_summary | firm_summary,Manufacturing,330,0.512713,0.031587,0.514344,-0.001631,0.003408
+summaries | policy_summary | firm_summary,Utilities,36,0.511696,0.021693,0.514344,-0.002648,0.007086
+summaries | policy_summary | firm_summary,Wholesale trade,18,0.511351,0.033852,0.514344,-0.002993,0.015639
+summaries | policy_summary | firm_summary,Finance and insurance,113,0.507891,0.032949,0.514344,-0.006454,0.006075
+summaries | policy_summary | firm_summary,Construction,10,0.505127,0.033659,0.514344,-0.009217,0.020862
+summaries | policy_summary | firm_summary,Educational services,3,0.504554,0.025216,0.514344,-0.009790,0.028534
+summaries | policy_summary | firm_summary,Accommodation and food services,15,0.499336,0.037282,0.514344,-0.015008,0.018867
+summaries | policy_summary | firm_summary,"Agriculture, forestry, fishing and hunting",2,0.497708,0.028107,0.514344,-0.016636,0.038955
+summaries | policy_summary | firm_summary,Transportation and warehousing,25,0.496825,0.037069,0.514344,-0.017519,0.014531
+summaries | policy_summary | firm_summary,"Arts, entertainment, and recreation",4,0.496300,0.025030,0.514344,-0.018044,0.024529
+summaries | policy_summary | firm_summary,Real estate and rental and leasing,42,0.493792,0.027249,0.514344,-0.020552,0.008241
+summaries | policy_summary | firm_summary,"Mining, quarrying, and oil and gas extraction",44,0.462594,0.021743,0.514344,-0.051750,0.006425
+summaries | policy_summary | yearly_mean,Information,89,0.552809,0.029775,0.507793,0.045017,0.006186
+summaries | policy_summary | yearly_mean,Unclassified,4,0.538761,0.025675,0.507793,0.030968,0.025162
+summaries | policy_summary | yearly_mean,Administrative and support and waste management,13,0.531346,0.043490,0.507793,0.023553,0.023641
+summaries | policy_summary | yearly_mean,"Professional, scientific, and technical services",27,0.530175,0.037882,0.507793,0.022382,0.014289
+summaries | policy_summary | yearly_mean,Health care and social assistance,11,0.524550,0.025673,0.507793,0.016757,0.015172
+summaries | policy_summary | yearly_mean,Retail trade,53,0.519891,0.033768,0.507793,0.012098,0.009091
+summaries | policy_summary | yearly_mean,Other services,2,0.517259,0.028221,0.507793,0.009467,0.039113
+summaries | policy_summary | yearly_mean,Utilities,36,0.511730,0.017420,0.507793,0.003937,0.005691
+summaries | policy_summary | yearly_mean,Wholesale trade,18,0.504391,0.032008,0.507793,-0.003402,0.014787
+summaries | policy_summary | yearly_mean,Finance and insurance,113,0.504222,0.032800,0.507793,-0.003570,0.006048
+summaries | policy_summary | yearly_mean,Manufacturing,330,0.503632,0.032208,0.507793,-0.004161,0.003475
+summaries | policy_summary | yearly_mean,"Agriculture, forestry, fishing and hunting",2,0.501417,0.018241,0.507793,-0.006375,0.025281
+summaries | policy_summary | yearly_mean,Educational services,3,0.499810,0.026265,0.507793,-0.007982,0.029721
+summaries | policy_summary | yearly_mean,Construction,10,0.494548,0.018084,0.507793,-0.013245,0.011209
+summaries | policy_summary | yearly_mean,Accommodation and food services,15,0.492764,0.031937,0.507793,-0.015029,0.016162
+summaries | policy_summary | yearly_mean,"Arts, entertainment, and recreation",4,0.491752,0.026167,0.507793,-0.016041,0.025644
+summaries | policy_summary | yearly_mean,Transportation and warehousing,25,0.488940,0.035935,0.507793,-0.018853,0.014087
+summaries | policy_summary | yearly_mean,Real estate and rental and leasing,42,0.488610,0.032374,0.507793,-0.019183,0.009791
+summaries | policy_summary | yearly_mean,"Mining, quarrying, and oil and gas extraction",44,0.452030,0.025269,0.507793,-0.055762,0.007467
