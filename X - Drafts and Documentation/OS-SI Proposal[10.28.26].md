@@ -36,6 +36,7 @@
     - [A.3.1. Overview of Processing Pipeline](#a31-overview-of-processing-pipeline)
     - [A.3.2. Application: Connecting Focal Concerns and Opportunities of Policymakers to Business Areas of Publicly Listed Firms](#a32-application-connecting-focal-concerns-and-opportunities-of-policymakers-to-business-areas-of-publicly-listed-firms)
     - [A.3.3. Research Outputs](#a33-research-outputs)
+- [Appendix B. Raw Data and Dataset Construction Pipeline](#appendix-b-raw-data-and-dataset-construction-pipeline)
 - [Appendix C. Example of Research Enabled by LLM Data Pipeline: Evaluating the Impact of Privacy Policy Debate Following the Cambridge Analytica Scandal on the Trajectory of Firm Corporate Research on Privacy Technology](#appendix-c-example-of-research-enabled-by-llm-data-pipeline)
 - [Appendix D. Reproducible and Adaptable Data Pipelines with Coding Agents](#appendix-d-reproducible-and-adaptable-data-pipelines-with-coding-agents)
 
@@ -228,6 +229,39 @@ The outputs of this pipeline are:
 - **Scores for Policy Relevance to Publicly Listed Firms:** A distance-based score measuring how much a particular policy (opportunity or threat) relates to the specific business activities of a publicly listed firm.
 
 ---
+
+## Appendix B. Raw Data and Dataset Construction Pipeline
+
+This appendix presents the raw counts, collection rails, and attrition metrics underlying the dataset construction phase (Stage 1), drawn from the dataset construction specification (`fig_dataset_construction.tex`).
+
+> **Governing Rule:** The universe is enumerated before anything is retrieved, so every gap is a subtraction against a stated manifest, measured at collection time — never a discovery made downstream. No language model runs in this stage.
+
+### Summary of Dataset Construction Rails
+
+| Rail / Corpus | Primary Source | Enumerated Universe | Pipeline Operations & Intermediate Stages | Measured Defects & Subtractions | Usable Sample / Downstream Role |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Rail A: Congressional Hearings** | U.S. GPO GovInfo API (`CHRG` collection) | **36,378 hearings** (1995–2025 manifest) | • Enumerate manifest before retrieval<br>• Download MODS XML + HTML transcripts<br>• Parse into speaker-attributed turns, rosters, and dates | • **1,253** un-digitized stubs (99% of 1995–96)<br>• **4,448** empty member rosters (flagged in columns, not dropped) | **2,352 hearings** (93.6M words) in Science Committees (`hssy00`, `sscm00`) $\rightarrow$
+ightarrow$\rightarrow$ Feeds Stage 2 Summarization |
+| **Rail B: Independent Reference** | C-SPAN Archives API (`api.c-spanarchives.org`) | **18,697 programs** | • Extract human-written editorial abstracts (median 51 words)<br>• Independent external provenance | None (complete reference benchmark) | **18,697 abstracts** $\rightarrow$
+ightarrow$\rightarrow$ Validates Stage 2 LLM summaries via discriminant cosine tests |
+| **Rail C: Firm Disclosures (Form 10-K)** | SEC EDGAR via `sec-api.io` | **305,140 annual reports** (394 monthly containers, 34 GB, 1993–2025) | • Bulk download complete 10-K archive<br>• CRSP–Compustat link (**25,207 CIK $\rightarrow$\leftrightarrow$\rightarrow$ GVKEY** bijection)<br>• Extract Item 1 (Business descriptions) | • **432 filings (1.9%)** returned empty by Extractor API (refilled & verified from local bulk archive) | **22,299 S&P 500 annual reports** (with text, provenance, usable flags) $\rightarrow$
+ightarrow$\rightarrow$ Feeds Stage 4 Policy Relevance |
+
+---
+
+### Granular Pipeline Step-by-Step Metrics
+
+| Stage / Rail | Step Name | Operation / Metric | Raw Count / Quantity | Notes & Integrity Checks |
+| :--- | :--- | :--- | :--- | :--- |
+| **Rail A (Hearings)** | A1. Enumerate | Complete package manifest (1995–2025) | 36,378 hearings | Enumerated before any retrieval commences. |
+| | A2. Download | MODS XML metadata + HTML transcripts | 36,378 packages | An outcome recorded for every single package. |
+| | A3. Parse & Assemble | Speaker turns, member rosters, witnesses | 36,378 records | 1,253 un-digitized stubs & 4,448 empty rosters flagged in indicator columns. |
+| | A4. SST Sample Selection | House & Senate Science Committees | 2,352 hearings | 93.6 million words; filtered by identifiers `hssy00` and `sscm00`. |
+| **Rail B (Reference)** | B1. Reference Retrieval | Independent C-SPAN committee abstracts | 18,697 programs | Human-authored editorial abstracts; zero pipeline contamination. |
+| **Rail C (SEC 10-Ks)** | C1. Bulk Download | Full 10-K monthly container archives | 394 containers | 305,140 filings; 34 GB total archive footprint (1993–2025). |
+| | C2. Filing Index | CRSP–Compustat firm crosswalk | 25,207 linked firms | Perfect CIK $\rightarrow$\leftrightarrow$\rightarrow$ GVKEY bijection across longitudinal panels. |
+| | C3. Item 1 Extraction | S&P 500 Business section text parsing | 22,299 filings | 432 empty extractor returns refilled deterministically from local archive. |
+| | C4. Final Corporate Panel | S&P 500 Item 1 panel dataset | 22,299 reports | Complete text, source provenance, and verified usability flags. |
 
 ## Appendix C. Example of Research Enabled by LLM Data Pipeline
 
