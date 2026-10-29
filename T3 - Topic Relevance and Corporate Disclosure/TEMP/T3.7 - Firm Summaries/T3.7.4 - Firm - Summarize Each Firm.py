@@ -6,7 +6,9 @@ table) with the per-firm task of that family, as the reduce stage of T1 builds o
 summary from its segment summaries. One call per firm; the firm's yearly summaries always fit
 one call. Prompts, budgets, and generation settings come from T3.7.1's settings file; the
 firm-level prompt must carry the same prompt version as the filing summaries it reads. Every
-call is logged. Rerunnable: finished firms are read back and skipped.
+call is logged. A summary still over the encoder limit after the re-asks is trimmed by dropping
+trailing sentences until it fits, and the record says so. --seed changes only the sampling, so a firm
+can be rerun with the same prompts until its summary fits on its own. Rerunnable: finished firms are read back and skipped.
 Run only on a card the environment's torch build supports (A40, L40S, A100).
 
 Usage   python "T3.7.4 - Firm - Summarize Each Firm.py" --set three_years --family summary_lines_of_business --version item1-mapreduce-1.2
@@ -50,6 +52,7 @@ parser.add_argument("--set", required=True, choices=["three_years", "all_years"]
 parser.add_argument("--family", required=True, help="summary family from T3.7.1 settings")
 parser.add_argument("--version", required=True, help="prompt version of the filing summaries to read; must equal the current settings version")
 parser.add_argument("--limit", type=int, default=None, help="smoke test: only the first N firms")
+parser.add_argument("--seed", type=int, default=SEED, help="sampling seed; change it to redraw a firm whose summary did not fit")
 args = parser.parse_args()
 
 # Step 1. Read the settings, the filing summaries of this family and version, and the sample flags.
@@ -80,7 +83,7 @@ print(f"Set {args.set}, family {args.family}, version {args.version}: {len(firms
 
 # Step 2. Load the language model on the GPU and the encoder's tokenizer for the length check.
 assert torch.cuda.is_available(), "run this stage on a GPU node"
-torch.manual_seed(SEED)
+torch.manual_seed(args.seed)
 model_folder = Path(settings["model_folder"])
 tokenizer = AutoTokenizer.from_pretrained(model_folder, local_files_only=True)
 tokenizer.padding_side = "left"
@@ -191,6 +194,18 @@ for target_words in SHORTER_TARGET_WORDS:
         final[gvkey] = redo[gvkey]
         rounds[gvkey] += 1
 
+# Step 4. Last resort for a summary still over the encoder limit after the re-asks: drop trailing sentences until it fits.
+trimmed = {gvkey: False for gvkey in firms.index}
+for gvkey in firms.index:
+    while len(bge_tokenizer(final[gvkey])["input_ids"]) > settings["max_bge_tokens"]:
+        sentences = re.split(r"(?<=[.!?])\s+", final[gvkey].strip())
+        assert len(sentences) > 1, f"{gvkey}: cannot trim a one-sentence summary under the limit"
+        final[gvkey] = " ".join(sentences[:-1])
+        trimmed[gvkey] = True
+n_trimmed = sum(trimmed.values())
+if n_trimmed:
+    print(f"Trimmed {n_trimmed} firm summaries to the encoder limit by dropping trailing sentences", flush=True)
+
 records_written = 0
 with output_file.open("a", encoding="utf-8") as handle:
     for gvkey, firm in firms.iterrows():
@@ -199,7 +214,7 @@ with output_file.open("a", encoding="utf-8") as handle:
         handle.write(json.dumps({
             "gvkey": gvkey, "conm": firm["conm"], "set": args.set, "family": args.family, "prompt_version": settings["prompt_version"],
             "n_filings": int(firm["n_filings"]), "years": firm["years"], "summary": text, "n_words": len(text.split()),
-            "n_bge_tokens": n_bge_tokens, "within_bge_limit": n_bge_tokens <= settings["max_bge_tokens"], "reduce_rounds": rounds[gvkey],
+            "n_bge_tokens": n_bge_tokens, "within_bge_limit": n_bge_tokens <= settings["max_bge_tokens"], "reduce_rounds": rounds[gvkey], "trimmed": trimmed[gvkey],
             "run_started": run_started,
         }, ensure_ascii=False) + "\n")
         records_written += 1
@@ -207,9 +222,9 @@ calls_handle.close()
 seconds = time.time() - stage_started
 (output_folder / "firms.json").write_text(json.dumps({
     "set": args.set, "family": args.family, "prompt_version": settings["prompt_version"], "firms_done_this_run": records_written,
-    "firms_skipped_as_done": len(done), "model_calls": n_calls, "model": settings["model_folder"], "gpu": gpu_name,
+    "firms_skipped_as_done": len(done), "firms_trimmed": n_trimmed, "model_calls": n_calls, "model": settings["model_folder"], "gpu": gpu_name,
     "generation": settings["generation"], "enable_thinking": settings["enable_thinking"], "max_new_tokens": settings["max_new_tokens"]["reduce"],
-    "seed": SEED, "torch": torch.__version__, "seconds": round(seconds, 1), "run_started": run_started,
+    "seed": args.seed, "torch": torch.__version__, "seconds": round(seconds, 1), "run_started": run_started,
     "finished": datetime.now(timezone.utc).isoformat(timespec="seconds"),
 }, indent=2), encoding="utf-8")
 print(f"Wrote {records_written:,} firm summaries ({n_calls:,} model calls) to {output_file} in {seconds / 60:.1f} minutes", flush=True)

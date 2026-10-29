@@ -5,10 +5,13 @@ Relevance of each S&P 500 firm's 10-K Item 1 to Topic 68, consumer data privacy 
 ```
 TEMP
 ├── README.md                                                    this file
+├── Flowchart.html                                               flowchart of the process (mermaid) and the measure formulas; open in a browser
 ├── jobs
 │   ├── run_T3.5.1_embed_topic_definition.sbatch                 SLURM wrapper for T3.5.1
 │   ├── run_T3.6.3_embed_sentence_shards.sbatch                  SLURM array wrapper for T3.6.3 (one task per shard)
 │   ├── run_T3.7.2_summarize_filings.sbatch                      SLURM array wrapper for T3.7.2 (one task per shard; SET and FAMILY from the environment)
+│   ├── run_T3.7.4_summarize_firms.sbatch                        SLURM wrapper for T3.7.4 (SET, FAMILY, VERSION from the environment)
+│   ├── run_T3.7.6_embed_summaries.sbatch                        SLURM wrapper that executes the T3.7.5 check and then the T3.7.6 notebook on a GPU node
 │   └── log/                                                     SLURM job logs
 ├── T3.4 - Sample
 │   └── T3.4.1 - Sample - Select Firms and Filings.ipynb         firm universe and the two filing samples (all years; fiscal 2010, 2015, 2020); one filing per firm-year
@@ -37,12 +40,13 @@ TEMP
 │   └── T3.7.6 - Firm - Embed the Summaries.ipynb                embed the filing and firm summaries with bge
 ├── T3.8 - Relevance Scores
 │   ├── T3.8.1 - Score - Relevance from Sentences.ipynb          per firm: binary and share of sentences at or above the threshold (definition, centroid); Meta example
-│   ├── T3.8.2 - Score - Relevance from Summaries.ipynb          per firm: cosine of the firm summary and mean cosine of the yearly summaries with each topic vector; Meta example
-│   └── T3.8.3 - Score - Assemble All Methods.ipynb              one table of all ten measures; what each measure is; correlations
-├── T3.9 - Relevance Figures
-│   ├── T3.9.1 - Figure - Distribution of Relevance Scores.ipynb histogram per measure
-│   ├── T3.9.2 - Figure - Most and Least Relevant Firms.ipynb    ten most and ten least relevant firms per measure
-│   └── T3.9.3 - Figure - Most and Least Relevant Industries.ipynb   NAICS two-digit sector means relative to the sample mean, with within-sector variation
+│   ├── T3.8.2 - Score - Relevance from Summaries.ipynb          per firm and sample: cosine of the firm summary and mean cosine of the yearly summaries with each topic vector; Meta example
+│   └── T3.8.3 - Score - Assemble All Methods.ipynb              one table of all ten measures for both samples; what each measure is; correlations on the all-years sample
+├── T3.9 - Relevance Figures                                     all on the main measure (summaries | policy_summary | firm_summary), all-years sample
+│   ├── T3.9.1 - Figure - Main Measure Distribution Overall and by Sector.ipynb      histogram over all firms; kernel density for information, manufacturing, and mining
+│   ├── T3.9.2 - Figure - Highest and Lowest Main Measure Firms by Sector.ipynb      the 20 highest and 20 lowest firms, score minus the sample mean, colored by sector
+│   ├── T3.9.3 - Figure - Main Measure Sector Means Relative to the Sample Mean.ipynb   NAICS two-digit sector means minus the sample mean, with 90, 95, and 99 percent intervals
+│   └── archive                                                  the earlier per-measure versions (distribution, firms, industries for all ten measures); kept, not run
 └── output
     ├── T3.4.1/filings.csv                                       one row per filing with sample flags
     ├── T3.5.1/topic_definition.csv, topic_definition_embedding.npy
@@ -59,15 +63,16 @@ TEMP
     ├── T3.6.6/score_sentence_share_definition.csv, example_sentences_above_threshold.csv
     ├── T3.6.7/score_sentence_share_centroid.csv, example_sentences_above_threshold.csv
     ├── T3.7.1/settings.json, prompts.md (version 1.3); settings_<version>.json, prompts_<version>.md (1.1, 1.2); manifest.csv; token_counts.csv
-    ├── T3.7.3/filing_summary_check_*.csv, example_summaries_*.csv (per version)
-    ├── T3.7.5/firm_summary_check_*.csv, example_firm_summaries_*.csv
+    ├── T3.7.3/filing_summary_check_*.csv, example_summaries_*.csv (per version); filing_summaries.parquet (copy of the scratch table: one summary per filing)
+    ├── T3.7.5/firm_summary_check_*.csv, example_firm_summaries_*.csv; firm_summaries.parquet (copy of the scratch table: one summary per firm and sample); firm_summaries_all_years.xlsx (the all-years rows)
     ├── T3.7.6/embedding_record.json
     ├── T3.8.1/score_sentences.csv
     ├── T3.8.2/score_summaries.csv, filing_similarities.csv
     ├── T3.8.3/firm_relevance_scores.csv (long), firm_relevance_scores_wide.csv, measure_correlations.csv
-    ├── T3.9.1/fig_distribution_<measure>.{png,svg,pdf}
-    ├── T3.9.2/fig_firms_<measure>.{png,svg,pdf}
-    └── T3.9.3/fig_industries_<measure>.{png,svg,pdf}, firm_industries.csv, sector_means.csv
+    ├── T3.9.1/fig_distribution_policy_summary_firm_summary_cosine_all_firms.{png,svg,pdf}, fig_distribution_policy_summary_firm_summary_cosine_information_manufacturing_mining_kde.{png,svg,pdf}
+    ├── T3.9.2/fig_top_20_and_bottom_20_firms_policy_summary_firm_summary_cosine_demeaned_by_sector.{png,svg,pdf}, top_and_bottom_firms.csv
+    ├── T3.9.3/fig_sector_mean_minus_sample_mean_policy_summary_firm_summary_cosine_naics2.{png,svg,pdf}, sector_means.csv
+    └── archive/T3.9.1, archive/T3.9.2, archive/T3.9.3              outputs of the archived per-measure notebooks
 ```
 
 Scratch (`/scratch1/acroh/projects/LLM-Text-Analysis-and-Synthesis/T3-TEMP/`):
@@ -77,5 +82,7 @@ T3.6 - Firm Sentences/Processed/      sentences.parquet, sentence_embeddings.npy
 T3.7 - Firm Summaries/Interim/        filing_inputs/<set>/, filing_summaries/<set>/<family>/<version>/, firm_summaries/<set>/<family>/<version>/
 T3.7 - Firm Summaries/Processed/      filing_summaries.parquet, firm_summaries.parquet, *_embeddings.npy with *_embedding_keys.parquet
 ```
+
+A copy of every data file the pipeline reads or writes, named by producing notebook and documented for sharing, is in `/project2/mmiric_1435/acroh/llm_method/T3_Data` (see its `README.md`).
 
 Sources: Item 1 texts and firm list from `/project2/mmiric_1435/acroh/llm_method/data`; models `BAAI/bge-large-en-v1.5` and `Qwen/Qwen3.5-4B` from `/scratch2/acroh/projects/llm_method/hf_cache`.

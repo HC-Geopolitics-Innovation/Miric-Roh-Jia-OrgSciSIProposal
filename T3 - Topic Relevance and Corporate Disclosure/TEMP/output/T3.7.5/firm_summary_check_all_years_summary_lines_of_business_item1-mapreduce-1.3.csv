@@ -1,0 +1,2 @@
+set,family,prompt_version,n_firms,n_filings_total,words_median,words_max,bge_tokens_max,re_asked,refers_to_input_share,model_calls,gpu,seconds,run_started
+all_years,summary_lines_of_business,item1-mapreduce-1.3,1058,18779,248.0,401,511,2,0.014177693761814745,1,NVIDIA A40,22.1,2026-10-26T22:45:44+00:00
