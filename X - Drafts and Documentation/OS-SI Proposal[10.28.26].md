@@ -11,7 +11,7 @@
 
 ---
 
-## Table of Contents
+## Table of Contents for Main Proposal
 
 - [1. Introduction](#1-introduction)
   - [1.1. Generative AI-Enabled Pipelines for Information Extraction and Synthesis](#11-generative-ai-enabled-pipelines-for-information-extraction-and-synthesis)
@@ -23,6 +23,9 @@
   - [3.3. Example of Empirical Application](#33-example-of-empirical-application)
   - [3.4. Key Risks and Limitations in Implementation](#34-key-risks-and-limitations-in-implementation)
   - [3.5. How This Advances Organizational and Social Science](#35-how-this-advances-organizational-and-social-science)
+
+## Appendix
+
 - [Appendix A. Overview of Steps in Large Language Model Enabled Research Pipeline](#appendix-a-overview-of-steps-in-large-language-model-enabled-research-pipeline)
   - [A.1. Long-Document Text Summarization](#a1-long-document-text-summarization)
     - [A.1.1. Overview of Processing Pipeline](#a11-overview-of-processing-pipeline)
@@ -36,7 +39,7 @@
     - [A.3.1. Overview of Processing Pipeline](#a31-overview-of-processing-pipeline)
     - [A.3.2. Application: Connecting Focal Concerns and Opportunities of Policymakers to Business Areas of Publicly Listed Firms](#a32-application-connecting-focal-concerns-and-opportunities-of-policymakers-to-business-areas-of-publicly-listed-firms)
     - [A.3.3. Research Outputs](#a33-research-outputs)
-- [Appendix B. Raw Data and Dataset Construction Pipeline](#appendix-b-raw-data-and-dataset-construction-pipeline)
+- [Appendix B. Overview of Datasets Used for Data Pipeline](#appendix-b-overview-of-datasets-used-for-data-pipeline)
 - [Appendix C. Example of Research Enabled by LLM Data Pipeline: Evaluating the Impact of Privacy Policy Debate Following the Cambridge Analytica Scandal on the Trajectory of Firm Corporate Research on Privacy Technology](#appendix-c-example-of-research-enabled-by-llm-data-pipeline)
 - [Appendix D. Reproducible and Adaptable Data Pipelines with Coding Agents](#appendix-d-reproducible-and-adaptable-data-pipelines-with-coding-agents)
 
@@ -96,8 +99,9 @@ We have currently developed and prototyped a research pipeline, available on the
 ### 3.1. Expected Deliverables
 
 - **Reproducible LLM Data Pipeline for Text Summarization, Stance Extraction, and Topic Relevance**
-- **Demonstration of the pipeline on congressional testimony and publicly listed 10-K statements**
-- **Example of deployment (for follow-on research) on related research questions using coding agents**
+- **Public Datasets for Subsequent Research:** From the data of 36K Congressional Hearings from 1995–2025 (currently 2,352 hearings for the House and Senate Science Committees): full chunked text, intermediate summaries, list of topics discussed, summarized stances, an index of committee stances on topics discussed in hearings, and an index of relevance of those topics for publicly listed firms based on Form 10-K statements (1995–2025).
+- **Example Empirical Results:** Demonstration of the empirical results of the policy relevance index applied to investigate the impact of privacy regulation on the trajectory of corporate innovation.
+- **Instructions and Framework for Deployment for Follow-on Research**
 
 ### 3.2. Datasets (Outputs from Focal Research Project)
 
@@ -154,9 +158,12 @@ We apply this pipeline to a corpus of U.S. Congressional hearing testimonies. Th
 
 To apply the pipeline, we first partition each hearing into individual witness testimonies. Within each testimony, we use sentence-level splitting to ensure granular coverage. These segments are then processed using the Map-Reduce summarization approach, with a "reduce" stage to consolidate summaries from multiple witnesses into a single comprehensive hearing summary.
 
-These summaries are tested with different prompts, models, and splitting strategies, and validated against human-made summaries for hearings where they are available.
+These summaries are tested with different prompts, models, and splitting strategies. As a validation approach, we compare our generated summaries against human-generated summaries (abstracts) available on C-SPAN for these hearings. To identify the extent to which they are similar or comparable, we compute the cosine similarity between the embeddings of the human-written abstracts and the large language model generated summaries. As a way of providing a baseline for these values, we compare them to the cosine similarity of different hearings from the same committee, or from hearings from different committees. Such tests allow us to confirm that the textual summaries are a useful distillation of the information in the long-form textual documents.
 
-*[FIGURES ABOUT HERE]*
+![Figure 1. Cosine Similarity Between Hand-Coded Summaries and Large Language Model Generated Summaries](figures/fig1_cosine_similarity.png){width=50%}
+
+**Figure 1. Cosine Similarity Between Hand-Coded Summaries and Large Language Model Generated Summaries.**  
+*Notes:* Discriminant validity test comparing LLM-generated summaries against independent human-written C-SPAN abstracts using dense sentence embeddings (`bge-large-en-v1.5`). The target hearing exhibits high cosine similarity ($ho = 0.742$) against its own human abstract, substantially exceeding baselines from different hearings within the same committee ($ho = 0.518$) and hearings from different committees ($ho = 0.384$).
 
 #### A.1.3. Research Outputs
 
@@ -188,7 +195,13 @@ We apply this methodology to extract stances and arguments from U.S. Congression
 
 We aggregate these summaries in different ways, ultimately arriving at a numerical measure that captures the overall tenor of discussion within congressional debate. In doing so, we capture the predominant stances and arguments made by policymakers.
 
-*[FIGURES ABOUT HERE]*
+In Figure 2, we illustrate the output of this analysis across four interconnected panels (grouped in twos: Panels A & B, Panels C & D).
+
+![Figure 2. Topics and Overview of Stance (Support / Concern of Policymakers)](figures/fig2_topics_stances_4panel.png){width=100%}
+
+**Figure 2. Topics and Overview of Stance (Support / Concern of Policymakers).**  
+*Application of the LLM-powered topic extraction and stance detection pipeline to U.S. Congressional committee hearings on technology policy.*  
+*Notes:* In Panel A, we report the distribution of topics discussed across the hearing sample and the balance of stances in support of or concern regarding these topics. In Panel B, we report the breakdown for topics specifically related to privacy and security. From Panel A, it is evident that consumer privacy is one of the dominant topics, and the subgroup ***Consumer Data Privacy Legislation*** is among the few where substantial legislative support emerges for regulatory action. In Panels C and D, we report the longitudinal share of stances discussed by Congress over time, separating ***Consumer Data Privacy Legislation*** into its own group (Panel D) and contrasting it with other technology policy topics (Panel C). We find a pronounced structural increase in the share of statements supporting consumer privacy legislation after 2016 (following the Cambridge Analytica disclosures). No corresponding increase is observed among other policy topics. This analysis demonstrates how the pipeline documents political debate and traces legislative shifts over time.
 
 #### A.2.3. Research Outputs
 
@@ -220,6 +233,16 @@ We apply this methodology to understand how congressional policy debate around a
 
 We utilize the filtered text from Section 3.2.3 to first create a summary of the Congressional debate on the topic of Privacy and Security, highlighting primary concerns and opportunities. We then compute the semantic distance between these summaries and the 10-K statements of publicly listed firms. We aggregate these measures to identify the firms whose businesses are potentially impacted by these policies. We report both raw data that can be leveraged for subsequent research and aggregate measures relevant to our empirical study.
 
+We summarize the results of this classification in Figure 3. In Figure 3A (Panel A), we show the average cosine similarity between firms' Item 1 business descriptions and Congressional statements on Topic 68 (Consumer Data Privacy Legislation), relative to the sample mean across sectors. Firms in the Information (NAICS 51) sector exhibit the highest policy relevance, consistent with empirical expectations. In Figure 3B (Panel B), we show the top 10 firms most relevant to the Congressional debate on consumer data privacy legislation, finding that major digital and social media firms (such as Facebook/Meta and Alphabet/Google) emerge as the most exposed entities.
+
+![Figure 3. Topic Relevance Scores for Publicly Listed Firms](figures/fig3_topic_relevance_2panel.png){width=100%}
+
+**Figure 3. Topic Relevance Scores for Publicly Listed Firms.**  
+*Panel A: Firm Summary Cosine by NAICS Sector Relative to the Sample Mean (Topic 68 Policy Summary Vector).*  
+*Notes:* Each bar represents the sector mean minus the mean across all 841 firms in the three-year sample (fiscal years 2010, 2015, and 2020) of the firm relevance score, computed as the cosine similarity between the firm's Item 1 summary and the policy summary of Topic 68 hearing statements. Zero denotes the sample mean (0.5143); bars to the right indicate sectors above the mean, and bars to the left indicate sectors below. Error bars span one standard deviation of firm scores within each sector, capturing within-industry cross-firm variation. Sectors reflect two-digit NAICS codes, with manufacturing (31–33), retail trade (44–45), and transportation/warehousing (48–49) grouped. Sectors with fewer than 5 firms are excluded.  
+*Panel B: Top 10 Most Relevant Firms by Share of Sentences Aligned with the Topic 68 Statement Centroid.*  
+*Notes:* Bars report the share of each firm's Item 1 sentences whose cosine similarity with the Topic 68 policy statement centroid is at or above 0.75, divided by total Item 1 sentences. Ranked among 841 scored firms across fiscal years 2010, 2015, and 2020. Least relevant firms are omitted as 679 firms tie at zero exposure.
+
 #### A.3.3. Research Outputs
 
 The outputs of this pipeline are:
@@ -230,38 +253,45 @@ The outputs of this pipeline are:
 
 ---
 
-## Appendix B. Raw Data and Dataset Construction Pipeline
+## Appendix B. Overview of Datasets Used for Data Pipeline
 
-This appendix presents the raw counts, collection rails, and attrition metrics underlying the dataset construction phase (Stage 1), drawn from the dataset construction specification (`fig_dataset_construction.tex`).
+This appendix provides an integrated overview of the primary input corpora, verification benchmarks, and research output datasets utilized across our AI-enabled pipeline.
 
-> **Governing Rule:** The universe is enumerated before anything is retrieved, so every gap is a subtraction against a stated manifest, measured at collection time — never a discovery made downstream. No language model runs in this stage.
+### A. Primary Data Inputs
 
-### Summary of Dataset Construction Rails
+- **Congressional Hearings Dataset (U.S. GPO GovInfo `CHRG` Collection):**
+  - **Enumerated Universe:** Complete package manifest of **36,378 hearings** spanning 1995–2025, enumerated prior to data retrieval to ensure every omitted item is a measured subtraction rather than an unobserved omission.
+  - **Focal Science Sample:** For this proposal, we focus on hearings before the House Science, Space, and Technology Committee (`hssy00`) and the Senate Commerce, Science, and Transportation Committee (`sscm00`), comprising **2,352 hearings** containing **93.6 million words** across 116,000 speaker turns. [ALBERT: confirm final turn count].
+  - **Data Processing & Integrity:** Downloaded MODS XML metadata and full HTML transcripts parsed into speaker-attributed speaking turns, witness lists, member rosters, and hearing dates. Systematic defect tracking identified **1,253 un-digitized stubs** (predominantly from 1995–1996) and **4,448 empty member rosters**, both flagged in indicator columns rather than silently dropped.
+- **Publicly Listed Firms Business Descriptions (SEC Form 10-K Filings):**
+  - **Enumerated Archive:** Full SEC EDGAR Form 10-K archive accessed via `sec-api.io`, comprising **305,140 annual reports** across 394 monthly containers (34 GB of text spanning 1993–2025).
+  - **Firm Linking & Identification:** Mapped to financial fundamentals through a bijective CRSP–Compustat crosswalk linking **25,207 CIK $\leftrightarrow$ GVKEY** identifier pairs.
+  - **Item 1 Extraction & Verification:** The Business description section (Item 1) is extracted for all S&P 500 reports. The Extractor API returned 432 filings (1.9%) empty; all 432 were deterministically recovered and verified from the local bulk archive.
+  - **Usable Corporate Sample:** Yields **22,299 S&P 500 annual reports** complete with extracted text, provenance metadata, and usability flags, directly feeding Stage 4 policy relevance scoring.
 
-| Rail / Corpus | Primary Source | Enumerated Universe | Pipeline Operations & Intermediate Stages | Measured Defects & Subtractions | Usable Sample / Downstream Role |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Rail A: Congressional Hearings** | U.S. GPO GovInfo API (`CHRG` collection) | **36,378 hearings** (1995–2025 manifest) | • Enumerate manifest before retrieval<br>• Download MODS XML + HTML transcripts<br>• Parse into speaker-attributed turns, rosters, and dates | • **1,253** un-digitized stubs (99% of 1995–96)<br>• **4,448** empty member rosters (flagged in columns, not dropped) | **2,352 hearings** (93.6M words) in Science Committees (`hssy00`, `sscm00`) $\rightarrow$
-ightarrow$\rightarrow$ Feeds Stage 2 Summarization |
-| **Rail B: Independent Reference** | C-SPAN Archives API (`api.c-spanarchives.org`) | **18,697 programs** | • Extract human-written editorial abstracts (median 51 words)<br>• Independent external provenance | None (complete reference benchmark) | **18,697 abstracts** $\rightarrow$
-ightarrow$\rightarrow$ Validates Stage 2 LLM summaries via discriminant cosine tests |
-| **Rail C: Firm Disclosures (Form 10-K)** | SEC EDGAR via `sec-api.io` | **305,140 annual reports** (394 monthly containers, 34 GB, 1993–2025) | • Bulk download complete 10-K archive<br>• CRSP–Compustat link (**25,207 CIK $\rightarrow$\leftrightarrow$\rightarrow$ GVKEY** bijection)<br>• Extract Item 1 (Business descriptions) | • **432 filings (1.9%)** returned empty by Extractor API (refilled & verified from local bulk archive) | **22,299 S&P 500 annual reports** (with text, provenance, usable flags) $\rightarrow$
-ightarrow$\rightarrow$ Feeds Stage 4 Policy Relevance |
+### B. Verification Data
+
+- **Independent Reference Abstracts (C-SPAN Archives API):**
+  - **Scope:** **18,697 committee programs** covering 1995–2025, retrieved from `api.c-spanarchives.org`.
+  - **Content & Role:** Human-authored editorial abstracts (median 51 words) written by professional C-SPAN editors independently of congressional staff and our pipeline.
+  - **Pipeline Function:** Serves as an unpolluted, external ground-truth benchmark for discriminant validity testing, comparing cosine similarity of LLM summaries against human abstracts across identical versus distinct committees. [ALBERT: confirm API endpoint details].
+
+### C. Output Research Datasets
+
+- **Text Summarization Corpus (Stage 2 Outputs):**
+  - Cleaned, turn-attributed, and chunked transcript segments across all 2,352 hearings.
+  - Intermediate chunk-level summaries produced by turn-aware map-reduce prompts.
+  - Finalized, entity-attributed committee hearing summaries (`hearing_summaries.parquet`; 2,352 records) validated against independent C-SPAN abstracts.
+- **Policy Stance Panel Dataset (Stage 3 Outputs):**
+  - Ratified, canonical 111-topic policy taxonomy codebook (`frozen_codebook_111.parquet`) extracted from congressional testimony and crosswalked to the Comparative Agendas Project (CAP).
+  - Filtered text statements isolating discrete member policy positions (support, concern, neutral).
+  - Longitudinal congressional member-topic stance panel (`member_stance_panel.parquet`) tracking policy orientation across committees and congresses over time.
+- **Corporate Topic Relevance Dataset (Stage 4 Outputs):**
+  - Synthesized Form 10-K Item 1 corporate business description embeddings across 22,299 firm-year filings.
+  - Synthesized congressional debate summaries and topic centroid vectors (e.g., Topic 68: Consumer Data Privacy Legislation).
+  - Firm-year policy exposure and relevance score panel (`firm_topic_relevance_panel.parquet`) linking S&P 500 firms to congressional debate dynamics.
 
 ---
-
-### Granular Pipeline Step-by-Step Metrics
-
-| Stage / Rail | Step Name | Operation / Metric | Raw Count / Quantity | Notes & Integrity Checks |
-| :--- | :--- | :--- | :--- | :--- |
-| **Rail A (Hearings)** | A1. Enumerate | Complete package manifest (1995–2025) | 36,378 hearings | Enumerated before any retrieval commences. |
-| | A2. Download | MODS XML metadata + HTML transcripts | 36,378 packages | An outcome recorded for every single package. |
-| | A3. Parse & Assemble | Speaker turns, member rosters, witnesses | 36,378 records | 1,253 un-digitized stubs & 4,448 empty rosters flagged in indicator columns. |
-| | A4. SST Sample Selection | House & Senate Science Committees | 2,352 hearings | 93.6 million words; filtered by identifiers `hssy00` and `sscm00`. |
-| **Rail B (Reference)** | B1. Reference Retrieval | Independent C-SPAN committee abstracts | 18,697 programs | Human-authored editorial abstracts; zero pipeline contamination. |
-| **Rail C (SEC 10-Ks)** | C1. Bulk Download | Full 10-K monthly container archives | 394 containers | 305,140 filings; 34 GB total archive footprint (1993–2025). |
-| | C2. Filing Index | CRSP–Compustat firm crosswalk | 25,207 linked firms | Perfect CIK $\rightarrow$\leftrightarrow$\rightarrow$ GVKEY bijection across longitudinal panels. |
-| | C3. Item 1 Extraction | S&P 500 Business section text parsing | 22,299 filings | 432 empty extractor returns refilled deterministically from local archive. |
-| | C4. Final Corporate Panel | S&P 500 Item 1 panel dataset | 22,299 reports | Complete text, source provenance, and verified usability flags. |
 
 ## Appendix C. Example of Research Enabled by LLM Data Pipeline
 
