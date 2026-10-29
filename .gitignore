@@ -10,3 +10,5 @@ __pycache__/
 *.toc
 *.vrb
 missfont.log
+~$*.docx
+*[Opened].docx
