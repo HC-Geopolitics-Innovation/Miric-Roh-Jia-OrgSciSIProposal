@@ -163,7 +163,7 @@ These summaries are tested with different prompts, models, and splitting strateg
 ![Figure 1. Cosine Similarity Between Hand-Coded Summaries and Large Language Model Generated Summaries](figures/fig1_cosine_similarity.png){width=50%}
 
 **Figure 1. Cosine Similarity Between Hand-Coded Summaries and Large Language Model Generated Summaries.**  
-*Notes:* Discriminant validity test comparing LLM-generated summaries against independent human-written C-SPAN abstracts using dense sentence embeddings (`bge-large-en-v1.5`). The target hearing exhibits high cosine similarity ($ho = 0.742$) against its own human abstract, substantially exceeding baselines from different hearings within the same committee ($ho = 0.518$) and hearings from different committees ($ho = 0.384$).
+*Notes:* Discriminant validity test comparing LLM-generated summaries against independent human-written C-SPAN abstracts using dense sentence embeddings (`bge-large-en-v1.5`). The target hearing exhibits high cosine similarity ($\rho = 0.742$) against its own human abstract, substantially exceeding baselines from different hearings within the same committee ($\rho = 0.518$) and hearings from different committees ($\rho = 0.384$).
 
 #### A.1.3. Research Outputs
 
@@ -197,7 +197,11 @@ We aggregate these summaries in different ways, ultimately arriving at a numeric
 
 In Figure 2, we illustrate the output of this analysis across four interconnected panels (grouped in twos: Panels A & B, Panels C & D).
 
-![Figure 2. Topics and Overview of Stance (Support / Concern of Policymakers)](figures/fig2_topics_stances_4panel.png){width=100%}
+| **Panel A: Topic Volume & Balance Groups** | **Panel B: Privacy Topic Stance Volume** |
+| :---: | :---: |
+| ![Panel A: Topic Volume](figures/fig2_panel_a.png) | ![Panel B: Privacy Stance](figures/fig2_panel_b.png) |
+| **Panel C: Privacy Support Share Across Congresses** | **Panel D: Consumer Privacy Legislation Shift (2016)** |
+| ![Panel C: Support Share](figures/fig2_panel_c.png) | ![Panel D: Privacy Legislation](figures/fig2_panel_d.png) |
 
 **Figure 2. Topics and Overview of Stance (Support / Concern of Policymakers).**  
 *Application of the LLM-powered topic extraction and stance detection pipeline to U.S. Congressional committee hearings on technology policy.*  
@@ -235,7 +239,13 @@ We utilize the filtered text from Section 3.2.3 to first create a summary of the
 
 We summarize the results of this classification in Figure 3. In Figure 3A (Panel A), we show the average cosine similarity between firms' Item 1 business descriptions and Congressional statements on Topic 68 (Consumer Data Privacy Legislation), relative to the sample mean across sectors. Firms in the Information (NAICS 51) sector exhibit the highest policy relevance, consistent with empirical expectations. In Figure 3B (Panel B), we show the top 10 firms most relevant to the Congressional debate on consumer data privacy legislation, finding that major digital and social media firms (such as Facebook/Meta and Alphabet/Google) emerge as the most exposed entities.
 
-![Figure 3. Topic Relevance Scores for Publicly Listed Firms](figures/fig3_topic_relevance_2panel.png){width=100%}
+| **Panel A: Firm Summary Cosine by NAICS Sector Relative to Sample Mean** |
+| :---: |
+| ![Figure 3A: NAICS Sector Cosine](figures/fig3_panel_a_naics_relevance.png) |
+
+| **Panel B: Top 10 Most Relevant Firms by Share of Sentences (Topic 68 Centroid)** |
+| :---: |
+| ![Figure 3B: Top 10 Relevant Firms](figures/fig3_panel_b_top_firms.png) |
 
 **Figure 3. Topic Relevance Scores for Publicly Listed Firms.**  
 *Panel A: Firm Summary Cosine by NAICS Sector Relative to the Sample Mean (Topic 68 Policy Summary Vector).*  
