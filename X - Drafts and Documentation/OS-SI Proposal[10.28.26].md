@@ -160,10 +160,11 @@ To apply the pipeline, we first partition each hearing into individual witness t
 
 These summaries are tested with different prompts, models, and splitting strategies. As a validation approach, we compare our generated summaries against human-generated summaries (abstracts) available on C-SPAN for these hearings. To identify the extent to which they are similar or comparable, we compute the cosine similarity between the embeddings of the human-written abstracts and the large language model generated summaries. As a way of providing a baseline for these values, we compare them to the cosine similarity of different hearings from the same committee, or from hearings from different committees. Such tests allow us to confirm that the textual summaries are a useful distillation of the information in the long-form textual documents.
 
-![Figure 1. Cosine Similarity Between Hand-Coded Summaries and Large Language Model Generated Summaries](figures/fig1_cosine_similarity.png){width=50%}
-
 **Figure 1. Cosine Similarity Between Hand-Coded Summaries and Large Language Model Generated Summaries.**  
-*Notes:* Discriminant validity test comparing LLM-generated summaries against independent human-written C-SPAN abstracts using dense sentence embeddings (`bge-large-en-v1.5`). The target hearing exhibits high cosine similarity ($\rho = 0.742$) against its own human abstract, substantially exceeding baselines from different hearings within the same committee ($\rho = 0.518$) and hearings from different committees ($\rho = 0.384$).
+
+![Figure 1. Cosine Similarity Between Hand-Coded Summaries and Large Language Model Generated Summaries](figures/fig1_cosine_similarity.png){width=3.25in}
+
+*Notes: Discriminant validity test comparing LLM-generated summaries against independent human-written C-SPAN abstracts using dense sentence embeddings (`bge-large-en-v1.5`). The target hearing exhibits high cosine similarity ($\rho = 0.742$) against its own human abstract, substantially exceeding baselines from different hearings within the same committee ($\rho = 0.518$) and hearings from different committees ($\rho = 0.384$).*
 
 #### A.1.3. Research Outputs
 
@@ -197,15 +198,16 @@ We aggregate these summaries in different ways, ultimately arriving at a numeric
 
 In Figure 2, we illustrate the output of this analysis across four interconnected panels (grouped in twos: Panels A & B, Panels C & D).
 
-| **Panel A: Topic Volume & Balance Groups** | **Panel B: Privacy Topic Stance Volume** |
-| :---: | :---: |
-| ![Panel A: Topic Volume](figures/fig2_panel_a.png) | ![Panel B: Privacy Stance](figures/fig2_panel_b.png) |
-| **Panel C: Privacy Support Share Across Congresses** | **Panel D: Consumer Privacy Legislation Shift (2016)** |
-| ![Panel C: Support Share](figures/fig2_panel_c.png) | ![Panel D: Privacy Legislation](figures/fig2_panel_d.png) |
-
 **Figure 2. Topics and Overview of Stance (Support / Concern of Policymakers).**  
 *Application of the LLM-powered topic extraction and stance detection pipeline to U.S. Congressional committee hearings on technology policy.*  
-*Notes:* In Panel A, we report the distribution of topics discussed across the hearing sample and the balance of stances in support of or concern regarding these topics. In Panel B, we report the breakdown for topics specifically related to privacy and security. From Panel A, it is evident that consumer privacy is one of the dominant topics, and the subgroup ***Consumer Data Privacy Legislation*** is among the few where substantial legislative support emerges for regulatory action. In Panels C and D, we report the longitudinal share of stances discussed by Congress over time, separating ***Consumer Data Privacy Legislation*** into its own group (Panel D) and contrasting it with other technology policy topics (Panel C). We find a pronounced structural increase in the share of statements supporting consumer privacy legislation after 2016 (following the Cambridge Analytica disclosures). No corresponding increase is observed among other policy topics. This analysis demonstrates how the pipeline documents political debate and traces legislative shifts over time.
+
+| **Panel A: Topic Volume & Balance Groups** | **Panel B: Privacy Topic Stance Volume** |
+| :---: | :---: |
+| ![Panel A: Topic Volume](figures/fig2_panel_a.png){width=3.1in} | ![Panel B: Privacy Stance](figures/fig2_panel_b.png){width=3.1in} |
+| **Panel C: Privacy Support Share Across Congresses** | **Panel D: Consumer Privacy Legislation Shift (2016)** |
+| ![Panel C: Support Share](figures/fig2_panel_c.png){width=3.1in} | ![Panel D: Privacy Legislation](figures/fig2_panel_d.png){width=3.1in} |
+
+*Notes: In Panel A, we report the distribution of topics discussed across the hearing sample and the balance of stances in support of or concern regarding these topics. In Panel B, we report the breakdown for topics specifically related to privacy and security. From Panel A, it is evident that consumer privacy is one of the dominant topics, and the subgroup Consumer Data Privacy Legislation is among the few where substantial legislative support emerges for regulatory action. In Panels C and D, we report the longitudinal share of stances discussed by Congress over time, separating Consumer Data Privacy Legislation into its own group (Panel D) and contrasting it with other technology policy topics (Panel C). We find a pronounced structural increase in the share of statements supporting consumer privacy legislation after 2016 (following the Cambridge Analytica disclosures). No corresponding increase is observed among other policy topics. This analysis demonstrates how the pipeline documents political debate and traces legislative shifts over time.*
 
 #### A.2.3. Research Outputs
 
@@ -239,19 +241,13 @@ We utilize the filtered text from Section 3.2.3 to first create a summary of the
 
 We summarize the results of this classification in Figure 3. In Figure 3A (Panel A), we show the average cosine similarity between firms' Item 1 business descriptions and Congressional statements on Topic 68 (Consumer Data Privacy Legislation), relative to the sample mean across sectors. Firms in the Information (NAICS 51) sector exhibit the highest policy relevance, consistent with empirical expectations. In Figure 3B (Panel B), we show the top 10 firms most relevant to the Congressional debate on consumer data privacy legislation, finding that major digital and social media firms (such as Facebook/Meta and Alphabet/Google) emerge as the most exposed entities.
 
-| **Panel A: Firm Summary Cosine by NAICS Sector Relative to Sample Mean** |
-| :---: |
-| ![Figure 3A: NAICS Sector Cosine](figures/fig3_panel_a_naics_relevance.png) |
-
-| **Panel B: Top 10 Most Relevant Firms by Share of Sentences (Topic 68 Centroid)** |
-| :---: |
-| ![Figure 3B: Top 10 Relevant Firms](figures/fig3_panel_b_top_firms.png) |
-
 **Figure 3. Topic Relevance Scores for Publicly Listed Firms.**  
-*Panel A: Firm Summary Cosine by NAICS Sector Relative to the Sample Mean (Topic 68 Policy Summary Vector).*  
-*Notes:* Each bar represents the sector mean minus the mean across all 841 firms in the three-year sample (fiscal years 2010, 2015, and 2020) of the firm relevance score, computed as the cosine similarity between the firm's Item 1 summary and the policy summary of Topic 68 hearing statements. Zero denotes the sample mean (0.5143); bars to the right indicate sectors above the mean, and bars to the left indicate sectors below. Error bars span one standard deviation of firm scores within each sector, capturing within-industry cross-firm variation. Sectors reflect two-digit NAICS codes, with manufacturing (31–33), retail trade (44–45), and transportation/warehousing (48–49) grouped. Sectors with fewer than 5 firms are excluded.  
-*Panel B: Top 10 Most Relevant Firms by Share of Sentences Aligned with the Topic 68 Statement Centroid.*  
-*Notes:* Bars report the share of each firm's Item 1 sentences whose cosine similarity with the Topic 68 policy statement centroid is at or above 0.75, divided by total Item 1 sentences. Ranked among 841 scored firms across fiscal years 2010, 2015, and 2020. Least relevant firms are omitted as 679 firms tie at zero exposure.
+
+| **Panel A: NAICS Sector Cosine Relative to Sample Mean** | **Panel B: Top 10 Relevant Firms by Share of Sentences** |
+| :---: | :---: |
+| ![Figure 3A: NAICS Sector Cosine](figures/fig3_panel_a_naics_relevance.png){width=3.1in} | ![Figure 3B: Top 10 Relevant Firms](figures/fig3_panel_b_top_firms.png){width=3.1in} |
+
+*Notes: Panel A reports firm summary cosine by NAICS sector relative to the sample mean (Topic 68 policy summary vector). Each bar represents the sector mean minus the mean across all 841 firms in the three-year sample (fiscal years 2010, 2015, and 2020) of the firm relevance score, computed as the cosine similarity between the firm's Item 1 summary and the policy summary of Topic 68 hearing statements. Zero denotes the sample mean (0.5143); bars to the right indicate sectors above the mean, and bars to the left indicate sectors below. Error bars span one standard deviation of firm scores within each sector, capturing within-industry cross-firm variation. Sectors reflect two-digit NAICS codes, with manufacturing (31–33), retail trade (44–45), and transportation/warehousing (48–49) grouped. Sectors with fewer than 5 firms are excluded. Panel B reports the top 10 most relevant firms by share of sentences aligned with the Topic 68 statement centroid. Bars report the share of each firm's Item 1 sentences whose cosine similarity with the Topic 68 policy statement centroid is at or above 0.75, divided by total Item 1 sentences. Ranked among 841 scored firms across fiscal years 2010, 2015, and 2020. Least relevant firms are omitted as 679 firms tie at zero exposure.*
 
 #### A.3.3. Research Outputs
 
