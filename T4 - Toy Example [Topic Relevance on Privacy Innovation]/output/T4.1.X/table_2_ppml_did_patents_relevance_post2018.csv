@@ -1,0 +1,21 @@
+,(1),(2),(3),(4)
+Dependent variable,Privacy patents,Privacy patents,All patents,All patents
+Topic relevance × Post-2018,−0.134,−0.095,−0.124,−0.001
+,(0.102),(0.067),(0.077),(0.052)
+Topic relevance (standard deviations),0.523***,,0.211*,
+,(0.183),,(0.123),
+"Log firm age, t − 1",0.256,0.048,0.292*,−0.035
+,(0.320),(0.181),(0.172),(0.073)
+"Log total assets, t − 1",0.376***,0.180,0.250***,0.193**
+,(0.093),(0.114),(0.061),(0.085)
+"Log of one plus R&D expense, t − 1",0.514***,0.045,0.573***,0.226***
+,(0.132),(0.105),(0.089),(0.077)
+"R&D expense missing, t − 1",1.844**,−0.346,1.763***,1.027***
+,(0.874),(0.586),(0.538),(0.374)
+Lagged controls,Yes,Yes,Yes,Yes
+Firm fixed effects,No,Yes,No,Yes
+NAICS two-digit-by-year fixed effects,Yes,Yes,Yes,Yes
+Observations,"9,310","4,466","11,276","11,129"
+Mean of dependent variable,3.455,7.199,102.309,103.658
+Pseudo R²,0.71,0.88,0.74,0.95
+Number of clusters (firms),652,258,683,655

@@ -1,0 +1,18 @@
+,(1),(2)
+"Topic relevance, firm level (standard deviations)",1.010***,0.475**
+,(0.238),(0.186)
+"Log firm age, t − 1",,0.254
+,,(0.318)
+"Log total assets, t − 1",,0.376***
+,,(0.093)
+"Log of one plus R&D expense, t − 1",,0.512***
+,,(0.131)
+"R&D expense missing, t − 1",,1.831**
+,,(0.861)
+Lagged controls,No,Yes
+Firm fixed effects,No,No
+NAICS two-digit-by-year fixed effects,Yes,Yes
+Observations,"9,310","9,310"
+Mean of dependent variable,3.455,3.455
+Pseudo R²,0.43,0.71
+Number of clusters (firms),652,652

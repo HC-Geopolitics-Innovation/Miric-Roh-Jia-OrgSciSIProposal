@@ -1,0 +1,73 @@
+cpc,cpc_display,cpc_class,definition,n_privacy_patents,n_firms_filing
+H04L63/0428,H04L 63/0428,H04L,"wherein the data content is protected, e.g. by encrypting or encapsulating the payload",4394,158
+H04L63/10,H04L 63/10,H04L,for controlling access to devices or network resources,4135,140
+G06F21/6218,G06F 21/6218,G06F,"to a system of files or objects, e.g. local or distributed file system or database",4057,132
+H04W12/08,H04W 12/08,H04W,Access security,3086,111
+H04W4/029,H04W 4/029,H04W,Location-based management or tracking services,2577,114
+G06F21/602,G06F 21/602,G06F,Providing cryptographic facilities or services,2349,110
+G06F21/6245,G06F 21/6245,G06F,"Protecting personal data, e.g. for financial or medical purposes",2124,107
+H04W12/02,H04W 12/02,H04W,"Protecting privacy or anonymity, e.g. protecting personally identifiable information [PII]",1519,97
+G06Q30/0269,G06Q 30/0269,G06Q,based on user profile or attribute,1430,78
+G06F21/62,G06F 21/62,G06F,"Protecting access to data via a platform, e.g. using keys or access control rules",1318,89
+G06F21/6227,G06F 21/6227,G06F,"where protection concerns the structure of data, e.g. records, types, queries",1244,84
+G06F21/6209,G06F 21/6209,G06F,"to a single file or object, e.g. in a secure envelope, encrypted and accessed using a key, or with access control rules appended to the object itself",1224,94
+G06Q30/0255,G06Q 30/0255,G06Q,based on user history,1011,69
+G06F2221/2107,G06F 2221/2107,G06F,File encryption,965,96
+G06Q30/0261,G06Q 30/0261,G06Q,based on user location,959,64
+G06F21/60,G06F 21/60,G06F,Protecting data,886,79
+H04L63/0442,H04L 63/0442,H04L,"wherein the sending and receiving network entities apply asymmetric encryption, i.e. different keys for encryption and decryption (cryptographic mechanisms or cryptographic arrangements for public-key encryption H04L 9/30)",875,86
+G06F21/6254,G06F 21/6254,G06F,"by anonymising data, e.g. decorrelating personal data from the owner's identification",819,75
+G06F21/78,G06F 21/78,G06F,to assure secure storage of data (address-based protection against unauthorised use of memory G06F 12/14; record carriers for use with machines and with at least a part designed to carry digital markings G06K 19/00),775,62
+H04L63/0435,H04L 63/0435,H04L,"wherein the sending and receiving network entities apply symmetric encryption, i.e. same key used for encryption and decryption (cryptographic mechanisms or cryptographic arrangements for symmetric key encryption H04L 9/06)",747,89
+G06F21/606,G06F 21/606,G06F,by securing the transmission between two devices or processes,746,92
+G06Q20/385,G06Q 20/385,G06Q,using an alias or single-use codes,691,52
+H04L63/04,H04L 63/04,H04L,for providing a confidential data exchange among entities communicating through data packet networks,583,88
+G06Q50/265,G06Q 50/265,G06Q,"Personal security, identity or safety",469,70
+G06Q10/063114,G06Q 10/063114,G06Q,Status monitoring or status determination for a person or group,467,72
+G06F11/3438,G06F 11/3438,G06F,monitoring of user actions (tracking the activity of the user H04L 67/535),457,59
+G06F2221/2143,G06F 2221/2143,G06F,"Clearing memory, e.g. to prevent the data from being stolen",445,61
+G06F21/6263,G06F 21/6263,G06F,"during internet communication, e.g. revealing personal data from cookies",383,50
+G06F3/0623,G06F 3/0623,G06F,in relation to content,377,35
+H04L67/535,H04L 67/535,H04L,Tracking the activity of the user (network monitoring arrangements H04L 43/00; recording of computer activity G06F 11/34),354,60
+G06F21/84,G06F 21/84,G06F,"output devices, e.g. displays or monitors",316,40
+G06Q30/0271,G06Q 30/0271,G06Q,Personalized advertisement,311,45
+H04L63/0407,H04L 63/0407,H04L,wherein the identity of one or more communicating identities is hidden (cryptographic mechanisms or cryptographic arrangements for anonymous credentials or for identity based cryptographic systems H04L 9/00),296,54
+H04L63/0492,H04L 63/0492,H04L,"by using a location-limited connection, e.g. near-field communication or limited proximity of entities",295,48
+G06Q20/363,G06Q 20/363,G06Q,with the personal data of a user,294,40
+H04L63/0421,H04L 63/0421,H04L,"Anonymous communication, i.e. the party's identifiers are hidden from the other party or parties, e.g. using an anonymizer",291,44
+H04L9/008,H04L 9/008,H04L,involving homomorphic encryption,289,34
+H04L63/0485,H04L 63/0485,H04L,"Networking architectures for enhanced packet encryption processing, e.g. offloading of IPsec packet processing or efficient security association look-up",281,54
+H04L63/045,H04L 63/045,H04L,"wherein the sending and receiving network entities apply hybrid encryption, i.e. combination of symmetric and asymmetric encryption (cryptographic mechanisms or cryptographic arrangements using a plurality of keys or algorithms H04L 9/14)",247,51
+H04L63/0471,H04L 63/0471,H04L,"applying encryption by an intermediary, e.g. receiving clear information at the intermediary and encrypting the received information at the intermediary before forwarding",236,56
+H04L2209/16,H04L 2209/16,H04L,"Obfuscation or hiding, e.g. involving white box",225,45
+G06F21/556,G06F 21/556,G06F,"involving covert channels, i.e. data leakage between processes (inhibiting the analysis of circuitry or operation with measures against power attack G06F 21/755)",189,36
+H04L2209/42,H04L 2209/42,H04L,"Anonymization, e.g. involving pseudonyms",186,32
+H04L9/3218,H04L 9/3218,H04L,"using proof of knowledge, e.g. Fiat-Shamir, GQ, Schnorr, or non-interactive zero-knowledge proofs",184,40
+H04L63/30,H04L 63/30,H04L,"for supporting lawful interception, monitoring or retaining of communications or communication related information (circuit switched telephony call monitoring H04M 3/2281)",173,41
+H04L63/0464,H04L 63/0464,H04L,"using hop-by-hop encryption, i.e. wherein an intermediate entity decrypts the information and re-encrypts it before forwarding it",156,48
+H04L63/0457,H04L 63/0457,H04L,"wherein the sending and receiving network entities apply dynamic encryption, e.g. stream encryption (cryptographic mechanisms or cryptographic arrangements for stream encryption H04L 9/065)",154,39
+H04W12/03,H04W 12/03,H04W,"Protecting confidentiality, e.g. by encryption",142,41
+H04L63/0414,H04L 63/0414,H04L,"during transmission, i.e. party's identity is protected against eavesdropping, e.g. by using temporary identifiers, but is known to the other party or parties involved in the communication",136,33
+H04W12/033,H04W 12/033,H04W,"of the user plane, e.g. user's traffic",135,35
+G06Q20/383,G06Q 20/383,G06Q,Anonymous user system,131,27
+H04L63/1475,H04L 63/1475,H04L,"Passive attacks, e.g. eavesdropping or listening without modification of the traffic monitored",124,43
+G06Q20/3678,G06Q 20/3678,G06Q,"e-cash details, e.g. blinded, divisible or detecting double spending",121,37
+H04L63/0478,H04L 63/0478,H04L,"applying multiple layers of encryption, e.g. nested tunnels or encrypting the content with a first key and then with at least a second key (cryptographic mechanisms or cryptographic arrangements using a plurality of keys or algorithms H04L 9/14)",118,37
+H04W12/037,H04W 12/037,H04W,"of the control plane, e.g. signalling traffic",100,25
+H04L9/3255,H04L 9/3255,H04L,"using group based signatures, e.g. ring or threshold signatures",87,20
+H04W8/16,H04W 8/16,H04W,selectively restricting mobility data tracking,86,21
+H04L2209/46,H04L 2209/46,H04L,"Secure multiparty computation, e.g. millionaire problem",76,23
+H04L9/3221,H04L 9/3221,H04L,interactive zero-knowledge proofs,76,21
+H04L61/2539,H04L 61/2539,H04L,Hiding addresses; Keeping addresses anonymous,65,23
+H04W12/084,H04W 12/084,H04W,"using delegated authorisation, e.g. open authorisation [OAuth] protocol",55,27
+H04L9/3257,H04L 9/3257,H04L,using blind signatures,46,12
+G06Q30/0615,G06Q 30/0615,G06Q,Anonymizing (Frozen),45,19
+H04W12/082,H04W 12/082,H04W,using revocation of authorisation,34,18
+H04L2209/50,H04L 2209/50,H04L,Oblivious transfer,25,8
+H04L12/22,H04L 12/22,H04L,Arrangements for preventing the taking of data from a data transmission channel without authorisation (means for verifying the identity or the authority of a user of a secure or secret communication system H04L 9/32),12,8
+H04W12/80,H04W 12/80,H04W,Arrangements enabling lawful interception [LI],12,7
+H04W12/75,H04W 12/75,H04W,Temporary identity,7,5
+H04L67/1396,H04L 67/1396,H04L,specially adapted for monitoring users' activity,3,3
+G06Q30/02011,G06Q 30/02011,G06Q,Profiling or inferring profiles of users or market based on their behaviour,0,0
+G06Q30/02023,G06Q 30/02023,G06Q,"based on movement or presence behaviour at a physical establishment, e.g. customer movement",0,0
+G06Q30/06311,G06Q 30/06311,G06Q,based on purchase or browsing history,0,0

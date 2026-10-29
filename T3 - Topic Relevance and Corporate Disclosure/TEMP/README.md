@@ -45,7 +45,7 @@ TEMP
 ├── T3.9 - Relevance Figures                                     all on the main measure (summaries | policy_summary | firm_summary), all-years sample
 │   ├── T3.9.1 - Figure - Main Measure Distribution Overall and by Sector.ipynb      histogram over all firms; kernel density for information, manufacturing, and mining
 │   ├── T3.9.2 - Figure - Highest and Lowest Main Measure Firms by Sector.ipynb      the 20 highest and 20 lowest firms, score minus the sample mean, colored by sector
-│   ├── T3.9.3 - Figure - Main Measure Sector Means Relative to the Sample Mean.ipynb   NAICS two-digit sector means minus the sample mean, with 90, 95, and 99 percent intervals
+│   ├── T3.9.3 - Figure - Main Measure Sector and Subsector Means and Medians.ipynb   NAICS two-digit sector and three-digit subsector means minus the sample mean and medians minus the sample median, with nested 90, 95, and 99 percent intervals
 │   └── archive                                                  the earlier per-measure versions (distribution, firms, industries for all ten measures); kept, not run
 └── output
     ├── T3.4.1/filings.csv                                       one row per filing with sample flags
@@ -71,7 +71,7 @@ TEMP
     ├── T3.8.3/firm_relevance_scores.csv (long), firm_relevance_scores_wide.csv, measure_correlations.csv
     ├── T3.9.1/fig_distribution_policy_summary_firm_summary_cosine_all_firms.{png,svg,pdf}, fig_distribution_policy_summary_firm_summary_cosine_information_manufacturing_mining_kde.{png,svg,pdf}
     ├── T3.9.2/fig_top_20_and_bottom_20_firms_policy_summary_firm_summary_cosine_demeaned_by_sector.{png,svg,pdf}, top_and_bottom_firms.csv
-    ├── T3.9.3/fig_sector_mean_minus_sample_mean_policy_summary_firm_summary_cosine_naics2.{png,svg,pdf}, sector_means.csv
+    ├── T3.9.3/fig_<sector|subsector>_<mean|median>_minus_sample_<mean|median>_policy_summary_firm_summary_cosine_<naics2|naics3>.{png,svg,pdf}, naics2_sector_means_and_medians.csv, naics3_subsector_means_and_medians.csv
     └── archive/T3.9.1, archive/T3.9.2, archive/T3.9.3              outputs of the archived per-measure notebooks
 ```
 

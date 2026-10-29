@@ -1,0 +1,25 @@
+**Table 1—Poisson Estimates of Yearly Privacy Patent Counts on Firm-Level Topic Relevance**
+
+| | (1) | (2) |
+|:---|:---:|:---:|
+| Topic relevance, firm level (standard deviations) | 1.010*** | 0.475** |
+|  | (0.238) | (0.186) |
+| Log firm age, t − 1 |  | 0.254 |
+|  |  | (0.318) |
+| Log total assets, t − 1 |  | 0.376*** |
+|  |  | (0.093) |
+| Log of one plus R&D expense, t − 1 |  | 0.512*** |
+|  |  | (0.131) |
+| R&D expense missing, t − 1 |  | 1.831** |
+|  |  | (0.861) |
+| Lagged controls | No | Yes |
+| Firm fixed effects | No | No |
+| NAICS two-digit-by-year fixed effects | Yes | Yes |
+| Observations | 9,310 | 9,310 |
+| Mean of dependent variable | 3.455 | 3.455 |
+| Pseudo R² | 0.43 | 0.71 |
+| Number of clusters (firms) | 652 | 652 |
+
+*Notes*: The unit of observation is a firm-year: the T4.1.3 analysis sample (firms of the all-years T3 sample with at least one patent filed in 1999 to 2017), fiscal years 1999 to 2021 with a 10-K and the lagged controls observed. The dependent variable in both columns is the number of KPSS patents filed in the year that carry at least one CPC code of the project's privacy code list (T4.1.2). Each column is a Poisson pseudo-maximum-likelihood regression (ppmlhdfe) with NAICS two-digit-by-year fixed effects absorbed; cells whose count is zero throughout drop out. Topic relevance is the firm's score, the cosine similarity between a firm-level summary of its 10-K Item 1 sections and the policy summary of legislator statements on consumer data privacy legislation, one score per firm, standardized to mean zero and standard deviation one over the regression firm-years; a coefficient is the difference in the log expected count between firms one standard deviation apart. Firm fixed effects are not included because the score is constant within firm and would be absorbed by them. Controls are measured at fiscal year t − 1: firm age is years since the first CRSP listing; R&D means research and development, entered as the log of one plus the expense with missing R&D set to zero and flagged. Standard errors clustered by firm are in parentheses; * p < 0.10, ** p < 0.05, *** p < 0.01. Pseudo R² is the one ppmlhdfe reports.
+
+*Source*: KPSS extended patent data (Kogan, Papanikolaou, Seru, and Stoffman, 2017, updated to 2025) with CPC codes; the privacy CPC code list in privacy_cpc/privacy_cpc_codes.xlsx; SEC EDGAR 10-K filings; congressional hearing statements from GovInfo; Compustat; CRSP-Compustat link; authors' calculations.
