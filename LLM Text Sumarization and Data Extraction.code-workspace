@@ -1,40 +1,8 @@
 {
 	"folders": [
 		{
-			"name": "🏠 Root — LLM Text Analysis & Synthesis",
+			"name": "LLM Text Analysis & Synthesis",
 			"path": "."
-		},
-		{
-			"name": "📥 D1 — Data Collection & Processing",
-			"path": "D1 - Data Collection and Processing"
-		},
-		{
-			"name": "📝 T1 — Text Summarization",
-			"path": "T1 - Text Summarization"
-		},
-		{
-			"name": "🧭 T2 — Topic Extraction & Stance Analysis",
-			"path": "T2 - Topic Extraction and Stance Analysis"
-		},
-		{
-			"name": "🏢 T3 — Topic Relevance & Corporate Disclosure",
-			"path": "T3 - Topic Relevance and Corporate Disclosure"
-		},
-		{
-			"name": "📚 L — Core Library (L1–L5)",
-			"path": "L - Lib"
-		},
-		{
-			"name": "📊 R — Results & Figures",
-			"path": "R - Results"
-		},
-		{
-			"name": "📄 X — Drafts & Documentation",
-			"path": "X - Drafts and Documentation"
-		},
-		{
-			"name": "🎤 P — Presentations",
-			"path": "P - Presentations"
 		}
 	],
 	"settings": {
