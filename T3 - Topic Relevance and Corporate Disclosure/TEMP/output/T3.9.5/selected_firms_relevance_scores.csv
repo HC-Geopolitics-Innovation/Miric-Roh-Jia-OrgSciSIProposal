@@ -1,0 +1,19 @@
+end,gvkey,conm,display_name,naics,naics2,sector,naics3,subsector,summaries | policy_summary | firm_summary,demeaned
+highest,179534,VISA INC,Visa Inc.,522320,52,Finance and insurance,522,Credit Intermediation and Related Activities,0.620883,0.108778
+highest,100873,NIELSEN HOLDINGS PLC,Nielsen Holdings Plc,541910,54,"Professional, scientific, and technical services",541,"Professional, Scientific, and Technical Services",0.613060,0.100955
+highest,160329,ALPHABET INC,Alphabet Inc.,518210,51,Information,518,Computing Infrastructure and Data Processing,0.609440,0.097335
+highest,002136,VERIZON COMMUNICATIONS INC,Verizon Communications Inc.,517312,51,Information,517,Telecommunications,0.607030,0.094925
+highest,024800,QUALCOMM INC,Qualcomm Inc.,334413,33,Manufacturing,334,Computer and Electronic Product Manufacturing,0.600682,0.088577
+highest,020779,CISCO SYSTEMS INC,Cisco Systems Inc.,334118,33,Manufacturing,334,Computer and Electronic Product Manufacturing,0.595573,0.083468
+highest,001690,APPLE INC,Apple Inc.,334220,33,Manufacturing,334,Computer and Electronic Product Manufacturing,0.594128,0.082023
+highest,028349,ALLSTATE CORP,Allstate Corp.,524126,52,Finance and insurance,524,Insurance Carriers and Related Activities,0.591812,0.079707
+highest,064768,AMAZON.COM INC,Amazon.Com Inc.,455219,45,Retail trade,455,General Merchandise Retailers,0.591493,0.079388
+highest,004423,EQUIFAX INC,Equifax Inc.,561450,56,Administrative and support and waste management,561,Administrative and Support Services,0.591470,0.079365
+highest,012141,MICROSOFT CORP,Microsoft Corp.,513210,51,Information,513,Publishing Industries,0.589822,0.077717
+highest,160225,MASTERCARD INC,Mastercard Inc.,522320,52,Finance and insurance,522,Credit Intermediation and Related Activities,0.581390,0.069285
+highest,012142,ORACLE CORP,Oracle Corp.,513210,51,Information,513,Publishing Industries,0.578639,0.066534
+highest,041818,GE HEALTHCARE TECHNOLOGI INC,Ge Healthcare Technologi Inc.,334510,33,Manufacturing,334,Computer and Electronic Product Manufacturing,0.575430,0.063325
+lowest,006335,KANSAS CITY SOUTHERN,Kansas City Southern,482111,48,Transportation and warehousing,482,Rail Transportation,0.445154,-0.066951
+lowest,012124,MORGAN STANLEY,Morgan Stanley,523110,52,Finance and insurance,523,"Securities, Commodity Contracts, and Other Financial Investments",0.443511,-0.068594
+lowest,104432,NORWEGIAN CRUISE LINE HLDGS,Norwegian Cruise Line Hldgs,483112,48,Transportation and warehousing,483,Water Transportation,0.437907,-0.074198
+lowest,119417,PEPSI BOTTLING GROUP INC,Pepsi Bottling Group Inc.,31211,31,Manufacturing,312,Beverage and Tobacco Product Manufacturing,0.429339,-0.082766
