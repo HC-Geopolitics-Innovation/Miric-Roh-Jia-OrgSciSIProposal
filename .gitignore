@@ -11,5 +11,5 @@ __pycache__/
 *.vrb
 missfont.log
 ~$*.docx
-*[Opened].docx
+*\[Opened\]*.docx
 .DS_Store
