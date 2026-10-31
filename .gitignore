@@ -12,3 +12,4 @@ __pycache__/
 missfont.log
 ~$*.docx
 *[Opened].docx
+.DS_Store
