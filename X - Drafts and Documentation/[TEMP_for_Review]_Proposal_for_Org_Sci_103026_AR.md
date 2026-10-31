@@ -163,11 +163,11 @@ A pipeline to manage this process involves three decisions, which Figure S1 lays
 
 **Figure S1. The Text Summarization Pipeline, From Transcript to Hearing Summary.**
 
-<p align="center"><img src="../T1%20-%20Text%20Summarization/T1.X%20-%20Flowchart/fig_text_summarization_flowchart.png" alt="Figure S1. The text summarization pipeline" width="480"></p>
+<p align="center"><img src="../R%20-%20Results/figures/T1%20-%20Text%20Summarization/fig_text_summarization_flowchart.png" alt="Figure S1. The text summarization pipeline" width="480"></p>
 
 *Notes*: The chart follows one hearing through the three stages of the pipeline. In stage (1), the raw transcript is parsed into speaker turns and consecutive turns are packed into chunks of at most 6,144 tokens. In stage (2), the model summarizes each chunk in one call (map). In stage (3), groups of segment summaries are condensed when they would exceed one call (collapse), and one final call writes the hearing summary (reduce). Tape-shaped blocks are documents as text; shaded rounded blocks are text written by the model; blue blocks tagged "LLM" are the only steps in which the model is called, with Qwen3.5-4B in production; the remaining blocks are computations that a reader can rerun. The counts in the chart are those of the completed run on 2,352 hearings. This figure appears only in this long version.
 
-*Source*: `T1 - Text Summarization/T1.X - Flowchart/fig_text_summarization_flowchart.tex`; counts from the production run described in Appendix A.1.2.
+*Source*: `R - Results/figures/T1 - Text Summarization/fig_text_summarization_flowchart.tex`; counts from the production run described in Appendix A.1.2.
 
 #### A.1.2. Application: Summarizing Long Text Congressional Hearings
 
