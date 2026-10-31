@@ -28,13 +28,13 @@ The codebase is organized into intuitive, self-contained sections:
 │   ├── T1.3 - Validation of Summaries/               # C-SPAN matching and the summary-abstract similarity test
 │   └── T1.4 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/  # One hearing step by step: inputs, outputs, log
 │
-├── T2 - Topic Extraction and Stance Analysis/        # Task 2: Congressional topic extraction & stance panel
-│   ├── Topic Extraction Workflow Overview.ipynb      # Comprehensive technical and workflow overview
-│   ├── T2.1 - Process Prototyping and Evaluation/    # Turn attribution & few-shot promptbook testing (Python)
-│   ├── T2.2 - Process Execution/                     # Track 1/Track 2 batch extraction & codebook freeze (Python)
-│   ├── T2.3 - Quality Assessment/                    # CAP codebook crosswalk alignment & audit (Python)
-│   ├── T2.X - Background Helper Functions/           # stance.py, constrained.py, speakers.py
-│   └── T2.X - Worked Example/                       # Same hearing: topics, stances, codebook, logs, and scripts
+├── T2 - Topic Extraction and Stance Analysis/        # Task 2: topic codebook, legislator stances, stance by topic over time
+│   ├── Topic Extraction Workflow Overview.ipynb      # Markdown guide: flowchart, the five parts, where the data live
+│   ├── T2.1 - Track 1 - Topic Extraction based on Hearing Summaries/  # Topics from the summaries, clustering, the frozen codebook, the 26 groups
+│   ├── T2.2 - Track 2 - Legislator Stance Extraction/  # Numbered turns, prompt development, sharded production, placement under topics
+│   ├── T2.3 - Validation of Topics/                  # CAP matching and the comparison with CAP's human codes
+│   ├── T2.4 - Stance by Topic over Time/             # Support and concern by topic group and Congress; the privacy group
+│   └── T2.5 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/  # One hearing through both tracks: inputs, outputs, log
 │
 ├── T3 - Topic Relevance and Corporate Disclosure/    # Task 3: Dual-instrument corporate disclosure topic relevance
 │   ├── Topic Relevance Workflow Overview.ipynb       # Comprehensive technical and workflow overview
@@ -51,7 +51,7 @@ The codebase is organized into intuitive, self-contained sections:
 └── B - Backup of Original File Structure/            # Complete preserved backup of initial scripts
 ```
 
-Follow the running example, the April 10, 2018 Facebook hearing with Mark Zuckerberg, through the [T1 summarization example](<T1 - Text Summarization/T1.4 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/README.md>), [T2 topic and stance example](<T2 - Topic Extraction and Stance Analysis/T2.X - Worked Example/README.md>), and [T3 firm-relevance example](<T3 - Topic Relevance and Corporate Disclosure/T3.X - Worked Example/README.md>). Each example has a README walkthrough and numbered folders for inputs, outputs, logs and verification, and scripts. T3 follows the hearing's privacy topic across all 998 eligible preceding firm disclosures, with Facebook and ResMed as two illustrations.
+Follow the running example, the April 10, 2018 Facebook hearing with Mark Zuckerberg, through the [T1 summarization example](<T1 - Text Summarization/T1.4 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/README.md>), [T2 topic and stance example](<T2 - Topic Extraction and Stance Analysis/T2.5 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/README.md>), and [T3 firm-relevance example](<T3 - Topic Relevance and Corporate Disclosure/T3.X - Worked Example/README.md>). Each example has a README walkthrough and numbered folders for inputs, outputs, logs and verification, and scripts. T3 follows the hearing's privacy topic across all 998 eligible preceding firm disclosures, with Facebook and ResMed as two illustrations.
 
 ---
 

@@ -14,16 +14,11 @@ This folder contains all evaluation figures and architectural diagrams organized
 - **`T1.3 - Validation of Summaries/T1.3.2 - Validation - Compare Summaries with C-SPAN Abstracts/fig_cosine_similarity_by_pair_type.pdf`** / **`.png`** / **`.svg`**: Cosine similarity between a hearing's generated summary and C-SPAN's abstract of the same hearing, of other hearings of the same committee, and of hearings of other committees. Drawn by notebook T1.3.2 from the stored pair table; replaces `cosine_similarity_averages`.
 
 ### `T2 - Topic Extraction and Stance Analysis`
-- **`fig_topic_extraction.pdf`** / **`.tex`**: Diagram of the member turn topic extraction and stance classification pipeline.
-- **`fig_taxonomy_criteria.pdf`** / **`.svg`**: Taxonomic clustering criteria and consensus evaluation figures.
-- **`fig_cap_crosswalk.pdf`** / **`.svg`**: Comparative Agendas Project (CAP) topic crosswalk alignment plots.
-- **`fig_cap_rank_percentile.pdf`** / **`.svg`**: Rank percentile distribution of extracted topics vs CAP categories.
-- **`fig_cap_retrieval.pdf`** / **`.svg`**: Information retrieval precision/recall metrics against CAP benchmarks.
-- **`fig_cap_subtopic_boxes.pdf`** / **`.svg`**: Subtopic distribution boxplots.
-- **`fig_cap_subtopic_pairs.pdf`** / **`.svg`**: Subtopic pairwise co-occurrence distributions.
-- **`fig_stance_attention.pdf`** / **`.svg`**: Congressional stance attention distribution curves over time.
-- **`fig_stance_net.pdf`** / **`.svg`**: Net sentiment/stance polarization network diagrams across topics.
-- **`fig_stance_topics.pdf`** / **`.svg`**: Primary policy topic distribution across congressional speaker turns.
+- **`fig_topic_extraction_flowchart.pdf`** / **`.png`** / **`.tex`**: The T2 workflow on one page: Track 1 from the summaries to the codebook and the 26 groups, Track 2 from the legislator turns to the placed stance records, and the aggregation to the support share by Congress, with the measured counts.
+- **`T2.3 - Validation of Topics/T2.3.2 - Validation - Compare the Codebook with CAP Codes/fig_cap_crosswalk.pdf`** / **`.png`** / **`.svg`**: Crosswalk heatmap of the 26 topic groups against CAP's human-coded major topics; each cell the share of the group's hearings under that CAP topic.
+- **`T2.4 - Stance by Topic over Time/T2.4.1 - Grouped Stance Volume/fig_select_volume_balance_groups.pdf`** / **`.png`** / **`.svg`**: Concern and support speech turns for each of the 26 topic groups.
+- **`T2.4 - Stance by Topic over Time/T2.4.2 - Privacy Group Stance over Time/fig_privacy_support_share_by_congress_panel_a.pdf`** / **`.png`** / **`.svg`**: Share of supportive legislator statements by Congress on consumer data privacy legislation; `..._panel_b` for the group's other four topics pooled; `..._both_panels` for the two side by side.
+- **`T2.4 - Stance by Topic over Time/T2.4.4 - Privacy Topic Stance Volume/fig_privacy_topic_stance_volume.pdf`** / **`.png`** / **`.svg`**: Concern and support for each of the five topics of the privacy group.
 
 ### `T3 - Topic Relevance and Corporate Disclosure`
 - **`fig_relevance_industry_exposure.pdf`** / **`.svg`**: Industry-level policy exposure distributions from 10-K Item 1 text.

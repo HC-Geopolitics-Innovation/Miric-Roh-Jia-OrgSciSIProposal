@@ -1,0 +1,10 @@
+# Stance by Topic over Time
+
+This folder counts the legislators' support and concern by topic group and over time, using the stance records of T2.2 placed under the codebook of T2.1 and grouped by the 26 topic groups of T2.1.5. The privacy and digital consumer protection group is the running example of the paper. Each notebook saves its figures under `R - Results/figures` and its count tables in the T2.4 Interim folder on the scratch root.
+
+| Notebook | What it shows |
+|---|---|
+| [T2.4.1 - Grouped Stance Volume](<T2.4.1 - Grouped Stance Volume.ipynb>) | Concern and support speech turns for every topic group ([figure](<../../R - Results/figures/T2 - Topic Extraction and Stance Analysis/T2.4 - Stance by Topic over Time/T2.4.1 - Grouped Stance Volume/fig_select_volume_balance_groups.png>)). |
+| [T2.4.2 - Privacy Group Stance over Time](<T2.4.2 - Privacy Group Stance over Time.ipynb>) | The share of supportive statements by Congress for consumer data privacy legislation ([Panel A](<../../R - Results/figures/T2 - Topic Extraction and Stance Analysis/T2.4 - Stance by Topic over Time/T2.4.2 - Privacy Group Stance over Time/fig_privacy_support_share_by_congress_panel_a.png>)) and for the group's other four topics ([Panel B](<../../R - Results/figures/T2 - Topic Extraction and Stance Analysis/T2.4 - Stance by Topic over Time/T2.4.2 - Privacy Group Stance over Time/fig_privacy_support_share_by_congress_panel_b.png>)). |
+| [T2.4.3 - Export Privacy Stance Turns](<T2.4.3 - Export Privacy Stance Turns.ipynb>) | One row per legislator speech turn in the privacy group, with the full text and the cited passages; the CSV lives in the T2.4 Processed folder. |
+| [T2.4.4 - Privacy Topic Stance Volume](<T2.4.4 - Privacy Topic Stance Volume.ipynb>) | Concern and support for each of the group's five topics ([figure](<../../R - Results/figures/T2 - Topic Extraction and Stance Analysis/T2.4 - Stance by Topic over Time/T2.4.4 - Privacy Topic Stance Volume/fig_privacy_topic_stance_volume.png>)). |

@@ -1,6 +1,6 @@
 # T3 worked example: the Zuckerberg hearing and firms' privacy relevance
 
-This example continues the **April 10, 2018** hearing, *Facebook, Social Media Privacy, and the Use and Abuse of Data* (`CHRG-115shrg37801`). Its saved primary category is **topic 68, consumer data privacy legislation**. The count tie and proposed alternative tie-breaking rule remain documented in the [T2 example](<../../T2 - Topic Extraction and Stance Analysis/T2.X - Worked Example/README.md>) and manuscript.
+This example continues the **April 10, 2018** hearing, *Facebook, Social Media Privacy, and the Use and Abuse of Data* (`CHRG-115shrg37801`). Its saved primary category is **topic 68, consumer data privacy legislation**. The count tie and proposed alternative tie-breaking rule remain documented in the [T2 example](<../../T2 - Topic Extraction and Stance Analysis/T2.5 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/README.md>) and manuscript.
 
 The assessment covers **998 firms**, using each firm's latest usable Item 1 disclosure filed before the hearing. **Facebook and ResMed are two illustrations within that sample.** The run processes all 7,950 blocks and 298,651 retained sentences in those filings. It does not select firms or LLM input sentences by embedding similarity.
 
