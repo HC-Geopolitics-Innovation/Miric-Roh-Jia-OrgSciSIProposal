@@ -18,7 +18,7 @@ Your goal is to inspect this repository, understand its four-tier architecture (
    The objective of this turn is not code implementation, but rather an exhaustive, structured **Implementation Plan** that I (the principal investigator) can review, evaluate, refine, and approve.
 2. **ACTIVE INSPECTION OF LOCAL DATA STRUCTURES:**
    Before producing the plan, you must actively explore and inspect the user's local workspace data, raw files, and linkage tables:
-   - **Local User Data**: Inspect existing data pipelines in `D1 - Data Collection and Processing/` and `T4/patents/`, noting file formats (`.parquet`, `.csv`, `.json`), column definitions, missingness patterns, and linkage keys (`gvkey`, `cik`, `packageId`).
+   - **Local User Data**: Inspect existing data pipelines in `D - Data Collection and Processing/` and `patents/`, noting file formats (`.parquet`, `.csv`, `.json`), column definitions, missingness patterns, and linkage keys (`gvkey`, `cik`, `packageId`).
    - **Structure of Legislative Data**: Analyze the raw and intermediate schemas of Congressional hearing packages (GovInfo `packageId`, committee codes, MODS XML rosters with BioGuide member IDs, HTML/text transcripts with 4-space indent speaker turn attributions, and witness statements). Understand how legislative debates can be partitioned by committee jurisdiction (e.g., House Energy & Commerce vs. Senate EPW), hearing topic, and witness type (regulators vs. industry executives vs. scientists) in relation to renewable energy and emissions.
    - **Structure of Patent Data**: Inspect the firm-to-patent linkage files (Compustat `gvkey` mapped to USPTO utility grants, `patent_num`, `filing_date`, `grant_date`, `cpc_all`). Understand the multi-label string structure of Cooperative Patent Classification (CPC) codes, the critical distinction between application filing year (capturing true R&D timing) and grant year (subject to examination delays and truncation), and how green technology codes (Solar, Wind, Batteries, EVs, Carbon Capture, and Fossil Extraction) must be parsed, deduplicated, and mapped.
 3. **RESEARCH RIGOR & METHODOLOGICAL INTEGRITY:**
@@ -49,7 +49,7 @@ Please structure your response as a comprehensive research implementation plan c
    - Define filtering criteria to construct the renewable energy and emissions hearing corpus (e.g., House Energy & Commerce, Senate Environment & Public Works, 2005–2022).
 
 3. **Understanding and Structuring the Corporate & Patent Data**
-   - **Corporate Disclosures**: Structure of SEC Form 10-K filings from `D1.3`, isolating Item 1 (Business Descriptions), Item 1A (Risk Factors / Transition Risks), and Item 7 (MD&A), linked via CIK to Compustat `gvkey`.
+   - **Corporate Disclosures**: Structure of SEC Form 10-K filings from `D3 - SEC Form 10-K Corporate Filings`, isolating Item 1 (Business Descriptions), Item 1A (Risk Factors / Transition Risks), and Item 7 (MD&A), linked via CIK to Compustat `gvkey`.
    - **Patent Linkage & Schema**: Document the schema of patent grant tables (`patent_num`, `gvkey`, `conm`, `filing_date`, `grant_date`, `cpc_all`):
      - Rationale for using **application filing dates** over grant dates to avoid patent office administrative lag and right-truncation.
      - Method for parsing multi-label `cpc_all` string arrays.

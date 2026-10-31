@@ -1,12 +1,12 @@
 # Results & Figures Index
 
-This folder contains all evaluation figures and architectural diagrams organized by their corresponding section in the analysis pipeline (`D1`, `T1`, `T2`, `T3`).
+This folder contains all evaluation figures and architectural diagrams organized by their corresponding section in the analysis pipeline (`D`, `T1`, `T2`, `T3`).
 
 ---
 
 ## Directory & File Organization
 
-### `D1 - Data Collection and Overview`
+### `D - Data Collection and Processing`
 - **`fig_dataset_construction.pdf`** / **`.tex`**: Architectural diagram illustrating the end-to-end dataset enumeration, raw file acquisition, and cleaning pipeline.
 
 ### `T1 - Text Summarization`

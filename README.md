@@ -29,7 +29,7 @@ Researchers increasingly use large language models (LLMs) to construct variables
 .
 ├── A - Archive/                                       # Historical drafts, superseded presentations, and archived figure code
 ├── B - Backup of Original File Structure/             # Preserved initial code files and raw data crosswalk scripts
-├── D1 - Data Collection and Processing/               # Raw corpus ingestion (GovInfo hearings, C-SPAN abstracts, SEC 10-K, SST)
+├── D - Data Collection and Processing/                # Raw corpus ingestion (GovInfo hearings, C-SPAN abstracts, SEC 10-K, SST)
 ├── L - Lib/                                           # Shared core Python library (chunking, stance, relevance, tagging)
 ├── P - Paper, Writing and Output/                     # Main proposal documents, compiled PDFs, and methodology drafts
 │   ├── P1. Org Sci Proposal [Miric, Roh and Jia][Github Version].md
@@ -96,7 +96,7 @@ All figures below are displayed side by side as presented in the proposal. Click
 
 ## Summary of Processing Stages
 
-### A. Data Collection & Processing (`D1`)
+### A. Data Collection & Processing (`D`)
 - **GovInfo Hearing Corpus**: Built an enumeration contract via `offsetMark` pagination to avoid shifting drops across 36,378 packages (1995–2025). Parsed MODS XML metadata to extract BioGuide member rosters and applied a 4-space indent paragraph rule to attribute speaker turns.
 - **C-SPAN Reference Summaries**: Queried C-SPAN Archives API across three committee categories (`House Committee`, `Senate Committee`, `Joint Committee`) to acquire 18,697 human-written editorial abstracts.
 - **SEC Form 10-K Filings**: Acquired 394 monthly bulk ZIP archives (~34 GB) containing 305,140 filings. Linked CIKs to Compustat GVKEYs and extracted Item 1 (Business), Item 1A (Risk Factors), and Item 7 (MD&A).

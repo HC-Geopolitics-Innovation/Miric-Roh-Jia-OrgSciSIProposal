@@ -16,7 +16,7 @@ The four-tier pipeline established in this repository is directly mapped to the 
 
 | Existing Pipeline (Privacy Domain) | Adapted Energy & Emissions Pipeline | Function & Output |
 | :--- | :--- | :--- |
-| **D1 - Data Collection & Processing** | **D1 - Climate Hearings & 10-K Ingestion** | Ingest raw GovInfo Congressional hearings and SEC EDGAR Form 10-K annual reports. |
+| **D - Data Collection & Processing** | **D - Climate Hearings & 10-K Ingestion** | Ingest raw GovInfo Congressional hearings and SEC EDGAR Form 10-K annual reports. |
 | **T1 - Text Summarization** | **T1 - Climate Policy & 10-K Summarization** | Condense massive Congressional hearing transcripts (House Energy & Commerce, Senate EPW) and multi-hundred-page Form 10-Ks into structured, standardized analytical summaries. |
 | **T2 - Topic & Stance Extraction** | **T2 - Climate Policy Topics & Regulatory Stances** | Identify latent policy debates (Topic 42: Renewable Portfolio Standards; Topic 58: Carbon Emissions Pricing & Clean Power Plan) and extract committee stances on mandates versus market incentives. |
 | **T3 - Topic Relevance Indexing** | **T3 - Corporate Carbon & Clean Energy Relevance** | Generate vector embeddings (`text-embedding-3-large`) and calculate cosine similarity between firm business models and focal climate policy summaries to establish continuous exposure scores ($S_i \in [0, 1]$). |
@@ -26,8 +26,8 @@ The four-tier pipeline established in this repository is directly mapped to the 
 
 ## 2. Understanding and Ingesting the Legislative Data
 
-### 2.1 Inspection of Local Legislative Data Structures (`D1.1 - GovInfo Congressional Hearings`)
-As established in `D1.1` and `Data Collection Overview.md`, the legislative corpus is organized around distinct, machine-readable components produced by the U.S. Government Publishing Office (GovInfo API):
+### 2.1 Inspection of Local Legislative Data Structures (`D1 - GovInfo Congressional Hearings`)
+As established in `D1` and `Data Collection Overview.md`, the legislative corpus is organized around distinct, machine-readable components produced by the U.S. Government Publishing Office (GovInfo API):
 
 1. **Hearing Package Identifiers (`packageId`)**:
    - Structured package keys encode the Congress, chamber, and hearing number (e.g., `CHRG-111hhrg54321` for House hearings, `CHRG-114shrg98765` for Senate hearings).
@@ -55,9 +55,9 @@ To build the target policy corpus for the renewable energy and emissions domain:
 
 ## 3. Understanding and Ingesting Corporate & Patent Data
 
-### 3.1 Corporate Disclosure Corpus (`D1.3 - SEC Form 10-K Corporate Filings`)
+### 3.1 Corporate Disclosure Corpus (`D3 - SEC Form 10-K Corporate Filings`)
 - **Sample Universe**: Publicly listed firms in Compustat spanning energy, utilities, automotive, chemical, and heavy industrial manufacturing (NAICS `211`, `212`, `221`, `324`, `325`, `333`, `335`, `336`).
-- **Entity Linkage**: Central Index Keys (`cik`) are linked to Compustat permanent identifiers (`gvkey`) via `D1.3.2 - SEC 10-K - Build Filing Index & Linkage.ipynb`.
+- **Entity Linkage**: Central Index Keys (`cik`) are linked to Compustat permanent identifiers (`gvkey`) via `D3.2 - SEC 10-K - Build Filing Index & Linkage.ipynb`.
 - **Text Sections Isolated**:
   - **Item 1 (Business Descriptions)**: Captures baseline revenue models, core energy assets, and existing production technologies.
   - **Item 1A (Risk Factors)**: Documents self-reported exposure to transition risks, carbon penalties, state renewable portfolio standards, and regulatory compliance liabilities.
@@ -198,12 +198,12 @@ output/T4_Energy/
 ```mermaid
 flowchart TD
     subgraph Phase 1: Ingestion & Environment Setup
-        A1[Survey D1.1-D1.3 and patents/ schemas] --> A2[Verify GovInfo packageId and 10-K CIK-GVKEY linkage]
+        A1[Survey D1-D3 and patents/ schemas] --> A2[Verify GovInfo packageId and 10-K CIK-GVKEY linkage]
         A2 --> A3[Create directory structure: T1_Energy, T2_Energy, T3_Energy, T4_Energy]
     end
 
     subgraph Phase 2: Corpus Extraction & Verification
-        B1[Extract Energy & Commerce and EPW Hearing Transcripts] --> B2[Extract 10-K Items 1, 1A, and 7 via D1.3 parser]
+        B1[Extract Energy & Commerce and EPW Hearing Transcripts] --> B2[Extract 10-K Items 1, 1A, and 7 via D3 parser]
         B2 --> B3[Run T1 Summarization Batch API]
         B3 --> B4{Validation Gate 1: Check hallucination rate & coverage on 50-firm audit sample}
     end
