@@ -1,14 +1,13 @@
-# Proposal For Organization Science
+# Opening the Black Box of Large Language Models in Text-based Measurement: Staged Pipelines with Verifiable Checkpoints
 
-# Data Bottlenecks and Enabling Research in New Domains by Engineering AI-Enabled Research Pipelines
+## Detailed Overview of Proposal and Methodology
 
-**Proposal for Special Issue:** AI-Enabled Frontiers in Organizational Science (*Organization Science*)
+**Milan Miric, Albert Roh, Nan Jia**  
+*University of Southern California, Marshall School of Business*  
 
-**CFP / URL:** [https://orgsci.org](https://orgsci.org/)
+**Proposal for Special Issue:** AI-Enabled Frontiers in Organizational Science (*Organization Science*)  
 
-**Repository:** [https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis](https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis)
-
-**Authors:** Jia, Miric, and Roh (in alphabetical order)
+**Repository:** [https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis](https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis)  
 
 ---
 
