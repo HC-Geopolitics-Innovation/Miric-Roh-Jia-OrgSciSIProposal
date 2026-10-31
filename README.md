@@ -15,7 +15,7 @@ The codebase is organized into intuitive, self-contained sections:
 ```
 .
 ├── D1 - Data Collection and Processing/               # Data ingestion, metadata parsing, and sample construction
-│   ├── Data Collection Overview.md
+│   ├── Data Collection Workflow Overview.ipynb
 │   ├── D1.1 - GovInfo Congressional Hearings/        # Enumerate, download, parse MODS XML & build hearing corpus
 │   ├── D1.2 - C-SPAN Reference Abstracts/            # Query C-SPAN Archives for human editorial abstracts
 │   ├── D1.3 - SEC Form 10-K Corporate Filings/       # Bulk 10-K downloads, indexing & item extraction

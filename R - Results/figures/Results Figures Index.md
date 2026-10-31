@@ -7,11 +7,11 @@ This folder contains all evaluation figures and architectural diagrams organized
 ## Directory & File Organization
 
 ### `D1 - Data Collection and Overview`
-- **`fig_dataset_construction.pdf`** / **`.tex`**: Architectural diagram illustrating the end-to-end dataset enumeration, raw file acquisition, and cleaning pipeline.
+- **`fig_dataset_construction.pdf`** / **`.png`** / **`.tex`**: The three collection rails of D1 on one page: GovInfo hearings, the C-SPAN reference abstracts, and the SEC 10-K filings, with the measured counts at each step. Same visual language as the T1, T2, and T3 flowcharts.
 
 ### `T1 - Text Summarization`
-- **`fig_summarization_mapreduce.pdf`** / **`.tex`**: Diagram of the 3-stage Map-Reduce summarization architecture (Map $\to$ Collapse $\to$ Reduce).
-- **`cosine_similarity_averages.pdf`** / **`.png`**: C-SPAN discriminant evaluation plot comparing cosine similarity across Same Document, Same Committee, and Different Committee pairs.
+- **`fig_text_summarization_flowchart.pdf`** / **`.png`** / **`.tex`**: The text summarization pipeline on one page: transcript to speaker turns to chunks, then the map, collapse, and reduce calls to the hearing summary, with the counts of the production run.
+- **`cosine_similarity_averages.pdf`** / **`.png`**: Cosine similarity between a hearing's generated summary and C-SPAN's abstract of the same hearing, of other hearings of the same committee, and of hearings of other committees.
 
 ### `T2 - Topic Extraction and Stance Analysis`
 - **`fig_topic_extraction.pdf`** / **`.tex`**: Diagram of the member turn topic extraction and stance classification pipeline.
