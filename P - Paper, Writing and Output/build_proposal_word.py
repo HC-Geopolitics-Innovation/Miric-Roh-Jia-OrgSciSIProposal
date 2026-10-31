@@ -27,14 +27,15 @@ from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml import parse_xml
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MD_PATH = os.path.join(BASE_DIR, "OS-SI Proposal[10.28.26].md")
-DOCX_PATH = os.path.join(BASE_DIR, "OS-SI Proposal[10.28.26].docx")
 TEMPLATE_PATH = os.path.join(BASE_DIR, "Word_Document_Template.docx")
 TEMP_MD_PATH = os.path.join(BASE_DIR, "temp_for_docx.md")
 
-def build_docx():
+def build_docx(md_filename="OS-SI Proposal[10.31.26].md", docx_filename="OS-SI Proposal[10.31.26].docx"):
+    md_path = os.path.join(BASE_DIR, md_filename)
+    docx_path = os.path.join(BASE_DIR, docx_filename)
+
     # 1. Read Markdown and filter out markdown-only TOC and horizontal rules
-    with open(MD_PATH, "r", encoding="utf-8") as f:
+    with open(md_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
     filtered_lines = []
@@ -62,7 +63,7 @@ def build_docx():
     cmd = [
         "pandoc",
         TEMP_MD_PATH,
-        "-o", DOCX_PATH,
+        "-o", docx_path,
         f"--reference-doc={TEMPLATE_PATH}",
         f"--resource-path={BASE_DIR}"
     ]
@@ -75,7 +76,7 @@ def build_docx():
         os.remove(TEMP_MD_PATH)
 
     # 3. Post-process DOCX styles and layouts
-    doc = docx.Document(DOCX_PATH)
+    doc = docx.Document(docx_path)
     black = RGBColor(0, 0, 0)
 
     # Margins: 1.0 in
@@ -226,9 +227,10 @@ def build_docx():
             p.paragraph_format.space_before = Pt(0)
             p.paragraph_format.space_after = Pt(4)
 
-    doc.save(DOCX_PATH)
-    print("Build complete: OS-SI Proposal[10.28.26].docx updated successfully.")
+    doc.save(docx_path)
+    print(f"Build complete: {docx_filename} updated successfully.")
     return True
 
 if __name__ == "__main__":
-    build_docx()
+    build_docx("OS-SI Proposal[10.31.26].md", "OS-SI Proposal[10.31.26].docx")
+    build_docx("OS-SI Proposal[10.28.26].md", "OS-SI Proposal[10.28.26].docx")
