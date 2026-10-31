@@ -103,8 +103,12 @@ def build_docx():
     for i in range(1, len(doc.inline_shapes)):
         s = doc.inline_shapes[i]
         aspect = s.height / s.width
-        s.width = Inches(3.10)
-        s.height = int(Inches(3.10) * aspect)
+        if s.width > Inches(4.5):
+            s.width = Inches(6.20)
+            s.height = int(Inches(6.20) * aspect)
+        else:
+            s.width = Inches(3.10)
+            s.height = int(Inches(3.10) * aspect)
 
     # Tables layout (centered, borderless)
     for table in doc.tables:
@@ -195,7 +199,7 @@ def build_docx():
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             p.paragraph_format.space_before = Pt(4)
             p.paragraph_format.space_after = Pt(4)
-        elif p_text.startswith("Figure 1.") or p_text.startswith("Figure 2.") or p_text.startswith("Figure 3."):
+        elif any(p_text.startswith(f"Figure {num}.") for num in range(1, 10)):
             p.alignment = WD_ALIGN_PARAGRAPH.LEFT
             p.paragraph_format.space_before = Pt(14)
             p.paragraph_format.space_after = Pt(4)
