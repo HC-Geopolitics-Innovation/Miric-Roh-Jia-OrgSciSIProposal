@@ -21,13 +21,12 @@ The codebase is organized into intuitive, self-contained sections:
 │   ├── D1.3 - SEC Form 10-K Corporate Filings/       # Bulk 10-K downloads, indexing & item extraction
 │   └── D1.4 - SST Sample Construction/               # Space, Science & Technology benchmark sample build
 │
-├── T1 - Text Summarization/                          # Task 1: Long-document hierarchical Map-Reduce summarization
-│   ├── Text Summarization Workflow Overview.ipynb    # Comprehensive technical and workflow overview
-│   ├── T1.1 - Process Prototyping and Evaluation/    # Model setup, token chunking & draft execution (Python)
-│   ├── T1.2 - Process Execution/                     # 10-shard batch execution & master parquet consolidation (Python)
-│   ├── T1.3 - Quality Assessment/                    # C-SPAN embedding discriminant evaluation (Python)
-│   ├── T1.X - Background Helper Functions/           # chunking.py, summarize.py
-│   └── T1.X - Worked Example/                       # Zuckerberg hearing: inputs, summaries, logs, and scripts
+├── T1 - Text Summarization/                          # Task 1: long-document map-reduce summarization
+│   ├── Text Summarization Workflow Overview.ipynb    # Markdown guide: flowchart, the four parts, where the data live
+│   ├── T1.1 - Process Prototyping and Evaluation/    # Draft on two hearings; four models compared on five hearings
+│   ├── T1.2 - Process Entire Sample Congressional Hearings/  # Sharded production run and assembly of the 2,352 summaries
+│   ├── T1.3 - Validation of Summaries/               # C-SPAN matching and the summary-abstract similarity test
+│   └── T1.4 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/  # One hearing step by step: inputs, outputs, log
 │
 ├── T2 - Topic Extraction and Stance Analysis/        # Task 2: Congressional topic extraction & stance panel
 │   ├── Topic Extraction Workflow Overview.ipynb      # Comprehensive technical and workflow overview
@@ -45,13 +44,14 @@ The codebase is organized into intuitive, self-contained sections:
 │   ├── T3.X - Background Helper Functions/           # tagging.py, relevance.py, item1_local.py
 │   └── T3.X - Worked Example/                       # Same hearing: privacy relevance across eligible firms
 │
+├── J - Jobs/                                         # SLURM scripts and logs of the GPU runs
 ├── L - Lib/                                          # Centralized core Python software library (L1 to L5)
 ├── R - Results/                                      # Evaluation results and categorized figure outputs
 │   └── figures/                                      # Subdivided by D1, T1, T2, T3
 └── B - Backup of Original File Structure/            # Complete preserved backup of initial scripts
 ```
 
-Follow the April 10, 2018 Zuckerberg hearing through the [T1 summarization example](<T1 - Text Summarization/T1.X - Worked Example/README.md>), [T2 topic and stance example](<T2 - Topic Extraction and Stance Analysis/T2.X - Worked Example/README.md>), and [T3 firm-relevance example](<T3 - Topic Relevance and Corporate Disclosure/T3.X - Worked Example/README.md>). Each example has a README walkthrough and numbered folders for inputs, outputs, logs and verification, and scripts. T3 follows the hearing's privacy topic across all 998 eligible preceding firm disclosures, with Facebook and ResMed as two illustrations.
+Follow the running example, the April 10, 2018 Facebook hearing with Mark Zuckerberg, through the [T1 summarization example](<T1 - Text Summarization/T1.4 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/README.md>), [T2 topic and stance example](<T2 - Topic Extraction and Stance Analysis/T2.X - Worked Example/README.md>), and [T3 firm-relevance example](<T3 - Topic Relevance and Corporate Disclosure/T3.X - Worked Example/README.md>). Each example has a README walkthrough and numbered folders for inputs, outputs, logs and verification, and scripts. T3 follows the hearing's privacy topic across all 998 eligible preceding firm disclosures, with Facebook and ResMed as two illustrations.
 
 ---
 

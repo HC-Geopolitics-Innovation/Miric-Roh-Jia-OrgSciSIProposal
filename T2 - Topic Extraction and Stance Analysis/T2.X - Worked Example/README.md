@@ -1,6 +1,6 @@
 # Worked example: topics and stances in the Zuckerberg hearing
 
-This continues the [Section 3 example](<../../T1 - Text Summarization/T1.X - Worked Example/README.md>): **Facebook, Social Media Privacy, and the Use and Abuse of Data**, April 10, 2018, `CHRG-115shrg37801`. These files export the saved production results. No new LLM calls were made, and neither topic wording nor category assignments were corrected for presentation.
+This continues the [Section 3 example](<../../T1 - Text Summarization/T1.4 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/README.md>): **Facebook, Social Media Privacy, and the Use and Abuse of Data**, April 10, 2018, `CHRG-115shrg37801`. These files export the saved production results. No new LLM calls were made, and neither topic wording nor category assignments were corrected for presentation.
 
 Use this README as the walkthrough. The supporting files use the same layout as the T1 example:
 
@@ -17,7 +17,7 @@ The [codebook](<02 - Outputs/codebook.json>) is an output of topic extraction. T
 
 ## 1. Start with the summary for hearing topics
 
-Track 1 supplies the [final hearing summary](<../../T1 - Text Summarization/T1.X - Worked Example/02 - Outputs/outputs.md#final-summary>) to Qwen/Qwen3.5-4B. The [exact prompt](<01 - Inputs/prompts.md#track-1-hearing-summary>) asks for up to five neutral topic phrases, ordered by centrality. The recorded response is:
+Track 1 supplies the [final hearing summary](<../../T1 - Text Summarization/T1.4 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/02 - Outputs/outputs.md#final-summary>) to Qwen/Qwen3.5-4B. The [exact prompt](<01 - Inputs/prompts.md#track-1-hearing-summary>) asks for up to five neutral topic phrases, ordered by centrality. The recorded response is:
 
 ```json
 ["Facebook data privacy", "content moderation", "election integrity", "Honest Ads Act", "GDPR-style controls"]
@@ -27,7 +27,7 @@ The code parses this list and adds ranks. [topics.json](<02 - Outputs/topics.jso
 
 ## 2. Return to the source turns for legislators' positions
 
-Track 2 begins with the [903 parsed records](<../../T1 - Text Summarization/T1.X - Worked Example/01 - Inputs/parsed_turns.json>), selecting records labeled `spoken` and attributed either to a member or to the unnamed-chair identifier `0000000`. This hearing has **507 selected turns**. Witness testimony does not enter this extraction track.
+Track 2 begins with the [903 parsed records](<../../T1 - Text Summarization/T1.4 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/01 - Inputs/parsed_turns.json>), selecting records labeled `spoken` and attributed either to a member or to the unnamed-chair identifier `0000000`. This hearing has **507 selected turns**. Witness testimony does not enter this extraction track.
 
 The [preparation notebook](<../../B - Backup of Original File Structure/scripts/python/03_topic_extraction/01_member_turns.ipynb>) segments each paragraph with `pysbd==0.3.4`, then applies the helper's cleaning rules. They truncate a turn at the first recognized adjournment or inserted-document marker, remove the initial speaker-label echo, and drop bracketed stage directions and mostly capitalized headers. For this hearing, the rules remove 13,380 sentences by truncation, 501 label echoes, 15 stage directions, and 44 headers, leaving **1,696 sentences**. All 507 turns remain nonempty.
 

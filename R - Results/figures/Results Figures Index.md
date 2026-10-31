@@ -11,7 +11,7 @@ This folder contains all evaluation figures and architectural diagrams organized
 
 ### `T1 - Text Summarization`
 - **`fig_text_summarization_flowchart.pdf`** / **`.png`** / **`.tex`**: The text summarization pipeline on one page: transcript to speaker turns to chunks, then the map, collapse, and reduce calls to the hearing summary, with the counts of the production run.
-- **`cosine_similarity_averages.pdf`** / **`.png`**: Cosine similarity between a hearing's generated summary and C-SPAN's abstract of the same hearing, of other hearings of the same committee, and of hearings of other committees.
+- **`T1.3 - Validation of Summaries/T1.3.2 - Validation - Compare Summaries with C-SPAN Abstracts/fig_cosine_similarity_by_pair_type.pdf`** / **`.png`** / **`.svg`**: Cosine similarity between a hearing's generated summary and C-SPAN's abstract of the same hearing, of other hearings of the same committee, and of hearings of other committees. Drawn by notebook T1.3.2 from the stored pair table; replaces `cosine_similarity_averages`.
 
 ### `T2 - Topic Extraction and Stance Analysis`
 - **`fig_topic_extraction.pdf`** / **`.tex`**: Diagram of the member turn topic extraction and stance classification pipeline.

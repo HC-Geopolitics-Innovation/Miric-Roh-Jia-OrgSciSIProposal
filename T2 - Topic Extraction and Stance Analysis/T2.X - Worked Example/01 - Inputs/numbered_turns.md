@@ -1,6 +1,6 @@
 # Numbered legislator turns
 
-Saved cleaned inputs for `CHRG-115shrg37801`. Turn IDs are zero-based indices in the [original parsed records](<../../../T1 - Text Summarization/T1.X - Worked Example/01 - Inputs/parsed_turns.json>); sentence numbers start at one within each cleaned turn. Turns longer than 40 sentences are sent in consecutive windows.
+Saved cleaned inputs for `CHRG-115shrg37801`. Turn IDs are zero-based indices in the [original parsed records](<../../../T1 - Text Summarization/T1.4 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/01 - Inputs/parsed_turns.json>); sentence numbers start at one within each cleaned turn. Turns longer than 40 sentences are sent in consecutive windows.
 
 ## Turn 1
 
