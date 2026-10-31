@@ -2,9 +2,8 @@
 """
 compile_latex.py
 ----------------
-Compiles main.tex and appendix.tex into main.pdf and appendix.pdf using pdflatex,
-and automatically deletes all intermediate files (*.aux, *.log, *.out, missfont.log)
-after every compilation run.
+Compiles LaTeX documents into PDFs and immediately cleans up all intermediate
+files (*.aux, *.log, *.out, missfont.log, etc.).
 """
 import glob
 import os
@@ -27,12 +26,11 @@ def compile_doc(tex_filename):
         cmd = ["/Library/TeX/texbin/pdflatex", "-interaction=nonstopmode", tex_filename]
         res = subprocess.run(cmd, cwd=BASE_DIR, capture_output=True, text=True)
         if res.returncode != 0 and pass_num == 2:
-            print(f"LaTeX Warning/Error on {tex_filename}:\n{res.stdout[-400:]}", file=sys.stderr)
+            print(f"LaTeX Warning/Error on {tex_filename}:\n{res.stdout[-500:]}", file=sys.stderr)
 
     cleanup_intermediates()
     pdf_name = tex_filename.replace(".tex", ".pdf")
-    print(f"Successfully created {pdf_name} and cleaned up all intermediate files.")
+    print(f"Successfully generated {pdf_name} and cleaned up all intermediate files.")
 
 if __name__ == "__main__":
-    compile_doc("main.tex")
-    compile_doc("appendix.tex")
+    compile_doc("P2. Org Sci Proposal [Miric, Roh and Jia][PDF].tex")

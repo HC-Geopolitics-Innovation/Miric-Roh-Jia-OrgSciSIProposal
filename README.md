@@ -1,61 +1,100 @@
-# LLM Text Analysis and Synthesis
+# Opening the Black Box of Large Language Models in Text-based Measurement: Staged Pipelines with Verifiable Checkpoints
 
-This repository provides an end-to-end framework for extracting low-dimensional, validated econometric measures from high-dimensional text using open-weights language models.
-
-The methodology is demonstrated on:
-1. **U.S. Congressional Science-Committee Hearings**: House Science and Senate Commerce committees (2,352 hearings, 1995–2025; 93.6 million words).
-2. **S&P 500 Form 10-K Filings**: Business descriptions (Item 1) spanning 21,966 filings (1993–2025) across 25,207 CIKs.
+**Milan Miric, Albert Roh, Nan Jia**  
+*University of Southern California, Marshall School of Business*  
+**Proposal for Special Issue:** AI-Enabled Frontiers in Organizational Science (*Organization Science*)  
+**Repository:** [https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis](https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis)  
 
 ---
 
-## 1. Standardized Directory & Task Architecture
+## Proposal Documents
 
-The codebase is organized into intuitive, self-contained sections:
+| Document | Format | Description |
+| :--- | :--- | :--- |
+| **[P1. Org Sci Proposal [Miric, Roh and Jia][Github Version].md](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md)** | Markdown (`.md`) | Core proposal text, interactive figure links, and online appendices |
+| **[P2. Org Sci Proposal [Miric, Roh and Jia][PDF].pdf](P%20-%20Paper,%20Writing%20and%20Output/P2.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BPDF%5D.pdf)** | PDF (16 pages) | Camera-ready proposal + appendices compiled via LaTeX |
+| **[P3. Org Sci Proposal - Full Methodology [Miric, Roh and Jia].md](P%20-%20Paper,%20Writing%20and%20Output/P3.%20Org%20Sci%20Proposal%20-%20Full%20Methodology%20%5BMiric,%20Roh%20and%20Jia%5D.md)** | Markdown (`.md`) | Comprehensive methodological architecture and technical extensions |
+
+---
+
+## Abstract
+
+Researchers increasingly use large language models (LLMs) to construct variables from long, noisy documents that were previously impractical to study at scale. When an LLM is used end to end, however, the final output is the only observable checkpoint. This opacity makes measures hard to validate and reproduce, and it conceals heterogeneity within documents, so systematic measurement error can bias subsequent analyses. More capable models will not resolve these concerns, because they stem from opacity and lack of control over design choices rather than limited capability. We propose decomposing LLM-based measurement into a pipeline of discrete stages, each producing an inspectable intermediate output. This design allows researchers to validate each stage against its own benchmark, locate where errors arise, revise one stage while reusing the others, and trace aggregate measures back to their components. We demonstrate the approach by processing 2,352 congressional hearings and firms’ 10-K filings to summarize hearings, extract policymakers’ stances, and measure firms’ exposure to the debate over consumer data privacy. Across 1,058 publicly traded firms, we demonstrate how the most exposed firms as reflected in our index experience a shift in their innovation trajectory towards both data anonymization and user-activity tracking. We aim to release the modular code and intermediate datasets, enabling researchers to adapt the pipeline with coding agents and to replicate it stage by stage.
+
+---
+
+## Repository Structure
 
 ```
 .
-├── D1 - Data Collection and Processing/               # Data ingestion, metadata parsing, and sample construction
-│   ├── Data Collection Overview.md
-│   ├── D1.1 - GovInfo Congressional Hearings/        # Enumerate, download, parse MODS XML & build hearing corpus
-│   ├── D1.2 - C-SPAN Reference Abstracts/            # Query C-SPAN Archives for human editorial abstracts
-│   ├── D1.3 - SEC Form 10-K Corporate Filings/       # Bulk 10-K downloads, indexing & item extraction
-│   └── D1.4 - SST Sample Construction/               # Space, Science & Technology benchmark sample build
-│
-├── T1 - Text Summarization/                          # Task 1: Long-document hierarchical Map-Reduce summarization
-│   ├── Text Summarization Workflow Overview.ipynb    # Comprehensive technical and workflow overview
-│   ├── T1.1 - Process Prototyping and Evaluation/    # Model setup, token chunking & draft execution (Python)
-│   ├── T1.2 - Process Execution/                     # 10-shard batch execution & master parquet consolidation (Python)
-│   ├── T1.3 - Quality Assessment/                    # C-SPAN embedding discriminant evaluation (Python)
-│   ├── T1.X - Background Helper Functions/           # chunking.py, summarize.py
-│   └── T1.X - Worked Example/                       # Zuckerberg hearing: inputs, summaries, logs, and scripts
-│
-├── T2 - Topic Extraction and Stance Analysis/        # Task 2: Congressional topic extraction & stance panel
-│   ├── Topic Extraction Workflow Overview.ipynb      # Comprehensive technical and workflow overview
-│   ├── T2.1 - Process Prototyping and Evaluation/    # Turn attribution & few-shot promptbook testing (Python)
-│   ├── T2.2 - Process Execution/                     # Track 1/Track 2 batch extraction & codebook freeze (Python)
-│   ├── T2.3 - Quality Assessment/                    # CAP codebook crosswalk alignment & audit (Python)
-│   ├── T2.X - Background Helper Functions/           # stance.py, constrained.py, speakers.py
-│   └── T2.X - Worked Example/                       # Same hearing: topics, stances, codebook, logs, and scripts
-│
-├── T3 - Topic Relevance and Corporate Disclosure/    # Task 3: Dual-instrument corporate disclosure topic relevance
-│   ├── Topic Relevance Workflow Overview.ipynb       # Comprehensive technical and workflow overview
-│   ├── T3.1 - Process Prototyping and Evaluation/    # Sentence segmentation & centroid scoring prototyping (Python)
-│   ├── T3.2 - Process Execution/                     # Dual-instrument batch tagging & Compustat panel (Python)
-│   ├── T3.3 - Quality Assessment/                    # Gold-standard gate audit & agreement analysis (Python)
-│   ├── T3.X - Background Helper Functions/           # tagging.py, relevance.py, item1_local.py
-│   └── T3.X - Worked Example/                       # Same hearing: privacy relevance across eligible firms
-│
-├── L - Lib/                                          # Centralized core Python software library (L1 to L5)
-├── R - Results/                                      # Evaluation results and categorized figure outputs
-│   └── figures/                                      # Subdivided by D1, T1, T2, T3
-└── B - Backup of Original File Structure/            # Complete preserved backup of initial scripts
+├── A - Archive/                                       # Historical drafts, superseded presentations, and archived figure code
+├── B - Backup of Original File Structure/             # Preserved initial code files and raw data crosswalk scripts
+├── D1 - Data Collection and Processing/               # Raw corpus ingestion (GovInfo hearings, C-SPAN abstracts, SEC 10-K, SST)
+├── L - Lib/                                           # Shared core Python library (chunking, stance, relevance, tagging)
+├── P - Paper, Writing and Output/                     # Main proposal documents, compiled PDFs, and methodology drafts
+│   ├── P1. Org Sci Proposal [Miric, Roh and Jia][Github Version].md
+│   ├── P2. Org Sci Proposal [Miric, Roh and Jia][PDF].pdf
+│   ├── P2. Org Sci Proposal [Miric, Roh and Jia][PDF].tex
+│   ├── P3. Org Sci Proposal - Full Methodology [Miric, Roh and Jia].md
+│   ├── Proposal_for_Org_Sci_101126_AR.md
+│   ├── [TEMP_for_Review]_Proposal_for_Org_Sci_103026_AR.md
+│   ├── figures/                                      # Rendered figures for proposal and appendices
+│   └── pdfs/                                         # Component PDFs (main.pdf, appendix.pdf)
+├── R - Results & Figures/                             # Master empirical tables and categorized output figures
+├── T1 - Text Summarization/                           # Task 1: Long-document turn-aware chunking and Map-Reduce summarization
+├── T2 - Topic Extraction and Stance Analysis/         # Task 2: 111-topic policy taxonomy codebook and legislator stance panel
+├── T3 - Topic Relevance and Corporate Disclosure/     # Task 3: Dual-instrument firm 10-K policy exposure and directional tagging
+├── X1 - Example of Research Enabled by LLM Pipeline/  # Toy empirical application: Cambridge Analytica privacy patent analysis
+└── X2 - Example of Reproducing and Adapting the Research Pipeline/ # Autonomous coding agent prompt and implementation plan
 ```
 
-Follow the April 10, 2018 Zuckerberg hearing through the [T1 summarization example](<T1 - Text Summarization/T1.X - Worked Example/README.md>), [T2 topic and stance example](<T2 - Topic Extraction and Stance Analysis/T2.X - Worked Example/README.md>), and [T3 firm-relevance example](<T3 - Topic Relevance and Corporate Disclosure/T3.X - Worked Example/README.md>). Each example has a README walkthrough and numbered folders for inputs, outputs, logs and verification, and scripts. T3 follows the hearing's privacy topic across all 998 eligible preceding firm disclosures, with Facebook and ResMed as two illustrations.
+### Detailed Paths for Proposal Documents (`P - Paper, Writing and Output/`):
+- **Core Markdown Proposal**: [`P1. Org Sci Proposal [Miric, Roh and Jia][Github Version].md`](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md)
+- **Combined PDF (Proposal + Appendices)**: [`P2. Org Sci Proposal [Miric, Roh and Jia][PDF].pdf`](P%20-%20Paper,%20Writing%20and%20Output/P2.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BPDF%5D.pdf) (Source: [`P2. Org Sci Proposal [Miric, Roh and Jia][PDF].tex`](P%20-%20Paper,%20Writing%20and%20Output/P2.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BPDF%5D.tex))
+- **Full Methodology Document**: [`P3. Org Sci Proposal - Full Methodology [Miric, Roh and Jia].md`](P%20-%20Paper,%20Writing%20and%20Output/P3.%20Org%20Sci%20Proposal%20-%20Full%20Methodology%20%5BMiric,%20Roh%20and%20Jia%5D.md)
+  - *Methodology Integration Sources*: [`Proposal_for_Org_Sci_101126_AR.md`](P%20-%20Paper,%20Writing%20and%20Output/Proposal_for_Org_Sci_101126_AR.md) and [`[TEMP_for_Review]_Proposal_for_Org_Sci_103026_AR.md`](P%20-%20Paper,%20Writing%20and%20Output/%5BTEMP_for_Review%5D_Proposal_for_Org_Sci_103026_AR.md)
+- **Figures Directory**: [`P - Paper, Writing and Output/figures/`](P%20-%20Paper,%20Writing%20and%20Output/figures/)
+- **Individual Component PDFs**: [`P - Paper, Writing and Output/pdfs/`](P%20-%20Paper,%20Writing%20and%20Output/pdfs/) ([`main.pdf`](P%20-%20Paper,%20Writing%20and%20Output/pdfs/main.pdf), [`appendix.pdf`](P%20-%20Paper,%20Writing%20and%20Output/pdfs/appendix.pdf))
 
 ---
 
-## 2. Summary of What Was Done in Each Process Stage
+## Key Empirical Figures
+
+All figures below are displayed side by side as presented in the proposal. Click on any figure or heading to jump directly to its discussion and complete econometric notes in [`P1. Org Sci Proposal [Miric, Roh and Jia][Github Version].md`](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md).
+
+### [Figure 2. Topics and Overview of Stance (Panels A & C)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md)
+
+| [Panel A: Distribution of Member Net Stances](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [Panel C: Subtopic Polarization](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
+| :---: | :---: |
+| [![Figure 2 Panel A](P%20-%20Paper,%20Writing%20and%20Output/figures/fig2_panel_a.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [![Figure 2 Panel C](P%20-%20Paper,%20Writing%20and%20Output/figures/fig2_panel_c.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
+
+### [Figure 3. Topic Relevance Scores for Publicly Listed Firms](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md)
+
+| [Panel A: NAICS-2 Sector Cosine Relative to Mean](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [Panel B: Selected High and Low Relevance Firms](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
+| :---: | :---: |
+| [![Figure 3 Panel A](P%20-%20Paper,%20Writing%20and%20Output/figures/fig3_panel_a_naics_relevance.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [![Figure 3 Panel B](P%20-%20Paper,%20Writing%20and%20Output/figures/fig3_panel_b_top_firms.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
+
+### [Figure 4. Firm Topic Relevance and Privacy Patenting Pre- and Post-2016](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md)
+
+| [Panel A: Distribution & Patent Intensity](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [Panel B: Pre/Post 2016 by Quartile](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [Panel C: Pre/Post 2016 by Subclass](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
+| :---: | :---: | :---: |
+| [![Figure 4 Panel A](P%20-%20Paper,%20Writing%20and%20Output/figures/fig_app_c_panel_a_topic_relevance.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [![Figure 4 Panel B](P%20-%20Paper,%20Writing%20and%20Output/figures/fig_app_c_panel_b_quartiles.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [![Figure 4 Panel C](P%20-%20Paper,%20Writing%20and%20Output/figures/fig_app_c_panel_c_subclasses.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
+
+### [Figure 5. Long-Term Trends and Firm Concentration in Privacy Patenting (1999–2021)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md)
+
+| [Panel A: Annual Patents by Topic Group](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [Panel B: Top 20 Privacy Patenting Firms](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
+| :---: | :---: |
+| [![Figure 5 Panel A](P%20-%20Paper,%20Writing%20and%20Output/figures/fig_app_c_fig8a_raw_counts.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [![Figure 5 Panel B](P%20-%20Paper,%20Writing%20and%20Output/figures/fig_app_c_fig9_top_firms.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
+
+### [Figure 6. Annual Event-Study Estimates of Patenting Probability by Topic Relevance Quartile](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md)
+
+| [Panel A: Anonymizing / Decorrelating Data](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [Panel B: Tracking User Activity](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
+| :---: | :---: |
+| [![Figure 6 Panel A](P%20-%20Paper,%20Writing%20and%20Output/figures/fig_app_c_fig6_panel_a_anonymizing.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [![Figure 6 Panel B](P%20-%20Paper,%20Writing%20and%20Output/figures/fig_app_c_fig6_panel_b_tracking.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
+
+---
+
+## Summary of Processing Stages
 
 ### A. Data Collection & Processing (`D1`)
 - **GovInfo Hearing Corpus**: Built an enumeration contract via `offsetMark` pagination to avoid shifting drops across 36,378 packages (1995–2025). Parsed MODS XML metadata to extract BioGuide member rosters and applied a 4-space indent paragraph rule to attribute speaker turns.
@@ -72,18 +111,18 @@ Follow the April 10, 2018 Zuckerberg hearing through the [T1 summarization examp
 ### C. Task 2: Topic Extraction & Stance Analysis (`T2`)
 - **Methodology**: Evaluated congressional member speaking turns through dual tracks: Track 1 (schema-constrained token masking via `jsonformer`) and Track 2 (open extraction with robust regex parsing).
 - **Execution & Output**: Consensus clustered extracted topic strings into a **111-topic ratified policy codebook** (`frozen_codebook_111.parquet`) and assembled the longitudinal dataset **`member_stance_panel.parquet`**.
-- **Quality Evaluation**: Crosswalked extracted topics against the Comparative Agendas Project (CAP) ground truth, achieving a **92.4% mean rank percentile** and **0.887 top-3 precision**. Generated polarization network and attention figures in `R - Results/figures/T2/`.
+- **Quality Evaluation**: Crosswalked extracted topics against the Comparative Agendas Project (CAP) ground truth, achieving a **92.4% mean rank percentile** and **0.887 top-3 precision**. Generated polarization network and attention figures in `R - Results & Figures/`.
 
 ### D. Task 3: Topic Relevance & Corporate Disclosure (`T3`)
 - **Methodology**: Constructed two independent instruments to identify corporate exposure to policy topics:
   1. *Deterministic Embedding Rail*: Cosine similarity between 10-K sentence embeddings and policy centroids (no generation inference).
   2. *Sentence-Block LLM Tagging*: Classifies relevance, confidence, and opportunity/threat direction with index-cited quotes.
 - **Execution & Output**: Processed 21,966 S&P 500 Form 10-K Business sections and merged with Compustat fundamentals to build **`firm_topic_relevance_panel.parquet`**.
-- **Quality Evaluation**: Audited against hand-verified gold annotations (**93.4% precision**, **91.2% recall**). Exported industry exposure and longitudinal trend figures to `R - Results/figures/T3/`.
+- **Quality Evaluation**: Audited against hand-verified gold annotations (**93.4% precision**, **91.2% recall**). Exported industry exposure and longitudinal trend figures to `R - Results & Figures/`.
 
 ---
 
-## 3. Core Output Artifacts
+## Core Output Artifacts
 
 | Output Table / Asset | Directory Location | Description |
 | :--- | :--- | :--- |
@@ -91,4 +130,4 @@ Follow the April 10, 2018 Zuckerberg hearing through the [T1 summarization examp
 | `frozen_codebook_111.parquet` | `data/cleaned/02_topic_extraction/` | 111-topic ratified policy codebook definitions |
 | `member_stance_panel.parquet` | `data/cleaned/02_topic_extraction/` | Longitudinal congressional member-topic stance panel |
 | `firm_topic_relevance_panel.parquet` | `data/cleaned/03_topic_relevance/` | S&P 500 firm-year policy exposure and opportunity/threat scores |
-| Evaluation Figures | `R - Results/figures/` | PDF, SVG, and PNG evaluation figures categorized by task |
+| Evaluation Figures | `R - Results & Figures/figures/` | PDF, SVG, and PNG evaluation figures categorized by task |
