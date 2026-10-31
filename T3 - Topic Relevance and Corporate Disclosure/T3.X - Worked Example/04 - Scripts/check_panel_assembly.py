@@ -88,7 +88,7 @@ def check():
         exporter = importlib.util.module_from_spec(spec); spec.loader.exec_module(exporter)
         exporter.ROOT = run / "publication_check"
         exporter.OUT = exporter.ROOT / "worked_example"
-        manuscript = exporter.ROOT / "X - Drafts and Documentation/Proposal_for_Org_Sci_092126_AR.md"
+        manuscript = exporter.ROOT / "W - Writing and Drafts/Proposal_for_Org_Sci_092126_AR.md"
         manuscript.parent.mkdir(parents=True)
         exporter.OUT.mkdir()
         manuscript.write_text("before\n<!-- TOPIC68_RUN_STATUS_START -->\npending\n<!-- TOPIC68_RUN_STATUS_END -->"
