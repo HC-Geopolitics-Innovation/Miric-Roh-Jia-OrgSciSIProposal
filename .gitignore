@@ -11,7 +11,7 @@ __pycache__/
 *.vrb
 missfont.log
 ~$*.docx
-*[Opened].docx
+*\[Opened\]*.docx
 .DS_Store
 
 # T3 alternative measures: kept locally and on the scratch root, not published (user decision 2026-10-31)
