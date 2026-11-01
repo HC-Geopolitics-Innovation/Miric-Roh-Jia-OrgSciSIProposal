@@ -27,10 +27,21 @@ Researchers increasingly use large language models (LLMs) to construct variables
 
 ```
 .
-├── A - Archive/                                       # Historical drafts, superseded presentations, and archived figure code
-├── B - Backup of Original File Structure/             # Preserved initial code files and raw data crosswalk scripts
 ├── D - Data Collection and Processing/                # Raw corpus ingestion (GovInfo hearings, C-SPAN abstracts, SEC 10-K, SST)
-├── L - Lib/                                           # Shared core Python library (chunking, stance, relevance, tagging)
+│   ├── Data Collection Workflow Overview.ipynb
+│   ├── D1 - GovInfo Congressional Hearings/
+│   ├── D2 - C-SPAN Reference Abstracts/
+│   ├── D3 - SEC Form 10-K Corporate Filings/
+│   └── D4 - SST Sample Construction/
+├── T - Three Step Text Analysis Pipeline/             # The three pipeline steps, one folder per step; results mirror this tree
+│   ├── T1 - Text Summarization/                       # Task 1: Long-document turn-aware chunking and Map-Reduce summarization
+│   ├── T2 - Topic Extraction and Stance Analysis/     # Task 2: 111-topic policy taxonomy codebook and legislator stance panel
+│   └── T3 - Topic Relevance and Corporate Disclosure/ # Task 3: Firm 10-K topic relevance to the consumer data privacy debate
+├── X1 - Example of Research Enabled by LLM Pipeline/  # Empirical application: topic relevance and privacy patents around 2016
+│   ├── Data/                                          # The privacy patent file, the firm relevance file, and the privacy code lists
+│   ├── X1.1 - Patent Data - Sample Firm Patents and Privacy Codes/
+│   └── X1.2 - Privacy Patents and Topic Relevance - 5 Codes by MM/
+├── X2 - Example of Reproducing and Adapting the Research Pipeline/ # Autonomous coding agent prompt and implementation plan
 ├── P - Paper, Writing and Output/                     # Main proposal documents, compiled PDFs, and methodology drafts
 │   ├── P1. Org Sci Proposal [Miric, Roh and Jia][Github Version].md
 │   ├── P2. Org Sci Proposal [Miric, Roh and Jia][PDF].pdf
@@ -38,15 +49,15 @@ Researchers increasingly use large language models (LLMs) to construct variables
 │   ├── P3. Org Sci Proposal - Full Methodology [Miric, Roh and Jia].md
 │   ├── Proposal_for_Org_Sci_101126_AR.md
 │   ├── [TEMP_for_Review]_Proposal_for_Org_Sci_103026_AR.md
-│   ├── figures/                                      # Rendered figures for proposal and appendices
-│   └── pdfs/                                         # Component PDFs (main.pdf, appendix.pdf)
-├── R - Results & Figures/                             # Master empirical tables and categorized output figures
-├── T1 - Text Summarization/                           # Task 1: Long-document turn-aware chunking and Map-Reduce summarization
-├── T2 - Topic Extraction and Stance Analysis/         # Task 2: 111-topic policy taxonomy codebook and legislator stance panel
-├── T3 - Topic Relevance and Corporate Disclosure/     # Task 3: Dual-instrument firm 10-K policy exposure and directional tagging
-├── X1 - Example of Research Enabled by LLM Pipeline/  # Toy empirical application: Cambridge Analytica privacy patent analysis
-└── X2 - Example of Reproducing and Adapting the Research Pipeline/ # Autonomous coding agent prompt and implementation plan
+│   ├── figures/                                       # Rendered figures for proposal and appendices
+│   └── pdfs/                                          # Component PDFs (main.pdf, appendix.pdf)
+├── R - Results/                                       # Figures and tables, one folder per notebook, in a tree that mirrors D, T, and X1
+│   ├── figures/
+│   └── tables/
+└── J - Jobs/                                          # SLURM scripts of the GPU runs
 ```
+
+Each pipeline step opens with a workflow overview notebook and ends with a running example that follows the same hearing, the April 10, 2018 Facebook hearing with Mark Zuckerberg: the [T1 summarization example](<T - Three Step Text Analysis Pipeline/T1 - Text Summarization/T1.4 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/README.md>), the [T2 topic and stance example](<T - Three Step Text Analysis Pipeline/T2 - Topic Extraction and Stance Analysis/T2.5 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/README.md>), and the [T3 firm-relevance example](<T - Three Step Text Analysis Pipeline/T3 - Topic Relevance and Corporate Disclosure/T3.5 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/README.md>). Each example has a README walkthrough, a step-by-step notebook, and numbered folders for inputs, outputs, and logs.
 
 ### Detailed Paths for Proposal Documents (`P - Paper, Writing and Output/`):
 - **Core Markdown Proposal**: [`P1. Org Sci Proposal [Miric, Roh and Jia][Github Version].md`](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md)
@@ -111,14 +122,14 @@ All figures below are displayed side by side as presented in the proposal. Click
 ### C. Task 2: Topic Extraction & Stance Analysis (`T2`)
 - **Methodology**: Evaluated congressional member speaking turns through dual tracks: Track 1 (schema-constrained token masking via `jsonformer`) and Track 2 (open extraction with robust regex parsing).
 - **Execution & Output**: Consensus clustered extracted topic strings into a **111-topic ratified policy codebook** (`frozen_codebook_111.parquet`) and assembled the longitudinal dataset **`member_stance_panel.parquet`**.
-- **Quality Evaluation**: Crosswalked extracted topics against the Comparative Agendas Project (CAP) ground truth, achieving a **92.4% mean rank percentile** and **0.887 top-3 precision**. Generated polarization network and attention figures in `R - Results & Figures/`.
+- **Quality Evaluation**: Crosswalked extracted topics against the Comparative Agendas Project (CAP) ground truth, achieving a **92.4% mean rank percentile** and **0.887 top-3 precision**. Generated polarization network and attention figures in `R - Results/figures/`.
 
 ### D. Task 3: Topic Relevance & Corporate Disclosure (`T3`)
 - **Methodology**: Constructed two independent instruments to identify corporate exposure to policy topics:
   1. *Deterministic Embedding Rail*: Cosine similarity between 10-K sentence embeddings and policy centroids (no generation inference).
   2. *Sentence-Block LLM Tagging*: Classifies relevance, confidence, and opportunity/threat direction with index-cited quotes.
 - **Execution & Output**: Processed 21,966 S&P 500 Form 10-K Business sections and merged with Compustat fundamentals to build **`firm_topic_relevance_panel.parquet`**.
-- **Quality Evaluation**: Audited against hand-verified gold annotations (**93.4% precision**, **91.2% recall**). Exported industry exposure and longitudinal trend figures to `R - Results & Figures/`.
+- **Quality Evaluation**: Audited against hand-verified gold annotations (**93.4% precision**, **91.2% recall**). Exported industry exposure and longitudinal trend figures to `R - Results/figures/`.
 
 ---
 
@@ -130,4 +141,4 @@ All figures below are displayed side by side as presented in the proposal. Click
 | `frozen_codebook_111.parquet` | `data/cleaned/02_topic_extraction/` | 111-topic ratified policy codebook definitions |
 | `member_stance_panel.parquet` | `data/cleaned/02_topic_extraction/` | Longitudinal congressional member-topic stance panel |
 | `firm_topic_relevance_panel.parquet` | `data/cleaned/03_topic_relevance/` | S&P 500 firm-year policy exposure and opportunity/threat scores |
-| Evaluation Figures | `R - Results & Figures/figures/` | PDF, SVG, and PNG evaluation figures categorized by task |
+| Evaluation Figures | `R - Results/figures/` | PDF, SVG, and PNG evaluation figures categorized by task |

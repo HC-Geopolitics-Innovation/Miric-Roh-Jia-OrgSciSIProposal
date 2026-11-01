@@ -1,0 +1,17 @@
+# The Facebook hearing's statements on consumer data privacy legislation
+
+The 13 stance records that T2.5 placed under topic 68 for `CHRG-115shrg37801`, among the 374 statements of the topic from 119 hearings. Each line gives the turn, the legislator's Bioguide id, the stance, and the cited sentences.
+
+- turn 5, G000386, **support**: Our policy toward data privacy and security must keep pace with these changes.
+- turn 5, G000386, **support**: Data privacy should be tethered to consumer needs and expectations.
+- turn 5, G000386, **support**: Now, at a minimum, consumers must have the transparency necessary to make an informed decision about whether to share their data and how it can be used. Consumers ought to have clear information, not opaque policies and complex click- through consent pages.
+- turn 5, G000386, **support**: The tech industry has an obligation to respond to widespread and growing concerns over data privacy and security and to restore the public's trust.
+- turn 5, G000386, **support**: Moreover, Congress must determine if and how we need to strengthen privacy standards to ensure transparency and understanding for the billions of consumers who utilize these products.
+- turn 7, N000032, **concern**: If you and other social media companies do not get your act in order, none of us are going to have any privacy anymore. That is what we are facing. We are talking about personally identifiable information that, if not kept by the social media companies from theft, we will not have our personal privacy anymore, a value that we have in America.
+- turn 7, N000032, **concern**: We want to know if it is going to be enough. And I hope that will be in the answers today.
+- turn 17, G000386, **concern**: Facebook collects massive amounts of data from consumers, including content, networks, contact lists, device information, location, and information from third parties, yet your data policy is only a few pages long and provides consumers with only a few examples of what is collected and how it might be used. The examples given emphasize benign uses such as connecting with friends, but your policy does not give any indication for more controversial issues of such data.
+- turn 60, H000338, **concern**: The recent stories about Cambridge Analytica and data mining on social media raise serious concerns about consumer privacy, and naturally, I know you understand that.
+- turn 659, H001075, **concern**: I have been here on and off for the last 4 hours that you have been testifying, and I have to tell you that I am concerned about how much Facebook values trust and transparency if we agree that a critical component of a relationship of trust and transparency is we speak truth and we get to the truth.
+- turn 685, K000393, **concern**: I do not want to have to vote to regulate Facebook, but, by God, I will. A lot of that depends on you.
+- turn 884, Y000064, **support**: Could you speak to this issue and indicate whether you would support a comprehensive privacy policy that applies in the same manner to all entities across the entire internet ecosystem?
+- turn 888, Y000064, **support**: Might we create stronger privacy rights for consumers either through creating a stronger general property right regime online, say a new law that states unequivocally something that you have said before, that users own their online data or through stronger affirmative opt-in requirements on platforms like yours.
