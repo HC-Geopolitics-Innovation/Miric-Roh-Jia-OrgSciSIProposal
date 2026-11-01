@@ -54,16 +54,16 @@ All figures in the manuscript and technical appendix strictly conform to three r
 
 ## Complete Figure Catalog
 
-The LaTeX documents incorporate all 6 empirical demonstration figures:
+All figures are organized in `R - Results/R1.1 - Figures/` by pipeline stage and dynamically resolved via `\graphicspath`:
 
-| Figure | Description | Panels & Source Files |
+| Figure | Description | Panels & Canonical Source Files (in `R - Results/R1.1 - Figures/`) |
 | :--- | :--- | :--- |
-| **Figure 1** | Cosine Similarity across Committees | `figures/fig1_cosine_similarity.png` |
-| **Figure 2** | Topics and Policymaker Stance (4-Panel) | `figures/fig2_topics_stances_4panel.png` |
-| **Figure 3** | Topic Relevance Scores for Public Firms | Panel A: `fig3_panel_a_naics_relevance.png`<br>Panel B: `fig3_panel_b_top_firms.png` |
-| **Figure 4** | Relevance & Privacy Patenting Pre/Post-2016 | Panel A: `fig_app_c_panel_a_topic_relevance.png`<br>Panel B: `fig_app_c_panel_b_quartiles.png`<br>Panel C: `fig_app_c_panel_c_subclasses.png` |
-| **Figure 5** | Long-Term Trends & Top Patenting Firms | Panel A: `fig_app_c_fig8a_raw_counts.png`<br>Panel B: `fig_app_c_fig9_top_firms.png` |
-| **Figure 6** | Event Study of Patenting Probability | Panel A: `fig_app_c_fig6_panel_a_anonymizing.png`<br>Panel B: `fig_app_c_fig6_panel_b_tracking.png` |
+| **Figure 1** | Cosine Similarity across Committees | `R1.1.2 - T - Three Step Text Analysis Pipeline/R1.1.2.1 - T1 - Text Summarization/1 - Figure 1 - Cosine Similarity Between Hand-Coded and LLM Summaries.png` |
+| **Figure 2** | Topics and Policymaker Stance (4-Panel) | `R1.1.2 - T - Three Step Text Analysis Pipeline/R1.1.2.2 - T2 - Classification/1 - Figure 2 - Topics and Overview of Stance 4-Panel.png` |
+| **Figure 3** | Topic Relevance Scores for Public Firms | Panel A: `R1.1.2 - T - Three Step Text Analysis Pipeline/R1.1.2.3 - T3 - Topic Relevance/2 - Figure 3 Panel A - Sector Relevance (NAICS 2-Digit).png`<br>Panel B: `R1.1.2 - T - Three Step Text Analysis Pipeline/R1.1.2.3 - T3 - Topic Relevance/3 - Figure 3 Panel B - Top 10 Relevant Firms.png` |
+| **Figure 4** | Relevance & Privacy Patenting Pre/Post-2016 | Panel A: `R1.1.3 - X1 - Validation (Patents)/1 - Figure 4 Panel A - Distribution of Firm Topic Relevance and Privacy Patents.png`<br>Panel B: `R1.1.3 - X1 - Validation (Patents)/2 - Figure 4 Panel B - Annual Privacy Patent Filings by Relevance Quartile.png`<br>Panel C: `R1.1.3 - X1 - Validation (Patents)/3 - Figure 4 Panel C - Annual Privacy Patent Filings by Subclass.png` |
+| **Figure 5** | Long-Term Trends & Top Patenting Firms | Panel A: `R1.1.3 - X1 - Validation (Patents)/1 - Figure 5 Panel A - Aggregate Filing Trends across Privacy CPC Codes.png`<br>Panel B: `R1.1.3 - X1 - Validation (Patents)/2 - Figure 5 Panel B - Top 20 Patent Assignees by Privacy Technology Group.png` |
+| **Figure 6** | Event Study of Patenting Probability | Panel A: `R1.1.3 - X1 - Validation (Patents)/1 - Figure 6 Panel A - Event Study of Patenting Probability - Anonymizing Data.png`<br>Panel B: `R1.1.3 - X1 - Validation (Patents)/2 - Figure 6 Panel B - Event Study of Patenting Probability - Tracking User Activity.png` |
 
 ---
 

@@ -172,7 +172,7 @@ Figure 1 shows the distributions and their overlap. The higher median for the co
 
 Group medians can conceal weak matches for individual hearings. We therefore also ask whether each generated summary identifies its own abstract as the closest among all 3,812 candidates. The correct abstract ranked first for 215 of the 351 hearings (61.3 percent). Together, these checks provide evidence of hearing-specific content in the evaluated summaries. They do not establish the absence of hallucinations, the accuracy of every attribution or number, or complete coverage of the hearing. Those aspects require direct review against the source transcript; the paired texts and intermediate outputs make such review possible.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T1%20-%20Text%20Summarization/cosine_similarity_averages.png" alt="Figure 1. Similarity between generated hearing summaries and C-SPAN abstracts"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T1%20-%20Text%20Summarization/cosine_similarity_averages.png" alt="Figure 1. Similarity between generated hearing summaries and C-SPAN abstracts"></p>
 
 *Figure 1. Cosine similarity for the same hearing, different hearings sharing a committee, and hearings sharing no committee identifier. The vertical axis measures similarity; each observation is one summary–abstract pair. Boxes contain the middle 50 percent of scores, and the line within each box marks the median. Whiskers extend to the most extreme scores no more than 1.5 times that range beyond the box; more distant observations are hidden. The comparison uses 351 generated summaries and 3,812 C-SPAN abstracts.*
 
@@ -284,7 +284,7 @@ The [clustering notebook](<../B - Backup of Original File Structure/scripts/pyth
 
 We examine three properties of each partition. Stability measures how consistently members are assigned together across repetitions. Silhouette measures how well clusters are separated from their neighbors. Cohesion measures how closely member meanings align within a cluster. A reproducible group need not be well separated or coherent, so the three are reported separately and none is used as a gate. The 15-cluster partition has the highest stability and silhouette of all counts. Among the finer partitions, the 150-cluster partition has the highest stability and the fewest low-cohesion groups. We therefore keep 15 broad clusters and 150 candidate topics. These are chosen levels of detail and not optimal counts. We keep both levels because the research question uses both. The fine topics link hearings to specific firm disclosures, and the broad themes summarize the hearing agenda.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_taxonomy_criteria.svg" alt="Clustering diagnostics across candidate category counts"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_taxonomy_criteria.svg" alt="Clustering diagnostics across candidate category counts"></p>
 
 *Choosing the codebook's level of detail. The horizontal axis gives the number of clusters. The navy line reports weighted mean coassignment as a percentage. The green line reports the share of phrase weight in clusters with coassignment of at least 0.50. The red line reports sampled silhouette multiplied by 100. Higher values indicate greater stability or separation and not classification accuracy.*
 
@@ -314,31 +314,31 @@ The [matching notebook](<../B - Backup of Original File Structure/scripts/python
 
 **(a) Does the extracted phrase identify the hearing's human-coded subject?** We embed each hearing's first-ranked Track 1 phrase and the descriptions of all 213 CAP subtopics with `BAAI/bge-large-en-v1.5`. We rank the CAP descriptions by similarity to the phrase and record the rank of the human-assigned subtopic. That subtopic ranks first for 27.0 percent of hearings and within the top 11 for 63.1 percent. The median rank is fifth. The histogram converts the ranks into percentiles, where 100 is first place. The first-ranked subject therefore carries enough of the hearing's substance to put the human code within the top 5 percent of 213 candidates for most hearings, where a random ranking would do so for 1 hearing in 20.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_cap_rank_percentile.svg" alt="CAP subtopic ranks for first-ranked extracted phrases"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_cap_rank_percentile.svg" alt="CAP subtopic ranks for first-ranked extracted phrases"></p>
 
 *Overall phrase correspondence. Each bar reports the share of hearings in a five-point percentile interval. The dashed line marks approximately 5 percent per interval under uniform random ranking.*
 
 **(b) Does the phrase add information beyond the frequency of policy subjects?** Science and Technology hearings concentrate on particular subjects, so favoring common CAP codes alone would beat random ranking. We therefore compare the phrase-based ranking with a frequency rule that gives every hearing the same list of the most common subtopics. With one candidate, the phrase finds the human code for 27.0 percent of hearings and the frequency rule for 9.4 percent. With 11 candidates the shares are 63.1 and 52.9 percent. The gap is the correspondence that hearing-specific phrases add beyond the subject distribution. This means the correspondence in (a) comes from what each summary says about its own hearing rather than from knowing which subjects these committees usually take up.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_cap_retrieval.svg" alt="CAP retrieval compared with frequency and random baselines"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_cap_retrieval.svg" alt="CAP retrieval compared with frequency and random baselines"></p>
 
 *Retrieval against baselines. The horizontal axis gives the number of candidate CAP subtopics retained. The vertical axis gives the share of hearings whose human-assigned subtopic is among them. The frequency rule uses the same candidates for every hearing.*
 
 **(c) Does the overall result conceal weak correspondence in particular policy areas?** We group the same percentile ranks by each hearing's codebook theme. Median correspondence is lowest for manufacturing competitiveness and highest for railroad safety, with theme sizes from 16 to 245 hearings. The grouping only organizes the diagnostic. The quantities evaluated are still the first-ranked phrases. This means the correspondence does not rest on a few well-defined policy areas, since the median in every theme lies above 90 and no box reaches the random line at 50.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_cap_subtopic_boxes.svg" alt="CAP phrase correspondence separated by codebook theme"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_cap_subtopic_boxes.svg" alt="CAP phrase correspondence separated by codebook theme"></p>
 
 *Variation across themes. Values nearer 100 indicate better phrase-level correspondence with the human-assigned subtopic. Whiskers extend to the most extreme observations within 1.5 interquartile ranges and outliers are hidden. The dashed line marks the median under random ranking.*
 
 **(d) Do the broad codebook themes bring together hearings in similar human-coded policy domains?** We cross-tabulate each hearing's theme with its CAP major topic. Each row of the heatmap gives one theme's distribution across CAP domains and sums to 100 percent. In the NASA theme, 217 of 245 hearings (88.6 percent) receive CAP's Technology code. In Aviation and Transportation Security, 74 of 93 (79.6 percent) receive Transportation. A concentrated row shows correspondence with one CAP domain. A dispersed row marks a theme that spans CAP boundaries and warrants inspection. This means that for 7 of the 14 themes more than half of the hearings share one human-coded domain, so the themes largely reproduce boundaries a human coder drew, and the dispersed rows mark where the two systems divide the same hearings differently.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_cap_crosswalk.svg" alt="Codebook themes cross-tabulated with CAP major topics"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_cap_crosswalk.svg" alt="Codebook themes cross-tabulated with CAP major topics"></p>
 
 *Broad category correspondence. Cells show percentages within each codebook theme. Numerical labels appear for shares of at least 10 percent.*
 
 **(e) Do the detailed codebook topics retain distinctions within those broad domains?** We take the 25 most frequent primary topics and find the most common CAP subtopic within each. All 31 hearings under Federal agency and board nominations receive CAP's Appointments code. For Mars and lunar exploration missions, 39 of 43 (90.7 percent) receive Space. Shorter bars mark topics whose hearings CAP spreads across several subtopics. These bars describe concentration within a topic and are not accuracy estimates. This means the fine topics are at least as specific as CAP's subtopics, since several of them pair with the same CAP code and so separate hearings that the human coding merges, while the short bars are topics defined around a matter such as funding that CAP divides by field.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_cap_subtopic_pairs.svg" alt="Detailed codebook topics and their most common CAP subtopics"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_cap_subtopic_pairs.svg" alt="Detailed codebook topics and their most common CAP subtopics"></p>
 
 *Detailed category correspondence. Bar length is the share of a codebook topic's hearings receiving its most common CAP subtopic. The right-hand label names that subtopic. Counts alongside the topic labels show the available evidence.*
 
@@ -464,7 +464,7 @@ The two aggregated outputs summarize these records by topic and Congress, and by
 
 For example, “Science and research funding” contains 1,372 records: 716 support and 656 concern. Its two long bars indicate many extracted stances on both sides. Other topics can have similar totals with a more uneven balance. These comparisons identify subjects that generated substantial directional discussion in the sampled hearings. They measure expressions retained by the extraction procedure, so factual discussion and questions without an extracted stance do not add to the bars. Counts also give more weight to speakers who contribute more records.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_stance_topics.svg" alt="Support and concern by topic"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_stance_topics.svg" alt="Support and concern by topic"></p>
 
 *Support and concern across topics. Each row is one of the 25 topics with the most assigned stance records over the full sample. Bar lengths are record counts; left and right indicate concern and support, respectively.*
 
@@ -472,7 +472,7 @@ For example, “Science and research funding” contains 1,372 records: 716 supp
 
 For example, science and research funding has 146 records in the 109th Congress and 129 in the 115th. These counts describe the volume of extracted stances without distinguishing their direction. Differences can reflect the number and subjects of hearings, the participating speakers, and their frequency of expressing stances. The figure reports raw counts rather than rates adjusted for those opportunities to speak; its darkest shade is capped at the 98th percentile of displayed cell counts. It can locate periods for closer investigation, but a darker cell alone does not establish a change in policy priorities.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_stance_attention.svg" alt="Stance record counts by topic and Congress"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_stance_attention.svg" alt="Stance record counts by topic and Congress"></p>
 
 *Timing of expressed stances. Cells show support and concern records combined. The 25 topics are ordered by their total record counts over the sample, and columns run from the 104th through the 119th Congress. Combinations with no assigned records are displayed as zero.*
 
@@ -482,7 +482,7 @@ Within the plotted topics, science and research funding changes from 59 support 
 
 In the figure, red indicates more concern, navy indicates more support, and pale shading indicates a balance near zero. Cells with fewer than five records are blank to avoid displaying a strong-looking balance based on very little evidence; a blank cell can therefore contain a few records and does not imply an absence of discussion. Because the measure weights records rather than individuals, a change can reflect different speakers or proposals as well as changing stances. The original issue wording and sentence references allow researchers to inspect those possibilities. The extraction and assignment errors illustrated in Section 4.2 also carry into these descriptive measures until the underlying records are reviewed and corrected.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_stance_net.svg" alt="Net stance by topic and Congress"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T2%20-%20Topic%20Extraction%20and%20Stance%20Analysis/fig_stance_net.svg" alt="Net stance by topic and Congress"></p>
 
 *Balance of expressed stances. Color represents net stance for the same topic–Congress combinations as the attention figure. Cells with fewer than five records are masked; a colored value describes the balance among extracted records, rather than a legislative vote or consensus on a single proposal.*
 
@@ -633,7 +633,7 @@ The saved entry also carries the theme, the exclusion notes drafted against the 
 
 The selection is made entirely by the stance extraction and the placement of Section 4. For the Facebook hearing, legislators spoke 1,696 sentences. Stance records cite 70 of them. Thirteen of those records were placed under topic 68, and the 19 distinct sentences they cite are the hearing's contribution to the privacy topic. Pooled across all hearings in the sample, including hearings after April 2018, topic 68 has **474 distinct evidence sentences**. The pool is therefore a retrospective representation of how legislators talk when they take a stance on privacy, not a representation of the Zuckerberg hearing alone.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_topic_vector_schematic.svg" alt="Hypothetical embedding space showing how a topic vector is built"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_topic_vector_schematic.svg" alt="Hypothetical embedding space showing how a topic vector is built"></p>
 
 *How the privacy topic is anchored. Left panel: of all legislator sentences in the hearings, only those cited by a Track 2 stance record whose issue was placed under consumer data privacy legislation qualify as evidence. The choice is made by the stance extraction and the placement of Step #2, not by similarity. Right panel: the evidence sentences and the codebook definition are embedded and averaged into the topic vector. The space is a hypothetical two-dimensional embedding space, and the positions are drawn for illustration.*
 
@@ -744,7 +744,7 @@ Sentence pairs within one firm show what the weight does and where it fails. For
 <!-- TOPIC68_EVALUATION_START -->
 From the lowest similarity group to the highest, the shares are 0.0, 2.8, 4.5, 6.7, and 48.6 percent. In the lowest group 0 of 179 firms carry a tag, and in the highest group 87 of 179 do. The rank correlation between standardized similarity and the share of retained sentences tagged is 0.461. Because neither measure enters the other, the rise across the groups is evidence that the two measures converge on the same firms, and the half of the top group without a tag is where similarity finds closeness that the model does not read as the firm's own business.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_privacy_measure_agreement.svg" alt="Privacy similarity and LLM evidence across firms"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_privacy_measure_agreement.svg" alt="Privacy similarity and LLM evidence across firms"></p>
 
 *Privacy-measure agreement. Each observation is one firm's latest available filing before April 10, 2018. Left: boxes show the middle 50 percent and median of standardized similarity, with whiskers to observations within 1.5 interquartile ranges and more distant points hidden. Right: bars show the percentage of firms with any accepted privacy tag within each similarity quintile, with all firms in the quintile as the denominator. The [group counts and score ranges](<../T - Three Step Text Analysis Pipeline/T3 - Topic Relevance and Corporate Disclosure/T3.X - Worked Example/02 - Outputs/03 - Evaluation and Figures/privacy_agreement_quintiles.csv>) reproduce the bars. Filings with flagged calls are excluded. Absence of a tag is a model outcome, not proof of irrelevance.*
 <!-- TOPIC68_EVALUATION_END -->
@@ -781,7 +781,7 @@ Embarq's connection to the Universal Service Fund has a mean of 5.612, and T-Mob
 
 This means the similarity-based score finds meaningful exposure without seeing an industry classification or any other pre-existing link.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_relevance_top_pairs.svg" alt="Firm–topic pairs with the highest average standardized similarity"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_relevance_top_pairs.svg" alt="Firm–topic pairs with the highest average standardized similarity"></p>
 
 *Highest-scoring firm–topic pairs. Points show mean standardized similarity across a firm's filings for one topic, with at least three filings required. Standardization uses the topic and filing-length decile. The figure covers all 111 topics and does not use the LLM privacy classifications.*
 
@@ -791,7 +791,7 @@ Telecommunications has a mean of 0.670, with an approximate 95-percent interval 
 
 This means the score, averaged over all topics, captures the nature of the hearing sample rather than a general tendency of some industries to use regulatory language.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_relevance_industry_exposure.svg" alt="Average standardized similarity across industries"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_relevance_industry_exposure.svg" alt="Average standardized similarity across industries"></p>
 
 *Industry-wide relatedness. Bars show the mean of firm-level averages across filings and all topics; whiskers are approximate 95-percent intervals across firms. Parentheses give firm counts. The comparison weights firms equally and requires at least eight per industry.*
 
@@ -801,7 +801,7 @@ Telecommunications scores highest on the Universal Service Fund (3.432), spectru
 
 These patterns permit inspection of whether the measure distinguishes recognizable subjects within industries. Here the averages are taken directly across filings, so a firm with more filings receives more weight than one with fewer. This differs from the preceding industry-wide comparison and should be considered when interpreting the values.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_relevance_industry_topics.svg" alt="Highest-scoring topics within selected industries"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_relevance_industry_topics.svg" alt="Highest-scoring topics within selected industries"></p>
 
 *Industry-specific subjects. Each industry block lists its three topics with the highest standardized similarity, averaging across filings. Industry selection is fixed in the notebook; topic selection follows the scores. Firms with more filings contribute more observations.*
 
@@ -811,7 +811,7 @@ Telecommunications' similarity to the Universal Service Fund increases from 2.55
 
 The dashed zero line is the pooled standardization reference, not a separately computed all-industry average for each year. Topic representations stay fixed, and labels referring to particular legislation function as retrospective categories when applied to earlier filings. The [figure export script](<../T - Three Step Text Analysis Pipeline/T3 - Topic Relevance and Corporate Disclosure/T3.X - Worked Example/04 - Scripts/render_relevance_figures.py>) reproduces the notebook's calculations while correcting the earlier captions' date range and zero-line description.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_relevance_industry_trends.svg" alt="Industry–topic similarity over fiscal years"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_relevance_industry_trends.svg" alt="Industry–topic similarity over fiscal years"></p>
 
 *Changes within industry–topic pairs. Lines show annual means for six pairs over fiscal years 1995–2025. The dashed line is the fixed zero reference from pooled topic-and-length standardization. Both changing disclosures and the composition of filing firms can change the observed series.*
 
@@ -823,13 +823,13 @@ Both rankings use the **894 filings without processing flags**. The 104 filings 
 
 The threat figure displays the highest 15 values among the 101 firms with at least one threat tag. Total System Services ranks first, with 21 of 87 sentences tagged as threats (24.1 percent); Facebook follows with 15 of 78 (19.2 percent); Fidelity National Information Services ranks third with 24 of 259 (9.3 percent). ResMed ranks eleventh at 4.1 percent, and AmerisourceBergen ranks fourteenth at 3.8 percent.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_privacy_llm_threat.svg" alt="Firms ranked by privacy threat discussion"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_privacy_llm_threat.svg" alt="Firms ranked by privacy threat discussion"></p>
 
 *Privacy threat discussion. Bars show threat-tagged sentences as a percentage of all retained sentences in the selected filing, ordered from highest to lowest. The figure displays the top 15 among 894 filings without processing flags. Neutral and opportunity tags do not contribute to the numerator. Counts are recorded model outputs, not validated measures of economic harm.*
 
 Opportunity tags are much less frequent: **16 sentences across seven firms** in the same sample. The second figure displays all seven firms with positive values. Paycom Software ranks first with eight of 300 sentences tagged as opportunities (2.7 percent), followed by Fidelity National Information Services with three of 259 (1.2 percent). Each remaining firm has one accepted opportunity tag. The figure uses its own horizontal scale because the opportunity shares are considerably smaller; their precision and meaning should be assessed from the underlying passages.
 
-<p align="center"><img src="../R%20-%20Results/figures/T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_privacy_llm_opportunity.svg" alt="Firms ranked by privacy opportunity discussion"></p>
+<p align="center"><img src="../R%20-%20Results/R1.1%20-%20Figures/R1.1.2%20-%20T%20-%20Three%20Step%20Text%20Analysis%20Pipeline/T3%20-%20Topic%20Relevance%20and%20Corporate%20Disclosure/fig_privacy_llm_opportunity.svg" alt="Firms ranked by privacy opportunity discussion"></p>
 
 *Privacy opportunity discussion. Bars show opportunity-tagged sentences as a percentage of all retained filing sentences, ordered from highest to lowest. All seven firms with positive counts are displayed; the other 887 filings without processing flags have zero accepted opportunity tags. The denominator and eligibility rules match the threat figure, while the horizontal scale differs. Neutral and threat tags do not contribute to the numerator.*
 
