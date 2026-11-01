@@ -20,6 +20,16 @@ Compiled output PDFs are automatically generated and deposited into `P - Paper, 
 
 ---
 
+## Formatting Rule: GitHub Markdown (`P1`) vs. LaTeX Submission (`P2`, `main`, `appendix`)
+
+> [!IMPORTANT]
+> **Do NOT replicate the Table of Contents (TOC) or the standalone Abstract from `P1.md` into the LaTeX files.**
+
+- **GitHub Markdown (`P1. Org Sci Proposal [Miric, Roh and Jia][Github Version].md`)**: Features a top-level Executive Abstract and an interactive Table of Contents with hyperlinked section anchors specifically designed for web-based browsing and repository navigation.
+- **LaTeX Submission Documents (`P2.tex`, `main.tex`, `appendix.tex`)**: Must strictly follow INFORMS *Organization Science* submission format. The title page immediately opens into Section 1 without a standalone abstract block or Table of Contents, preserving the strict 10-page text limit for the main proposal.
+
+---
+
 ## Required Packages
 
 The LaTeX documents compile with standard `pdflatex` (TeX Live / MacTeX) using the following CTAN packages:
