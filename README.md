@@ -45,21 +45,25 @@ Each pipeline step opens with a workflow overview notebook and ends with a runni
 
 ```
 .
-├── D - Data Collection and Processing/                # Raw corpus collection (GovInfo, C-SPAN, 10-K)
+├── D - Data Collection and Processing/                      # Example of Text Inputs  (GovInfo, C-SPAN, 10-K)
 │   ├── Data Collection Workflow Overview.ipynb
 │   ├── D1 - GovInfo Congressional Hearings/
 │   ├── D2 - C-SPAN Reference Abstracts/
 │   ├── D3 - SEC Form 10-K Corporate Filings/
 │   └── D4 - SST Sample Construction/
-├── T - Three Step Text Analysis Pipeline/             # Three-stage measurement pipeline
-│   ├── T1 - Text Summarization/                       # Long-document chunking & Map-Reduce
-│   ├── T2 - Topic Extraction and Stance Analysis/     # 111-topic codebook & stance panel
-│   └── T3 - Topic Relevance and Corporate Disclosure/ # Firm 10-K exposure to privacy debate
-├── X1 - Example of Research Enabled by LLM Pipeline/  # Empirical application & patent shifts
+|
+├── T - Three Step Text Analysis Pipeline/                     # Code for Pipeline Steps
+│   ├── T1 - Text Summarization/                                # Long-document summarization
+│   ├── T2 - Topic Extraction and Stance Analysis/              # Coonstruct topic stance measure
+│   └── T3 - Topic Relevance and Corporate Disclosure/          # Firm 10-K exposure to privacy debate
+|
+├── X1 - Example of Research Enabled by LLM Pipeline/           # Empirical application and patent shifts
 │   ├── Data/
 │   ├── X1.1 - Patent Data - Sample Firm Patents and Privacy Codes/
 │   └── X1.2 - Privacy Patents and Topic Relevance - 5 Codes by MM/
+|
 ├── X2 - Example of Reproducing and Adapting the Research Pipeline/ # Coding agent adaptation guide
+|
 ├── P - Paper, Writing and Output/                     # Main proposal documents and PDFs
 │   ├── P1. Org Sci Proposal [Miric, Roh and Jia][Github Version].md
 │   ├── P2. Org Sci Proposal [Miric, Roh and Jia][PDF].pdf
@@ -67,6 +71,7 @@ Each pipeline step opens with a workflow overview notebook and ends with a runni
 │   ├── P3. Org Sci Proposal - Full Methodology [Miric, Roh and Jia].md
 │   ├── figures/                                       # Rendered proposal figures
 │   └── pdfs/                                          # Component PDFs
+|
 └── R - Results/                                       # Figures and tables matching D, T, X1
     ├── figures/
     └── tables/
@@ -78,47 +83,53 @@ Each pipeline step opens with a workflow overview notebook and ends with a runni
 
 All figures below are displayed side by side as presented in the proposal. Click on any figure or heading to jump directly to its discussion and complete econometric notes in [`P1. Org Sci Proposal [Miric, Roh and Jia][Github Version].md`](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md).
 
-### 1. Analysis of Congressional Debate Stance on Key Topics
+### E1. Analysis of Congressional Debate Stance on Key Topics
+
+As an example of the output of our stance measurement approach, below we provide a summary of the results of our analysis. Panel A reports the distribution of topics and balance of stances, highlighting consumer privacy as a dominant topic with emerging regulatory support, while Panel C tracks the structural surge in legislative support for privacy regulation following 2016.
 
 #### [Figure 2. Topics and Overview of Stance (Panels A & C)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md#a22-application-extracting-stances-and-arguments-around-focal-topics)
 
-We aggregate extracted stance statements across hearings to capture the overall tenor of congressional debate and trace legislative shifts over time. Panel A reports the distribution of topics and balance of stances, highlighting consumer privacy as a dominant topic with emerging regulatory support, while Panel C tracks the structural surge in legislative support for privacy regulation following 2016.
 
 | [Panel A: Distribution of Member Net Stances](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [Panel C: Subtopic Polarization](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
 | :---: | :---: |
 | [![Figure 2 Panel A](P%20-%20Paper,%20Writing%20and%20Output/figures/fig2_panel_a.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [![Figure 2 Panel C](P%20-%20Paper,%20Writing%20and%20Output/figures/fig2_panel_c.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
 
-### 2. Relevance of Topics in Debate on Publicly Listed Firms
+### E2. Relevance of Topics in Debate on Publicly Listed Firms
+
+
+As an example of measuring the relevance of topics in the leglisative debate to the to individual firms, we provide a summary of the relevance scores aggregated at different levels. We compute semantic cosine similarity between synthesized congressional privacy debate statements and Form 10-K Item 1 business descriptions across public firms. In Panel A, we report the relevance to various sectors at the NAICS two digite level. In Panel B, we provide an example of the companies that are subject to (or exposed to) this congressional debate issue. 
 
 #### [Figure 3. Topic Relevance Scores for Publicly Listed Firms](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md#a32-application-connecting-focal-concerns-and-opportunities-of-policymakers-to-business-areas-of-publicly-listed-firms)
 
-We compute semantic cosine similarity between synthesized congressional privacy debate statements and Form 10-K Item 1 business descriptions across public firms. In Panel A, firms in the Information sector (NAICS 51) exhibit the highest relevance relative to the sample mean, and Panel B confirms that major digital platforms emerge as the most exposed entities.
 
 | [Panel A: NAICS-2 Sector Cosine Relative to Mean](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [Panel B: Selected High and Low Relevance Firms](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
 | :---: | :---: |
 | [![Figure 3 Panel A](P%20-%20Paper,%20Writing%20and%20Output/figures/fig3_panel_a_naics_relevance.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [![Figure 3 Panel B](P%20-%20Paper,%20Writing%20and%20Output/figures/fig3_panel_b_top_firms.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
 
-### 3. Example of Applying Scores to Debate Around Privacy Legislation
+### E3. Example of Applying Scores to Debate Around Privacy Legislation
+
+As an example of the application of our topic relevance scores, we demonstrate the application on the debate around privacy legislation. WUsing our policy exposure index, we examine corporate patenting responses before and after the 2016 privacy debate shock across relevance quartiles. Panel A shows that high-relevance firms account for the vast share of privacy patents, Panel B documents an increase patenting following 2016 concentrated heavily in Quartile 4, and Panel C decomposes this growth across specific privacy technology subclasses.
 
 #### [Figure 4. Firm Topic Relevance and Privacy Patenting Pre- and Post-2016](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md#appendix-c-example-of-research-enabled-by-llm-data-pipeline)
 
-Using our policy exposure index, we examine corporate patenting responses before and after the 2016 privacy debate shock across relevance quartiles. Panel A shows that high-relevance firms account for the vast share of privacy patents, Panel B documents an increase concentrated heavily in Quartile 4, and Panel C decomposes this growth across specific privacy technology subclasses.
 
 | [Panel A: Distribution & Patent Intensity](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [Panel B: Pre/Post 2016 by Quartile](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [Panel C: Pre/Post 2016 by Subclass](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
 | :---: | :---: | :---: |
 | [![Figure 4 Panel A](P%20-%20Paper,%20Writing%20and%20Output/figures/fig_app_c_panel_a_topic_relevance.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [![Figure 4 Panel B](P%20-%20Paper,%20Writing%20and%20Output/figures/fig_app_c_panel_b_quartiles.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [![Figure 4 Panel C](P%20-%20Paper,%20Writing%20and%20Output/figures/fig_app_c_panel_c_subclasses.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
 
+Here we continue this analysis, by providing a raw summary of the long-term technological trajectories from 1999 to 2021 across five distinct privacy classes (those related to tracking user data). Panel A plots annual patent counts across regulatory milestones, highlighting the surge in data anonymization and behavioral tracking, while Panel B reveals how much the top twenty firms that patented in technology related to consumer privacy, engaged with the different technologies (e.g. consumer tracking versus annonymization technologies). 
+
 #### [Figure 5. Long-Term Trends and Firm Concentration in Privacy Patenting (1999–2021)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md#appendix-c-example-of-research-enabled-by-llm-data-pipeline)
 
-We trace long-term technological trajectories from 1999 to 2021 across five distinct privacy classes. Panel A plots annual patent counts across regulatory milestones, highlighting the surge in data anonymization and behavioral tracking, while Panel B reveals corporate portfolio specialization across the top 20 patenting firms.
 
 | [Panel A: Annual Patents by Topic Group](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [Panel B: Top 20 Privacy Patenting Firms](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
 | :---: | :---: |
 | [![Figure 5 Panel A](P%20-%20Paper,%20Writing%20and%20Output/figures/fig_app_c_fig8a_raw_counts.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [![Figure 5 Panel B](P%20-%20Paper,%20Writing%20and%20Output/figures/fig_app_c_fig9_top_firms.png)](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
 
+As a way of directly understanding how much the firm level trajectory of innovation shifted following these policies, we estimate dynamic event-study regressions relative to 2015. We report the results for two sub-classes of privacy patents which saw a drastic divergence in patenting behaviour coinciding with this shift in policy debate, across subslasses with different levels of topic-policy relevance. 
+
 #### [Figure 6. Annual Event-Study Estimates of Patenting Probability by Topic Relevance Quartile](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md#appendix-c-example-of-research-enabled-by-llm-data-pipeline)
 
-To evaluate the impact of policy debate on firm innovation, we estimate dynamic event-study regressions relative to 2015. Exposed firms exhibit divergent strategic responses: Quartile 4 firms sharply increased patenting in personal data anonymization (Panel A) and in user-activity tracking (Panel B), with flat pre-trends confirming identification.
 
 | [Panel A: Anonymizing / Decorrelating Data](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) | [Panel B: Tracking User Activity](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md) |
 | :---: | :---: |
