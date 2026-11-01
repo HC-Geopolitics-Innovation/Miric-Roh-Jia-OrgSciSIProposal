@@ -14,50 +14,58 @@ The codebase is organized into intuitive, self-contained sections:
 
 ```
 .
-├── D1 - Data Collection and Processing/               # Data ingestion, metadata parsing, and sample construction
+├── D - Data Collection and Processing/               # Data ingestion, metadata parsing, and sample construction
 │   ├── Data Collection Workflow Overview.ipynb
-│   ├── D1.1 - GovInfo Congressional Hearings/        # Enumerate, download, parse MODS XML & build hearing corpus
-│   ├── D1.2 - C-SPAN Reference Abstracts/            # Query C-SPAN Archives for human editorial abstracts
-│   ├── D1.3 - SEC Form 10-K Corporate Filings/       # Bulk 10-K downloads, indexing & item extraction
-│   └── D1.4 - SST Sample Construction/               # Space, Science & Technology benchmark sample build
+│   ├── D1 - GovInfo Congressional Hearings/        # Enumerate, download, parse MODS XML & build hearing corpus
+│   ├── D2 - C-SPAN Reference Abstracts/            # Query C-SPAN Archives for human editorial abstracts
+│   ├── D3 - SEC Form 10-K Corporate Filings/       # Bulk 10-K downloads, indexing & item extraction
+│   └── D4 - SST Sample Construction/               # Space, Science & Technology benchmark sample build
 │
-├── T1 - Text Summarization/                          # Task 1: long-document map-reduce summarization
-│   ├── Text Summarization Workflow Overview.ipynb    # Markdown guide: flowchart, the four parts, where the data live
-│   ├── T1.1 - Process Prototyping and Evaluation/    # Draft on two hearings; four models compared on five hearings
-│   ├── T1.2 - Process Entire Sample Congressional Hearings/  # Sharded production run and assembly of the 2,352 summaries
-│   ├── T1.3 - Validation of Summaries/               # C-SPAN matching and the summary-abstract similarity test
-│   └── T1.4 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/  # One hearing step by step: inputs, outputs, log
+├── T - Three Step Text Analysis Pipeline/             # The three pipeline steps, one folder per step; results and scratch mirror this tree
+│   │
+│   ├── T1 - Text Summarization/                          # Task 1: long-document map-reduce summarization
+│   │   ├── Text Summarization Workflow Overview.ipynb    # Markdown guide: flowchart, the four parts, where the data live
+│   │   ├── T1.1 - Process Prototyping and Evaluation/    # Draft on two hearings; four models compared on five hearings
+│   │   ├── T1.2 - Process Entire Sample Congressional Hearings/  # Sharded production run and assembly of the 2,352 summaries
+│   │   ├── T1.3 - Validation of Summaries/               # C-SPAN matching and the summary-abstract similarity test
+│   │   └── T1.4 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/  # One hearing step by step: inputs, outputs, log
+│   │
+│   ├── T2 - Topic Extraction and Stance Analysis/        # Task 2: topic codebook, legislator stances, stance by topic over time
+│   │   ├── Topic Extraction Workflow Overview.ipynb      # Markdown guide: flowchart, the five parts, where the data live
+│   │   ├── T2.1 - Track 1 - Topic Extraction based on Hearing Summaries/  # Topics from the summaries, clustering, the frozen codebook, the 26 groups
+│   │   ├── T2.2 - Track 2 - Legislator Stance Extraction/  # Numbered turns, prompt development, sharded production, placement under topics
+│   │   ├── T2.3 - Validation of Topics/                  # CAP matching and the comparison with CAP's human codes
+│   │   ├── T2.4 - Stance by Topic over Time/             # Support and concern by topic group and Congress; the privacy group
+│   │   └── T2.5 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/  # One hearing through both tracks: inputs, outputs, log
+│   │
+│   └── T3 - Topic Relevance and Corporate Disclosure/    # Task 3: topic relevance of each S&P 500 firm's 10-K Item 1 to consumer data privacy legislation
+│       ├── Topic Relevance Workflow Overview.ipynb       # Markdown guide: flowchart, the main chain, where the data live
+│       ├── T3.1 - Sample - Firms and 10-K Item 1 Filings/  # 1,058 firms, 18,779 filings, two samples
+│       ├── T3.2 - Topic Side - Policy Summary of the Legislator Statements/  # 374 statements, the prompts, the model run, its check, the vector
+│       ├── T3.3 - Firm Side - Summaries of the 10-K Item 1 Filings/  # segments and prompts, filing and firm summaries, their vectors
+│       ├── T3.4 - Topic Relevance - Score and Figures/   # the cosine score, its distribution, sector means, selected firms
+│       └── T3.5 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/  # the hearing's topic followed to the firms, Figure 3 in one figure
 │
-├── T2 - Topic Extraction and Stance Analysis/        # Task 2: topic codebook, legislator stances, stance by topic over time
-│   ├── Topic Extraction Workflow Overview.ipynb      # Markdown guide: flowchart, the five parts, where the data live
-│   ├── T2.1 - Track 1 - Topic Extraction based on Hearing Summaries/  # Topics from the summaries, clustering, the frozen codebook, the 26 groups
-│   ├── T2.2 - Track 2 - Legislator Stance Extraction/  # Numbered turns, prompt development, sharded production, placement under topics
-│   ├── T2.3 - Validation of Topics/                  # CAP matching and the comparison with CAP's human codes
-│   ├── T2.4 - Stance by Topic over Time/             # Support and concern by topic group and Congress; the privacy group
-│   └── T2.5 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/  # One hearing through both tracks: inputs, outputs, log
+├── X1 - Example of Research Enabled by LLM Pipeline/   # Empirical application: topic relevance and privacy patents around 2016
+│   ├── Data/                                         # The two data files of X1.2 and the three privacy code lists
+│   ├── X1.1 - Patent Data - Sample Firm Patents and Privacy Codes/  # Sample firms to KPSS patents, then the CPC code match
+│   └── X1.2 - Privacy Patents and Topic Relevance - 5 Codes by MM/  # Descriptive figures, topic groups, pre- and post-2016 by relevance quartile
 │
-├── T3 - Topic Relevance and Corporate Disclosure/    # Task 3: Dual-instrument corporate disclosure topic relevance
-│   ├── Topic Relevance Workflow Overview.ipynb       # Comprehensive technical and workflow overview
-│   ├── T3.1 - Process Prototyping and Evaluation/    # Sentence segmentation & centroid scoring prototyping (Python)
-│   ├── T3.2 - Process Execution/                     # Dual-instrument batch tagging & Compustat panel (Python)
-│   ├── T3.3 - Quality Assessment/                    # Gold-standard gate audit & agreement analysis (Python)
-│   ├── T3.X - Background Helper Functions/           # tagging.py, relevance.py, item1_local.py
-│   └── T3.X - Worked Example/                       # Same hearing: privacy relevance across eligible firms
+├── X2 - Example of Reproducing and Adapting the Research Pipeline/  # Agent prompt and implementation plan for adapting the pipeline
 │
 ├── J - Jobs/                                         # SLURM scripts and logs of the GPU runs
-├── L - Lib/                                          # Centralized core Python software library (L1 to L5)
-├── R - Results/                                      # Evaluation results and categorized figure outputs
-│   └── figures/                                      # Subdivided by D1, T1, T2, T3
-└── B - Backup of Original File Structure/            # Complete preserved backup of initial scripts
+└── R - Results/                                      # Evaluation results and categorized figure outputs
+    ├── figures/                                      # Subdivided by D, T1, T2, T3, X1; one folder per notebook
+    └── tables/                                       # Readable tables, one folder per notebook
 ```
 
-Follow the running example, the April 10, 2018 Facebook hearing with Mark Zuckerberg, through the [T1 summarization example](<T1 - Text Summarization/T1.4 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/README.md>), [T2 topic and stance example](<T2 - Topic Extraction and Stance Analysis/T2.5 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/README.md>), and [T3 firm-relevance example](<T3 - Topic Relevance and Corporate Disclosure/T3.X - Worked Example/README.md>). Each example has a README walkthrough and numbered folders for inputs, outputs, logs and verification, and scripts. T3 follows the hearing's privacy topic across all 998 eligible preceding firm disclosures, with Facebook and ResMed as two illustrations.
+Follow the running example, the April 10, 2018 Facebook hearing with Mark Zuckerberg, through the [T1 summarization example](<T - Three Step Text Analysis Pipeline/T1 - Text Summarization/T1.4 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/README.md>), [T2 topic and stance example](<T - Three Step Text Analysis Pipeline/T2 - Topic Extraction and Stance Analysis/T2.5 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/README.md>), and [T3 firm-relevance example](<T - Three Step Text Analysis Pipeline/T3 - Topic Relevance and Corporate Disclosure/T3.5 - Running Example [Facebook-Cambridge Analytica Scandal Hearing]/README.md>). Each example has a README walkthrough, a step-by-step notebook, and numbered folders for inputs, outputs, and logs. T3 follows the hearing's topic, consumer data privacy legislation, to the 1,058 S&P 500 firms it concerns, with the two panels of Figure 3 as one figure.
 
 ---
 
 ## 2. Summary of What Was Done in Each Process Stage
 
-### A. Data Collection & Processing (`D1`)
+### A. Data Collection & Processing (`D`)
 - **GovInfo Hearing Corpus**: Built an enumeration contract via `offsetMark` pagination to avoid shifting drops across 36,378 packages (1995–2025). Parsed MODS XML metadata to extract BioGuide member rosters and applied a 4-space indent paragraph rule to attribute speaker turns.
 - **C-SPAN Reference Summaries**: Queried C-SPAN Archives API across three committee categories (`House Committee`, `Senate Committee`, `Joint Committee`) to acquire 18,697 human-written editorial abstracts.
 - **SEC Form 10-K Filings**: Acquired 394 monthly bulk ZIP archives (~34 GB) containing 305,140 filings. Linked CIKs to Compustat GVKEYs and extracted Item 1 (Business), Item 1A (Risk Factors), and Item 7 (MD&A).

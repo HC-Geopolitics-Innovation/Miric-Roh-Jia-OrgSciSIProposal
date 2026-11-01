@@ -41,7 +41,7 @@ export RUN_NAME="sst_Qwen3.5-4B"
 
 echo "node $(hostname) | gpu $(nvidia-smi --query-gpu=name --format=csv,noheader) | shard ${SHARD} of ${N_SHARDS} | $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
-cd "${PROJECT_FOLDER}/T1 - Text Summarization/T1.2 - Process Entire Sample Congressional Hearings"
+cd "${PROJECT_FOLDER}/T - Three Step Text Analysis Pipeline/T1 - Text Summarization/T1.2 - Process Entire Sample Congressional Hearings"
 OUT_FOLDER="${SCRATCH_FOLDER}/nb_runs/${RUN_NAME}"
 mkdir -p "$OUT_FOLDER"
 "${ENV_PREFIX}/bin/jupyter" nbconvert --to notebook --execute \

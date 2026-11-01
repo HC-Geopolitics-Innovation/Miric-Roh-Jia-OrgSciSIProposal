@@ -1,0 +1,144 @@
+{
+  "packageId": "CHRG-115shrg37801",
+  "topic_id": 68,
+  "topic_statements": 374,
+  "hearings_with_statements": 119,
+  "hearing_statements": 13,
+  "hearing_statements_by_stance": {
+    "support": 7,
+    "concern": 6
+  },
+  "policy_summary_run": {
+    "run_started": "2026-10-25T12:37:24+00:00",
+    "gpu": "NVIDIA A40",
+    "calls": 27,
+    "final_words": 221,
+    "final_encoder_tokens": 274
+  },
+  "all_years_sample": {
+    "firms": 1058,
+    "sample_mean": 0.512105,
+    "score_min": 0.403442,
+    "score_max": 0.620883
+  },
+  "sectors_drawn": 15,
+  "highest_sector": "Information",
+  "lowest_sector_drawn": "Mining, quarrying, and oil and gas extraction",
+  "selected_firms": {
+    "Visa Inc.": {
+      "score": 0.620883,
+      "rank": 1,
+      "sector": "Finance and insurance"
+    },
+    "Nielsen Holdings": {
+      "score": 0.61306,
+      "rank": 5,
+      "sector": "Professional, scientific, and technical services"
+    },
+    "Alphabet Inc.": {
+      "score": 0.60944,
+      "rank": 8,
+      "sector": "Information"
+    },
+    "Motorola Mobility": {
+      "score": 0.606267,
+      "rank": 10,
+      "sector": "Manufacturing"
+    },
+    "ADT Corp.": {
+      "score": 0.602478,
+      "rank": 11,
+      "sector": "Administrative and support and waste management"
+    },
+    "CrowdStrike Holdings": {
+      "score": 0.597347,
+      "rank": 15,
+      "sector": "Information"
+    },
+    "Palo Alto Networks": {
+      "score": 0.596596,
+      "rank": 16,
+      "sector": "Information"
+    },
+    "Cisco Systems": {
+      "score": 0.595573,
+      "rank": 18,
+      "sector": "Manufacturing"
+    },
+    "Apple Inc.": {
+      "score": 0.594128,
+      "rank": 19,
+      "sector": "Manufacturing"
+    },
+    "Amazon.com Inc.": {
+      "score": 0.591493,
+      "rank": 21,
+      "sector": "Retail trade"
+    },
+    "Mastercard Inc.": {
+      "score": 0.58139,
+      "rank": 36,
+      "sector": "Finance and insurance"
+    },
+    "Oracle Corp.": {
+      "score": 0.578639,
+      "rank": 41,
+      "sector": "Information"
+    },
+    "Salesforce Inc.": {
+      "score": 0.57103,
+      "rank": 59,
+      "sector": "Information"
+    },
+    "Meta Platforms": {
+      "score": 0.546285,
+      "rank": 186,
+      "sector": "Information"
+    },
+    "Brown-Forman Corp.": {
+      "score": 0.469251,
+      "rank": 940,
+      "sector": "Manufacturing"
+    },
+    "Anheuser-Busch Cos.": {
+      "score": 0.459762,
+      "rank": 989,
+      "sector": "Manufacturing"
+    },
+    "Molson Coors Beverage Co.": {
+      "score": 0.449708,
+      "rank": 1030,
+      "sector": "Manufacturing"
+    },
+    "Marathon Oil Corp.": {
+      "score": 0.449017,
+      "rank": 1032,
+      "sector": "Mining, quarrying, and oil and gas extraction"
+    },
+    "Morgan Stanley": {
+      "score": 0.443511,
+      "rank": 1041,
+      "sector": "Finance and insurance"
+    },
+    "Norwegian Cruise Line": {
+      "score": 0.437907,
+      "rank": 1047,
+      "sector": "Transportation and warehousing"
+    },
+    "Pepsi Bottling Group": {
+      "score": 0.429339,
+      "rank": 1051,
+      "sector": "Manufacturing"
+    },
+    "Pep Boys (Manny Moe & Jack)": {
+      "score": 0.425061,
+      "rank": 1053,
+      "sector": "Retail trade"
+    }
+  },
+  "meta_platforms": {
+    "score": 0.546285,
+    "rank": 186
+  },
+  "verification_scope": "every value is read from the stored outputs of T3.2.1, T3.2.3, T3.3.5, T3.4.1, T3.4.3, and T3.4.4; no model is called"
+}

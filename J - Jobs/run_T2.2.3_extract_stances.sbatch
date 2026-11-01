@@ -40,7 +40,7 @@ export N_SHARDS=5
 
 echo "node $(hostname) | gpu $(nvidia-smi --query-gpu=name --format=csv,noheader) | shard ${SHARD} of ${N_SHARDS} | $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
-cd "${PROJECT_FOLDER}/T2 - Topic Extraction and Stance Analysis/T2.2 - Track 2 - Legislator Stance Extraction"
+cd "${PROJECT_FOLDER}/T - Three Step Text Analysis Pipeline/T2 - Topic Extraction and Stance Analysis/T2.2 - Track 2 - Legislator Stance Extraction"
 OUT_FOLDER="${SCRATCH_FOLDER}/nb_runs/track2_Qwen3.5-4B"
 mkdir -p "$OUT_FOLDER"
 "${ENV_PREFIX}/bin/jupyter" nbconvert --to notebook --execute \

@@ -32,7 +32,7 @@ mkdir -p "$TMPDIR"
 
 echo "node $(hostname) | gpu $(nvidia-smi --query-gpu=name --format=csv,noheader) | $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
-cd "${PROJECT_FOLDER}/T1 - Text Summarization/T1.3 - Validation of Summaries"
+cd "${PROJECT_FOLDER}/T - Three Step Text Analysis Pipeline/T1 - Text Summarization/T1.3 - Validation of Summaries"
 "${ENV_PREFIX}/bin/jupyter" nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=1800 \
   "T1.3.2 - Validation - Compare Summaries with C-SPAN Abstracts.ipynb"
 echo "finished $(date -u +%Y-%m-%dT%H:%M:%SZ)"
