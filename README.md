@@ -58,9 +58,9 @@ Each pipeline step opens with a workflow overview notebook and ends with a runni
 │   └── T3 - Topic Relevance and Corporate Disclosure/          # Firm 10-K exposure to privacy debate
 |
 ├── X1 - Example of Research Enabled by LLM Pipeline/           # Empirical application and patent shifts
-│   ├── Data/
-│   ├── X1.1 - Patent Data - Sample Firm Patents and Privacy Codes/
-│   └── X1.2 - Privacy Patents and Topic Relevance - 5 Codes by MM/
+│   ├── X1.1 - Data for Matching and Patent Analysis/
+│   ├── X1.2 - Notebooks for Matching and Aggregating Patent Data/
+│   └── X1.3 - Notebooks for Analysis/
 |
 ├── X2 - Example of Reproducing and Adapting the Research Pipeline/ # Coding agent adaptation guide
 |
@@ -69,12 +69,13 @@ Each pipeline step opens with a workflow overview notebook and ends with a runni
 │   ├── P2. Org Sci Proposal [Miric, Roh and Jia][PDF].pdf
 │   ├── P2. Org Sci Proposal [Miric, Roh and Jia][PDF].tex
 │   ├── P3. Org Sci Proposal - Full Methodology [Miric, Roh and Jia].md
-│   ├── figures/                                       # Rendered proposal figures
-│   └── pdfs/                                          # Component PDFs
+│   ├── P1.1 - PDFs for Submission/                    # Component and submission PDFs
+│   ├── P1.2 - Latex style files/                      # Supporting style files and compilation script
+│   └── figures/                                       # Rendered proposal figures
 |
 └── R - Results/                                       # Figures and tables matching D, T, X1
-    ├── figures/
-    └── tables/
+    ├── R1.1 - Figures/                                # High-resolution numbered figures (.png, .pdf, .svg)
+    └── R1.2 - Tables/                                 # Summary tables and point estimates
 ```
 
 ---

@@ -1,0 +1,19 @@
+end,gvkey,conm,display_name,naics,naics2,sector,score,demeaned,rank
+highest,179534,VISA INC,Visa Inc.,522320,52,Finance and insurance,0.620883,0.108778,1
+highest,100873,NIELSEN HOLDINGS PLC,Nielsen Holdings Plc,541910,54,"Professional, scientific, and technical services",0.613060,0.100955,5
+highest,160329,ALPHABET INC,Alphabet Inc.,518210,51,Information,0.609440,0.097335,8
+highest,002136,VERIZON COMMUNICATIONS INC,Verizon Communications Inc.,517312,51,Information,0.607030,0.094925,9
+highest,024800,QUALCOMM INC,Qualcomm Inc.,334413,33,Manufacturing,0.600682,0.088577,13
+highest,020779,CISCO SYSTEMS INC,Cisco Systems Inc.,334118,33,Manufacturing,0.595573,0.083468,18
+highest,001690,APPLE INC,Apple Inc.,334220,33,Manufacturing,0.594128,0.082023,19
+highest,028349,ALLSTATE CORP,Allstate Corp.,524126,52,Finance and insurance,0.591812,0.079707,20
+highest,064768,AMAZON.COM INC,Amazon.Com Inc.,455219,45,Retail trade,0.591493,0.079388,21
+highest,004423,EQUIFAX INC,Equifax Inc.,561450,56,Administrative and support and waste management,0.591470,0.079365,22
+highest,012141,MICROSOFT CORP,Microsoft Corp.,513210,51,Information,0.589822,0.077717,23
+highest,160225,MASTERCARD INC,Mastercard Inc.,522320,52,Finance and insurance,0.581390,0.069285,36
+highest,012142,ORACLE CORP,Oracle Corp.,513210,51,Information,0.578639,0.066534,41
+highest,041818,GE HEALTHCARE TECHNOLOGI INC,Ge Healthcare Technologi Inc.,334510,33,Manufacturing,0.575430,0.063325,49
+lowest,006335,KANSAS CITY SOUTHERN,Kansas City Southern,482111,48,Transportation and warehousing,0.445154,-0.066951,1037
+lowest,012124,MORGAN STANLEY,Morgan Stanley,523110,52,Finance and insurance,0.443511,-0.068594,1041
+lowest,104432,NORWEGIAN CRUISE LINE HLDGS,Norwegian Cruise Line Hldgs,483112,48,Transportation and warehousing,0.437907,-0.074198,1047
+lowest,119417,PEPSI BOTTLING GROUP INC,Pepsi Bottling Group Inc.,31211,31,Manufacturing,0.429339,-0.082765,1051

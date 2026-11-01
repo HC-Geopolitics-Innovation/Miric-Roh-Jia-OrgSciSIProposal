@@ -1,0 +1,27 @@
+primary_group,1 Macroeconomics,2 Civil Rights,3 Health,4 Agriculture,5 Labor,6 Education,7 Environment,8 Energy,9 Immigration,10 Transportation,12 Law and Crime,14 Housing,15 Domestic Commerce,16 Defense,17 Technology,18 Foreign Trade,19 International Affairs,20 Government Operations,21 Public Lands
+"Advanced computing, AI, and nanotechnology",0,0,2,0,0,1,1,6,0,0,0,0,0,0,19,0,0,0,0
+"Aviation policy, safety, and air traffic management",0,0,0,0,0,0,0,0,0,52,0,0,0,0,3,0,0,6,1
+"Broadband infrastructure, spectrum, and universal service",1,1,0,0,0,1,0,0,0,3,6,0,5,0,78,2,0,15,1
+Climate and environmental regulation,0,0,0,1,0,0,36,0,0,2,0,0,2,0,3,0,1,3,1
+Communications regulation and media,1,0,1,0,0,1,0,0,0,5,0,0,10,1,36,0,0,1,1
+Competition and intellectual property,0,0,0,1,0,0,0,0,0,1,0,0,3,0,3,1,0,0,0
+"Competitiveness, innovation, and STEM workforce",5,3,0,0,0,28,0,0,0,0,0,0,7,0,11,2,0,1,0
+Consumer and financial protection,2,0,1,0,0,0,1,2,0,2,0,0,24,0,2,1,0,6,0
+Cybersecurity and system integrity,0,2,2,0,1,0,0,0,0,5,1,0,5,3,35,1,0,11,0
+"Energy policy, research, and clean technologies",0,0,2,0,0,0,43,90,0,2,0,0,4,1,15,0,1,4,3
+"Federal budgets, appropriations, and stimulus",6,0,6,1,2,12,8,22,0,20,3,1,6,5,62,5,0,9,4
+"Fossil fuels, pipelines, and fuel standards",1,0,0,0,1,1,9,39,0,5,0,0,0,1,3,2,0,5,0
+Government operations and oversight,0,0,2,0,1,0,1,1,0,1,0,0,3,0,3,0,0,34,0
+Hazard preparedness and emergency response,0,0,0,0,0,0,2,0,0,1,11,0,13,0,3,0,0,3,0
+Health IT and biomedical policy,1,1,38,3,0,0,5,1,0,2,3,0,5,0,3,1,0,0,0
+Homeland and transportation security,0,0,1,0,0,3,1,0,0,65,5,0,3,4,1,1,1,13,0
+Motor carrier and vehicle safety,0,1,0,0,0,0,1,2,0,11,0,0,1,0,2,0,0,1,0
+NASA and space policy,1,0,1,0,1,1,0,0,0,4,1,0,0,1,169,0,1,7,0
+"Oceans, fisheries, and Arctic",0,0,0,21,0,0,15,1,0,0,0,0,0,0,7,0,1,2,0
+Passenger rail and rail safety,0,0,0,0,0,0,0,0,0,29,0,0,2,0,0,0,0,6,0
+Privacy and digital consumer protection,0,11,7,0,0,0,0,0,0,3,10,0,14,1,20,0,1,1,0
+"Science agencies, advisory bodies, and integrity",0,1,0,0,0,0,3,0,0,1,2,0,0,0,7,1,0,0,0
+Sports and tourism regulation,1,1,1,1,1,1,0,0,0,1,0,0,21,0,4,0,0,1,0
+Surface transportation and infrastructure funding,0,0,0,0,0,0,0,0,0,27,0,0,1,0,1,0,0,7,0
+"Trade, supply chains, and critical minerals",2,0,1,2,2,0,2,0,1,0,0,0,2,0,2,11,1,6,1
+"Weather, satellites, and Earth observation",0,0,0,0,0,0,8,0,0,0,0,0,8,0,71,0,0,7,1

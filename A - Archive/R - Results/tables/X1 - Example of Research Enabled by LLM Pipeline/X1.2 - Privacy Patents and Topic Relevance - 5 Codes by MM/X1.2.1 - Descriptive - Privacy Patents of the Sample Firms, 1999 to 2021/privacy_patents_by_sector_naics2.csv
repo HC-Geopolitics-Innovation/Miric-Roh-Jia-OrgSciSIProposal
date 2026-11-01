@@ -1,0 +1,20 @@
+sector,n_firms,n_firms_ever_filed,codes,n_firms_never_filed,n_privacy_patents
+Information,113,42,51,71,2285
+Finance and insurance,149,14,52,135,469
+Manufacturing,420,48,31 to 33,372,399
+Retail trade,59,7,44 to 45,52,351
+"Professional, scientific, and technical services",38,9,54,29,124
+Transportation and warehousing,27,4,48 to 49,23,52
+Administrative and support and waste management,14,4,56,10,10
+"Arts, entertainment, and recreation",5,2,71,3,9
+Real estate and rental and leasing,47,1,53,46,3
+Unclassified,4,2,99,2,2
+"Mining, quarrying, and oil and gas extraction",53,1,21,52,1
+Wholesale trade,21,1,42,20,1
+Accommodation and food services,17,1,72,16,1
+Utilities,58,0,22,58,0
+Health care and social assistance,13,0,62,13,0
+Construction,11,0,23,11,0
+"Agriculture, forestry, fishing and hunting",3,0,11,3,0
+Educational services,3,0,61,3,0
+Other services,3,0,81,3,0

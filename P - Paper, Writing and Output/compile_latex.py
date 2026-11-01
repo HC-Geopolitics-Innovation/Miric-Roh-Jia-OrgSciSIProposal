@@ -3,34 +3,61 @@
 compile_latex.py
 ----------------
 Compiles LaTeX documents into PDFs and immediately cleans up all intermediate
-files (*.aux, *.log, *.out, missfont.log, etc.).
+files (*.aux, *.log, *.out, *.toc, *.nav, *.snm, *.vrb, missfont.log, etc.).
 """
 import glob
 import os
 import subprocess
 import sys
+import shutil
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, ".."))
+P_DIR = os.path.join(PROJECT_ROOT, "P - Paper, Writing and Output") if not BASE_DIR.endswith("P - Paper, Writing and Output") else BASE_DIR
+P11_DIR = os.path.join(P_DIR, "P1.1 - PDFs for Submission")
 
-def cleanup_intermediates():
+def cleanup_intermediates(directory):
     for ext in ("*.aux", "*.log", "*.out", "*.toc", "*.nav", "*.snm", "*.vrb", "missfont.log"):
-        for f in glob.glob(os.path.join(BASE_DIR, ext)):
+        for f in glob.glob(os.path.join(directory, ext)):
             try:
                 os.remove(f)
             except OSError:
                 pass
 
-def compile_doc(tex_filename):
-    print(f"Compiling {tex_filename}...")
+def compile_doc(tex_path, target_dir=None):
+    tex_dir = os.path.dirname(os.path.abspath(tex_path))
+    tex_name = os.path.basename(tex_path)
+    print(f"Compiling {tex_name} in {tex_dir}...")
     for pass_num in (1, 2):
-        cmd = ["/Library/TeX/texbin/pdflatex", "-interaction=nonstopmode", tex_filename]
-        res = subprocess.run(cmd, cwd=BASE_DIR, capture_output=True, text=True)
+        cmd = ["/Library/TeX/texbin/pdflatex", "-interaction=nonstopmode", tex_name]
+        res = subprocess.run(cmd, cwd=tex_dir, capture_output=True, text=True)
         if res.returncode != 0 and pass_num == 2:
-            print(f"LaTeX Warning/Error on {tex_filename}:\n{res.stdout[-500:]}", file=sys.stderr)
+            print(f"LaTeX Warning/Error on {tex_name}:\n{res.stdout[-600:]}", file=sys.stderr)
 
-    cleanup_intermediates()
-    pdf_name = tex_filename.replace(".tex", ".pdf")
-    print(f"Successfully generated {pdf_name} and cleaned up all intermediate files.")
+    cleanup_intermediates(tex_dir)
+    pdf_name = tex_name.replace(".tex", ".pdf")
+    pdf_path = os.path.join(tex_dir, pdf_name)
+    if os.path.exists(pdf_path):
+        print(f"Successfully generated {pdf_name} and cleaned up intermediate files.")
+        if target_dir and os.path.abspath(tex_dir) != os.path.abspath(target_dir):
+            shutil.copy2(pdf_path, os.path.join(target_dir, pdf_name))
+            print(f"Copied {pdf_name} to {target_dir}")
+
+def compile_all():
+    # 1. P2 in P folder
+    p2_tex = os.path.join(P_DIR, "P2. Org Sci Proposal [Miric, Roh and Jia][PDF].tex")
+    if os.path.exists(p2_tex):
+        compile_doc(p2_tex, target_dir=P11_DIR)
+    
+    # 2. main.tex and appendix.tex in P1.1
+    for doc in ["main.tex", "appendix.tex"]:
+        doc_path = os.path.join(P11_DIR, doc)
+        if os.path.exists(doc_path):
+            compile_doc(doc_path)
 
 if __name__ == "__main__":
-    compile_doc("P2. Org Sci Proposal [Miric, Roh and Jia][PDF].tex")
+    if len(sys.argv) > 1:
+        for arg in sys.argv[1:]:
+            compile_doc(arg)
+    else:
+        compile_all()
