@@ -53,110 +53,155 @@
 \section*{Appendix A. Overview of Steps in Large Language Model Enabled Research Pipeline}
 \addcontentsline{toc}{section}{Appendix A. Overview of Steps in Large Language Model Enabled Research Pipeline}
 
+Here we summarize and outline the described pipeline, split across three related tasks (or problems) solved by LLMs.
+
 \subsection*{A.1. Long-Document Text Summarization}
+
+Many textual documents contain important information but also contain noisy and complex textual data. Large language models can provide a concise, information-rich summary that can be utilized in subsequent research tasks.
+
 \subsubsection*{A.1.1. Overview of Processing Pipeline}
 
-Processing long text documents is a challenge for large language models because they are prone to degradation in attention as input text increases (Liu et al., 2023), struggle to preserve factual detail across multiple conversational turns, and can introduce hallucinations during complex open-ended synthesis. 
+A pipeline to manage this process is as follows (summarized at length in Section xxx):
 
-To overcome these constraints, we propose a staged Map-Reduce summarization pipeline that preserves document integrity:
-\begin{enumerate}
-    \item \textbf{Data Ingestion \& Speaker Turn Partitioning:} Documents are ingested from source XML/HTML formats, parsed into turn-level records, and attributed to specific speakers.
-    \item \textbf{Chunk-Level Map Summarization:} Documents exceeding the model's high-attention context threshold are divided into sequential semantic chunks (roughly 4,000--8,000 tokens) with overlapping boundaries to prevent conversational clipping. Prompts focus the model on identifying substantive factual points.
-    \item \textbf{Hierarchical Reduce Synthesis:} Intermediate chunk summaries are aggregated through a structured reduce prompt that reconciles cross-chunk themes into an entity-attributed document summary.
-    \item \textbf{Discriminant Validity Checkpoint:} Summaries are validated against external human benchmarks (such as professional C-SPAN editorial abstracts).
-\end{enumerate}
+\begin{itemize}
+    \item \textbf{Understand Document Structure and Define Semantic Partitioning:} Long textual documents often have a particular structure and therefore may be split into meaningful chunks. Context-aware chunking uses meaningful units of text in the document---such as a document section or a speaker's uninterrupted contribution---to split documents into chunks that can be processed by the LLM. The document is partitioned into these chunks and processed further.
+    \item \textbf{Summarize and Combine the Inputs:} Each chunk of text is provided to an LLM with instructions outlining the desired format of the summary and the key information that should be extracted. The outputs can be combined in a variety of ways, such as recursively summarizing chunks or using a dedicated ``reduce'' stage to combine the summaries. This is referred to as a ``map-reduce'' approach.
+    \item \textbf{Model Selection, Validation, and Deployment:} This is inherently an iterative process where researchers must test different approaches for partitioning, prompts for summarization, models for summarization, and combination strategies. All of these choices can be evaluated by inspecting intermediate outputs (partitions, summaries, outcomes for different models) and validated against ground truth where available. Once the optimal set of choices is identified, the pipeline is deployed across the entire corpus of documents.
+\end{itemize}
 
 \subsubsection*{A.1.2. Application: Summarizing Long Text Congressional Hearings}
 
-We apply this architecture to 2,352 congressional committee hearings before the House Science, Space, and Technology Committee and the Senate Commerce, Science, and Transportation Committee. Transcripts average roughly 40,000 words. Figure 1 reports the cosine similarity between our generated summaries and independent, professional C-SPAN abstracts across same-hearing, same-committee, and different-committee pairs.
+We apply this pipeline to a corpus of U.S. Congressional hearing testimonies. The corpus consists of hearing transcripts spanning from 1995 to 2025, with multiple sessions per year. Hearings are typically long, often exceeding 100 pages, and feature multiple witnesses and committee members presenting testimony and engaging in Q\&A discussions.
 
-\begin{figure}[htbp]
-    \centering
-    \caption{Cosine Similarity Between Hand-Coded Summaries and Large Language Model Generated Summaries across Committees}
-    \vspace{6pt}
-    \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
-    \fbox{\includegraphics[width=0.85\textwidth]{figures/fig1_cosine_similarity.png}}
-    \vspace{6pt}
-    {\footnotesize\textit{Notes: Comparison of cosine similarity distributions between model-generated summaries and independent human-authored C-SPAN abstracts. Same-document pairs exhibit high semantic alignment, whereas different-committee pairs show distinct separation, verifying discriminant validity.}\par}
-\end{figure}
+To apply the pipeline, we first partition each hearing into individual witness testimonies. Within each testimony, we use sentence-level splitting to ensure granular coverage. These segments are then processed using the Map-Reduce summarization approach, with a ``reduce'' stage to consolidate summaries from multiple witnesses into a single comprehensive hearing summary.
+
+These summaries are tested with different prompts, models, and splitting strategies. As a validation approach, we compare our generated summaries against human-generated summaries (abstracts) available on C-SPAN for these hearings. To identify the extent to which they are similar or comparable, we compute the cosine similarity between the embeddings of the human-written abstracts and the large language model generated summaries. As a way of providing a baseline for these values, in Figure 1, we compare them to the cosine similarity of different hearings from the same committee, or from hearings from different committees. Such tests allow us to confirm that the textual summaries are a useful distillation of the information in the long-form textual documents.
 
 \subsubsection*{A.1.3. Research Outputs}
 
+The summarization pipeline yields a transparent pipeline of code and prompts, as well as intermediate outputs at each stage of the process that can be utilized further:
+
 \begin{itemize}
-    \item \textbf{Cleaned Transcript Segments:} Fully segmented, speaker-attributed transcripts with timestamp and witness provenance.
-    \item \textbf{Intermediate Chunk Summaries:} Auditable, passage-level summaries supporting localized verification.
-    \item \textbf{Final Hearing Summaries:} Entity-attributed committee hearing summaries for downstream classification.
+    \item \textbf{Partitioned Textual Documents:} A cleaned and partitioned version of each hearing that can be uploaded to an LLM without exceeding context windows.
+    \item \textbf{Summarized Partitions:} A summary of each partition, generated by feeding the partitions into an LLM.
+    \item \textbf{Committee Hearing Summaries:} Aggregated summaries from individual partitions into high-level summaries of overall hearing proceedings, capturing main themes, discussions, and conclusions (an output of the map-reduce process).
 \end{itemize}
 
 \subsection*{A.2. Extracting Topics, Positions, and Arguments from Long-Form Documents}
+
+Large language models can also extract subtle but important nuances from textual documents, specifically related to topics of interest. In this step, we provide a method for extracting topics, positions, and arguments from long-form documents.
+
 \subsubsection*{A.2.1. Overview of Processing Pipeline}
 
-\begin{enumerate}
-    \item \textbf{Taxonomic Clustering \& Codebook Generation:} We use LLMs to extract emerging policy topics from statements and crosswalk them to standardized classification systems like the Comparative Agendas Project (CAP).
-    \item \textbf{Stance Extraction:} Identifying discrete positions (support, concern, neutral) held by individual speakers on focal topics.
-    \item \textbf{Validation Against External Criteria:} Agreement audits across prompt variants and cross-validation against legislative roll-call voting records.
-\end{enumerate}
+A pipeline to manage this process is as follows:
+
+\begin{itemize}
+    \item \textbf{Extract Topics from Textual Summaries:} From the long-form textual summaries, researchers can identify the major topics discussed within each summary. Because these are condensed, information-rich summaries, a variety of existing models can be effective for this task.
+    \item \textbf{Filter Textual Summaries by Topic Relevance:} The partitioned text chunks contain subtle and nuanced arguments. However, as described in Section 3.1, many of these chunks contain noise, such as generic statements, remarks made by peripheral entities, or irrelevant information. Large language models can be used to filter out chunks that are relevant to having a stance on the focal topic.
+    \item \textbf{Extract Arguments and Stances from Relevant Textual Summaries:} Within the filtered chunks, the LLM is tasked with extracting key positions related to the focal topic. This includes identifying whether the statement is supportive of or opposed to the topic, the specific nuances of the argument, and contextual information from the document.
+    \item \textbf{Aggregate and Summarize:} The output of the preceding stage provides a set of concise data about the stances of individuals on a focal topic. These can be aggregated or summarized in different ways and at different levels of granularity.
+    \item \textbf{Prototyping and Validation:} The goal of this exercise is to extract information that is otherwise difficult to capture and contextualize at scale. While this is challenging to validate quantitatively because comprehensive ground truth does not pre-exist, it is possible to compare against external baselines. We provide an example by validating our summaries against human-generated ones.
+\end{itemize}
 
 \subsubsection*{A.2.2. Application: Extracting Stances and Arguments around Focal Topics}
 
-Figure 2 illustrates the distribution of identified congressional stances across major technological domains, highlighting the balance of support versus concern.
+We apply this methodology to extract stances and arguments from U.S. Congressional hearings. First, we filter out summaries that are not relevant to the topic of interest and extract arguments and stances related to the focal topic. For instance, within congressional debate on a particular topic (such as the security and privacy of consumers), it becomes possible to capture both arguments related to the risks presented by a policy topic (e.g., potential misuse of data, impact on free speech) and potential opportunities (e.g., economic growth, innovation).
 
-\begin{figure}[htbp]
-    \centering
-    \caption{Topics and Overview of Stance (Support / Concern of Policymakers)}
-    \vspace{6pt}
-    \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
-    \fbox{\includegraphics[width=0.90\textwidth]{figures/fig2_topics_stances_4panel.png}}
-    \vspace{6pt}
-    {\footnotesize\textit{Notes: Four-panel overview tracking congressional topic prevalence, stance distributions, member polarization, and longitudinal legislative attention across science and technology hearings.}\par}
-\end{figure}
+We aggregate these summaries in different ways, ultimately arriving at a numerical measure that captures the overall tenor of discussion within congressional debate. In doing so, we capture the predominant stances and arguments made by policymakers.
+
+In Figure 2, we illustrate the output of this analysis across four interconnected panels (grouped in twos: Panels A \& B, Panels C \& D).
 
 \subsubsection*{A.2.3. Research Outputs}
 
+The outputs of this pipeline are:
+
 \begin{itemize}
-    \item \textbf{Standardized 111-Topic Policy Codebook:} Fully crosswalked to CAP categories.
-    \item \textbf{Member-Topic Stance Panel:} Micro-level dataset tracking individual member arguments and policy positions over time.
+    \item \textbf{Topics of Debate within Congressional Hearings:} A standardized list of topics discussed within the textual documents, assigned to each hearing document.
+    \item \textbf{Filtered Arguments and Examples on Each Topic:} A set of statements filtered from each congressional debate that captures the main arguments related to each specific topic, classified according to whether the policy is discussed as an opportunity or a threat.
+    \item \textbf{Predominant Stances on Each Topic:} An index for each topic indicating the extent to which it is perceived as an opportunity or a threat by policymakers in each hearing, also aggregated at the year and committee levels to provide an overall description of main stances on each topic.
 \end{itemize}
 
 \subsection*{A.3. Policy Relevance for Publicly Listed Firms}
+
+The earlier analysis provides detailed information extraction from congressional debate about economically important policies that directly shape the external environment of publicly listed firms. While there are anecdotal examples of firms being influenced by these policies, it is difficult to quantify this at scale and determine the extent to which firms are impacted.
+
+To quantitatively measure the relevance of policy debate to publicly listed firms requires computing the relatedness between policy documents and corporate disclosures that reflect the business of the firm. This is fundamentally achieved by computing the textual distance between documents conveying policy relevance and documents describing the firm's business. LLMs can be used to either filter or summarize text, as described above, in order to improve the accuracy of this distance measure.
+
 \subsubsection*{A.3.1. Overview of Processing Pipeline}
 
-\begin{enumerate}
-    \item \textbf{Corporate Text Extraction:} We extract Item 1 (Business Description) from annual 10-K filings.
-    \item \textbf{Centroid Embedding Estimation:} Generating high-dimensional dense embeddings of policy debate stances and firm business summaries.
-    \item \textbf{Cosine Distance Scoring:} Measuring semantic cosine similarity between each firm's business profile and the policy centroid, demeaned relative to sample benchmarks.
-\end{enumerate}
+A pipeline to manage this process is as follows (summarized at length in Section xxx):
+
+\begin{itemize}
+    \item \textbf{Identify \& Pre-Process Focal Documents:} In the earlier process, we filtered out text chunks reflecting positions or stances of individuals or organizations on a particular topic. As an optional step, these can be further summarized into a stance summary on each issue. Similarly, an optional step is to summarize textual documents from companies (for example, Form 10-K filings).
+    \item \textbf{Compute Semantic Distance and Topical Relevance:} Using either raw textual documents or summaries created in the earlier step, we compute the semantic relatedness of these documents to the 10-K statements of firms. This can be done using textual distance measures between document embeddings (e.g., cosine similarity using transformer-based embeddings) or by using large language models to compute semantic similarity. The robustness and sensitivity to different similarity measures can be tested and validated.
+    \item \textbf{Aggregate Distance and Relevance Measures:} Outputs from the earlier phase can then be aggregated up to the level appropriate for a specific analysis. For instance, it may be relevant to compute the impact of a policy debate on a specific firm over time, a specific firm in aggregate, or across an entire industry. Fine-grained outputs at each stage of the process allow for validation, verification, and evaluation.
+\end{itemize}
 
 \subsubsection*{A.3.2. Application: Connecting Focal Concerns and Opportunities of Policymakers to Business Areas of Publicly Listed Firms}
 
-Figure 3 reports topic relevance scores for publicly listed firms regarding Consumer Data Privacy Legislation (Topic 68). Panel A reports industry-level exposure by NAICS sector relative to the sample mean. Panel B reports firm-level relevance scores for selected high- and low-relevance firms.
+We apply this methodology to understand how congressional policy debate around a particular policy topic impacts the business of firms. We focus on a particularly transformational shift in regulatory debate: the regulation of technology companies in relation to consumer privacy following the Cambridge Analytica scandal, which affected Facebook / Meta.
 
-\begin{figure}[htbp]
-    \centering
-    \caption{Topic Relevance Scores for Publicly Listed Firms}
-    \vspace{6pt}
-    \begin{minipage}[t]{0.48\textwidth}
-        \centering
-        {\footnotesize Panel A: NAICS Sector Cosine Relative to Mean}\par\vspace{3pt}
-        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
-        \fbox{\includegraphics[width=\textwidth]{figures/fig3_panel_a_naics_relevance.png}}
-    \end{minipage}\hfill
-    \begin{minipage}[t]{0.48\textwidth}
-        \centering
-        {\footnotesize Panel B: Selected High and Low Relevance Firms}\par\vspace{3pt}
-        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
-        \fbox{\includegraphics[width=\textwidth]{figures/fig3_panel_b_top_firms.png}}
-    \end{minipage}
-    \vspace{6pt}
-    {\footnotesize\textit{Notes: Panel A reports firm summary cosine similarity by NAICS sector relative to the sample mean (Topic 68 policy summary vector). Panel B reports demeaned topic relevance scores for selected high- and low-relevance firms, color-coded by sector (Information sector in crimson, other sectors in slate grey). Both panels share identical aspect ratios ($1.5$).}\par}
-\end{figure}
+We utilize the filtered text from Section 3.2.3 to first create a summary of the Congressional debate on the topic of Privacy and Security, highlighting primary concerns and opportunities. We then compute the semantic distance between these summaries and the 10-K statements of publicly listed firms. We aggregate these measures to identify the firms whose businesses are potentially impacted by these policies. We report both raw data that can be leveraged for subsequent research and aggregate measures relevant to our empirical study.
+
+We summarize the results of this classification in Figure 3. In Figure 3A (Panel A), we show the average cosine similarity between firms' Item 1 business descriptions and Congressional statements on Topic 68 (Consumer Data Privacy Legislation), relative to the sample mean across sectors. Firms in the Information (NAICS 51) sector exhibit the highest policy relevance, consistent with empirical expectations. In Figure 3B (Panel B), we show the top 10 firms most relevant to the Congressional debate on consumer data privacy legislation, finding that major digital and social media firms (such as Facebook/Meta and Alphabet/Google) emerge as the most exposed entities.
 
 \subsubsection*{A.3.3. Research Outputs}
 
+The outputs of this pipeline are:
+
 \begin{itemize}
-    \item \textbf{10-K Item 1 Business Description Corpus:} Curated and verified annual report summaries.
-    \item \textbf{Firm-Topic Relevance Panel:} Longitudinal exposure scores linking public firms to policy debates.
+    \item \textbf{Summary of Policy Opportunities and Concerns for Each Congressional Session:} A textual summary of key concerns and opportunities related to a particular policy discussed by policymakers during a particular session.
+    \item \textbf{Aggregated Summary of Opportunities and Concerns for Each Major Policy Issue:} A synthesized summary of primary opportunities and concerns related to each policy issue across policymakers.
+    \item \textbf{Scores for Policy Relevance to Publicly Listed Firms:} A distance-based score measuring how much a particular policy (opportunity or threat) relates to the specific business activities of a publicly listed firm.
 \end{itemize}
+
+% =========================================================================
+% FIGURES 1, 2, AND 3 AT THE END OF APPENDIX A (EACH ON ITS OWN PAGE)
+% =========================================================================
+
+\clearpage
+\begin{center}
+\captionof{figure}{Cosine Similarity Between Hand-Coded Summaries and Large Language Model Generated Summaries}
+\vspace{6pt}
+\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+\fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{figures/fig1_cosine_similarity.png}}
+\vspace{6pt}
+{\footnotesize\textit{Notes: Discriminant validity test comparing LLM-generated summaries against independent human-written C-SPAN abstracts using dense sentence embeddings (bge-large-en-v1.5). The target hearing exhibits high cosine similarity ($\rho=0.742$) against its own human abstract, substantially exceeding baselines from different hearings within the same committee ($\rho=0.518$) and hearings from different committees ($\rho=0.384$).}\par}
+\end{center}
+
+\clearpage
+\begin{center}
+\captionof{figure}{Topics and Overview of Stance (Support / Concern of Policymakers)}
+\vspace{6pt}
+\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+\fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{figures/fig2_topics_stances_4panel.png}}
+\vspace{6pt}
+{\footnotesize\textit{Notes: In Panel A, we report the distribution of topics discussed across the hearing sample and the balance of stances in support of or concern regarding these topics. In Panel B, we report the breakdown for topics specifically related to privacy and security. From Panel A, it is evident that consumer privacy is one of the dominant topics, and the subgroup Consumer Data Privacy Legislation is among the few where substantial legislative support emerges for regulatory action. In Panels C and D, we report the longitudinal share of stances discussed by Congress over time, separating Consumer Data Privacy Legislation into its own group (Panel D) and contrasting it with other technology policy topics (Panel C). We find a pronounced structural increase in the share of statements supporting consumer privacy legislation after 2016 (following the Cambridge Analytica disclosures). No corresponding increase is observed among other policy topics. This analysis demonstrates how the pipeline documents political debate and traces legislative shifts over time.}\par}
+\end{center}
+
+\clearpage
+\begin{center}
+\captionof{figure}{Topic Relevance Scores for Publicly Listed Firms}
+\vspace{6pt}
+\begin{minipage}[t]{0.485\textwidth}
+    \centering
+    {\footnotesize\textbf{Panel A: NAICS Sector Cosine Relative to Sample Mean}}\par\vspace{3pt}
+    \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+    \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{figures/fig3_panel_a_naics_relevance.png}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}
+    \centering
+    {\footnotesize\textbf{Panel B: Top 10 Relevant Firms by Share of Sentences}}\par\vspace{3pt}
+    \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+    \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{figures/fig3_panel_b_top_firms.png}}
+\end{minipage}
+\vspace{6pt}
+{\footnotesize\textit{Notes: Panel A reports firm summary cosine by NAICS sector relative to the sample mean (Topic 68 policy summary vector). Each bar represents the sector mean minus the mean across all 841 firms in the three-year sample (fiscal years 2010, 2015, and 2020) of the firm relevance score, computed as the cosine similarity between the firm’s Item 1 summary and the policy summary of Topic 68 hearing statements. Zero denotes the sample mean (0.5143); bars to the right indicate sectors above the mean, and bars to the left indicate sectors below. Error bars span one standard deviation of firm scores within each sector, capturing within-industry cross-firm variation. Sectors reflect two-digit NAICS codes, with manufacturing (31--33), retail trade (44--45), and transportation/warehousing (48--49) grouped. Sectors with fewer than 5 firms are excluded. Panel B reports the top 10 most relevant firms by share of sentences aligned with the Topic 68 statement centroid. Bars report the share of each firm’s Item 1 sentences whose cosine similarity with the Topic 68 policy statement centroid is at or above 0.75, divided by total Item 1 sentences. Ranked among 841 scored firms across fiscal years 2010, 2015, and 2020. Least relevant firms are omitted as 679 firms tie at zero exposure.}\par}
+\end{center}
+
+% =========================================================================
+% APPENDIX B
+% =========================================================================
 
 \clearpage
 \section*{Appendix B. Overview of Datasets Used for Data Pipeline}
@@ -164,23 +209,43 @@ Figure 3 reports topic relevance scores for publicly listed firms regarding Cons
 
 This appendix provides an integrated overview of the primary input corpora, verification benchmarks, and research output datasets utilized across our AI-enabled pipeline.
 
-\subsection*{B.1. Primary Data Inputs}
+\subsection*{A. Primary Data Inputs}
+
+\textbf{Congressional Hearings Dataset (U.S. GPO GovInfo CHRG Collection):}
 \begin{itemize}
-    \item \textbf{Congressional Hearings Dataset (U.S. GPO GovInfo CHRG Collection):} Complete package manifest of 36,378 hearings spanning 1995--2025. Focal sample covers 2,352 hearings before House Science and Senate Commerce committees containing 93.6 million words across 116,000 speaker turns.
-    \item \textbf{Publicly Listed Firms Business Descriptions (SEC Form 10-K Filings):} Full SEC EDGAR archive accessed via sec-api.io, comprising 305,140 annual reports. Mapped to financial fundamentals through a bijective CRSP--Compustat crosswalk linking 25,207 CIK $\leftrightarrow$ GVKEY identifier pairs. Yields 22,299 S\&P 500 reports complete with extracted text and usability flags.
+    \item \textbf{Enumerated Universe:} Complete package manifest of 36,378 hearings spanning 1995--2025, enumerated prior to data retrieval to ensure every omitted item is a measured subtraction rather than an unobserved omission.
+    \item \textbf{Focal Science Sample:} For this proposal, we focus on hearings before the House Science, Space, and Technology Committee (hssy00) and the Senate Commerce, Science, and Transportation Committee (sscm00), comprising 2,352 hearings containing 93.6 million words across 116,000 speaker turns.
+    \item \textbf{Data Processing \& Integrity:} Downloaded MODS XML metadata and full HTML transcripts parsed into speaker-attributed speaking turns, witness lists, member rosters, and hearing dates. Systematic defect tracking identified 1,253 un-digitized stubs (predominantly from 1995--1996) and 4,448 empty member rosters, both flagged in indicator columns rather than silently dropped.
 \end{itemize}
 
-\subsection*{B.2. Verification Data}
+\textbf{Publicly Listed Firms Business Descriptions (SEC Form 10-K Filings):}
 \begin{itemize}
-    \item \textbf{Independent Reference Abstracts (C-SPAN Archives API):} 18,697 committee program summaries covering 1995--2025 written by professional C-SPAN editors independently of congressional staff, serving as an external ground-truth benchmark for discriminant validity testing.
+    \item \textbf{Enumerated Archive:} Full SEC EDGAR Form 10-K archive accessed via sec-api.io, comprising 305,140 annual reports across 394 monthly containers (34 GB of text spanning 1993--2025).
+    \item \textbf{Firm Linking \& Identification:} Mapped to financial fundamentals through a bijective CRSP--Compustat crosswalk linking 25,207 CIK $\leftrightarrow$ GVKEY identifier pairs.
+    \item \textbf{Item 1 Extraction \& Verification:} The Business description section (Item 1) is extracted for all S\&P 500 reports. The Extractor API returned 432 filings (1.9\%) empty; all 432 were deterministically recovered and verified from the local bulk archive.
+    \item \textbf{Usable Corporate Sample:} Yields 22,299 S\&P 500 annual reports complete with extracted text, provenance metadata, and usability flags, directly feeding Stage 4 policy relevance scoring.
 \end{itemize}
 
-\subsection*{B.3. Output Research Datasets}
+\subsection*{B. Verification Data}
+
+\textbf{Independent Reference Abstracts (C-SPAN Archives API):}
 \begin{itemize}
-    \item \textbf{Text Summarization Corpus (Stage 2 Outputs):} Cleaned, turn-attributed transcripts; intermediate chunk summaries; finalized hearing summaries (\texttt{hearing\_summaries.parquet}).
-    \item \textbf{Policy Stance Panel Dataset (Stage 3 Outputs):} Standardized 111-topic policy taxonomy codebook (\texttt{frozen\_codebook\_111.parquet}); longitudinal member-topic stance panel (\texttt{member\_stance\_panel.parquet}).
-    \item \textbf{Corporate Topic Relevance Dataset (Stage 4 Outputs):} Form 10-K Item 1 corporate business description embeddings; congressional debate centroid vectors; firm-year policy exposure panel (\texttt{firm\_topic\_relevance\_panel.parquet}).
+    \item \textbf{Scope:} 18,697 committee programs covering 1995--2025, retrieved from api.c-spanarchives.org.
+    \item \textbf{Content \& Role:} Human-authored editorial abstracts (median 51 words) written by professional C-SPAN editors independently of congressional staff and our pipeline.
+    \item \textbf{Pipeline Function:} Serves as an unpolluted, external ground-truth benchmark for discriminant validity testing, comparing cosine similarity of LLM summaries against human abstracts across identical versus distinct committees.
 \end{itemize}
+
+\subsection*{C. Output Research Datasets}
+
+\begin{itemize}
+    \item \textbf{Text Summarization Corpus (Stage 2 Outputs):} Cleaned, turn-attributed, and chunked transcript segments across all 2,352 hearings; intermediate chunk-level summaries produced by turn-aware map-reduce prompts; finalized, entity-attributed committee hearing summaries (\texttt{hearing\_summaries.parquet}; 2,352 records) validated against independent C-SPAN abstracts.
+    \item \textbf{Policy Stance Panel Dataset (Stage 3 Outputs):} Ratified, canonical 111-topic policy taxonomy codebook (\texttt{frozen\_codebook\_111.parquet}) extracted from congressional testimony and crosswalked to the Comparative Agendas Project (CAP); filtered text statements isolating discrete member policy positions (support, concern, neutral); longitudinal congressional member-topic stance panel (\texttt{member\_stance\_panel.parquet}) tracking policy orientation across committees and congresses over time.
+    \item \textbf{Corporate Topic Relevance Dataset (Stage 4 Outputs):} Synthesized Form 10-K Item 1 corporate business description embeddings across 22,299 firm-year filings; synthesized congressional debate summaries and topic centroid vectors (e.g., Topic 68: Consumer Data Privacy Legislation); firm-year policy exposure and relevance score panel (\texttt{firm\_topic\_relevance\_panel.parquet}) linking S\&P 500 firms to congressional debate dynamics.
+\end{itemize}
+
+% =========================================================================
+% APPENDIX C
+% =========================================================================
 
 \clearpage
 \section*{Appendix C. Example of Research Enabled by LLM Data Pipeline}
@@ -188,94 +253,101 @@ This appendix provides an integrated overview of the primary input corpora, veri
 
 \subsection*{Evaluating the Impact of Privacy Policy Debate Following the Cambridge Analytica Scandal on the Trajectory of Firm Corporate Research on Privacy Technology}
 
-As described above, we demonstrate how the application of our data pipeline to congressional testimony and company 10-K filings allows us to quantify which firms were impacted by policy debate and study this question in a way not previously possible. 
+As described above, we demonstrate how the application of our data pipeline to congressional testimony and company 10-K filings allows us to quantify which firms were impacted by this policy and study this question in a way not previously possible.
 
-Leveraging this pipeline, we generate an index providing both the stance of a policy debate (corporate and consumer data privacy) and the extent to which these policy positions impacted specific firms. Crucially, these issues would not have been possible to identify, let alone empirically study, in the absence of our staged approach: while prominent technology firms like Meta/Facebook were known targets following the Cambridge Analytica scandal, identifying the broader universe of affected firms across diverse sectors has historically been intractable.
+Leveraging the rich data pipeline we describe above, we are able to generate an index which provides us with an indication for the stance of a policy debate (e.g., related to corporate / customer privacy; see Section A.3.2), but also simultaneously the extent to which these policy positions would have impacted firms, and which firms would have been impacted. Crucially, these issues would not have been possible to identify, let alone empirically study, in the absence of an approach such as the one we propose, because while it would have been possible to identify prominent technology companies from the data, it would not have been easy to conclude which are the companies which were directly impacted by these policy changes, beyond the usual suspects (e.g., Meta / Facebook following the Cambridge Analytica scandal).
 
-In Figure 4, we evaluate patenting intensity across topic relevance quartiles ($Q_1$ to $Q_4$). Panel A plots the distribution of topic relevance scores against the intensity of privacy patenting. Firms identified as more exposed to the privacy debate generate an overwhelming share of privacy patents. Panel B evaluates annual patent filing rates before and after 2016 (2009--2015 vs. 2016--2020), showing that privacy innovation surged predominantly among Quartile 4 firms (rising from 5.57 to 8.84 patents per firm per year, $+3.27$ patents/year/firm), while lower quartiles remained flat. Panel C disaggregates these changes across specific technology subclasses, revealing surges in data anonymization (\texttt{G06F 21/6254}, \texttt{H04W 12/033}, $+335.1\%$) and network-level activity tracking (\texttt{H04L 67/535}, $+5,080\%$).
+In Figure 4, Panel A, we plot the distribution of our generated topic relevance scores, indicating each quartile, and then for each corresponding quartile compute the intensity of patenting by firms in that quartile in the domain of user privacy and data security. The firms that we identify as more likely to be influenced by the privacy policy debate are also those generating an overwhelming share of patents in privacy-related domains. We report the breakdown across a variety of specific subclasses related to privacy and technologies involved in collecting and processing customer data.
 
-\begin{figure}[htbp]
+In Panel B, we report the change in the annual rate of privacy patents filed by firms within each topic relevance quartile before and after 2016 (2009--2015 average vs. 2016--2020 average), coinciding with the structural surge in Congressional debate regarding technology and consumer privacy legislation (see Section A.2.2). As shown in Panel B, the increase in corporate privacy innovation is overwhelmingly concentrated among firms in Quartile 4 (the highest topic relevance firms), where annual patent filings rose from an average of 5.57 to 8.84 patents per firm per year (+3.27 patents/year/firm), while lower-relevance firms exhibited negligible increases.
+
+In Panel C, we investigate the specific privacy technology subclasses directly and compare how annual patent filings shifted across the pre- and post-2016 periods. These subclasses capture distinct technological approaches to collecting, tracking, and managing customer data. The patterns in Panel C indicate that the post-2016 surge was particularly driven by an increase in companies anonymizing or de-correlating personal data from user identifiers (\texttt{G06F 21/6254}, \texttt{H04W 12/033}), which rose from 27.9 to 121.2 patents per year (+335.1\%). Simultaneously, there was a dramatic emergence of alternative network-level behavioral tracking technologies (\texttt{H04L 67/535}), which jumped from 0.7 to 37.0 patents per year (+5,080\%), allowing firms to infer user attributes from online activity rather than direct profile data. Importantly, this reflects a shift toward different technological approaches from those that were predominant prior to 2016.
+
+In Figure 5, we decompose these results further by investigating how these patterns appear in the raw patent data. In Panel A, we plot the number of patents filed in each class in each year and observe a large increase in patents related to tracking user profiles and collecting customer data, particularly increasing after 2009, coinciding with the widespread adoption of smartphones. This is mirrored by an increase (albeit less pronounced) of technology designed to protect customer data. Not reflected in this figure, but in this period, with the transmission of digital data through digital mobile networks, saw an increase in patenting of patents related to encryption and data protection over mobile networks by hardware and infrastructure manufacturers.
+
+We see a gradual increase in the patenting of anonymization and data de-correlation technologies accelerating after 2016, mirrored with a decline in the tracking of user data. This coincides with the increase in government scrutiny and broader concerns around privacy and legislation during that period. Following 2018, we similarly observe a decline in the protection of customer data and data de-correlation technologies, along with data collection in general. This coincides with the Cambridge Analytica scandal as well as the introduction of GDPR. Following this policy however we observe an increase in a number of other technologies, namely the tracking of users through network and interface activities (how and what they search) as well as through technologies that protect confidentiality through encryption.
+
+In Panel B, we show the patenting within these categories by various major technology companies. We can observe that these are the major technology companies patenting within this space, but also can note meaningful variation between technology companies. For instance, hardware manufacturers such as Apple, Qualcomm, Cisco and Intel are more likely to patent in technologies related to encryption, whereas software and digital service providers invested heavily in customer data tracking and profiling technologies. Moreover, it is notable that while Meta and Adobe invested heavily in collecting customer data, they invested considerably less in protecting confidentiality or anonymizing and de-correlating data than peer service companies (e.g. Alphabet or Amazon).
+
+In Figure 6, we investigate this further by exploring how the probability of firms pursuing these technologies changed in relation to 2015. This is by no means an exogenous event. The increase in policy discussion coincided with a broader debate and pressure on how companies would have the rights to manage customer data. However, it provides a useful instance in which we can evaluate the usefulness of this index.
+
+In Panel A, we report the coefficients for the probability of firms patenting in the domain of Anonymizing or De-correlating technologies, where we observed a sizeable increase following 2016 in the raw descriptive data. We observe that those firms in the top quartile, had been patenting and continued to patent in this space (Q4). By contrast, firms in the lower quartiles (Q1--Q2) did not nor did they adjust their patenting behaviour. However, firms in Q3, which were somewhat at risk of increasing their patenting behaviour experienced an increase in patenting following 2015, which had been previously flat. However, following 2018, those same firms decreased their patenting, while the upper quartiles continued to patent these technologies. This illustrates the heterogeneity of how the innovation output of these firms changed alongside this change in the regulatory debate. Moreover, following 2018 the divergence between the first quartile and the other quartiles increased further. In Panel B, we focus on those technologies which were beginning to emerge and then became accelerated following the introduction of GDPR. In this case we observe how the upper quartile (Q4) of companies increased their patenting behaviour in these technologies as compared to the other companies including those in Q3 who had clearly engaged in other privacy technologies, but had not made this pivot.
+
+In summary, this empirical exercise demonstrates how the LLM enabled text analysis pipeline can create a framework which can be used to generate measures which would otherwise be infeasible. Using these measures we are able to generate results and insights which can enable research such as this into the innovation response of firms following changes in the policy environment and legislative debate.
+
+% =========================================================================
+% FIGURES 4, 5, AND 6 AT THE END OF APPENDIX C (EACH ON ITS OWN PAGE)
+% =========================================================================
+
+\clearpage
+\begin{center}
+\captionof{figure}{Firm Topic Relevance and Privacy Patenting Pre- and Post-2016}
+\vspace{4pt}
+{\scriptsize\textbf{Panel A: Distribution of Firm Topic Relevance and Privacy Patents Across Categories and Quartiles}}\par\vspace{2pt}
+\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+\fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{figures/fig_app_c_panel_a_topic_relevance.png}}\par\vspace{4pt}
+\begin{minipage}[t]{0.485\textwidth}
     \centering
-    \caption{Firm Topic Relevance and Privacy Patenting Responses Pre- and Post-2016}
-    \vspace{6pt}
-    \begin{minipage}[t]{0.32\textwidth}
-        \centering
-        {\scriptsize Panel A: Distribution \& Patents}\par\vspace{3pt}
-        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
-        \fbox{\includegraphics[width=\textwidth]{figures/fig_app_c_panel_a_topic_relevance.png}}
-    \end{minipage}\hfill
-    \begin{minipage}[t]{0.32\textwidth}
-        \centering
-        {\scriptsize Panel B: Pre/Post 2016 by Quartile}\par\vspace{3pt}
-        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
-        \fbox{\includegraphics[width=\textwidth]{figures/fig_app_c_panel_b_quartiles.png}}
-    \end{minipage}\hfill
-    \begin{minipage}[t]{0.32\textwidth}
-        \centering
-        {\scriptsize Panel C: Pre/Post by Subclass}\par\vspace{3pt}
-        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
-        \fbox{\includegraphics[width=\textwidth]{figures/fig_app_c_panel_c_subclasses.png}}
-    \end{minipage}
-    \vspace{6pt}
-    {\footnotesize\textit{Notes: Sample comprises 1,058 publicly traded sample firms (excluding Facebook/Meta and Alphabet/Google). Panel A plots the distribution of firm topic relevance (cosine similarity between firm Form 10-K Item 1 business descriptions and the Congressional policy summary for Topic 68: Consumer Data Privacy Legislation; left axis, scaled 0--100). Red dotted vertical lines denote quartile boundaries ($Q_1 \le 0.486$, $Q_2$: 0.486--0.511, $Q_3$: 0.511--0.537, $Q_4 > 0.537$). Right Axis 1 traces average total privacy patents per firm across 1999--2021 (rising from 2.2 in $Q_1$ to 111.1 in $Q_4$). Right Axis 2 traces average patents per firm across the five narrow technology subclasses: Tracking Profiles \& Targeted Ads (G06Q 30/0269, 30/0255, 30/0261), Protecting Privacy \& PII (H04W 12/02), Anonymizing Data (G06F 21/6254, H04W 12/033), Tracking User Activity (H04L 67/535), and Protecting Confidentiality Encryption (H04W 12/03). Panel B reports annual privacy patents filed per firm before (2009--2015 annual mean) and after (2016--2020 annual mean) by topic relevance quartile, with capless standard error bars. Panel C reports annual patent filings across the five technology subclasses before and after 2016.}\par}
-\end{figure}
-
-In Figure 5, we decompose these results further by investigating how these patterns appear in the raw patent data. In Panel A, we plot the number of patents filed in each class in each year and observe a large increase in patents related to tracking user profiles and collecting customer data, particularly increasing after 2009, coinciding with the widespread adoption of smartphones. This is mirrored by an increase (albeit less pronounced) of technology designed to protect customer data. Not reflected in this figure, but in this period, the transmission of digital data through digital mobile networks saw an increase in patenting of patents related to encryption and data protection over mobile networks by hardware and infrastructure manufacturers. Panel B displays the 20 sample firms with the highest total privacy patent holdings over 1999--2021, broken down by technology class.
-
-\begin{figure}[htbp]
+    {\scriptsize\textbf{Panel B: Annual Privacy Patent Filings Pre- vs. Post-2016 by Relevance Quartile}}\par\vspace{2pt}
+    \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{figures/fig_app_c_panel_b_quartiles.png}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}
     \centering
-    \caption{Long-Term Trends and Firm Concentration in Privacy Patenting (1999--2021)}
-    \vspace{6pt}
-    \begin{minipage}[t]{0.48\textwidth}
-        \centering
-        {\footnotesize Panel A: Annual Privacy Patents by Topic Group}\par\vspace{3pt}
-        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
-        \fbox{\includegraphics[width=\textwidth]{figures/fig_app_c_fig8a_raw_counts.png}}
-    \end{minipage}\hfill
-    \begin{minipage}[t]{0.48\textwidth}
-        \centering
-        {\footnotesize Panel B: Top Privacy Patenting Firms}\par\vspace{3pt}
-        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
-        \fbox{\includegraphics[width=\textwidth]{figures/fig_app_c_fig9_top_firms.png}}
-    \end{minipage}
-    \vspace{6pt}
-    {\footnotesize\textit{Notes: Longitudinal evolution and corporate concentration of privacy patents across the sample of 1,058 publicly traded firms from 1999 to 2021 matched to USPTO utility patent grants using CPC codes. Panel A plots annual patent counts across five focal technology classes: (1) Tracking User Profiles and Data (G06Q 30/0269, 30/0255, 30/0261); (2) Protecting Privacy and Anonymity in PII (H04W 12/02); (3) Anonymizing or Decorrelating Data (G06F 21/6254, H04W 12/033); (4) Protecting Confidentiality by Encryption (H04W 12/03); and (5) Tracking User Activity (H04L 67/535). Vertical dashed lines indicate regulatory milestones (2009.5, 2016.5, 2018.5). Panel B displays the 20 sample firms with the highest total privacy patent holdings over 1999--2021, with stacked bars indicating portfolio composition.}\par}
-\end{figure}
+    {\scriptsize\textbf{Panel C: Annual Privacy Patent Filings Pre- vs. Post-2016 by Subclass}}\par\vspace{2pt}
+    \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{figures/fig_app_c_panel_c_subclasses.png}}
+\end{minipage}
+\vspace{4pt}
+{\scriptsize\textit{Notes: Figure 4 presents firm-level topic relevance and corporate innovation responses across 1,058 publicly traded sample firms (excluding Facebook/Meta and Alphabet/Google). Panel A plots the distribution of firm topic relevance (cosine similarity between firm Form 10-K Item 1 business descriptions and the Congressional policy summary for Topic 68: Consumer Data Privacy Legislation; left axis, scaled 0--100, dodger blue bars without outlines). Red dotted vertical lines denote quartile boundaries ($Q_1 \le 0.486$, $Q_2$: 0.486--0.511, $Q_3$: 0.511--0.537, $Q_4 > 0.537$). Right Axis 1 (solid black line, scale 0--125) traces average total privacy patents per firm across 1999--2021 (rising from 2.2 in $Q_1$ to 111.1 in $Q_4$). Right Axis 2 (scale 0--12, black spine) traces average patents per firm across the five narrow technology subclasses: Tracking Profiles \& Targeted Ads (G06Q 30/0269, 30/0255, 30/0261; navy solid line, $Q_4$: 8.6), Protecting Privacy \& PII (H04W 12/02; dark grey dashed line, $Q_4$: 5.2), Anonymizing Data (G06F 21/6254, H04W 12/033; medium grey dash-dot line, $Q_4$: 3.0), Tracking User Activity (H04L 67/535; navy dotted line, $Q_4$: 1.2), and Protecting Confidentiality Encryption (H04W 12/03; light grey loosely dashed line, $Q_4$: 0.5). Panel B reports annual privacy patents filed per firm before (2009--2015 annual mean, black) and after (2016--2020 annual mean, dodger blue) by topic relevance quartile, with capless standard error bars. Panel C reports annual patent filings across the five technology subclasses before and after 2016 (black = Pre-2016, dodger blue = Post-2016).}\par}
+\end{center}
 
-In Figure 6, we investigate this further by exploring how the probability of firms pursuing these technologies changed in relation to 2015. This is by no means an exogenous event: the increase in policy discussion coincided with a broader debate and pressure on how companies manage customer data. However, it provides a useful setting to evaluate the diagnostic usefulness of the relevance index. We present annual event-study estimates of patenting probability from 2009 to 2020 relative to 2015 across topic relevance quartiles ($Q_1$ to $Q_4$). The outcome in each panel is an indicator equal to one if firm $i$ filed at least one patent application in year $t$ in the focal technology group, estimated using firm fixed effects with standard errors clustered at the firm level.
-
-\begin{figure}[htbp]
+\clearpage
+\begin{center}
+\captionof{figure}{Long-Term Trends and Firm Concentration in Privacy Patenting (1999--2021)}
+\vspace{6pt}
+\begin{minipage}[t]{0.485\textwidth}
     \centering
-    \caption{Annual Event-Study Estimates of Patenting Probability Relative to 2015 by Relevance Quartile}
-    \vspace{6pt}
-    \begin{minipage}[t]{0.48\textwidth}
-        \centering
-        {\footnotesize Panel A: Anonymizing / Decorrelating Data}\par\vspace{3pt}
-        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
-        \fbox{\includegraphics[width=\textwidth]{figures/fig_app_c_fig6_panel_a_anonymizing.png}}
-    \end{minipage}\hfill
-    \begin{minipage}[t]{0.48\textwidth}
-        \centering
-        {\footnotesize Panel B: Tracking User Activity}\par\vspace{3pt}
-        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
-        \fbox{\includegraphics[width=\textwidth]{figures/fig_app_c_fig6_panel_b_tracking.png}}
-    \end{minipage}
-    \vspace{6pt}
-    {\footnotesize\textit{Notes: Sample comprises 1,058 firms. Estimated using firm fixed effects with standard errors clustered at the firm level. Vertical capless error bars represent 95\% confidence intervals. Vertical red dashed lines indicate the 2015/2016 policy transition and the 2018/2019 GDPR/CCPA enforcement milestone. Panel A evaluates Anonymizing or Decorrelating Data (CPC G06F 21/6254, H04W 12/033); Quartile 4 firms exhibit a sharp increase of $+6.0$ pp in 2019 ($p < 0.001$) and $+6.4$ pp in 2020 ($p < 0.001$). Panel B evaluates Tracking User Activity (CPC H04L 67/535); Quartile 4 firms experience a continuous rise up to $+9.8$ pp in 2020 ($p < 0.001$). Pre-trends are flat across all quartiles.}\par}
-\end{figure}
+    {\footnotesize\textbf{Panel A: Annual Privacy Patents by Topic Group (Raw Counts, 1999--2021)}}\par\vspace{3pt}
+    \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+    \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{figures/fig_app_c_fig8a_raw_counts.png}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}
+    \centering
+    {\footnotesize\textbf{Panel B: Top 20 Privacy Patenting Firms Split by Technology Group}}\par\vspace{3pt}
+    \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+    \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{figures/fig_app_c_fig9_top_firms.png}}
+\end{minipage}
+\vspace{6pt}
+{\footnotesize\textit{Notes: Figure 5 illustrates the longitudinal evolution and corporate concentration of privacy patents across the sample of 1,058 publicly traded firms from 1999 to 2021. The sample is constructed by matching Compustat firm identifiers (GVKEY) to USPTO utility patent grants using cooperative patent classification (CPC) codes. Panel A plots annual patent counts across the five focal technology classes: (1) Tracking User Profiles and Data (G06Q 30/0269, 30/0255, 30/0261; black) includes commercial profiling, customer history tracking, and attribute-based targeted advertising; (2) Protecting Privacy and Anonymity in PII (H04W 12/02; dodger blue) covers wireless security protocols preventing subscriber identification; (3) Anonymizing or Decorrelating Data (G06F 21/6254, H04W 12/033; slate grey) encompasses cryptographic anonymization and de-correlation techniques that unlink personal data from user identity; (4) Protecting Confidentiality by Encryption (H04W 12/03; cyan) covers cryptographic communication protection; and (5) Tracking User Activity (H04L 67/535; maroon) encompasses network monitoring and behavioral activity tracking. Faint vertical dashed lines indicate regulatory milestones: 2009.5 (FTC privacy reports and HITECH Act), 2016.5 (Cambridge Analytica disclosures and GDPR adoption), and 2018.5 (GDPR enforcement and CCPA enactment). Panel B displays the 20 sample firms with the highest total privacy patent holdings over 1999--2021, with stacked bars indicating the compositional share of each firm's portfolio across the five technology classes.}\par}
+\end{center}
+
+\clearpage
+\begin{center}
+\captionof{figure}{Event Study of Patenting Probability by Topic Relevance Quartile}
+\vspace{6pt}
+\begin{minipage}[t]{0.485\textwidth}
+    \centering
+    {\footnotesize\textbf{Panel A: Anonymizing or Decorrelating Technologies}}\par\vspace{3pt}
+    \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+    \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{figures/fig_app_c_fig6_panel_a_anonymizing.png}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}
+    \centering
+    {\footnotesize\textbf{Panel B: Tracking User Activity Technologies}}\par\vspace{3pt}
+    \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+    \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{figures/fig_app_c_fig6_panel_b_tracking.png}}
+\end{minipage}
+\vspace{6pt}
+{\footnotesize\textit{Notes: Figure 6 presents event-study estimates tracking the annual probability that a firm files at least one patent within designated privacy technology subclasses from 2009 to 2020 relative to 2015 across topic relevance quartiles ($Q_1$ to $Q_4$). The sample comprises 1,058 publicly traded firms. The outcome in each panel is an indicator variable equal to one if firm $i$ filed at least one patent application in year $t$ in the focal technology group, estimated using firm fixed effects with standard errors clustered at the firm level. Vertical capless error bars represent 95\% confidence intervals. Vertical red dashed background lines mark the 2015/2016 policy transition (pre/post-2016 split) and the 2018/2019 GDPR enforcement and CCPA enactment milestone. The horizontal dashed line denotes zero change relative to 2015. Panel A evaluates Anonymizing or Decorrelating Data (CPC codes G06F 21/6254, H04W 12/033). Pre-2016 coefficients are flat and indistinguishable from zero across all quartiles. Following the 2015/2016 transition, firms in the highest relevance quartile ($Q_4$, dodger blue) exhibit a pronounced surge in patenting probability, increasing by +6.0 percentage points in 2019 ($p < 0.001$) and +6.4 percentage points in 2020 ($p < 0.001$), while lower quartiles ($Q_1$ through $Q_3$) remain flat. Panel B evaluates Tracking User Activity (CPC code H04L 67/535). Pre-trends from 2009 to 2015 remain essentially zero across all quartiles. Following the 2015/2016 transition, $Q_4$ firms experience a continuous, monotonic rise in tracking patenting probability: +1.5 percentage points in 2016, +2.3 percentage points in 2017, +3.4 percentage points in 2018, +5.7 percentage points in 2019, and +9.8 percentage points in 2020 ($p < 0.001$). Quartiles $Q_1$ and $Q_2$ exhibit no significant change, while $Q_3$ registers a modest uptick to +1.9 percentage points in 2020.}\par}
+\end{center}
+
+% =========================================================================
+% APPENDIX D
+% =========================================================================
 
 \clearpage
 \section*{Appendix D. Reproducible and Adaptable Data Pipelines with Coding Agents}
 \addcontentsline{toc}{section}{Appendix D. Reproducible and Adaptable Data Pipelines with Coding Agents}
 
-While this data pipeline leverages AI tools to perform critical measurement tasks, an additional structural benefit is emerging: research pipelines shared via online repositories (like GitHub) in machine-readable formats can be rapidly deployed, verified, and adapted by autonomous coding agents.
-
-Rather than treating papers as static documents, online repositories serve as active software environments where researchers share modular tools. To demonstrate this capability, the accompanying repository folder (\href{https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis/tree/main/X2%20-%20Example%20of%20Reproducing%20and%20Adapting%20the%20Research%20Pipeline}{\texttt{X2 - Example of Reproducing and Adapting the Research Pipeline/}}) provides:
-\begin{enumerate}
-    \item \textbf{Sample Agent Prompt:} An actionable prompt (\href{https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis/blob/main/X2%20-%20Example%20of%20Reproducing%20and%20Adapting%20the%20Research%20Pipeline/X1%20-%20Sample%20Agent%20Prompt%20For%20Adapting%20Research%20Pipeline%20To%20New%20Question.md}{\texttt{X1 - Sample Agent Prompt For Adapting Research Pipeline To New Question.md}}) instructing an LLM coding agent to read the repository architecture, inspect input corpora, and adapt the staged methodology to a new research setting (e.g., regulatory debate surrounding renewable energy and corporate carbon emission innovation).
-    \item \textbf{Implementation Plan:} A full, researcher-evaluable implementation plan (\href{https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis/blob/main/X2%20-%20Example%20of%20Reproducing%20and%20Adapting%20the%20Research%20Pipeline/X2%20-%20Sample%20Implementation%20Plan%20Generated%20by%20Pipeline.md}{\texttt{X2 - Sample Implementation Plan Generated by Pipeline.md}}) detailing step-by-step adaptations, schema crosswalks (from CPC privacy codes to Y02 climate mitigation patent classifications), verification checkpoints, and execution timelines.
-\end{enumerate}
-
-Researchers can provide this prompt to their own AI tools, evaluate the proposed implementation plan, and deploy adaptable pipelines for organizational and social science research.
+While this data pipeline leverages AI tools to perform important analysis tasks, an additional important benefit is emerging in empirical research: research papers made available through platforms such as GitHub in easy machine-readable formats (Markdown, Python code, Stata, and R) can be deployed rapidly through coding agents to build entire data pipelines. In addition to providing a methodology that can advance research with text data, we also advocate for and provide a framework for using online repositories of papers as a medium where researchers can share tools that are easily deployable and adaptable for other scholars. To demonstrate this in the accompanying repository folder (\href{https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis/tree/main/X2%20-%20Example%20of%20Reproducing%20and%20Adapting%20the%20Research%20Pipeline}{\texttt{X2 - Example of Reproducing and Adapting the Research Pipeline/}}), we provide a sample agent prompt (\href{https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis/blob/main/X2%20-%20Example%20of%20Reproducing%20and%20Adapting%20the%20Research%20Pipeline/X1%20-%20Sample%20Agent%20Prompt%20For%20Adapting%20Research%20Pipeline%20To%20New%20Question.md}{\texttt{X1 - Sample Agent Prompt For Adapting Research Pipeline To New Question.md}}) and an end-to-end implementation plan generated by an LLM (\href{https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis/blob/main/X2%20-%20Example%20of%20Reproducing%20and%20Adapting%20the%20Research%20Pipeline/X2%20-%20Sample%20Implementation%20Plan%20Generated%20by%20Pipeline.md}{\texttt{X2 - Sample Implementation Plan Generated by Pipeline.md}}) demonstrating how to adapt this methodology to evaluate corporate innovation responses to Congressional debates over renewable energy and carbon emissions. Researchers can do the same with their own AI tools, augment the implementation plan, and deploy it further.
 
 \end{document}
