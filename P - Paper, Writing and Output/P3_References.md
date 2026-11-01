@@ -10,16 +10,22 @@
 }
 
 @article{csaszar2024artificial,
-  title={Artificial intelligence and organizational decision making},
-  author={Csaszar, Felipe A and Ketkar, S and Kim, M},
-  journal={Academy of Management Annals},
+  title={Artificial intelligence and strategic decision-making: Evidence from entrepreneurs and investors},
+  author={Csaszar, Felipe A and Ketkar, Harsh and Kim, Hyunjin},
+  journal={Strategy Science},
+  volume={9},
+  number={4},
+  pages={322--345},
   year={2024}
 }
 
 @article{dellacqua2026navigating,
-  title={Navigating the jagged technological frontier: Field experimental evidence of the effects of {AI} on knowledge worker productivity and quality},
+  title={Navigating the jagged technological frontier: Field experimental evidence of the effects of artificial intelligence on knowledge worker productivity and quality},
   author={Dell'Acqua, Fabrizio and McFowland, Edward and Mollick, Ethan R and Lifshitz-Assaf, Hila and Kellogg, Katherine and Rajendran, Saran and Krayer, Lisa and Candelon, Fran{\c{c}}ois and Lakhani, Karim R},
-  journal={Management Science},
+  journal={Organization Science},
+  volume={37},
+  number={2},
+  pages={403--423},
   year={2026}
 }
 
