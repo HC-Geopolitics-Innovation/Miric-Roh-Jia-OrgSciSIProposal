@@ -155,3 +155,13 @@
   address={Cambridge, MA}
 }
 
+@article{benoit2026using,
+  title={Using large language models to analyze political texts through natural language understanding},
+  author={Benoit, Kenneth and De Marchi, Scott and Laver, Conor and Laver, Michael and Ma, Jinshuai},
+  journal={American Journal of Political Science},
+  volume={70},
+  number={4},
+  pages={1589--1605},
+  year={2026},
+  publisher={Wiley Online Library}
+}
