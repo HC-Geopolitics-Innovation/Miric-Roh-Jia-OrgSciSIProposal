@@ -9,6 +9,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{caption}
+\usepackage{ragged2e}
 \usepackage{xcolor}
 \usepackage[colorlinks=true, linkcolor=blue!70!black, citecolor=blue!70!black, urlcolor=blue!70!black]{hyperref}
 \urlstyle{same}
@@ -292,7 +293,7 @@ The outputs of this pipeline are:
 \end{itemize}
 
 % =========================================================================
-% FIGURES 1, 2, AND 3 AT THE END OF APPENDIX A (EACH ON ITS OWN PAGE)
+% FIGURES 1, 2, AND 3 AT THE END OF APPENDIX A
 % =========================================================================
 
 \clearpage
@@ -301,38 +302,46 @@ The outputs of this pipeline are:
 \vspace{6pt}
 \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
 \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{"1 - Figure 1 - Cosine Similarity Between Hand-Coded and LLM Summaries.png"}}
-\vspace{6pt}
-{\footnotesize\textit{Notes: Discriminant validity test comparing LLM-generated summaries against independent human-written C-SPAN abstracts using dense sentence embeddings (bge-large-en-v1.5). The target hearing exhibits high cosine similarity ($\rho=0.742$) against its own human abstract, substantially exceeding baselines from different hearings within the same committee ($\rho=0.518$) and hearings from different committees ($\rho=0.384$).}\par}
+\vspace{8pt}
+{\footnotesize\justifying\noindent\textit{Notes:} Discriminant validity test comparing LLM-generated summaries against independent human-written C-SPAN abstracts using dense sentence embeddings (bge-large-en-v1.5). The target hearing exhibits high cosine similarity ($\rho=0.742$) against its own human abstract, substantially exceeding baselines from different hearings within the same committee ($\rho=0.518$) and hearings from different committees ($\rho=0.384$).\par}
 \end{center}
 
 \clearpage
 \begin{center}
 \captionof{figure}{Topics and Overview of Stance (Support / Concern of Policymakers)}
-\vspace{6pt}
+\vspace{4pt}
+{\small\textbf{Panel A: Distribution of Member Net Stances Across Congressional Hearings}}\par\vspace{2pt}
 \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
-\fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{"1 - Figure 2 - Topics and Overview of Stance 4-Panel.png"}}
-\vspace{6pt}
-{\footnotesize\textit{Notes: In Panel A, we report the distribution of topics discussed across the hearing sample and the balance of stances in support of or concern regarding these topics. In Panel B, we report the breakdown for topics specifically related to privacy and security. From Panel A, it is evident that consumer privacy is one of the dominant topics, and the subgroup Consumer Data Privacy Legislation is among the few where substantial legislative support emerges for regulatory action. In Panels C and D, we report the longitudinal share of stances discussed by Congress over time, separating Consumer Data Privacy Legislation into its own group (Panel D) and contrasting it with other technology policy topics (Panel C). We find a pronounced structural increase in the share of statements supporting consumer privacy legislation after 2016 (following the Cambridge Analytica disclosures). No corresponding increase is observed among other policy topics. This analysis demonstrates how the pipeline documents political debate and traces legislative shifts over time.}\par}
+\fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax,height=0.38\textheight,keepaspectratio]{"2 - Figure 2 Panel A - Distribution of Member Net Stances.png"}}\par\vspace{6pt}
+{\small\textbf{Panel B: Longitudinal Net Stance by Hearing Over Time (1998--2024)}}\par\vspace{2pt}
+\fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax,height=0.38\textheight,keepaspectratio]{"3 - Figure 2 Panel B - Net Stance by Hearing Over Time.png"}}
+\end{center}
+
+\clearpage
+\begin{center}
+\addtocounter{figure}{-1}
+\captionof{figure}{Topics and Overview of Stance (Continued)}
+\vspace{4pt}
+{\small\textbf{Panel C: Subtopic Polarization Pre- vs. Post-2016 (Cambridge Analytica)}}\par\vspace{2pt}
+\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+\fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax,height=0.30\textheight,keepaspectratio]{"4 - Figure 2 Panel C - Subtopic Polarization Pre-Post 2016.png"}}\par\vspace{6pt}
+{\small\textbf{Panel D: Polarizing vs. Consensual Subtopics Across Parties}}\par\vspace{2pt}
+\fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax,height=0.30\textheight,keepaspectratio]{"5 - Figure 2 Panel D - Polarizing vs Consensual Subtopics.png"}}
+\par\vspace{8pt}
+{\footnotesize\justifying\noindent\textit{Notes:} In Panel A, we report the distribution of topics discussed across the hearing sample and the balance of stances in support of or concern regarding these topics. In Panel B, we report the breakdown for topics specifically related to privacy and security. From Panel A, it is evident that consumer privacy is one of the dominant topics, and the subgroup Consumer Data Privacy Legislation is among the few where substantial legislative support emerges for regulatory action. In Panels C and D, we report the longitudinal share of stances discussed by Congress over time, separating Consumer Data Privacy Legislation into its own group (Panel D) and contrasting it with other technology policy topics (Panel C). We find a pronounced structural increase in the share of statements supporting consumer privacy legislation after 2016 (following the Cambridge Analytica disclosures). No corresponding increase is observed among other policy topics. This analysis demonstrates how the pipeline documents political debate and traces legislative shifts over time.\par}
 \end{center}
 
 \clearpage
 \begin{center}
 \captionof{figure}{Topic Relevance Scores for Publicly Listed Firms}
-\vspace{6pt}
-\begin{minipage}[t]{0.485\textwidth}
-    \centering
-    {\footnotesize\textbf{Panel A: NAICS Sector Cosine Relative to Sample Mean}}\par\vspace{3pt}
-    \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
-    \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{"2 - Figure 3 Panel A - Sector Relevance (NAICS 2-Digit).png"}}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.485\textwidth}
-    \centering
-    {\footnotesize\textbf{Panel B: Top 10 Relevant Firms by Share of Sentences}}\par\vspace{3pt}
-    \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
-    \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{"3 - Figure 3 Panel B - Top 10 Relevant Firms.png"}}
-\end{minipage}
-\vspace{6pt}
-{\footnotesize\textit{Notes: Panel A reports firm summary cosine by NAICS sector relative to the sample mean (Topic 68 policy summary vector). Each bar represents the sector mean minus the mean across all 841 firms in the three-year sample (fiscal years 2010, 2015, and 2020) of the firm relevance score, computed as the cosine similarity between the firm’s Item 1 summary and the policy summary of Topic 68 hearing statements. Zero denotes the sample mean (0.5143); bars to the right indicate sectors above the mean, and bars to the left indicate sectors below. Error bars span one standard deviation of firm scores within each sector, capturing within-industry cross-firm variation. Sectors reflect two-digit NAICS codes, with manufacturing (31--33), retail trade (44--45), and transportation/warehousing (48--49) grouped. Sectors with fewer than 5 firms are excluded. Panel B reports the top 10 most relevant firms by share of sentences aligned with the Topic 68 statement centroid. Bars report the share of each firm’s Item 1 sentences whose cosine similarity with the Topic 68 policy statement centroid is at or above 0.75, divided by total Item 1 sentences. Ranked among 841 scored firms across fiscal years 2010, 2015, and 2020. Least relevant firms are omitted as 679 firms tie at zero exposure.}\par}
+\vspace{3pt}
+{\small\textbf{Panel A: NAICS Sector Cosine Relative to Sample Mean}}\par\vspace{2pt}
+\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+\fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax,height=0.35\textheight,keepaspectratio]{"2 - Figure 3 Panel A - Sector Relevance (NAICS 2-Digit).png"}}\par\vspace{4pt}
+{\small\textbf{Panel B: Top 10 Relevant Firms by Share of Sentences}}\par\vspace{2pt}
+\fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax,height=0.35\textheight,keepaspectratio]{"3 - Figure 3 Panel B - Top 10 Relevant Firms.png"}}
+\par\vspace{8pt}
+{\footnotesize\justifying\noindent\textit{Notes:} Panel A reports firm summary cosine by NAICS sector relative to the sample mean (Topic 68 policy summary vector). Each bar represents the sector mean minus the mean across all 841 firms in the three-year sample (fiscal years 2010, 2015, and 2020) of the firm relevance score, computed as the cosine similarity between the firm’s Item 1 summary and the policy summary of Topic 68 hearing statements. Zero denotes the sample mean (0.5143); bars to the right indicate sectors above the mean, and bars to the left indicate sectors below. Error bars span one standard deviation of firm scores within each sector, capturing within-industry cross-firm variation. Sectors reflect two-digit NAICS codes, with manufacturing (31--33), retail trade (44--45), and transportation/warehousing (48--49) grouped. Sectors with fewer than 5 firms are excluded. Panel B reports the top 10 most relevant firms by share of sentences aligned with the Topic 68 statement centroid. Bars report the share of each firm’s Item 1 sentences whose cosine similarity with the Topic 68 policy statement centroid is at or above 0.75, divided by total Item 1 sentences. Ranked among 841 scored firms across fiscal years 2010, 2015, and 2020. Least relevant firms are omitted as 679 firms tie at zero exposure.\par}
 \end{center}
 
 % =========================================================================
@@ -399,7 +408,7 @@ In Panel B, we report the change in the annual rate of privacy patents filed by 
 
 In Panel C, we investigate the specific privacy technology subclasses directly and compare how annual patent filings shifted across the pre- and post-2016 periods. These subclasses capture distinct technological approaches to collecting, tracking, and managing customer data. The patterns in Panel C indicate that the post-2016 surge was particularly driven by an increase in companies anonymizing or de-correlating personal data from user identifiers (\texttt{G06F 21/6254}, \texttt{H04W 12/033}), which rose from 27.9 to 121.2 patents per year (+335.1\%). Simultaneously, there was a dramatic emergence of alternative network-level behavioral tracking technologies (\texttt{H04L 67/535}), which jumped from 0.7 to 37.0 patents per year (+5,080\%), allowing firms to infer user attributes from online activity rather than direct profile data. Importantly, this reflects a shift toward different technological approaches from those that were predominant prior to 2016.
 
-In Figure 5, we decompose these results further by investigating how these patterns appear in the raw patent data. In Panel A, we plot the number of patents filed in each class in each year and observe a large increase in patents related to tracking user profiles and collecting customer data, particularly increasing after 2009, coinciding with the widespread adoption of smartphones. This is mirrored by an increase (albeit less pronounced) of technology designed to protect customer data. Not reflected in this figure, but in this period, with the transmission of digital data through digital mobile networks, saw an increase in patenting of patents related to encryption and data protection over mobile networks by hardware and infrastructure manufacturers.
+In Figure 5, we decompose these results further by investigating how these patterns appear across patent filings over time. In Panel A, we plot the annual share of sample-firm patents filed in each topic group relative to all patents filed by sample firms in that technology class in that year (with the denominator reflecting class-level annual filings, ensuring a distinct baseline for each group). We observe a large increase in patents related to tracking user profiles and collecting customer data, particularly increasing after 2009, coinciding with the widespread adoption of smartphones. This is mirrored by an increase (albeit less pronounced) of technology designed to protect customer data. Not reflected in this figure, but in this period, with the transmission of digital data through digital mobile networks, saw an increase in patenting of patents related to encryption and data protection over mobile networks by hardware and infrastructure manufacturers.
 
 We see a gradual increase in the patenting of anonymization and data de-correlation technologies accelerating after 2016, mirrored with a decline in the tracking of user data. This coincides with the increase in government scrutiny and broader concerns around privacy and legislation during that period. Following 2018, we similarly observe a decline in the protection of customer data and data de-correlation technologies, along with data collection in general. This coincides with the Cambridge Analytica scandal as well as the introduction of GDPR. Following this policy however we observe an increase in a number of other technologies, namely the tracking of users through network and interface activities (how and what they search) as well as through technologies that protect confidentiality through encryption.
 
@@ -432,8 +441,8 @@ In summary, this empirical exercise demonstrates how the LLM enabled text analys
     {\scriptsize\textbf{Panel C: Annual Privacy Patent Filings Pre- vs. Post-2016 by Subclass}}\par\vspace{2pt}
     \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{"3 - Figure 4 Panel C - Annual Privacy Patent Filings by Subclass.png"}}
 \end{minipage}
-\vspace{4pt}
-{\scriptsize\textit{Notes: Figure 4 presents firm-level topic relevance and corporate innovation responses across 1,058 publicly traded sample firms (excluding Facebook/Meta and Alphabet/Google). Panel A plots the distribution of firm topic relevance (cosine similarity between firm Form 10-K Item 1 business descriptions and the Congressional policy summary for Topic 68: Consumer Data Privacy Legislation; left axis, scaled 0--100, dodger blue bars without outlines). Red dotted vertical lines denote quartile boundaries ($Q_1 \le 0.486$, $Q_2$: 0.486--0.511, $Q_3$: 0.511--0.537, $Q_4 > 0.537$). Right Axis 1 (solid black line, scale 0--125) traces average total privacy patents per firm across 1999--2021 (rising from 2.2 in $Q_1$ to 111.1 in $Q_4$). Right Axis 2 (scale 0--12, black spine) traces average patents per firm across the five narrow technology subclasses: Tracking Profiles \& Targeted Ads (G06Q 30/0269, 30/0255, 30/0261; navy solid line, $Q_4$: 8.6), Protecting Privacy \& PII (H04W 12/02; dark grey dashed line, $Q_4$: 5.2), Anonymizing Data (G06F 21/6254, H04W 12/033; medium grey dash-dot line, $Q_4$: 3.0), Tracking User Activity (H04L 67/535; navy dotted line, $Q_4$: 1.2), and Protecting Confidentiality Encryption (H04W 12/03; light grey loosely dashed line, $Q_4$: 0.5). Panel B reports annual privacy patents filed per firm before (2009--2015 annual mean, black) and after (2016--2020 annual mean, dodger blue) by topic relevance quartile, with capless standard error bars. Panel C reports annual patent filings across the five technology subclasses before and after 2016 (black = Pre-2016, dodger blue = Post-2016).}\par}
+\par\vspace{8pt}
+{\scriptsize\justifying\noindent\textit{Notes:} Figure 4 presents firm-level topic relevance and corporate innovation responses across 1,058 publicly traded sample firms (excluding Facebook/Meta and Alphabet/Google). Panel A plots the distribution of firm topic relevance (cosine similarity between firm Form 10-K Item 1 business descriptions and the Congressional policy summary for Topic 68: Consumer Data Privacy Legislation; left axis, scaled 0--100, dodger blue bars without outlines). Red dotted vertical lines denote quartile boundaries ($Q_1 \le 0.486$, $Q_2$: 0.486--0.511, $Q_3$: 0.511--0.537, $Q_4 > 0.537$). Right Axis 1 (solid black line, scale 0--125) traces average total privacy patents per firm across 1999--2021 (rising from 2.2 in $Q_1$ to 111.1 in $Q_4$). Right Axis 2 (scale 0--12, black spine) traces average patents per firm across the five narrow technology subclasses: Tracking Profiles \& Targeted Ads (G06Q 30/0269, 30/0255, 30/0261; navy solid line, $Q_4$: 8.6), Protecting Privacy \& PII (H04W 12/02; dark grey dashed line, $Q_4$: 5.2), Anonymizing Data (G06F 21/6254, H04W 12/033; medium grey dash-dot line, $Q_4$: 3.0), Tracking User Activity (H04L 67/535; navy dotted line, $Q_4$: 1.2), and Protecting Confidentiality Encryption (H04W 12/03; light grey loosely dashed line, $Q_4$: 0.5). Panel B reports annual privacy patents filed per firm before (2009--2015 annual mean, black) and after (2016--2020 annual mean, dodger blue) by topic relevance quartile, with capless standard error bars. Panel C reports annual patent filings across the five technology subclasses before and after 2016 (black = Pre-2016, dodger blue = Post-2016).\par}
 \end{center}
 
 \clearpage
@@ -442,7 +451,7 @@ In summary, this empirical exercise demonstrates how the LLM enabled text analys
 \vspace{6pt}
 \begin{minipage}[t]{0.485\textwidth}
     \centering
-    {\footnotesize\textbf{Panel A: Annual Privacy Patents by Topic Group (Raw Counts, 1999--2021)}}\par\vspace{3pt}
+    {\footnotesize\textbf{Panel A: Annual Privacy Patents by Topic Group (Share of Patents in Class, 1999--2021)}}\par\vspace{3pt}
     \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
     \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{"1 - Figure 5 Panel A - Aggregate Filing Trends across Privacy CPC Codes.png"}}
 \end{minipage}\hfill
@@ -452,8 +461,8 @@ In summary, this empirical exercise demonstrates how the LLM enabled text analys
     \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
     \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{"2 - Figure 5 Panel B - Top 20 Patent Assignees by Privacy Technology Group.png"}}
 \end{minipage}
-\vspace{6pt}
-{\footnotesize\textit{Notes: Figure 5 illustrates the longitudinal evolution and corporate concentration of privacy patents across the sample of 1,058 publicly traded firms from 1999 to 2021. The sample is constructed by matching Compustat firm identifiers (GVKEY) to USPTO utility patent grants using cooperative patent classification (CPC) codes. Panel A plots annual patent counts across the five focal technology classes: (1) Tracking User Profiles and Data (G06Q 30/0269, 30/0255, 30/0261; black) includes commercial profiling, customer history tracking, and attribute-based targeted advertising; (2) Protecting Privacy and Anonymity in PII (H04W 12/02; dodger blue) covers wireless security protocols preventing subscriber identification; (3) Anonymizing or Decorrelating Data (G06F 21/6254, H04W 12/033; slate grey) encompasses cryptographic anonymization and de-correlation techniques that unlink personal data from user identity; (4) Protecting Confidentiality by Encryption (H04W 12/03; cyan) covers cryptographic communication protection; and (5) Tracking User Activity (H04L 67/535; maroon) encompasses network monitoring and behavioral activity tracking. Faint vertical dashed lines indicate regulatory milestones: 2009.5 (FTC privacy reports and HITECH Act), 2016.5 (Cambridge Analytica disclosures and GDPR adoption), and 2018.5 (GDPR enforcement and CCPA enactment). Panel B displays the 20 sample firms with the highest total privacy patent holdings over 1999--2021, with stacked bars indicating the compositional share of each firm's portfolio across the five technology classes.}\par}
+\par\vspace{8pt}
+{\footnotesize\justifying\noindent\textit{Notes:} Figure 5 illustrates the longitudinal evolution and corporate concentration of privacy patents across the sample of 1,058 publicly traded firms from 1999 to 2021. The sample is constructed by matching Compustat firm identifiers (GVKEY) to USPTO utility patent grants using cooperative patent classification (CPC) codes. Panel A plots the annual share of sample-firm patents filed in each topic group relative to all patents filed by sample firms in that technology class in that year (Tracking User Profiles normalized to G06Q; Protecting Privacy and Anonymity in PII normalized to H04W; Anonymizing or Decorrelating Data normalized to G06F/H04W; and Protecting Confidentiality by Encryption normalized to H04W), where the denominator is the total number of patents filed in that technology class in that year across sample firms. Faint vertical dashed lines indicate regulatory milestones: 2009.5 (FTC privacy reports and HITECH Act), 2016.5 (Cambridge Analytica disclosures and GDPR adoption), and 2018.5 (GDPR enforcement and CCPA enactment). Panel B displays the 20 sample firms with the highest total privacy patent holdings over 1999--2021, with stacked bars indicating the compositional share of each firm's portfolio across the focal technology classes.\par}
 \end{center}
 
 \clearpage
@@ -472,8 +481,8 @@ In summary, this empirical exercise demonstrates how the LLM enabled text analys
     \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
     \fbox{\includegraphics[width=\dimexpr\textwidth-2\fboxrule\relax]{"2 - Figure 6 Panel B - Event Study of Patenting Probability - Tracking User Activity.png"}}
 \end{minipage}
-\vspace{6pt}
-{\footnotesize\textit{Notes: Figure 6 presents event-study estimates tracking the annual probability that a firm files at least one patent within designated privacy technology subclasses from 2009 to 2020 relative to 2015 across topic relevance quartiles ($Q_1$ to $Q_4$). The sample comprises 1,058 publicly traded firms. The outcome in each panel is an indicator variable equal to one if firm $i$ filed at least one patent application in year $t$ in the focal technology group, estimated using firm fixed effects with standard errors clustered at the firm level. Vertical capless error bars represent 95\% confidence intervals. Vertical red dashed background lines mark the 2015/2016 policy transition (pre/post-2016 split) and the 2018/2019 GDPR enforcement and CCPA enactment milestone. The horizontal dashed line denotes zero change relative to 2015. Panel A evaluates Anonymizing or Decorrelating Data (CPC codes G06F 21/6254, H04W 12/033). Pre-2016 coefficients are flat and indistinguishable from zero across all quartiles. Following the 2015/2016 transition, firms in the highest relevance quartile ($Q_4$, dodger blue) exhibit a pronounced surge in patenting probability, increasing by +6.0 percentage points in 2019 ($p < 0.001$) and +6.4 percentage points in 2020 ($p < 0.001$), while lower quartiles ($Q_1$ through $Q_3$) remain flat. Panel B evaluates Tracking User Activity (CPC code H04L 67/535). Pre-trends from 2009 to 2015 remain essentially zero across all quartiles. Following the 2015/2016 transition, $Q_4$ firms experience a continuous, monotonic rise in tracking patenting probability: +1.5 percentage points in 2016, +2.3 percentage points in 2017, +3.4 percentage points in 2018, +5.7 percentage points in 2019, and +9.8 percentage points in 2020 ($p < 0.001$). Quartiles $Q_1$ and $Q_2$ exhibit no significant change, while $Q_3$ registers a modest uptick to +1.9 percentage points in 2020.}\par}
+\par\vspace{8pt}
+{\footnotesize\justifying\noindent\textit{Notes:} Figure 6 presents event-study estimates tracking the annual probability that a firm files at least one patent within designated privacy technology subclasses from 2009 to 2020 relative to 2015 across topic relevance quartiles ($Q_1$ to $Q_4$). The sample comprises 1,058 publicly traded firms. The outcome in each panel is an indicator variable equal to one if firm $i$ filed at least one patent application in year $t$ in the focal technology group, estimated using firm fixed effects with standard errors clustered at the firm level. Vertical capless error bars represent 95\% confidence intervals. Vertical red dashed background lines mark the 2015/2016 policy transition (pre/post-2016 split) and the 2018/2019 GDPR enforcement and CCPA enactment milestone. The horizontal dashed line denotes zero change relative to 2015. Panel A evaluates Anonymizing or Decorrelating Data (CPC codes G06F 21/6254, H04W 12/033). Pre-2016 coefficients are flat and indistinguishable from zero across all quartiles. Following the 2015/2016 transition, firms in the highest relevance quartile ($Q_4$, dodger blue) exhibit a pronounced surge in patenting probability, increasing by +6.0 percentage points in 2019 ($p < 0.001$) and +6.4 percentage points in 2020 ($p < 0.001$), while lower quartiles ($Q_1$ through $Q_3$) remain flat. Panel B evaluates Tracking User Activity (CPC code H04L 67/535). Pre-trends from 2009 to 2015 remain essentially zero across all quartiles. Following the 2015/2016 transition, $Q_4$ firms experience a continuous, monotonic rise in tracking patenting probability: +1.5 percentage points in 2016, +2.3 percentage points in 2017, +3.4 percentage points in 2018, +5.7 percentage points in 2019, and +9.8 percentage points in 2020 ($p < 0.001$). Quartiles $Q_1$ and $Q_2$ exhibit no significant change, while $Q_3$ registers a modest uptick to +1.9 percentage points in 2020.\par}
 \end{center}
 
 % =========================================================================
