@@ -12,8 +12,13 @@ import sys
 import shutil
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, ".."))
-P_DIR = os.path.join(PROJECT_ROOT, "P - Paper, Writing and Output") if not BASE_DIR.endswith("P - Paper, Writing and Output") else BASE_DIR
+if os.path.basename(BASE_DIR) == "P1.2 - Latex style files":
+    P_DIR = os.path.abspath(os.path.join(BASE_DIR, ".."))
+elif BASE_DIR.endswith("P - Paper, Writing and Output"):
+    P_DIR = BASE_DIR
+else:
+    P_DIR = os.path.join(BASE_DIR, "P - Paper, Writing and Output")
+
 P11_DIR = os.path.join(P_DIR, "P1.1 - PDFs for Submission")
 
 def cleanup_intermediates(directory):
