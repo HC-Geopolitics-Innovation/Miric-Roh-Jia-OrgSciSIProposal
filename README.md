@@ -1,13 +1,20 @@
+
+## *Accompanying Github Page for Organization Science Paper Submsision* ##
+
+
 # Opening the Black Box of Large Language Models in Text-based Measurement: Staged Pipelines with Verifiable Checkpoints
+
+
 
 **Milan Miric, Albert Roh, Nan Jia**  
 *University of Southern California, Marshall School of Business*  
 **Proposal for Special Issue:** AI-Enabled Frontiers in Organizational Science (*Organization Science*)  
-**Repository:** [https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis](https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis)  
+
 
 ---
+---
 
-## Proposal Documents
+## Main PProposal Documents
 
 | Document | Format | Description |
 | :--- | :--- | :--- |
