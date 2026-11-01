@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{times}
+\usepackage{ebgaramond}
 \usepackage{setspace}
 \setstretch{1.15}
 \usepackage{graphicx}
@@ -13,14 +13,30 @@
 \urlstyle{same}
 \renewcommand{\ttdefault}{cmtt}
 
+% Caption styling: figure title above figure, unbolded
+\captionsetup[figure]{labelfont=normalfont,textfont=normalfont,position=top,skip=6pt}
+
+% Section numbering format:
+% For major section titles (\section), outdent the number so the title text aligns with the start of the body text
+\makeatletter
+\def\@seccntformat#1{%
+  \ifcsname format@#1\endcsname
+    \csname format@#1\endcsname
+  \else
+    \csname the#1\endcsname.\quad
+  \fi
+}
+\def\format@section{\llap{\thesection.\hspace{0.8em}}}
+\makeatother
+
 % Adjust list spacing
 \def\labelitemi{--}
 
 \begin{document}
 
 \begin{center}
-    {\Large\bfseries Opening the Black Box of Large Language Models in Text-based Measurement: Staged Pipelines with Verifiable Checkpoints\par}
-    \vspace{1em}
+    {\LARGE \textsc{Opening the Black Box of Large Language Models in Text-based Measurement: Staged Pipelines with Verifiable Checkpoints}\par}
+    \vspace{1.2em}
     {\normalsize\bfseries Milan Miric, Albert Roh, Nan Jia\par}
     \vspace{0.2em}
     {\small\itshape University of Southern California, Marshall School of Business\par}

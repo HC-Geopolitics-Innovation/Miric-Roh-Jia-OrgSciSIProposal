@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{times}
+\usepackage{ebgaramond}
 \usepackage{setspace}
 \setstretch{1.15}
 \usepackage{graphicx}
@@ -13,14 +13,30 @@
 \urlstyle{same}
 \renewcommand{\ttdefault}{cmtt}
 
+% Caption styling: figure title above figure, unbolded
+\captionsetup[figure]{labelfont=normalfont,textfont=normalfont,position=top,skip=6pt}
+
+% Section numbering format:
+% For major section titles (\section), outdent the number so the title text aligns with the start of the body text
+\makeatletter
+\def\@seccntformat#1{%
+  \ifcsname format@#1\endcsname
+    \csname format@#1\endcsname
+  \else
+    \csname the#1\endcsname.\quad
+  \fi
+}
+\def\format@section{\llap{\thesection.\hspace{0.8em}}}
+\makeatother
+
 % Adjust list spacing
 \def\labelitemi{--}
 
 \begin{document}
 
 \begin{center}
-    {\Large\bfseries Opening the Black Box of Large Language Models in Text-based Measurement: Staged Pipelines with Verifiable Checkpoints\par}
-    \vspace{1em}
+    {\LARGE \textsc{Opening the Black Box of Large Language Models in Text-based Measurement: Staged Pipelines with Verifiable Checkpoints}\par}
+    \vspace{1.2em}
     {\normalsize\bfseries Milan Miric, Albert Roh, Nan Jia\par}
     \vspace{0.2em}
     {\small\itshape University of Southern California, Marshall School of Business\par}
@@ -146,9 +162,9 @@ Together, these contributions allow researchers both to do existing work better 
 \appendix
 
 \begin{center}
-    {\Large\bfseries Online Appendices: Opening the Black Box of Large Language Models in Text-based Measurement\par}
-    \vspace{0.5em}
-    {\large\itshape Staged Pipelines with Verifiable Checkpoints\par}
+    {\huge \textsc{Technical Appendix}\par}
+    \vspace{1.2em}
+    {\Large \textsc{Opening the Black Box of Large Language Models in Text-based Measurement: Staged Pipelines with Verifiable Checkpoints}\par}
     \vspace{1em}
     {\normalsize\bfseries Milan Miric, Albert Roh, Nan Jia\par}
     \vspace{0.2em}
@@ -183,9 +199,11 @@ We apply this architecture to 2,352 congressional committee hearings before the 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.85\textwidth]{figures/fig1_cosine_similarity.png}
-    \caption{\textbf{Cosine Similarity Between Hand-Coded Summaries and Large Language Model Summaries across Committees.}}
-    \vspace{4pt}
+    \caption{Cosine Similarity Between Hand-Coded Summaries and Large Language Model Generated Summaries across Committees}
+    \vspace{6pt}
+    \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+    \fbox{\includegraphics[width=0.85\textwidth]{figures/fig1_cosine_similarity.png}}
+    \vspace{6pt}
     {\footnotesize\textit{Notes: Comparison of cosine similarity distributions between model-generated summaries and independent human-authored C-SPAN abstracts. Same-document pairs exhibit high semantic alignment, whereas different-committee pairs show distinct separation, verifying discriminant validity.}\par}
 \end{figure}
 
@@ -212,9 +230,11 @@ Figure 2 illustrates the distribution of identified congressional stances across
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.90\textwidth]{figures/fig2_topics_stances_4panel.png}
-    \caption{\textbf{Topics and Overview of Stance (Support / Concern of Policymakers).}}
-    \vspace{4pt}
+    \caption{Topics and Overview of Stance (Support / Concern of Policymakers)}
+    \vspace{6pt}
+    \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+    \fbox{\includegraphics[width=0.90\textwidth]{figures/fig2_topics_stances_4panel.png}}
+    \vspace{6pt}
     {\footnotesize\textit{Notes: Four-panel overview tracking congressional topic prevalence, stance distributions, member polarization, and longitudinal legislative attention across science and technology hearings.}\par}
 \end{figure}
 
@@ -240,18 +260,21 @@ Figure 3 reports topic relevance scores for publicly listed firms regarding Cons
 
 \begin{figure}[htbp]
     \centering
-    \begin{minipage}{0.48\textwidth}
+    \caption{Topic Relevance Scores for Publicly Listed Firms}
+    \vspace{6pt}
+    \begin{minipage}[t]{0.48\textwidth}
         \centering
-        \textbf{\footnotesize Panel A: NAICS Sector Cosine Relative to Mean}\par\vspace{2pt}
-        \includegraphics[width=\textwidth]{figures/fig3_panel_a_naics_relevance.png}
+        {\footnotesize Panel A: NAICS Sector Cosine Relative to Mean}\par\vspace{3pt}
+        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+        \fbox{\includegraphics[width=\textwidth]{figures/fig3_panel_a_naics_relevance.png}}
     \end{minipage}\hfill
-    \begin{minipage}{0.48\textwidth}
+    \begin{minipage}[t]{0.48\textwidth}
         \centering
-        \textbf{\footnotesize Panel B: Selected High and Low Relevance Firms}\par\vspace{2pt}
-        \includegraphics[width=\textwidth]{figures/fig3_panel_b_top_firms.png}
+        {\footnotesize Panel B: Selected High and Low Relevance Firms}\par\vspace{3pt}
+        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+        \fbox{\includegraphics[width=\textwidth]{figures/fig3_panel_b_top_firms.png}}
     \end{minipage}
-    \caption{\textbf{Topic Relevance Scores for Publicly Listed Firms.}}
-    \vspace{4pt}
+    \vspace{6pt}
     {\footnotesize\textit{Notes: Panel A reports firm summary cosine similarity by NAICS sector relative to the sample mean (Topic 68 policy summary vector). Panel B reports demeaned topic relevance scores for selected high- and low-relevance firms, color-coded by sector (Information sector in crimson, other sectors in slate grey). Both panels share identical aspect ratios ($1.5$).}\par}
 \end{figure}
 
@@ -262,31 +285,31 @@ Figure 3 reports topic relevance scores for publicly listed firms regarding Cons
     \item \textbf{Firm-Topic Relevance Panel:} Longitudinal exposure scores linking public firms to policy debates.
 \end{itemize}
 
-\newpage
+\clearpage
 \section*{Appendix B. Overview of Datasets Used for Data Pipeline}
 \addcontentsline{toc}{section}{Appendix B. Overview of Datasets Used for Data Pipeline}
 
 This appendix provides an integrated overview of the primary input corpora, verification benchmarks, and research output datasets utilized across our AI-enabled pipeline.
 
-\subsection*{A. Primary Data Inputs}
+\subsection*{B.1. Primary Data Inputs}
 \begin{itemize}
     \item \textbf{Congressional Hearings Dataset (U.S. GPO GovInfo CHRG Collection):} Complete package manifest of 36,378 hearings spanning 1995--2025. Focal sample covers 2,352 hearings before House Science and Senate Commerce committees containing 93.6 million words across 116,000 speaker turns.
     \item \textbf{Publicly Listed Firms Business Descriptions (SEC Form 10-K Filings):} Full SEC EDGAR archive accessed via sec-api.io, comprising 305,140 annual reports. Mapped to financial fundamentals through a bijective CRSP--Compustat crosswalk linking 25,207 CIK $\leftrightarrow$ GVKEY identifier pairs. Yields 22,299 S\&P 500 reports complete with extracted text and usability flags.
 \end{itemize}
 
-\subsection*{B. Verification Data}
+\subsection*{B.2. Verification Data}
 \begin{itemize}
     \item \textbf{Independent Reference Abstracts (C-SPAN Archives API):} 18,697 committee program summaries covering 1995--2025 written by professional C-SPAN editors independently of congressional staff, serving as an external ground-truth benchmark for discriminant validity testing.
 \end{itemize}
 
-\subsection*{C. Output Research Datasets}
+\subsection*{B.3. Output Research Datasets}
 \begin{itemize}
     \item \textbf{Text Summarization Corpus (Stage 2 Outputs):} Cleaned, turn-attributed transcripts; intermediate chunk summaries; finalized hearing summaries (\texttt{hearing\_summaries.parquet}).
     \item \textbf{Policy Stance Panel Dataset (Stage 3 Outputs):} Standardized 111-topic policy taxonomy codebook (\texttt{frozen\_codebook\_111.parquet}); longitudinal member-topic stance panel (\texttt{member\_stance\_panel.parquet}).
     \item \textbf{Corporate Topic Relevance Dataset (Stage 4 Outputs):} Form 10-K Item 1 corporate business description embeddings; congressional debate centroid vectors; firm-year policy exposure panel (\texttt{firm\_topic\_relevance\_panel.parquet}).
 \end{itemize}
 
-\newpage
+\clearpage
 \section*{Appendix C. Example of Research Enabled by LLM Data Pipeline}
 \addcontentsline{toc}{section}{Appendix C. Example of Research Enabled by LLM Data Pipeline}
 
@@ -300,48 +323,77 @@ In Figure 4, we evaluate patenting intensity across topic relevance quartiles ($
 
 \begin{figure}[htbp]
     \centering
-    \begin{minipage}{0.32\textwidth}
+    \caption{Firm Topic Relevance and Privacy Patenting Responses Pre- and Post-2016}
+    \vspace{6pt}
+    \begin{minipage}[t]{0.32\textwidth}
         \centering
-        \textbf{\scriptsize Panel A: Distribution \& Patents}\par\vspace{2pt}
-        \includegraphics[width=\textwidth]{figures/fig_app_c_panel_a_topic_relevance.png}
+        {\scriptsize Panel A: Distribution \& Patents}\par\vspace{3pt}
+        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+        \fbox{\includegraphics[width=\textwidth]{figures/fig_app_c_panel_a_topic_relevance.png}}
     \end{minipage}\hfill
-    \begin{minipage}{0.32\textwidth}
+    \begin{minipage}[t]{0.32\textwidth}
         \centering
-        \textbf{\scriptsize Panel B: Pre/Post 2016 by Quartile}\par\vspace{2pt}
-        \includegraphics[width=\textwidth]{figures/fig_app_c_panel_b_quartiles.png}
+        {\scriptsize Panel B: Pre/Post 2016 by Quartile}\par\vspace{3pt}
+        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+        \fbox{\includegraphics[width=\textwidth]{figures/fig_app_c_panel_b_quartiles.png}}
     \end{minipage}\hfill
-    \begin{minipage}{0.32\textwidth}
+    \begin{minipage}[t]{0.32\textwidth}
         \centering
-        \textbf{\scriptsize Panel C: Pre/Post by Subclass}\par\vspace{2pt}
-        \includegraphics[width=\textwidth]{figures/fig_app_c_panel_c_subclasses.png}
+        {\scriptsize Panel C: Pre/Post by Subclass}\par\vspace{3pt}
+        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+        \fbox{\includegraphics[width=\textwidth]{figures/fig_app_c_panel_c_subclasses.png}}
     \end{minipage}
-    \caption{\textbf{Topic Relevance and Privacy Patenting Responses Pre- and Post-2016.}}
-    \vspace{4pt}
-    {\footnotesize\textit{Notes: Sample comprises 1,058 publicly traded firms scored for policy relevance. Panel A shows patent intensity by relevance quartile. Panel B shows pre- vs. post-2016 changes by quartile. Panel C shows annual filing changes across privacy technology subclasses.}\par}
+    \vspace{6pt}
+    {\footnotesize\textit{Notes: Sample comprises 1,058 publicly traded sample firms (excluding Facebook/Meta and Alphabet/Google). Panel A plots the distribution of firm topic relevance (cosine similarity between firm Form 10-K Item 1 business descriptions and the Congressional policy summary for Topic 68: Consumer Data Privacy Legislation; left axis, scaled 0--100). Red dotted vertical lines denote quartile boundaries ($Q_1 \le 0.486$, $Q_2$: 0.486--0.511, $Q_3$: 0.511--0.537, $Q_4 > 0.537$). Right Axis 1 traces average total privacy patents per firm across 1999--2021 (rising from 2.2 in $Q_1$ to 111.1 in $Q_4$). Right Axis 2 traces average patents per firm across the five narrow technology subclasses: Tracking Profiles \& Targeted Ads (G06Q 30/0269, 30/0255, 30/0261), Protecting Privacy \& PII (H04W 12/02), Anonymizing Data (G06F 21/6254, H04W 12/033), Tracking User Activity (H04L 67/535), and Protecting Confidentiality Encryption (H04W 12/03). Panel B reports annual privacy patents filed per firm before (2009--2015 annual mean) and after (2016--2020 annual mean) by topic relevance quartile, with capless standard error bars. Panel C reports annual patent filings across the five technology subclasses before and after 2016.}\par}
 \end{figure}
 
-To evaluate the dynamic trajectory of this response, Figure 5 (referred to as Figure 6 in the pipeline) presents annual event-study estimates of patenting probability from 2009 to 2020 relative to 2015 across topic relevance quartiles ($Q_1$ to $Q_4$). The outcome in each panel is an indicator equal to one if firm $i$ filed at least one patent application in year $t$ in the focal technology group, estimated using firm fixed effects with standard errors clustered at the firm level.
+In Figure 5, we decompose these results further by investigating how these patterns appear in the raw patent data. In Panel A, we plot the number of patents filed in each class in each year and observe a large increase in patents related to tracking user profiles and collecting customer data, particularly increasing after 2009, coinciding with the widespread adoption of smartphones. This is mirrored by an increase (albeit less pronounced) of technology designed to protect customer data. Not reflected in this figure, but in this period, the transmission of digital data through digital mobile networks saw an increase in patenting of patents related to encryption and data protection over mobile networks by hardware and infrastructure manufacturers. Panel B displays the 20 sample firms with the highest total privacy patent holdings over 1999--2021, broken down by technology class.
 
 \begin{figure}[htbp]
     \centering
-    \begin{minipage}{0.48\textwidth}
+    \caption{Long-Term Trends and Firm Concentration in Privacy Patenting (1999--2021)}
+    \vspace{6pt}
+    \begin{minipage}[t]{0.48\textwidth}
         \centering
-        \textbf{\footnotesize Panel A: Anonymizing / Decorrelating Data}\par\vspace{2pt}
-        \includegraphics[width=\textwidth]{figures/fig_app_c_fig6_panel_a_anonymizing.png}
+        {\footnotesize Panel A: Annual Privacy Patents by Topic Group}\par\vspace{3pt}
+        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+        \fbox{\includegraphics[width=\textwidth]{figures/fig_app_c_fig8a_raw_counts.png}}
     \end{minipage}\hfill
-    \begin{minipage}{0.48\textwidth}
+    \begin{minipage}[t]{0.48\textwidth}
         \centering
-        \textbf{\footnotesize Panel B: Tracking User Activity}\par\vspace{2pt}
-        \includegraphics[width=\textwidth]{figures/fig_app_c_fig6_panel_b_tracking.png}
+        {\footnotesize Panel B: Top Privacy Patenting Firms}\par\vspace{3pt}
+        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+        \fbox{\includegraphics[width=\textwidth]{figures/fig_app_c_fig9_top_firms.png}}
     \end{minipage}
-    \caption{\textbf{Annual Event-Study Estimates of Patenting Probability Relative to 2015 by Relevance Quartile.}}
-    \vspace{4pt}
+    \vspace{6pt}
+    {\footnotesize\textit{Notes: Longitudinal evolution and corporate concentration of privacy patents across the sample of 1,058 publicly traded firms from 1999 to 2021 matched to USPTO utility patent grants using CPC codes. Panel A plots annual patent counts across five focal technology classes: (1) Tracking User Profiles and Data (G06Q 30/0269, 30/0255, 30/0261); (2) Protecting Privacy and Anonymity in PII (H04W 12/02); (3) Anonymizing or Decorrelating Data (G06F 21/6254, H04W 12/033); (4) Protecting Confidentiality by Encryption (H04W 12/03); and (5) Tracking User Activity (H04L 67/535). Vertical dashed lines indicate regulatory milestones (2009.5, 2016.5, 2018.5). Panel B displays the 20 sample firms with the highest total privacy patent holdings over 1999--2021, with stacked bars indicating portfolio composition.}\par}
+\end{figure}
+
+In Figure 6, we investigate this further by exploring how the probability of firms pursuing these technologies changed in relation to 2015. This is by no means an exogenous event: the increase in policy discussion coincided with a broader debate and pressure on how companies manage customer data. However, it provides a useful setting to evaluate the diagnostic usefulness of the relevance index. We present annual event-study estimates of patenting probability from 2009 to 2020 relative to 2015 across topic relevance quartiles ($Q_1$ to $Q_4$). The outcome in each panel is an indicator equal to one if firm $i$ filed at least one patent application in year $t$ in the focal technology group, estimated using firm fixed effects with standard errors clustered at the firm level.
+
+\begin{figure}[htbp]
+    \centering
+    \caption{Annual Event-Study Estimates of Patenting Probability Relative to 2015 by Relevance Quartile}
+    \vspace{6pt}
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        {\footnotesize Panel A: Anonymizing / Decorrelating Data}\par\vspace{3pt}
+        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+        \fbox{\includegraphics[width=\textwidth]{figures/fig_app_c_fig6_panel_a_anonymizing.png}}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        {\footnotesize Panel B: Tracking User Activity}\par\vspace{3pt}
+        \setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.4pt}%
+        \fbox{\includegraphics[width=\textwidth]{figures/fig_app_c_fig6_panel_b_tracking.png}}
+    \end{minipage}
+    \vspace{6pt}
     {\footnotesize\textit{Notes: Sample comprises 1,058 firms. Estimated using firm fixed effects with standard errors clustered at the firm level. Vertical capless error bars represent 95\% confidence intervals. Vertical red dashed lines indicate the 2015/2016 policy transition and the 2018/2019 GDPR/CCPA enforcement milestone. Panel A evaluates Anonymizing or Decorrelating Data (CPC G06F 21/6254, H04W 12/033); Quartile 4 firms exhibit a sharp increase of $+6.0$ pp in 2019 ($p < 0.001$) and $+6.4$ pp in 2020 ($p < 0.001$). Panel B evaluates Tracking User Activity (CPC H04L 67/535); Quartile 4 firms experience a continuous rise up to $+9.8$ pp in 2020 ($p < 0.001$). Pre-trends are flat across all quartiles.}\par}
 \end{figure}
 
 In summary, this empirical exercise demonstrates how our AI-enabled pipeline constructs auditable, highly predictive firm-level measures that make it possible to study organizational innovation responses to policy debates.
 
-\newpage
+\clearpage
 \section*{Appendix D. Reproducible and Adaptable Data Pipelines with Coding Agents}
 \addcontentsline{toc}{section}{Appendix D. Reproducible and Adaptable Data Pipelines with Coding Agents}
 
