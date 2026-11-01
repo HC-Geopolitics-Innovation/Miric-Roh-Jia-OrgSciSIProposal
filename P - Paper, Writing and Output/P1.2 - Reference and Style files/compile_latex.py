@@ -12,7 +12,7 @@ import sys
 import shutil
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-if os.path.basename(BASE_DIR) == "P1.2 - Latex style files":
+if os.path.basename(BASE_DIR).startswith("P1.2"):
     P_DIR = os.path.abspath(os.path.join(BASE_DIR, ".."))
 elif BASE_DIR.endswith("P - Paper, Writing and Output"):
     P_DIR = BASE_DIR

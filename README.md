@@ -70,7 +70,7 @@ Each pipeline step opens with a workflow overview notebook and ends with a runni
 │   ├── P2. Org Sci Proposal [Miric, Roh and Jia][PDF].tex
 │   ├── P3. Org Sci Proposal - Full Methodology [Miric, Roh and Jia].md
 │   ├── P1.1 - PDFs for Submission/                    # Component and submission PDFs
-│   ├── P1.2 - Latex style files/                      # Supporting style files and compilation script
+│   ├── P1.2 - Reference and Style files/              # References database, style files, compilation script
 │   └── figures/                                       # Rendered proposal figures
 |
 └── R - Results/                                       # Figures and tables matching D, T, X1

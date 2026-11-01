@@ -1,6 +1,14 @@
-# LaTeX Style Files & Compilation Environment
+# Reference & Style Files
 
-This folder contains supporting style files, compilation utilities, and documentation for building the proposal and appendix PDF documents.
+This folder contains supporting style files, the central bibliography database, compilation utilities, and documentation for building the proposal and appendix documents.
+
+## Contents
+
+1. **`P3_References.md`**: Master BibTeX database containing structured citation entries (`@article`, `@techreport`, `@book`) for all works cited across `P1`, `P2`, and `P3`.
+2. **`compile_latex.py`**: Automated two-pass LaTeX compiler that compiles `P2`, `main`, and `appendix`, places the output PDFs in `P1.1 - PDFs for Submission/`, and immediately cleans up intermediate auxiliary files.
+3. **`README.md`**: This guide describing typography, required packages, and compilation instructions.
+
+---
 
 ## Documents Managed
 
