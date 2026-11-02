@@ -5,7 +5,7 @@ This folder contains supporting style files, the master BibTeX database, automat
 ## Contents
 
 1. **`P3_References.md`**: Master BibTeX database containing structured citation entries (`@article`, `@techreport`, `@book`) for all works cited across `P1`, `P2`, and `P3`.
-2. **`compile_latex.py`**: Automated two-pass LaTeX compiler that compiles `P2`, `main`, and `appendix`, deposits the output PDFs in `P1.1 - PDFs for Submission/`, and immediately cleans up all intermediate auxiliary files.
+2. **`compile_latex.py`**: Automated two-pass LaTeX compiler that compiles `P2` in the main folder and the separate submission files (`main` and `appendix`) in `P1.1 - PDFs for Submission/`, and immediately cleans up all intermediate auxiliary files.
 3. **`README.md`**: This guide describing typography, required packages, compilation instructions, and formatting rules.
 
 ---
@@ -16,7 +16,7 @@ This folder contains supporting style files, the master BibTeX database, automat
 2. **`main.tex`**: Standalone main proposal document (Sections 1–4 and References).
 3. **`appendix.tex`**: Standalone technical appendix with empirical demonstration figures and methodological tables.
 
-Compiled output PDFs are automatically generated and deposited into `P - Paper, Writing and Output/P1.1 - PDFs for Submission/`.
+The combined PDF (`P2. Org Sci Proposal [Miric, Roh and Jia][PDF].pdf`) is kept in the main folder `P - Paper, Writing and Output/`, while the separate submission PDFs (`main.pdf` and `appendix.pdf`) reside in `P - Paper, Writing and Output/P1.1 - PDFs for Submission/`.
 
 ---
 

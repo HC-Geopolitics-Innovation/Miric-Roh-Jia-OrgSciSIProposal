@@ -49,12 +49,12 @@ def compile_doc(tex_path, target_dir=None):
             print(f"Copied {pdf_name} to {target_dir}")
 
 def compile_all():
-    # 1. P2 in P folder
+    # 1. P2 in main P folder (keeps PDF with both main and appendix in main folder)
     p2_tex = os.path.join(P_DIR, "P2. Org Sci Proposal [Miric, Roh and Jia][PDF].tex")
     if os.path.exists(p2_tex):
-        compile_doc(p2_tex, target_dir=P11_DIR)
+        compile_doc(p2_tex)
     
-    # 2. main.tex and appendix.tex in P1.1
+    # 2. main.tex and appendix.tex in P1.1 (separate files for submission)
     for doc in ["main.tex", "appendix.tex"]:
         doc_path = os.path.join(P11_DIR, doc)
         if os.path.exists(doc_path):
