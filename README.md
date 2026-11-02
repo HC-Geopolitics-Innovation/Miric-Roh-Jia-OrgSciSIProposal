@@ -45,36 +45,36 @@ Each pipeline step opens with a workflow overview notebook and ends with a runni
 
 ```
 .
-├── D - Data Collection and Processing/                      # Example of Text Inputs  (GovInfo, C-SPAN, 10-K)
+├── D - Data Collection and Processing/                                 # Example of Text Inputs (GovInfo, C-SPAN, 10-K)
 │   ├── Data Collection Workflow Overview.ipynb
 │   ├── D1 - GovInfo Congressional Hearings/
 │   ├── D2 - C-SPAN Reference Abstracts/
 │   ├── D3 - SEC Form 10-K Corporate Filings/
 │   └── D4 - SST Sample Construction/
 |
-├── T - Three Step Text Analysis Pipeline/                     # Code for Pipeline Steps
-│   ├── T1 - Text Summarization/                                # Long-document summarization
-│   ├── T2 - Topic Extraction and Stance Analysis/              # Coonstruct topic stance measure
-│   └── T3 - Topic Relevance and Corporate Disclosure/          # Firm 10-K exposure to privacy debate
+├── T - Three Step Text Analysis Pipeline/                              # Code for Pipeline Steps
+│   ├── T1 - Text Summarization/                                        # Long-document summarization
+│   ├── T2 - Topic Extraction and Stance Analysis/                       # Construct topic stance measure
+│   └── T3 - Topic Relevance and Corporate Disclosure/                   # Firm 10-K exposure to privacy debate
 |
-├── X1 - Example of Research Enabled by LLM Pipeline/           # Empirical application and patent shifts
+├── X1 - Example of Research Enabled by LLM Pipeline/                   # Empirical application and patent shifts
 │   ├── X1.1 - Data for Matching and Patent Analysis/
 │   ├── X1.2 - Notebooks for Matching and Aggregating Patent Data/
 │   └── X1.3 - Notebooks for Analysis/
 |
-├── X2 - Example of Reproducing and Adapting the Research Pipeline/ # Coding agent adaptation guide
+├── X2 - Example of Reproducing and Adapting the Research Pipeline/     # Coding agent adaptation guide
 |
-├── P - Paper, Writing and Output/                     # Main proposal documents and PDFs
+├── P - Paper, Writing and Output/                                      # Main proposal documents and PDFs
 │   ├── P1. Org Sci Proposal [Miric, Roh and Jia][Github Version].md
 │   ├── P2. Org Sci Proposal [Miric, Roh and Jia][PDF].pdf
 │   ├── P2. Org Sci Proposal [Miric, Roh and Jia][PDF].tex
 │   ├── P3. Org Sci Proposal - Full Methodology [Miric, Roh and Jia].md
-│   ├── P1.1 - PDFs for Submission/                    # Component and submission PDFs (main.pdf, appendix.pdf)
-│   └── P1.2 - Reference and Style files/              # References database, style files, compilation script
+│   ├── P1.1 - PDFs for Submission/                                     # Component and submission PDFs (main.pdf, appendix.pdf)
+│   └── P1.2 - Reference and Style files/                               # References database, style files, compilation script
 |
-└── R - Results/                                       # Figures and tables matching D, T, X1
-    ├── R1.1 - Figures/                                # High-resolution numbered figures (.png, .pdf, .svg)
-    └── R1.2 - Tables/                                 # Summary tables and point estimates
+└── R - Results/                                                        # Figures and tables matching D, T, X1
+    ├── R1.1 - Figures/                                                 # High-resolution numbered figures (.png, .pdf, .svg)
+    └── R1.2 - Tables/                                                  # Summary tables and point estimates
 ```
 
 ---
