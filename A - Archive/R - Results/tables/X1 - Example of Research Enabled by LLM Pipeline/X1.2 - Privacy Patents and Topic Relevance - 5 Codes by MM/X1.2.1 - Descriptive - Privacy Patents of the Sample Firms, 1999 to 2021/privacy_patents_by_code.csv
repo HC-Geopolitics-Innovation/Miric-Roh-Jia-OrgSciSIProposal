@@ -1,6 +1,0 @@
-cpc,cpc_display,cpc_class,definition,n_privacy_patents,n_firms_filing
-G06Q30/0269,G06Q 30/0269,G06Q,based on user profile or attribute,1430,78
-G06Q30/0255,G06Q 30/0255,G06Q,based on user history,1011,69
-G06F21/6254,G06F 21/6254,G06F,"by anonymising data, e.g. decorrelating personal data from the owner's identification",819,75
-G06F11/3438,G06F 11/3438,G06F,monitoring of user actions (tracking the activity of the user H04L 67/535),457,59
-H04L67/535,H04L 67/535,H04L,Tracking the activity of the user (network monitoring arrangements H04L 43/00; recording of computer activity G06F 11/34),354,60

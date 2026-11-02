@@ -1,3 +1,0 @@
-set,family,prompt_version,n_firms,n_filings_total,duplicates_dropped,words_median,words_min,words_max,bge_tokens_max,re_asked,trimmed,refers_to_input_share,gpu,last_session_finished
-all_years,summary_lines_of_business,item1-mapreduce-1.3,1058,18779,0,248.0,126,401,511,2,0,0.014177693761814745,NVIDIA A40,2026-10-26T22:46:06+00:00
-three_years,summary_lines_of_business,item1-mapreduce-1.3,841,2072,0,258.0,128,392,512,13,0,0.034482758620689655,NVIDIA A40,2026-10-26T02:01:07+00:00

@@ -14,6 +14,10 @@ missfont.log
 *\[Opened\]*.docx
 .DS_Store
 
+# Workspace and Archive files (kept locally, not published)
+*.code-workspace
+A - Archive/
+
 # T3 alternative measures: kept locally and on the scratch root, not published (user decision 2026-10-31)
 T - Three Step Text Analysis Pipeline/T3 - Topic Relevance and Corporate Disclosure/T3.X - Alternative Measures/
 R - Results/figures/T - Three Step Text Analysis Pipeline/T3 - Topic Relevance and Corporate Disclosure/T3.X - Alternative Measures/

@@ -5,7 +5,7 @@
 **Milan Miric, Albert Roh, Nan Jia**  
 *University of Southern California, Marshall School of Business*  
 **Proposal for Special Issue:** AI-Enabled Frontiers in Organizational Science (*Organization Science*)  
-**Repository:** [https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis](https://github.com/HC-Geopolitics-Innovation/LLM-Text-Analysis-and-Synthesis)
+**Repository:** [https://github.com/HC-Geopolitics-Innovation/Miric-Roh-Jia-OrgSciSIProposal](https://github.com/HC-Geopolitics-Innovation/Miric-Roh-Jia-OrgSciSIProposal)
 
 Below we provide an overview of the repository structure, the main files in the paper, and the empirical demonstration.
 

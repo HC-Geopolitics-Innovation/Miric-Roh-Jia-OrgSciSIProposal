@@ -1,3 +1,0 @@
-,our categories,CAP categories,many-to-one accuracy,"baseline, most common code",normalized mutual information
-topic groups against CAP major topics,26.0,19.0,0.6122569239835003,0.33176193282262817,0.35313783739548504
-topics against CAP subtopics,108.0,126.0,0.47908073070123747,0.09428403064230996,0.5572430988245075
