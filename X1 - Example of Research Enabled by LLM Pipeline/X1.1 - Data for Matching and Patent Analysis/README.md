@@ -34,6 +34,6 @@ The 72-code privacy list, one row per code: `CPC` (with a space between class an
 
 The five focal codes of the X1.2 figures, selected by hand on 2026-10-29, same two columns: G06Q 30/0269 and G06Q 30/0255 (advertising targeted by user profile and by user history), G06F 21/6254 (anonymisation of personal data), H04L 67/535 (tracking of user activity in network services), and G06F 11/3438 (monitoring of user actions on computers). The X1.2 notebooks define their topic groups in code; this file documents the selection. All five are among the 72.
 
-## privacy_cpc_codes_clustered_by_claude.csv
+## privacy_cpc_codes_clustered.csv
 
-The 72 codes in four cluster groups, read by X1.2.3: `cpc_display`, `cpc_class`, `definition`, `n_privacy_patents` and `n_firms_filing` (counts from the October 2026 pass, informational), and `group` (A. privacy protection; B. use of personal data; C. interception by authorities; D. security). The grouping was proposed by a language model and reviewed by the authors.
+The 72 codes in four cluster groups: `cpc_display`, `cpc_class`, `definition`, `n_privacy_patents` and `n_firms_filing` (counts from the October 2026 pass, informational), and `group` (A. privacy protection; B. use of personal data; C. interception by authorities; D. security). The grouping was proposed by a language model and reviewed by the authors.

@@ -1,6 +1,6 @@
 # Sample Agent Prompt: Adapting the Research Pipeline to a New Domain
 
-> **Context for Appendix D**: This prompt illustrates how an empirical researcher can instruct an autonomous coding agent (such as Claude, Gemini, or Codex operating in an IDE like Antigravity, Cursor, or Claude Code) to inspect this paper's open-source repository, examine local user and raw data structures (legislative transcripts, corporate 10-K filings, and patent classification tables), and formulate a rigorous, step-by-step implementation plan to investigate a new empirical research question.
+> **Context for Appendix D**: This prompt illustrates how an empirical researcher can instruct an autonomous coding agent (such as an LLM coding agent operating in an AI-assisted environment like Antigravity, Cursor, or similar developer tools) to inspect this paper's open-source repository, examine local user and raw data structures (legislative transcripts, corporate 10-K filings, and patent classification tables), and formulate a rigorous, step-by-step implementation plan to investigate a new empirical research question.
 
 ---
 
