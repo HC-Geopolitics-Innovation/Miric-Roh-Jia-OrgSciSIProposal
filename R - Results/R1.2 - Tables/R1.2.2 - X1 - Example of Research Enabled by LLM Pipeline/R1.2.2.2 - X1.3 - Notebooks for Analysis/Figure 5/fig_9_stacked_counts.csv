@@ -1,21 +1,21 @@
-gvkey,firm,n_privacy_patents,Tracking User Profiles and Data,Protecting Privacy and Anonymity (PII),Anonymizing or Decorrelating Data,Protecting Confidentiality (Encryption)
-6066,Intl Business Machines Corp,608,251.0,135.5,217.0,4.5
-160329,Alphabet Inc,500,352.5,79.0,63.5,5.0
-9899,AT&T Inc,405,218.5,150.5,31.0,5.0
-12141,Microsoft Corp,321,168.0,66.5,81.5,5.0
-170617,Meta Platforms Inc,272,249.0,18.0,5.0,0.0
-24800,Qualcomm Inc,257,40.0,167.5,30.0,19.5
-1690,Apple Inc,220,46.0,118.0,40.0,16.0
-64768,Amazon.com Inc,213,166.83333333333334,12.833333333333334,30.333333333333332,3.0
-6008,Intel Corp,184,21.0,138.5,18.5,6.0
-2136,Verizon Communications Inc,135,82.5,36.0,10.5,6.0
-30990,Capital One Financial Corp,128,63.0,8.5,51.5,5.0
-114524,Ebay Inc,113,107.0,2.0,4.0,0.0
-1447,American Express Co,101,96.5,1.0,3.5,0.0
-20779,Cisco Systems Inc,99,10.5,71.0,14.5,3.0
-12540,Adobe Inc,89,81.0,0.0,8.0,0.0
-62634,Altaba Inc,88,85.0,0.0,3.0,0.0
-179534,Visa Inc,75,51.0,13.0,9.5,1.5
-5606,Hp Inc,74,24.0,29.0,18.0,3.0
-12142,Oracle Corp,69,43.0,13.5,12.0,0.5
-7647,Bank Of America Corp,59,23.0,7.0,28.0,1.0
+gvkey,firm,n_privacy_patents,Tracking User Profiles and Data,Protecting Privacy and Anonymity (PII),Anonymizing or Decorrelating Data,Protecting Confidentiality (Encryption),Tracking User Activity
+6066,Intl Business Machines Corp,645,250.0,135.5,217.0,4.5,38.0
+160329,Alphabet Inc,525,352.0,79.0,63.0,5.0,26.0
+9899,AT&T Inc,411,218.0,150.0,31.0,5.0,7.0
+12141,Microsoft Corp,350,168.0,66.5,81.5,5.0,29.0
+170617,Meta Platforms Inc,299,247.0,18.0,5.0,0.0,29.0
+24800,Qualcomm Inc,260,40.0,167.5,30.0,19.5,3.0
+1690,Apple Inc,231,46.0,118.0,40.0,16.0,11.0
+64768,Amazon.com Inc,222,166.83333333333334,12.833333333333334,30.333333333333332,3.0,9.0
+6008,Intel Corp,186,21.0,138.5,18.5,6.0,2.0
+2136,Verizon Communications Inc,146,82.0,36.0,10.5,6.0,11.5
+30990,Capital One Financial Corp,140,62.5,8.5,51.5,5.0,12.5
+114524,Ebay Inc,123,107.0,2.0,4.0,0.0,10.0
+20779,Cisco Systems Inc,119,10.5,71.0,14.5,3.0,20.0
+1447,American Express Co,102,96.5,1.0,3.5,0.0,1.0
+12540,Adobe Inc,98,81.0,0.0,8.0,0.0,9.0
+62634,Altaba Inc,88,85.0,0.0,3.0,0.0,0.0
+5606,Hp Inc,79,24.0,29.0,18.0,3.0,5.0
+179534,Visa Inc,79,51.0,13.0,9.5,1.5,4.0
+12142,Oracle Corp,75,41.833333333333336,13.5,11.833333333333334,0.5,7.333333333333333
+7647,Bank Of America Corp,69,23.0,7.0,28.0,1.0,10.0
