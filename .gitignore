@@ -12,6 +12,8 @@ __pycache__/
 missfont.log
 ~$*.docx
 *\[Opened\]*.docx
+*.docx
+*.doc
 .DS_Store
 
 # Workspace and Archive files (kept locally, not published)
