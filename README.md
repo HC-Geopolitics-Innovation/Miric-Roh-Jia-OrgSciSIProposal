@@ -2,10 +2,8 @@
 
 # Opening the Black Box of Large Language Models in Text-based Measurement: Staged Pipelines with Verifiable Checkpoints
 
-**Milan Miric, Albert Roh, Nan Jia**  
-*University of Southern California, Marshall School of Business*  
 **Proposal for Special Issue:** AI-Enabled Frontiers in Organizational Science (*Organization Science*)  
-**Repository:** [https://github.com/HC-Geopolitics-Innovation/Miric-Roh-Jia-OrgSciSIProposal](https://github.com/HC-Geopolitics-Innovation/Miric-Roh-Jia-OrgSciSIProposal)
+**Repository:** [https://anonymous.4open.science/r/OrgSciSIProposal-A183](https://anonymous.4open.science/r/OrgSciSIProposal-A183)
 
 Below we provide an overview of the repository structure, the main files in the paper, and the empirical demonstration.
 
@@ -24,7 +22,9 @@ In this section we list and provide links to the proposal documents we submitted
 | Document | Description |
 | :--- | :--- |
 | **[P1. Org Sci Proposal [Miric, Roh and Jia][Github Version].md](P%20-%20Paper,%20Writing%20and%20Output/P1.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BGithub%20Version%5D.md)** | Markdown (Github readable) version of main proposal document + technical appendix. |
-| **[P2. Org Sci Proposal [Miric, Roh and Jia][PDF].pdf](P%20-%20Paper,%20Writing%20and%20Output/P2.%20Org%20Sci%20Proposal%20%5BMiric,%20Roh%20and%20Jia%5D%5BPDF%5D.pdf)** | PDF version of main proposal document + technical appendix. |
+| **[P2. Org Sci Proposal [Anonymized][PDF].pdf](P%20-%20Paper,%20Writing%20and%20Output/P2.%20Org%20Sci%20Proposal%20%5BAnonymized%5D%5BPDF%5D.pdf)** | PDF version of main proposal document + technical appendix (anonymized for review). |
+| **[main [Anonymized].pdf](P%20-%20Paper,%20Writing%20and%20Output/P1.1%20-%20PDFs%20for%20Submission/main%20%5BAnonymized%5D.pdf)** | Main proposal document PDF (anonymized for submission). |
+| **[appendix [Anonymized].pdf](P%20-%20Paper,%20Writing%20and%20Output/P1.1%20-%20PDFs%20for%20Submission/appendix%20%5BAnonymized%5D.pdf)** | Technical appendix PDF (anonymized for submission). |
 | **[P3. Org Sci Proposal - Full Methodology [Miric, Roh and Jia].md](P%20-%20Paper,%20Writing%20and%20Output/P3.%20Org%20Sci%20Proposal%20-%20Full%20Methodology%20%5BMiric,%20Roh%20and%20Jia%5D.md)** | Extended methodological details. |
 
 ---

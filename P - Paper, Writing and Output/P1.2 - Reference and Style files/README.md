@@ -12,11 +12,11 @@ This folder contains supporting style files, the master BibTeX database, automat
 
 ## Documents Managed
 
-1. **`P2. Org Sci Proposal [Miric, Roh and Jia][PDF].tex`**: Complete merged proposal (Main text + Technical Appendix), formatted in accordance with INFORMS *Organization Science* submission guidelines.
-2. **`main.tex`**: Standalone main proposal document (Sections 1–4 and References).
-3. **`appendix.tex`**: Standalone technical appendix with empirical demonstration figures and methodological tables.
+1. **`P2. Org Sci Proposal [Anonymized][PDF].tex`**: Complete merged proposal (Main text + Technical Appendix) anonymized for double-blind submission, formatted in accordance with INFORMS *Organization Science* submission guidelines.
+2. **`main [Anonymized].tex` / `main.tex`**: Standalone main proposal document (Sections 1–4 and References).
+3. **`appendix [Anonymized].tex` / `appendix.tex`**: Standalone technical appendix with empirical demonstration figures and methodological tables.
 
-The combined PDF (`P2. Org Sci Proposal [Miric, Roh and Jia][PDF].pdf`) is kept in the main folder `P - Paper, Writing and Output/`, while the separate submission PDFs (`main.pdf` and `appendix.pdf`) reside in `P - Paper, Writing and Output/P1.1 - PDFs for Submission/`.
+The combined PDF (`P2. Org Sci Proposal [Anonymized][PDF].pdf`) is kept in the main folder `P - Paper, Writing and Output/`, while the separate submission PDFs (`main [Anonymized].pdf` and `appendix [Anonymized].pdf`) reside in `P - Paper, Writing and Output/P1.1 - PDFs for Submission/`.
 
 ---
 

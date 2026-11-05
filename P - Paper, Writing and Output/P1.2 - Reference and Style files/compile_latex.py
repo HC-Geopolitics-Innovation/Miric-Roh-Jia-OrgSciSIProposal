@@ -49,16 +49,28 @@ def compile_doc(tex_path, target_dir=None):
             print(f"Copied {pdf_name} to {target_dir}")
 
 def compile_all():
-    # 1. P2 in main P folder (keeps PDF with both main and appendix in main folder)
-    p2_tex = os.path.join(P_DIR, "P2. Org Sci Proposal [Miric, Roh and Jia][PDF].tex")
-    if os.path.exists(p2_tex):
-        compile_doc(p2_tex)
+    # 1. Merged proposals in main P folder
+    for doc in ["P2. Org Sci Proposal [Miric, Roh and Jia][PDF].tex", "P2. Org Sci Proposal [Anonymized][PDF].tex"]:
+        p2_tex = os.path.join(P_DIR, doc)
+        if os.path.exists(p2_tex):
+            compile_doc(p2_tex)
     
-    # 2. main.tex and appendix.tex in P1.1 (separate files for submission)
-    for doc in ["main.tex", "appendix.tex"]:
+    # Also provide [Annonymized] duplicate for safety
+    anon_p2 = os.path.join(P_DIR, "P2. Org Sci Proposal [Anonymized][PDF].pdf")
+    if os.path.exists(anon_p2):
+        shutil.copy2(anon_p2, os.path.join(P_DIR, "P2. Org Sci Proposal [Annonymized][PDF].pdf"))
+    
+    # 2. Individual main and appendix files in P1.1 (separate files for submission)
+    for doc in ["main.tex", "appendix.tex", "main [Anonymized].tex", "appendix [Anonymized].tex"]:
         doc_path = os.path.join(P11_DIR, doc)
         if os.path.exists(doc_path):
             compile_doc(doc_path)
+            
+    # Also provide [Annonymized] duplicates in P1.1
+    for name in ["main", "appendix"]:
+        src = os.path.join(P11_DIR, f"{name} [Anonymized].pdf")
+        if os.path.exists(src):
+            shutil.copy2(src, os.path.join(P11_DIR, f"{name} [Annonymized].pdf"))
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
