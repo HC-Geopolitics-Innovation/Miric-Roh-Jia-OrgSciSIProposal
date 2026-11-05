@@ -3,7 +3,7 @@
 # Opening the Black Box of Large Language Models in Text-based Measurement: Staged Pipelines with Verifiable Checkpoints
 
 **Proposal for Special Issue:** AI-Enabled Frontiers in Organizational Science (*Organization Science*)  
-**Repository:** [https://anonymous.4open.science/r/OrgSciSIProposal-A183](https://anonymous.4open.science/r/OrgSciSIProposal-A183)
+**Repository:** [https://anonymous.4open.science/r/OrgSciSIProposal-A183/](https://anonymous.4open.science/r/OrgSciSIProposal-A183/)
 
 Below we provide an overview of the repository structure, the main files in the paper, and the empirical demonstration.
 
