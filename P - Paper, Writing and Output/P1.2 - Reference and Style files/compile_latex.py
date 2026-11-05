@@ -49,11 +49,10 @@ def compile_doc(tex_path, target_dir=None):
             print(f"Copied {pdf_name} to {target_dir}")
 
 def compile_all():
-    # 1. Merged proposals in main P folder
-    for doc in ["P2. Org Sci Proposal [Miric, Roh and Jia][PDF].tex", "P2. Org Sci Proposal [Anonymized][PDF].tex"]:
-        p2_tex = os.path.join(P_DIR, doc)
-        if os.path.exists(p2_tex):
-            compile_doc(p2_tex)
+    # 1. Merged proposal in main P folder (anonymized)
+    p2_tex = os.path.join(P_DIR, "P2. Org Sci Proposal [Anonymized][PDF].tex")
+    if os.path.exists(p2_tex):
+        compile_doc(p2_tex)
     
     # Also provide [Annonymized] duplicate for safety
     anon_p2 = os.path.join(P_DIR, "P2. Org Sci Proposal [Anonymized][PDF].pdf")
